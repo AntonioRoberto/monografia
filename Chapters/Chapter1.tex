@@ -1,0 +1,165 @@
+% Chapter 1
+
+\chapter{Divisibilidade} % Main chapter title
+
+\label{Chapter1} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Introdução}
+
+Nesse seção vamos descrever algumas definições e propriedades dos números inteiros que serão utilizados ao longo desse trabalho.
+
+\begin{definition}
+\end{definition}
+
+\begin{corollary}\label{corolario_divisibilidade_1}
+Dado um subconjunto dos inteiros $S = \{S_1, S_2, S_3, ..., S_n\}$ ordenado crescentemente, e um número inteiro $d$, tal que, $d|(S_i-S_{i-1})$, $2 \leq i \leq n$. 
+
+Nessas Condições temos que: $d|(S_i-S_j)$, $\forall S_i, S_j \in S$.
+\end{corollary}
+\textbf{Demonstração:}
+Tome $S_i,S_j \in S$ quaisquer, e sem perda de generalidade assuma que $S_i \geq S_j$ (ie, $i \geq j$, pois $S$ está ordenado crescentemente).
+
+Como $i \geq j$, tome $r \in \mathbb{N}$ como sendo a diferença entre $i$ e $j$ : $i = j + r$.
+
+Vamos agora provar por indução que $d|(S_{j+r}-S_j)$.
+
+Para $r=0$ ou $r=1$ a demostração segue trivialmente.
+
+Assuma que o corolário funciona para $(r-1)$, ie, $d|(S_{j+r-1}-S_j)$. 
+
+Temos então que: 
+
+$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j) \Rightarrow d|(S_{j+r}-S_j)$ 
+
+
+\begin{corollary}
+O \textbf{Corolário} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
+\end{corollary}
+\textbf{Demonstração:}
+Deixaremos a demostração a cargo do leitor.
+
+
+\begin{theorem}\label{algoritmo_divisao}
+Dados dois inteiros quaisquer $a$ e $b$, com $b > 0$, então existe um único par $q$ e $r$ tal que:
+
+$a = qb + r$, com $0 \leq r < b$
+\end{theorem}
+
+\textbf{Demonstração:}
+Deixaremos a demostração a cargo do leitor.
+
+
+
+
+%-----------------------------------
+%	SECTION 2
+%-----------------------------------
+\section{Números Primos}
+
+\begin{definition} 
+Todo número inteiro n (n > 1) que têm apenas dois divisores distintos (1 e n) é chamado de número primo. Se n (n > 1) não for primo, dizemos que n é número composto.
+\end{definition}
+
+
+%-----------------------------------
+%	SECTION 3
+%-----------------------------------
+\section{Máximo Divisor Comum}
+
+\begin{definition}
+O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferente de zero), denotado por $MDC(a,b)$, é o maior inteiro que divide ambos $a$ e $b$.
+\end{definition}
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Máximo Divisor Comum}\label{mdc}
+\begin{algorithmic}[1]
+\Procedure{MMC (a, b)}{}
+\While {$b \neq 0$}
+\State $t \gets b$
+\State $b \gets a \bmod b$
+\State $a \gets t$
+\EndWhile
+\State \Return a
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{corollary}\label{divisibilidade_mdc}
+$MDC(a,b) = d \Rightarrow MDC(a/d, b/d) = 1$
+\end{corollary}
+
+\textbf{Demonstração:}
+
+
+
+
+
+\begin{theorem}[Teorema de Bézout]\label{teorema_bezout}
+$\forall$ $a$, $b \in \mathbb{Z}$, $\exists$ $x, y \in \mathbb{Z} \mid ax + by = mdc(a, b).$
+\end{theorem}
+\textbf{Demonstração:}
+De acordo com \autoref{teorema_bezout}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Crivo de Erastóteles}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Problemas Propostos}
+
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-10407}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1348}{10407 - Simple Division} \\
+
+\textbf{Resumo:} 
+Tome $P(S) := \{ x \in \mathbb{Z} \mid  \forall a , b \in S , a \equiv b ( mod$ $x)\}$ em que $S \subset \mathbb{Z}$.
+
+O problema consiste em encontrar o valor máximo de $P(S)$ dado um conjunto $S$.
+\\
+
+\textbf{Solução:} 
+Seja $S = \{S_1, S_2, S_3, ..., S_n\}$, com $n = |S|$, o conjunto dado pelo problema (assumiremos que os valores de S estão ordenados crescentemente).
+
+Tome um número qualquer $d \in P(S)$. Por definição temos que $\forall S_i, S_j \in S$, $S_i \equiv S_j ( mod$ $d) \Rightarrow $ 
+$ (S_i-S_j) \equiv 0 ( mod$ $d) \Rightarrow d \mid (S_i-S_j)$ .
+
+Pelo \textbf{Corolário} \autoref{corolario_divisibilidade_1} sabemos que:
+
+$d | (S_i-S_{i-1})$, $ \forall i \in \mathbb{N}, 2 \leq i \leq n \Rightarrow d | (S_i-S_j)$, $ \forall S_i, S_j \in S \Rightarrow d \in P(S)$.
+
+E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o Máximo Divisor Comum das diferenças $(S_i-S_{i-1})$ com $i$ variando de $2$ à $n$ $\square$.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Simple Division}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{GetMaximumValue (S)}{}
+\State $S \gets sort(S)$ \Comment{sort(X) retorna o conjunto X ordenado.} 
+\State $maxValue \gets 0$
+\For {i := 2 to |S|} 
+\State $maxValue \gets MDC(maxValue, S_i - S_{i-1})$
+\EndFor
+\State \Return{$maxValue$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+

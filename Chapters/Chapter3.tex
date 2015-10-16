@@ -1,0 +1,170 @@
+% Chapter 3
+
+\chapter{Funções Aritméticas} % Main chapter title
+
+\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{$\varphi$ de Euler}
+
+\begin{definition}
+A Função Totiente de Euler, denotada por $\varphi(n)$, é a função aritmética que conta o número 
+de inteiros positivos menores ou iguais a $n$ que são primos entre si com $n$.
+
+$\varphi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
+\end{definition}
+
+
+\begin{theorem}\label{phi_potencia}
+$\varphi(n^k) = n^{k-1}\varphi(n)$, para inteiros positiovos quaisquer $n$ e $k$. Em particular 
+$\varphi(p^k) = (p^k - p^{k-1})$, para $p$ primo.%, e $k \in \mathbb{N}^{*}$.
+\end{theorem}
+\textbf{Demonstração:}
+
+
+
+\begin{theorem}\label{phi_multiplicativa}
+$\varphi(n)$ é função multiplicativa, ie, $\varphi(mn) = \varphi(m)\varphi(n)$ para $MDC(m,n) = 1$.
+\end{theorem}
+\textbf{Demonstração:}
+
+
+
+\begin{theorem}[Fórmula Produto de Euler]
+$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$
+\end{theorem}
+\textbf{Demonstração:}
+Pelo Teorema X, \autoref{phi_potencia}, \autoref{phi_multiplicativa} segue as seguintes recorrências:
+
+$\varphi(n) = \varphi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$
+
+$\varphi(n) = \varphi(p_1^{a_1})\varphi(p_2^{a_2})...\varphi(p_k^{a_k})$
+
+$\varphi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$
+
+$\varphi(n) = p_1^{a_1}p_2^{a_2}...p_k^{a_k}(1 - 1/p_1)(1 - 1/p_2)...(1 - 1/p_k)$
+
+$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Sequência de Fibonacci}
+
+\begin{definition}
+\end{definition}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Problemas Propostos}
+
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-11424}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2419}{11424 - GCD - Extreme (I)} \\
+
+\textbf{Resumo:}
+É dado um inteiro positivo $N$ ($1 < N < 200001$). O problema consiste em calcular o mais rápido possível a expressão:
+
+$G(N) = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N}MDC(i,j)$.
+\\
+
+\textbf{Solução:}
+Trivialmente a expressão acima pode ser calculada em tempo proporcional à $O(n^2log(N))$, porém essa solução consome muito tempo e não será aceita no Judge Online. Vamos então mostrar uma solução mais eficiente.
+\\
+
+Primeiramente reescrevemos a expressão acima da seguinte maneira:
+
+$G(N) = \sum_{j=2}^N\sum_{i=1}^{j-1}MDC(i,j)$ ( $\rhd$ Observe que as expressão são equivalentes).
+
+Tome agora a função $F(M) = \sum_{i=1}^{M-1}MDC(i, M)$ $\Rightarrow$ $G(N) = \sum_{j=2}^NF(j)$.
+
+Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(M)$ são divisores de $M$. Desse modo, podemos reescrever $F(M)$ da seguinte maneira:
+
+$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^{n}\lambda_l d_l$, em que, $d_1, d_2,..., d_n$ são os divisores de $M$, $\lambda_l$ é o número de vezes que o divisor $d_l$ aparece na somatória $\sum_{i=1}^{M-1}MDC(i,N)$, e $n$ é o número de divisores de $M$.
+\\
+
+Pelo Corolario \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória, será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \varphi(M/d_l)$.
+
+Reescrevendo novamente $F(M)$, temos:
+
+$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^n \lambda_l d_l = \sum_{l=1}^n \varphi(M/d_l) d_l$.
+
+$G(N) = \sum_{j=2}^N \sum_{l=1}^n \varphi(j/d_l)d_l$ $\square$.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{GCD - Etreme(I)}\label{gcd_extreme}
+\begin{algorithmic}[1]
+\Procedure{G (N)}{}
+\State $\varphi[] \gets PHI(N)$
+\State $solution \gets 0$
+\For {$j$ := $2$ to $N$}
+\For {\textbf{each} divisor $d$ de $j$}
+\State $solution \gets solution + \varphi[j/d] d$
+\EndFor
+\EndFor
+\State \Return{$solution$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O método $PHI(N)$ na linha 2 consome tempo proporcional à $O(N\sqrt{N})$.
+
+O número de divisores de $j$ é proporcional à $O(\sqrt{N})$, já que $j \leq N$.
+
+Assim a complexidade das linhas 4, 5, 6 do algoritmo é $O(N\sqrt{N})$.
+
+Complexidade final do algoritmo: $O(N\sqrt{N})$.
+
+\textbf{OBS.:} Para resolver o problema no Judge Online será preciso armazenar as soluções usando \href{https://linux.ime.usp.br/~stefanot/mac499/template.pdf}{Programação Dinâmica}.
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{TJU-3506}
+\href{http://acm.tju.edu.cn/toj/showp3506.html}{3506 - Euler Function} \\
+
+\textbf{Resumo:}
+É dado dois números positivos $n$, $m$ ($1 < n < 10^7$, $1 < m < 10^9$).
+O problenas consiste em calcular a expressão: $\varphi(n^m) \bmod 201004.$
+\\
+
+\textbf{Solução:}
+Pelo \autoref{phi_potencia}
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{GCD - Etreme(I)}\label{gcd_extreme}
+\begin{algorithmic}[1]
+\Procedure{G (N)}{}
+\State $\varphi[] \gets PHI(N)$
+\State $solutuion \gets 0$
+\For {$j$ := $2$ to $N$}
+\For {\textbf{each} divisor $d$ de $j$}
+\State $solution \gets solution + \varphi[j/d] d$
+\EndFor
+\EndFor
+\State \Return{$solutuion$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+
+
