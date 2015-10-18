@@ -22,4 +22,5 @@
 \contentsline {subsection}{\numberline {3.3.2}TJU-3506}{6}{subsection.41}
 \contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{9}{chapter.43}
 \contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{11}{appendix.44}
-\contentsline {chapter}{Bibliografia}{13}{appendix*.46}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{13}{appendix.46}
+\contentsline {chapter}{Bibliografia}{15}{appendix*.47}

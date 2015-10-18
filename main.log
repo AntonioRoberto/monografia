@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 OCT 2015 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 OCT 2015 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/antonio/Dropbox/TCC/thesis_1/main.tex
-(/Users/antonio/Dropbox/TCC/thesis_1/main.tex
+**/Users/antonio/monografia/main.tex
+(/Users/antonio/monografia/main.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (./MastersDoctoralThesis.cls
@@ -1691,38 +1691,53 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=273, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=279, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
 Package pdftex.def Info: Figures/grafico.png used on input line 22.
 (pdftex.def)             Requested size: 416.83289pt x 291.86502pt.
+) (./Appendices/AppendixB.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [11]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [12 <./Figures/grafico.png>]
+Ap\^endice B.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+--------------------
+ B. Ju\IeC {\'\i }zes Online (Online Judges)
+--------------------
 )
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 278.
- [11]
+ [13
+
+]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 278.
- [12 <./Figures/grafico.png>]
+ [14
+
+]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 278.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 278.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 282.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 282.
- [13
 
-]
+[15]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 282.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 282.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E4AAA0C77E2E1FB304844EA14077F743;3020.
+(rerunfilecheck)             Checksum: FCB2D5027FBF46D0295927B30D9984A5;3229.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1732,13 +1747,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26943 strings out of 493089
- 485239 string characters out of 6134842
+ 26954 strings out of 493089
+ 485399 string characters out of 6134842
  628868 words of memory out of 5000000
- 30016 multiletter control sequences out of 15000+600000
+ 30021 multiletter control sequences out of 15000+600000
  49971 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,11n,51p,10413b,1583s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,11n,51p,10403b,1554s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1758,10 +1773,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (27 pages, 329958 bytes).
+Output written on main.pdf (29 pages, 330618 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
