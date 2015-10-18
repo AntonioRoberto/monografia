@@ -23,4 +23,8 @@
 \contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{9}{chapter.43}
 \contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{11}{appendix.44}
 \contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{13}{appendix.46}
-\contentsline {chapter}{Bibliografia}{15}{appendix*.47}
+\contentsline {section}{\numberline {B.1}UVa}{13}{section.47}
+\contentsline {section}{\numberline {B.2}Topcoder}{13}{section.48}
+\contentsline {section}{\numberline {B.3}Codeforces}{13}{section.49}
+\contentsline {section}{\numberline {B.4}CodeChef}{13}{section.50}
+\contentsline {chapter}{Bibliografia}{15}{appendix*.51}
