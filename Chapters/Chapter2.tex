@@ -91,34 +91,55 @@ E em caso afirmativo encontrar o valor desses dois primos.
 
 
 \textbf{Resumo:}
-Tome a seguinte função $f_K:\mathbb{N} \longmapsto \mathbb{N}$:
+Tome a seguinte função $f_K:\mathbb{N}^* \longmapsto \mathbb{N}$:
 
 \[
  f_K(x) = 
   \begin{cases} 
-   1 & \text{se } x = 0 \\
-   K & \text{se } x = 1 \\
-   \prod_{i=0}^{x-1}f_K(i) & \text{se } x > 1
+   1 & \text{se } x = 1 \\
+   K & \text{se } x = 2 \\
+   \prod_{i=1}^{x-1}f_K(i) & \text{se } x \geq 3
   \end{cases}
 \]
 
-São dados dois número inteiro $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod (10^9+7)$.
+São dados dois número inteiro $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod p$, em que $p = (10^9+7)$.
 \\
 
 \textbf{Solução:}
+Escrevendo os valores dos primeiros termos que a função assume, temos: $f(1)=1, f(2)=K, f(3)=K, f=(4)=K^2, f(5)=K^4, f(6)=K^8, f(7)=K^{16}$.
+
+Provaremos, por indução, que $f_K(N) = K^{2^{N-3}}, N \geq 3$.
+
+Para os primeiros termos essa expressão é trivialmente verificada.
+
+Assuma que a expressão funciona para algum número natural qualquer $(R-1) \geq 3$ ($f_K(R-1) = K^{2^{R-4}}$).
+
+Nessas condições temos que: 
+
+$f_K(R) = \prod_{i=1}^{R-1}f_K(i) = 1.K.\prod_{i=3}^{R-1}f_K(i) = K\prod_{i=3}^{R-1}K^{2^{i-3}} = K\prod_{j=0}^{R-4}K^{2^j}$
+
+$f_K(R) = KK^{\sum_{j=0}^{R-4}2^j} = KK^{2^{R-3}-1} = K^{2^{R-3}}$ $\square$
+
+Para calcular o valor de $f_K(N) \bmod p$, podemos aplicar o TeoremaXX, já que $p$ é um número primo e $MDC(p, K) = 1$:
+
+$f_K(N) \bmod p = K^{2^{N-3}} \bmod p = K^{2^{N-3} \bmod (p-1)} \bmod p$ 
+
+Reduzindo o problema, dessa maneira, em calcular: $K^{2^{N-3}} \bmod (10^9+7)$.
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Chef and Pattern}
 \begin{algorithmic}[1]
-\Procedure{FindTwoPrimesSum (n)}{}
-
+\Procedure{f (N, K)}{}
+\State $p \gets (10^9+7)$
+\State $exp \gets EXPMOD(2, N-3, p-1)$ \Comment{$exp = 2^{N-3} \bmod (p-1)$}
+\State $solution \gets EXPMOD(K, exp, p)$ \Comment{$solution = K^{2^{N-3} \bmod (p-1)} \bmod p$}
+\State \Return{$solution$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
-
+Como vimos anteriormente, as linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(n \log n)$, e assim a complexidade total é $O(n \log n)$.
 
