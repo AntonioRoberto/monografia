@@ -26,6 +26,29 @@
 
 \section{Teorema de Fermat, Euler e Wilson}
 
+\subsection{Teorema de Fermat}
+
+\begin{theorem}[Pequeno Teorema de Fermat]\label{teorema_fermat}
+Dado um número primo qualquer $p$, temos que: 
+$a^{p-1} \equiv 1 (\bmod$ $p), \forall a \in \mathbb{Z} \mid MDC(a, p) = 1$
+\end{theorem}
+
+\textbf{Demonstração:}
+Deixaremos a demostração a cargo do leitor.
+
+
+\begin{theorem}\label{teorema_fermat_expansao}
+Dados os inteiros quaisquer $a$, $b$, $c$ e um número primo $p$, com $MDC(a, p) = 1$, temos que:
+
+$a^{b^c} \equiv a^{b^c \bmod (p-1)} (\bmod$ $p)$
+
+\end{theorem}
+
+\textbf{Demonstração:}
+Deixaremos a demostração a cargo do leitor.
+
+
+
 
 
 %----------------------------------------------------------------------------------------
@@ -120,7 +143,7 @@ $f_K(R) = \prod_{i=1}^{R-1}f_K(i) = 1.K.\prod_{i=3}^{R-1}f_K(i) = K\prod_{i=3}^{
 
 $f_K(R) = KK^{\sum_{j=0}^{R-4}2^j} = KK^{2^{R-3}-1} = K^{2^{R-3}}$ $\square$
 
-Para calcular o valor de $f_K(N) \bmod p$, podemos aplicar o TeoremaXX, já que $p$ é um número primo e $MDC(p, K) = 1$:
+Para calcular o valor de $f_K(N) \bmod p$, podemos aplicar o \autoref{teorema_fermat_expansao}, já que $p$ é um número primo e $MDC(p, K) = 1$:
 
 $f_K(N) \bmod p = K^{2^{N-3}} \bmod p = K^{2^{N-3} \bmod (p-1)} \bmod p$ 
 
