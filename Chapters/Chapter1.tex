@@ -89,29 +89,43 @@ Deixaremos a demostração a cargo do leitor.
 O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferente de zero), denotado por $MDC(a,b)$, é o maior inteiro que divide ambos $a$ e $b$.
 \end{definition}
 
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Máximo Divisor Comum}\label{mdc}
-\begin{algorithmic}[1]
-\Procedure{MMC (a, b)}{}
-\While {$b \neq 0$}
-\State $t \gets b$
-\State $b \gets a \bmod b$
-\State $a \gets t$
-\EndWhile
-\State \Return a
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+
+\begin{corollary}\label{gcd_modular}
+Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(b, a \bmod b)$
+\end{corollary}
+\textbf{Demonstração:}
+TODO
+
 
 \begin{corollary}\label{divisibilidade_mdc}
 $MDC(a,b) = d \Rightarrow MDC(a/d, b/d) = 1$
 \end{corollary}
 \textbf{Demonstração:}
+TODO
+
+
+\subsection{Algoritmo de Euclides}
+A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o \textbf{Máximo Divisor Comum} de dois números baseando-se no 
+\textbf{Corolário} \autoref{gcd_modular}.\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Algoritmo de Euclides}\label{mdc}
+\begin{algorithmic}[1]
+\Procedure{$MDC (a, b)$}{}
+\If {$b = 0$}
+\State \Return $a$
+\Else
+\State \Return $MDC(b, a \bmod b)$
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
 
 
 
+\subsection{Teorema de Bézout}
 
 \begin{theorem}[Teorema de Bézout]\label{teorema_bezout}
 $\forall$ $a$, $b \in \mathbb{Z}$, $\exists$ $x, y \in \mathbb{Z} \mid ax + by = mdc(a, b).$

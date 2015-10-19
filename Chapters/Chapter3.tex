@@ -61,8 +61,9 @@ A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positiv
 \[
  Fib_n :=
   \begin{cases}
-   1 & \text{se } n = 1\text{ ou }n = 2 \\
-   Fib_{n-1} + Fib_{n-2} & \text{se } n \geq 3
+   0 & \text{se } n = 0 \\
+   1 & \text{se } n = 1 \\
+   Fib_{n-1} + Fib_{n-2} & \text{se } n \geq 2
   \end{cases}
 \]
 \end{definition}
@@ -111,18 +112,29 @@ $Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$ $\square$
 
 
 \begin{theorem}\label{fibonacci_mdc}
-$MDC(Fib_m, Fib_n) = Fib(MDC(m, n)), \forall m, n \in \mathbb{Z}$
+$MDC(Fib_m, Fib_n) = Fib_{MDC(m, n)}, \forall m, n \in \mathbb{Z}$
 \end{theorem}
 \textbf{Demonstração:}
-Primeiro escreva $n = qm + r, 0 \leq r < m$ (\autoref{algoritmo_divisao}). Assim temos:
 
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fin_{qm + r})$
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm + r})$ ($\triangleright$ \autoref{algoritmo_divisao}, $n = qm + r, 0 \leq r < n$)
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\triangleright$ \textbf{Corolário} \autoref{gcd_combinacao_fib}).
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
 
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$ ($\triangleright$ \textbf{Corolário} \autoref{corolario_gcd_produto}).
+Pelo \textbf{Corolário} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{n \bmod m})$
+
+Se tirarmos o símbolo funcional $Fib$, a última equação forma um passo do \textbf{Algoritmo de Euclides} ($MDC(m,n) = MDC(m, n \bmod m)$).
+
+Podemos continuar esse processo até que o resto $r$ se torne $0$. O último resto não-nulo será
+exatamente o Máximo Divisor Comum do dois números originais.
+
+Desse modo, se aplicar-mos o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que se aplicar-mos aos índice $m$ e $n$.
+E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
 
 
 %----------------------------------------------------------------------------------------
@@ -294,9 +306,6 @@ E em caso afirmativo encontrar o valor desses dois primos.
 \href{http://codeforces.com/contest/227/problem/E}{227E - Anniversary}\\
 
 \textbf{Resumo:}
-
-É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos. 
-E em caso afirmativo encontrar o valor desses dois primos.
 \\
 
 \textbf{Solução:}
@@ -304,7 +313,7 @@ E em caso afirmativo encontrar o valor desses dois primos.
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Goldbach and Euler}
+\caption{Anniversary}
 \begin{algorithmic}[1]
 \Procedure{FindTwoPrimesSum (n)}{}
 

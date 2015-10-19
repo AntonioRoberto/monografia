@@ -5,32 +5,34 @@
 \contentsline {section}{\numberline {1.1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{section.7}
 \contentsline {section}{\numberline {1.2}N\IeC {\'u}meros Primos}{2}{section.12}
 \contentsline {section}{\numberline {1.3}M\IeC {\'a}ximo Divisor Comum}{2}{section.15}
-\contentsline {section}{\numberline {1.4}Crivo de Erast\IeC {\'o}teles}{3}{section.22}
-\contentsline {section}{\numberline {1.5}Problemas Propostos}{3}{section.23}
-\contentsline {subsection}{\numberline {1.5.1}UVA-10407}{3}{subsection.24}
-\contentsline {chapter}{\numberline {2}Congru\IeC {\^e}ncia}{5}{chapter.26}
-\contentsline {section}{\numberline {2.1}Congru\IeC {\^e}ncia}{5}{section.27}
-\contentsline {section}{\numberline {2.2}Congru\IeC {\^e}ncia Linear}{5}{section.28}
-\contentsline {section}{\numberline {2.3}Teorema de Fermat, Euler e Wilson}{5}{section.29}
-\contentsline {subsection}{\numberline {2.3.1}Teorema de Fermat}{5}{subsection.30}
-\contentsline {section}{\numberline {2.4}Teorema do Resto Chin\IeC {\^e}s}{5}{section.33}
-\contentsline {section}{\numberline {2.5}Problemas Propostos}{5}{section.35}
-\contentsline {subsection}{\numberline {2.5.1}UVA-10090}{5}{subsection.36}
-\contentsline {subsection}{\numberline {2.5.2}CodeChef-IITK2P10}{6}{subsection.38}
-\contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{9}{chapter.40}
-\contentsline {section}{\numberline {3.1}$\varphi $ de Euler}{9}{section.41}
-\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{9}{section.46}
-\contentsline {section}{\numberline {3.3}Problemas Propostos}{10}{section.51}
-\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{10}{subsection.52}
-\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{11}{subsection.54}
-\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{11}{subsection.56}
-\contentsline {subsection}{\numberline {3.3.4}UVA-10311}{12}{subsection.58}
-\contentsline {subsection}{\numberline {3.3.5}Codeforces-227E}{12}{subsection.60}
-\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{13}{chapter.62}
-\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{15}{appendix.63}
-\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{17}{appendix.65}
-\contentsline {section}{\numberline {B.1}UVa}{17}{section.66}
-\contentsline {section}{\numberline {B.2}Topcoder}{17}{section.67}
-\contentsline {section}{\numberline {B.3}Codeforces}{17}{section.68}
-\contentsline {section}{\numberline {B.4}CodeChef}{17}{section.69}
-\contentsline {chapter}{Bibliografia}{19}{appendix*.70}
+\contentsline {subsection}{\numberline {1.3.1}Algoritmo de Euclides}{2}{subsection.19}
+\contentsline {subsection}{\numberline {1.3.2}Teorema de B\IeC {\'e}zout}{2}{subsection.21}
+\contentsline {section}{\numberline {1.4}Crivo de Erast\IeC {\'o}teles}{3}{section.25}
+\contentsline {section}{\numberline {1.5}Problemas Propostos}{3}{section.26}
+\contentsline {subsection}{\numberline {1.5.1}UVA-10407}{3}{subsection.27}
+\contentsline {chapter}{\numberline {2}Congru\IeC {\^e}ncia}{5}{chapter.29}
+\contentsline {section}{\numberline {2.1}Congru\IeC {\^e}ncia}{5}{section.30}
+\contentsline {section}{\numberline {2.2}Congru\IeC {\^e}ncia Linear}{5}{section.31}
+\contentsline {section}{\numberline {2.3}Teorema de Fermat, Euler e Wilson}{5}{section.32}
+\contentsline {subsection}{\numberline {2.3.1}Teorema de Fermat}{5}{subsection.33}
+\contentsline {section}{\numberline {2.4}Teorema do Resto Chin\IeC {\^e}s}{5}{section.36}
+\contentsline {section}{\numberline {2.5}Problemas Propostos}{5}{section.38}
+\contentsline {subsection}{\numberline {2.5.1}UVA-10090}{5}{subsection.39}
+\contentsline {subsection}{\numberline {2.5.2}CodeChef-IITK2P10}{6}{subsection.41}
+\contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{9}{chapter.43}
+\contentsline {section}{\numberline {3.1}$\varphi $ de Euler}{9}{section.44}
+\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{9}{section.49}
+\contentsline {section}{\numberline {3.3}Problemas Propostos}{10}{section.54}
+\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{10}{subsection.55}
+\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{11}{subsection.57}
+\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{11}{subsection.59}
+\contentsline {subsection}{\numberline {3.3.4}UVA-10311}{12}{subsection.61}
+\contentsline {subsection}{\numberline {3.3.5}Codeforces-227E}{12}{subsection.63}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{15}{chapter.65}
+\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{17}{appendix.66}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{19}{appendix.68}
+\contentsline {section}{\numberline {B.1}UVa}{19}{section.69}
+\contentsline {section}{\numberline {B.2}Topcoder}{19}{section.70}
+\contentsline {section}{\numberline {B.3}Codeforces}{19}{section.71}
+\contentsline {section}{\numberline {B.4}CodeChef}{19}{section.72}
+\contentsline {chapter}{Bibliografia}{21}{appendix*.73}
