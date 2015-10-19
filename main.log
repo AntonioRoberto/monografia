@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 OCT 2015 18:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 OCT 2015 19:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1574,6 +1574,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--45
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 56.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 61.
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
 ) (./Chapters/Chapter3.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -1724,7 +1741,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=313, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=320, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -1778,7 +1795,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 282.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 282.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B2E35A678E0080C4014DA770CF6FA3F;3834.
+(rerunfilecheck)             Checksum: D1F1A62A0C19512AA0629C3167114D6E;3937.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1788,10 +1805,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26968 strings out of 493089
- 485567 string characters out of 6134842
+ 26971 strings out of 493089
+ 485607 string characters out of 6134842
  629868 words of memory out of 5000000
- 30027 multiletter control sequences out of 15000+600000
+ 30028 multiletter control sequences out of 15000+600000
  49971 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,51p,10403b,1554s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1814,10 +1831,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (29 pages, 336713 bytes).
+Output written on main.pdf (29 pages, 337477 bytes).
 PDF statistics:
- 431 PDF objects out of 1000 (max. 8388607)
- 377 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 384 compressed objects within 4 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
