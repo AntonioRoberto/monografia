@@ -84,3 +84,41 @@ E em caso afirmativo encontrar o valor desses dois primos.
 \textbf{Análise:}
 
 
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-IITK2P10}
+\href{https://www.codechef.com/problems/IITK2P10}{IITK2P10 - Chef and Pattern}\\
+
+
+\textbf{Resumo:}
+Tome a seguinte função $f_K:\mathbb{N} \longmapsto \mathbb{N}$:
+
+\[
+ f_K(x) = 
+  \begin{cases} 
+   1 & \text{se } x = 0 \\
+   K & \text{se } x = 1 \\
+   \prod_{i=0}^{x-1}f_K(i) & \text{se } x > 1
+  \end{cases}
+\]
+
+São dados dois número inteiro $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod (10^9+7)$.
+\\
+
+\textbf{Solução:}
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Chef and Pattern}
+\begin{algorithmic}[1]
+\Procedure{FindTwoPrimesSum (n)}{}
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+
+

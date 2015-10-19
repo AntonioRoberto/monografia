@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 OCT 2015 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 OCT 2015 01:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1117,17 +1117,67 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip78
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen185
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count311
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count312
+\leftroot@=\count313
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count314
+\DOTSCASE@=\count315
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen186
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count316
+\c@MaxMatrixCols=\count317
+\dotsspace@=\muskip17
+\c@parentequation=\count318
+\dspbrk@lvl=\count319
+\tag@help=\toks22
+\row@=\count320
+\column@=\count321
+\maxfields@=\count322
+\andhelp@=\toks23
+\eqnshift@=\dimen187
+\alignsep@=\dimen188
+\tagshift@=\dimen189
+\tagwidth@=\dimen190
+\totwidth@=\dimen191
+\lineht@=\dimen192
+\@envbody=\toks24
+\multlinegap=\skip79
+\multlinetaggap=\skip80
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count311
-\float@exts=\toks22
-\float@box=\box52
-\@float@everytoks=\toks23
-\@floatcapt=\box53
+\c@float@type=\count323
+\float@exts=\toks26
+\float@box=\box54
+\@float@everytoks=\toks27
+\@floatcapt=\box55
 )
 Package scrhack Info: loading float hack on input line 32.
 
@@ -1142,8 +1192,8 @@ Package scrhack Info: redefining \listof on input line 161.
 Package scrhack Info: undefining \float@addtolists on input line 161.
 )
 Package tocbasic Info: setting babel extension for `loa' on input line 95.
-\@float@every@algorithm=\toks24
-\c@algorithm=\count312
+\@float@every@algorithm=\toks28
+\c@algorithm=\count324
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -1152,23 +1202,23 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count313
-\c@ALG@rem=\count314
-\c@ALG@nested=\count315
-\ALG@tlm=\skip78
-\ALG@thistlm=\skip79
-\c@ALG@Lnr=\count316
-\c@ALG@blocknr=\count317
-\c@ALG@storecount=\count318
-\c@ALG@tmpcounter=\count319
-\ALG@tmplength=\skip80
+\c@ALG@line=\count325
+\c@ALG@rem=\count326
+\c@ALG@nested=\count327
+\ALG@tlm=\skip81
+\ALG@thistlm=\skip82
+\c@ALG@Lnr=\count328
+\c@ALG@blocknr=\count329
+\c@ALG@storecount=\count330
+\c@ALG@tmpcounter=\count331
+\ALG@tmplength=\skip83
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-\c@theorem=\count320
-\c@definition=\count321
-\c@proof=\count322
-\c@corollary=\count323
+\c@theorem=\count332
+\c@definition=\count333
+\c@proof=\count334
+\c@corollary=\count335
 Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/brazilian.lbx
@@ -1184,23 +1234,23 @@ LaTeX Warning: Label `gcd_extreme' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 88.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -1291,17 +1341,17 @@ Dictionary: translator-basic-dictionary, Language: brazil
 File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
 ) (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count324
-\scratchdimen=\dimen185
-\scratchbox=\box54
-\nofMPsegments=\count325
-\nofMParguments=\count326
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count327
-\MPscratchDim=\dimen186
-\MPnumerator=\count328
-\makeMPintoPDFobject=\count329
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count336
+\scratchdimen=\dimen193
+\scratchbox=\box56
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen194
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1356,7 +1406,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box55
+\AtBeginShipoutBox=\box57
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 LaTeX Info: Redefining \color on input line 81.
@@ -1366,7 +1416,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 142.
 )
-Package hyperref Info: Link coloring ON on input line 87.
+Package hyperref Info: Link coloring ON on input line 88.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1374,11 +1424,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count330
+\c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 87.
-LaTeX Info: Redefining \pageref on input line 87.
-LaTeX Info: Redefining \nameref on input line 87.
+LaTeX Info: Redefining \ref on input line 88.
+LaTeX Info: Redefining \pageref on input line 88.
+LaTeX Info: Redefining \nameref on input line 88.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1397,49 +1447,49 @@ Package biblatex Warning: Data encoding is 'utf8'.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 87.
-Package biblatex Info: Reference segment=0 on input line 87.
-\c__siunitx_mathsf_int=\count331
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+Package biblatex Info: Reference section=0 on input line 88.
+Package biblatex Info: Reference segment=0 on input line 88.
+\c__siunitx_mathsf_int=\count343
+LaTeX Font Info:    Try loading font information for U+msa on input line 88.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 88.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count332
+\c__siunitx_mathtt_int=\count344
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 104.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 105.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 134.
  [1
 
 
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 148.
+(babel)             in language  on input line 149.
  [2]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 153.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 154.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 163.
  [3
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 175.
+(babel)             in language  on input line 176.
  [4
 
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 180.
+(babel)             in language  on input line 181.
  [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 192.
+(babel)             in language  on input line 193.
 
 [6
 
@@ -1452,10 +1502,10 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 \openout5 = `main.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 195.
  [7]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 195.
  [8
 
 ] (./main.lof)
@@ -1463,10 +1513,10 @@ Package babel Info: Redefining portuges shorthand "|
 \openout6 = `main.lof'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 197.
  [9]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 197.
  [10
 
 ] (./main.lot)
@@ -1474,10 +1524,10 @@ Package babel Info: Redefining portuges shorthand "|
 \openout7 = `main.lot'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 242.
+(babel)             in language  on input line 243.
  [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 242.
+(babel)             in language  on input line 243.
  [12
 
 ]
@@ -1485,10 +1535,10 @@ Package babel Info: Redefining portuges shorthand "|
  Dedicatory
 --------------------
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 248.
+(babel)             in language  on input line 249.
 [13]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 248.
+(babel)             in language  on input line 249.
  [14
 
 ] (./Chapters/Chapter1.tex
@@ -1591,17 +1641,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
  []
 
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 89.
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 93.
+[3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
+
+ []
+
 ) (./Chapters/Chapter3.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [3
-
-]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [4
-
-]
+ [4]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -1645,7 +1709,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--82
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 85.
-[5]
+[5
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
@@ -1741,7 +1807,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=320, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=327, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -1770,32 +1836,32 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 39.
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
+(babel)             in language  on input line 279.
  [13
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
+(babel)             in language  on input line 279.
  [14
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 278.
+(babel)             in language  on input line 279.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 279.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 282.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 282.
+(babel)             in language  on input line 283.
 
 [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 282.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 282.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D1F1A62A0C19512AA0629C3167114D6E;3937.
+(rerunfilecheck)             Checksum: C9688CD115E332E2A1DE2DD16D9A4DD8;4080.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1805,13 +1871,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26971 strings out of 493089
- 485607 string characters out of 6134842
- 629868 words of memory out of 5000000
- 30028 multiletter control sequences out of 15000+600000
- 49971 words of font info for 99 fonts, out of 8000000 for 9000
+ 27518 strings out of 493089
+ 491760 string characters out of 6134842
+ 638479 words of memory out of 5000000
+ 30564 multiletter control sequences out of 15000+600000
+ 51833 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,51p,10403b,1554s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,12n,51p,10403b,1562s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1831,10 +1897,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (29 pages, 337477 bytes).
+Output written on main.pdf (29 pages, 341737 bytes).
 PDF statistics:
- 438 PDF objects out of 1000 (max. 8388607)
- 384 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 446 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
+ 254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
