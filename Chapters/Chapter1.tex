@@ -43,17 +43,24 @@ O \textbf{Corolário} \autoref{corolario_divisibilidade_1} funciona mesmo se o c
 Deixaremos a demostração a cargo do leitor.
 
 
-\begin{theorem}\label{algoritmo_divisao}
-Dados dois inteiros quaisquer $a$ e $b$, com $b > 0$, então existe um único par $q$ e $r$ tal que:
+\begin{theorem}[Teorema da divisão]\label{algoritmo_divisao}
+Para todo número inteiro $a$ e qualquer número inteiro positivo $n$, existe inteiros únicos $q$ e $r$, tal que:
 
-$a = qb + r$, com $0 \leq r < b$
+$a = qn + r$, $0 \leq r < n$
+
+O valor $q$ ($q = \lfloor  \frac{a}{n} \rfloor$) é chamado de \textbf{quociente} da divisão, e o valor $r$ ($r = a \bmod n$) é chamado de \textbf{resto}
+(ou \textbf{resíduo}) da divisão.
 \end{theorem}
-
 \textbf{Demonstração:}
-Deixaremos a demostração a cargo do leitor.
+Suponha que $q$ e $r$ não sejam únicos, ie, que exista $q^*$ e $r^*$ tal que: $a = q^*n + r^*, 0 \leq r^* < n$.
 
+$a = qn + r = q^*n + r^* \Rightarrow (r - r^*) = (q^* - q)n \Rightarrow (r - r^*) \equiv (q^* - q)n \equiv 0 (mod$ $n)$
 
+Porém, como $r \neq r^*$, e tanto $r$ quanto $r^*$ são menores que $n$, temos que: 
 
+$r \not\equiv r^* (mod$ $n) \Rightarrow (r - r^*) \not\equiv 0 (mod$ $n)$
+
+Chegando numa contradição, e assim $q$ e $r$ são únicos $\square$ \\
 
 %-----------------------------------
 %	SECTION 2
@@ -63,6 +70,14 @@ Deixaremos a demostração a cargo do leitor.
 \begin{definition} 
 Todo número inteiro n (n > 1) que têm apenas dois divisores distintos (1 e n) é chamado de número primo. Se n (n > 1) não for primo, dizemos que n é número composto.
 \end{definition}
+
+\begin{theorem}[Fatoração Única]\label{fatoracao_unica}
+Um número natural qualquer $n$, pode ser escrito unicamente como um produto da forma: 
+$n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 < p_2 < ... < p_k$, e os números $a_i$ são inteiros positivos.
+\end{theorem}
+\textbf{Demonstração:}
+Deixaremos a demostração a cargo do leitor.
+\textbf{Dica:} Use o fato de que o conjunto dos primos que divide um número inteiro é único, e fato de que se qualquer potência $a_i$ for alterado o valor de $n$ será alterado.
 
 
 %-----------------------------------
