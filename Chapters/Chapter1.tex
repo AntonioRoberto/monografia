@@ -107,7 +107,6 @@ O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferen
 \begin{corollary}\label{divisibilidade_mdc}
 $MDC(a,b) = d \Rightarrow MDC(a/d, b/d) = 1$
 \end{corollary}
-
 \textbf{Demonstração:}
 
 
@@ -120,6 +119,24 @@ $\forall$ $a$, $b \in \mathbb{Z}$, $\exists$ $x, y \in \mathbb{Z} \mid ax + by =
 \textbf{Demonstração:}
 De acordo com \autoref{teorema_bezout}
 
+
+
+
+\begin{corollary}\label{corolario_gcd_soma}
+Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(a,a \pm b)$
+\end{corollary}
+\textbf{Demonstração:}
+A prova dessa expressão vem do fato de que qualder divisor de $a$ e $b$, é também divisor de $(a \pm b)$.
+
+
+
+\begin{corollary}\label{corolario_gcd_produto}
+Para números inteiros quaisquer $a$ e $b$, temos:
+
+$MDC(a,b) = 1 \Rightarrow MDC(a,bk) = MDC(a,k)$, com $k \in \mathbb{Z}$
+\end{corollary}
+\textbf{Demonstração:}
+A prova dessa expressão vem do fato de que qualder divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
 
 
 %----------------------------------------------------------------------------------------

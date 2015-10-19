@@ -56,7 +56,73 @@ $\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$
 \section{Sequência de Fibonacci}
 
 \begin{definition}
+A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positivos em que cada termo subsequente corresponde a some dos dois termos anteriores.
+
+\[
+ Fib_n :=
+  \begin{cases}
+   1 & \text{se } n = 1\text{ ou }n = 2 \\
+   Fib_{n-1} + Fib_{n-2} & \text{se } n \geq 3
+  \end{cases}
+\]
 \end{definition}
+
+
+\begin{corollary}\label{gcd_consecutivo_fib}
+$MDC(Fib_n, Fib_{n-1}) = 1$, para $n \geq 2$
+\end{corollary}
+\textbf{Demonstração:}
+Tome os primeiros termos da sequência de fibonacci: $1, 1, 2, 3, 5, 8,...$.
+Claramente a expressão acima funciona para os primeiros termos.
+Assuma que a expressão funciona para um inteiro qualquer $(k-1) > 2$ ($MDC(Fib_{k-1}, Fib_{k-2}) = 1$).
+
+Provaremos por indução que a expressão sempre funciona.
+
+$MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1})$
+
+$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pelo \textbf{Corolário} \autoref{corolario_gcd_soma})
+
+Logo, temos que:
+
+$MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1}) = 1$ $\square$
+
+
+
+\begin{corollary}\label{gcd_combinacao_fib}
+$Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$
+\end{corollary}
+\textbf{Demonstração:} Provaremos esse corolário por indução no índice $n$.
+
+A base da indução será, $n=2$:
+
+$Fib_{m+2} = Fib_m + Fim_{m+1} = Fib_m + Fib_m + Fib_{m-1}$
+
+$Fib_{m+2} = 2Fib_m + 1Fib_{m-1} = Fib_mFib_{3} + Fib_{m-1}Fib_2$
+
+Assumindo que a expressão funciona para todos os valores menores que $n$, temos:
+
+$Fib_{m+n} = Fib_{m+n-2} + Fib_{m+n-1}$
+
+$Fib_{m+n} = (Fib_{m}Fib_{n-1} + Fib_{m-1}Fib_{n-2}) + (Fib_{m}Fib_{n} + Fib_{m-1}Fib_{n-1})$
+
+$Fib_{m+n} = Fib_m(Fib_{n-1} + Fib_{n}) + Fib_{m-1}(Fib_{n-2} + Fib_{n-1})$
+
+$Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$ $\square$ 
+
+
+\begin{theorem}\label{fibonacci_mdc}
+$MDC(Fib_m, Fib_n) = Fib(MDC(m, n)), \forall m, n \in \mathbb{Z}$
+\end{theorem}
+\textbf{Demonstração:}
+Primeiro escreva $n = qm + r, 0 \leq r < m$ (\autoref{algoritmo_divisao}). Assim temos:
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fin_{qm + r})$
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\triangleright$ \textbf{Corolário} \autoref{gcd_combinacao_fib}).
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$ ($\triangleright$ \textbf{Corolário} \autoref{corolario_gcd_produto}).
 
 
 %----------------------------------------------------------------------------------------
@@ -201,6 +267,34 @@ O problenas consiste em calcular a expressão: $F(S) = \sum_{A \subset S \hspace
 \href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1252}{10311 - Goldbach and Euler}\\
 
 \textbf{Resumo:}
+É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos. 
+E em caso afirmativo encontrar o valor desses dois primos.
+\\
+
+\textbf{Solução:}
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Goldbach and Euler}
+\begin{algorithmic}[1]
+\Procedure{FindTwoPrimesSum (n)}{}
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{Codeforces-227E}
+\href{http://codeforces.com/contest/227/problem/E}{227E - Anniversary}\\
+
+\textbf{Resumo:}
+
 É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos. 
 E em caso afirmativo encontrar o valor desses dois primos.
 \\
