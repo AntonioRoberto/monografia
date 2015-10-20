@@ -21,18 +21,18 @@
 \contentsline {subsection}{\numberline {2.5.2}CodeChef-IITK2P10}{6}{subsection.45}
 \contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{9}{chapter.47}
 \contentsline {section}{\numberline {3.1}$\varphi $ de Euler}{9}{section.48}
-\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{9}{section.53}
-\contentsline {section}{\numberline {3.3}Problemas Propostos}{10}{section.58}
-\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{10}{subsection.59}
-\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{11}{subsection.61}
-\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{11}{subsection.63}
-\contentsline {subsection}{\numberline {3.3.4}UVA-10311}{12}{subsection.65}
-\contentsline {subsection}{\numberline {3.3.5}Codeforces-227E}{12}{subsection.67}
-\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{15}{chapter.69}
-\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{17}{appendix.70}
-\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{19}{appendix.72}
-\contentsline {section}{\numberline {B.1}UVa}{19}{section.73}
-\contentsline {section}{\numberline {B.2}Topcoder}{19}{section.74}
-\contentsline {section}{\numberline {B.3}Codeforces}{19}{section.75}
-\contentsline {section}{\numberline {B.4}CodeChef}{19}{section.76}
-\contentsline {chapter}{Bibliografia}{21}{appendix*.77}
+\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{10}{section.54}
+\contentsline {section}{\numberline {3.3}Problemas Propostos}{11}{section.60}
+\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{11}{subsection.61}
+\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{12}{subsection.63}
+\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{13}{subsection.65}
+\contentsline {subsection}{\numberline {3.3.4}UVA-10311}{13}{subsection.67}
+\contentsline {subsection}{\numberline {3.3.5}Codeforces-227E}{13}{subsection.69}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{15}{chapter.71}
+\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{17}{appendix.72}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{19}{appendix.74}
+\contentsline {section}{\numberline {B.1}UVa}{19}{section.75}
+\contentsline {section}{\numberline {B.2}Topcoder}{19}{section.76}
+\contentsline {section}{\numberline {B.3}Codeforces}{19}{section.77}
+\contentsline {section}{\numberline {B.4}CodeChef}{19}{section.78}
+\contentsline {chapter}{Bibliografia}{21}{appendix*.79}

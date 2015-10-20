@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 OCT 2015 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 OCT 2015 17:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1227,11 +1227,7 @@ File: brazilian.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./main.aux
-
-LaTeX Warning: Label `gcd_extreme' multiply defined.
-
-)
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
@@ -1732,63 +1728,39 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 11.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 56.
 
-Package hyperref Warning: No autoref name for `corollary' on input line 84.
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 93.
+(babel)             in language  on input line 83.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 88.
 [9]
 
-Package hyperref Warning: No autoref name for `corollary' on input line 121.
+Package hyperref Warning: No autoref name for `corollary' on input line 111.
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 125.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 144.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 148.
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
-
- []
+Package hyperref Warning: No autoref name for `corollary' on input line 148.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
-
- []
+Package hyperref Warning: No autoref name for `corollary' on input line 152.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 168.
+(babel)             in language  on input line 174.
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 169--171
-
- []
-
-
-Package hyperref Warning: No autoref name for `corollary' on input line 172.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
-
- []
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 216.
+(babel)             in language  on input line 211.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 215.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--223
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
 
  []
 
@@ -1797,63 +1769,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--227
 
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 250.
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Underfull \hbox (badness 10000) in paragraph at lines 236--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--257
-
- []
+Package hyperref Warning: No autoref name for `corollary' on input line 239.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 257.
+(babel)             in language  on input line 241.
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
+(babel)             in language  on input line 283.
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 305.
+(babel)             in language  on input line 320.
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 323.
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 330--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 354.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 357--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--364
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 381.
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
 
  []
 
 ) (./Chapters/Chapter4.tex
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [12]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
  [13]
@@ -1883,7 +1884,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=404, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=406, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -1937,20 +1938,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8B9E510546BAD22E96BDEF14F6304A35;4683.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: B66E47A6BE86A47A8C8E9F4A978ED50C;4683.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27571 strings out of 493089
- 492499 string characters out of 6134842
- 639479 words of memory out of 5000000
- 30593 multiletter control sequences out of 15000+600000
+ 27574 strings out of 493089
+ 492533 string characters out of 6134842
+ 638479 words of memory out of 5000000
+ 30594 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,51p,10403b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1975,10 +1972,10 @@ onts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb>
-Output written on main.pdf (35 pages, 380945 bytes).
+Output written on main.pdf (35 pages, 387660 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 116 named destinations out of 1000 (max. 500000)
+ 536 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
+ 118 named destinations out of 1000 (max. 500000)
  286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

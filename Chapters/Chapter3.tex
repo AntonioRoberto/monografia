@@ -23,31 +23,58 @@ $\varphi(n^k) = n^{k-1}\varphi(n)$, para inteiros positiovos quaisquer $n$ e $k$
 $\varphi(p^k) = (p^k - p^{k-1})$, para $p$ primo.%, e $k \in \mathbb{N}^{*}$.
 \end{theorem}
 \textbf{Demonstração:}
-
+TODO
 
 
 \begin{theorem}\label{phi_multiplicativa}
 $\varphi(n)$ é função multiplicativa, ie, $\varphi(mn) = \varphi(m)\varphi(n)$ para $MDC(m,n) = 1$.
 \end{theorem}
 \textbf{Demonstração:}
-
+TODO
 
 
 \begin{theorem}[Fórmula Produto de Euler]
-$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$
+$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$
 \end{theorem}
 \textbf{Demonstração:}
-Pelo \autoref{fatoracao_unica}, \autoref{phi_potencia}, \autoref{phi_multiplicativa} segue as seguintes recorrências:
 
-$\varphi(n) = \varphi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$
+$\varphi(n) = \varphi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$ ($\triangleright$ \autoref{fatoracao_unica})
 
-$\varphi(n) = \varphi(p_1^{a_1})\varphi(p_2^{a_2})...\varphi(p_k^{a_k})$
+$\varphi(n) = \varphi(p_1^{a_1})\varphi(p_2^{a_2})...\varphi(p_k^{a_k})$ ($\triangleright$ \autoref{phi_multiplicativa})
 
-$\varphi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$
+$\varphi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$ ($\triangleright$ \autoref{phi_potencia})
 
 $\varphi(n) = p_1^{a_1}p_2^{a_2}...p_k^{a_k}(1 - 1/p_1)(1 - 1/p_2)...(1 - 1/p_k)$
 
-$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$
+$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Calcula os primeiros N termos da função $\varphi$}
+\begin{algorithmic}[1]
+\Procedure{$PHI (N)$}{}
+\State $\varphi[] \gets new Array[N]$
+\For {$(p = 1 \text{; } p \leq N \text{; } p++)$}
+\State $\varphi[p] \gets p$
+\EndFor
+
+\For {$(p = 2\text{; } p \leq N\text{; } p++)$}
+
+\If {$\varphi[p] \neq p$} \Comment{$\varphi[p] \neq p \Leftrightarrow p\text{ não é primo}$}
+\State \textbf{continue}
+\EndIf
+
+\For {$(n = p\text{; } n \leq N\text{; } n = n+p)$}
+\State $\varphi[n] \gets \varphi[n] (\frac{p-1}{p})$
+\EndFor
+
+\EndFor
+
+\State \Return {$\varphi[]$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -137,6 +164,46 @@ Desse modo, se aplicar-mos o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$
 E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
 
 
+\begin{theorem}
+$Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$
+\end{theorem}
+\textbf{Demonstração:}
+
+A demostrção asseguir foi baseada no no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 85 p.}
+
+$Fib_{n+1} = Fib_n + Fib_{n-1}$
+
+$Fib_{n+1} - kFib_n = Fib_n + Fib_{n-1} - kFib_n$
+
+$Fib_{n+1} - kFib_n = Fib_n + Fib_{n-1} - kFib_n + (kFib_{n-1}-kFib_{n-1}) + (k^2Fib_{n-1}-k^2Fib_{n-1})$
+
+$Fib_{n+1} - kFib_n = (1 - k)(Fib_n - kFib_{n-1}) + (1 + k - k^2)Fib_{n-1}$
+
+Se denotarmos as raízes de $k^2-k-1=0$ por $k_1$ e $k_2$, teremos que $k_1=\frac{1-\sqrt{5}}{2}$ e $k_2=\frac{1+\sqrt{5}}{2}$. 
+
+$Fib_{n+1} - k_1Fib_b = k_2(Fib_n - k_1Fib_{n-1})$
+
+$Fib_{n+1} - k_2Fib_b = k_1(Fib_n - k_2Fib_{n-1})$
+
+Por iterações sucessivas dessas duas equações teremos que:
+
+$Fib_{n+1} - k_1Fib_b = k_2^n(Fib_1 - k_1Fib_0) = k_2^n$
+
+$Fib_{n+1} - k_2Fib_b = k_1^n(Fib_1 - k_2Fib_0) = k_1^n$
+
+Subtraindo membro à membro nos dá:
+
+$Fib_n(k_2 - k_1) = k_2^n - k_1^n$
+
+$Fib_n = \frac{k_2^n - k_1^n}{k_2 - k_1}$
+
+$Fib_n = \frac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{(\frac{1+\sqrt{5}}{2}) - (\frac{1-\sqrt{5}}{2})}$
+
+$Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$ $\square$
+
+
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
@@ -217,33 +284,36 @@ Complexidade final do algoritmo: $O(N\sqrt{N})$.
 \href{http://acm.tju.edu.cn/toj/showp3506.html}{3506 - Euler Function} \\
 
 \textbf{Resumo:}
-São dados dois números positivos $n$, $m$ ($1 < n < 10^7$, $1 < m < 10^9$).
-O problenas consiste em calcular a expressão: $\varphi(n^m) \bmod 201004.$
+São dados três números positivos $n$, $m$ ($1 < n < 10^7$, $1 < m < 10^9$) e $d = 201004$.
+O problema consiste em calcular a expressão: $\varphi(n^m) \bmod d$.
 \\
 
 \textbf{Solução:}
-Pelo \autoref{phi_potencia}
+Pelo \autoref{phi_potencia}, temos: 
+
+$\varphi(n^m) \bmod d = (n^{m-1}\varphi(n)) \bmod d$
+
+$\varphi(n^m) \bmod d = ((n^{m-1} \bmod d)(\varphi(n)) \bmod d) \bmod d)$
+
+Desse modo, podemos calcular a primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e a segundo fator com o método $PHI()$.
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{GCD - Etreme(I)}\label{gcd_extreme}
+\caption{Euler Functions}
 \begin{algorithmic}[1]
-\Procedure{G (N)}{}
-\State $\varphi[] \gets PHI(N)$
-\State $solutuion \gets 0$
-\For {$j$ := $2$ to $N$}
-\For {\textbf{each} divisor $d$ de $j$}
-\State $solution \gets solution + \varphi[j/d] d$
-\EndFor
-\EndFor
-\State \Return{$solutuion$}
+\Procedure{$PhiEulerPotential (n, m, d)$}{}
+\State $\varphi[] \gets PHI(n)$
+\State $exp \gets EXPMOD(n, m-1, d)$
+\State $solution \gets (exp$ $\varphi[n]) \bmod d$
+\State \Return{$solution$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
+As linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(\log m)$ e $O(1)$ respectivamente.
+Se precalcular-mos o vetor $\varphi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
 
 
 %----------------------------------------------------------------------------------------
@@ -252,7 +322,13 @@ Pelo \autoref{phi_potencia}
 
 \textbf{Resumo:}
 São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 50000$, $1 \leq K \leq N$) e um conjunto $S \subset \mathbb{N}$ com $N$ elementos, tal que, $\forall s \in S, 1 \leq s \leq 10^9$.
-O problenas consiste em calcular a expressão: $F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\varphi(n^m) \bmod 201004.$
+
+Tome a seguinte função:
+
+$F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\varphi(n^m) \bmod 201004.$
+
+O problema consiste em calcular a expressão:  
+$F(S) \bmod 99991 $
 \\
 
 \textbf{Solução:}
