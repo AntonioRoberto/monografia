@@ -10,29 +10,30 @@
 \contentsline {section}{\numberline {1.4}Crivo de Erast\IeC {\'o}teles}{4}{section.29}
 \contentsline {section}{\numberline {1.5}Problemas Propostos}{4}{section.30}
 \contentsline {subsection}{\numberline {1.5.1}UVA-10407}{4}{subsection.31}
-\contentsline {chapter}{\numberline {2}Congru\IeC {\^e}ncia}{5}{chapter.33}
+\contentsline {chapter}{\numberline {2}Aritm\IeC {\'e}tica Modular}{5}{chapter.33}
 \contentsline {section}{\numberline {2.1}Congru\IeC {\^e}ncia}{5}{section.34}
-\contentsline {section}{\numberline {2.2}Congru\IeC {\^e}ncia Linear}{5}{section.35}
-\contentsline {section}{\numberline {2.3}Teorema de Fermat, Euler e Wilson}{5}{section.36}
-\contentsline {subsection}{\numberline {2.3.1}Teorema de Fermat}{5}{subsection.37}
-\contentsline {section}{\numberline {2.4}Teorema do Resto Chin\IeC {\^e}s}{5}{section.40}
-\contentsline {section}{\numberline {2.5}Problemas Propostos}{5}{section.42}
-\contentsline {subsection}{\numberline {2.5.1}UVA-10090}{5}{subsection.43}
-\contentsline {subsection}{\numberline {2.5.2}CodeChef-IITK2P10}{6}{subsection.45}
-\contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{9}{chapter.47}
-\contentsline {section}{\numberline {3.1}$\varphi $ de Euler}{9}{section.48}
-\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{10}{section.54}
-\contentsline {section}{\numberline {3.3}Problemas Propostos}{11}{section.60}
-\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{11}{subsection.61}
-\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{12}{subsection.63}
-\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{13}{subsection.65}
-\contentsline {subsection}{\numberline {3.3.4}UVA-10311}{13}{subsection.67}
-\contentsline {subsection}{\numberline {3.3.5}Codeforces-227E}{13}{subsection.69}
-\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{15}{chapter.71}
-\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{17}{appendix.72}
-\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{19}{appendix.74}
-\contentsline {section}{\numberline {B.1}UVa}{19}{section.75}
-\contentsline {section}{\numberline {B.2}Topcoder}{19}{section.76}
-\contentsline {section}{\numberline {B.3}Codeforces}{19}{section.77}
-\contentsline {section}{\numberline {B.4}CodeChef}{19}{section.78}
-\contentsline {chapter}{Bibliografia}{21}{appendix*.79}
+\contentsline {section}{\numberline {2.2}Congru\IeC {\^e}ncia Linear}{5}{section.39}
+\contentsline {section}{\numberline {2.3}Teoremas de Fermat e do Resto Chin\IeC {\^e}s}{5}{section.40}
+\contentsline {subsection}{\numberline {2.3.1}Teorema de Fermat}{5}{subsection.41}
+\contentsline {subsection}{\numberline {2.3.2}Teorema do Resto Chin\IeC {\^e}s}{5}{subsection.44}
+\contentsline {section}{\numberline {2.4}Problemas Propostos}{6}{section.46}
+\contentsline {subsection}{\numberline {2.4.1}UVA-10090}{6}{subsection.47}
+\contentsline {subsection}{\numberline {2.4.2}CodeChef-IITK2P10}{6}{subsection.49}
+\contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{9}{chapter.51}
+\contentsline {section}{\numberline {3.1}$\varphi $ de Euler}{9}{section.52}
+\contentsline {subsection}{\numberline {3.1.1}Teorema de Euler}{10}{subsection.58}
+\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{10}{section.60}
+\contentsline {section}{\numberline {3.3}Problemas Propostos}{11}{section.66}
+\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{11}{subsection.67}
+\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{12}{subsection.69}
+\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{13}{subsection.71}
+\contentsline {subsection}{\numberline {3.3.4}UVA-10311}{13}{subsection.73}
+\contentsline {subsection}{\numberline {3.3.5}Codeforces-227E}{13}{subsection.75}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{15}{chapter.77}
+\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{17}{appendix.78}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{19}{appendix.80}
+\contentsline {section}{\numberline {B.1}UVa}{19}{section.81}
+\contentsline {section}{\numberline {B.2}Topcoder}{19}{section.82}
+\contentsline {section}{\numberline {B.3}Codeforces}{19}{section.83}
+\contentsline {section}{\numberline {B.4}CodeChef}{19}{section.84}
+\contentsline {chapter}{Bibliografia}{21}{appendix*.85}
