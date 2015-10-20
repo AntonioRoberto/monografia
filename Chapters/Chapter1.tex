@@ -9,16 +9,40 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introdução}
-
-Nesse seção vamos descrever algumas definições e propriedades dos números inteiros que serão utilizados ao longo desse trabalho.
+A noção de divisibilidade dos números inteiros é fundamental na \textbf{Teoria dos Números}.
+Nesse seção vamos descrever algumas definições e propriedades que serão utilizados ao longo desse trabalho.
 
 \begin{definition}
+A notação $d|n$ ("$d$ \textbf{divive} $n$"), significa que existe um inteiro $q$, tal que, $n = dq$.
+Se $d|n$ dizemos que $n$ é múltiplo de $d$. Caso $n$ não seja múltiplo de $d$ (ou seja, $d$ não divide $n$), escrevemos $d \nmid n$.
 \end{definition}
 
-\begin{corollary}\label{corolario_divisibilidade_1}
-Dado um subconjunto dos inteiros $S = \{S_1, S_2, S_3, ..., S_n\}$ ordenado crescentemente, e um número inteiro $d$, tal que, $d|(S_i-S_{i-1})$, $2 \leq i \leq n$. 
 
-Nessas Condições temos que: $d|(S_i-S_j)$, $\forall S_i, S_j \in S$.
+\begin{corollary}\label{divisibilidade_transitiva}
+$d|n$ , $d|m \Rightarrow d|(n+m)$
+\end{corollary}
+\textbf{Demonstração:}
+Se $d|n$ e $d|m$, então existe inteiros $q$ e $k$, tal que, $n = qd$ e $m = kd$. Desse modo temos:
+
+$(n+m) = qd + kd = (q + k)d \Rightarrow d|(n+m) $ $\square$
+
+
+\begin{corollary}\label{divisibilidade_fracao}
+$d|(\frac{n}{m}) \Rightarrow dm|n$
+\end{corollary}
+\textbf{Demonstração:}
+
+$d|(\frac{n}{m}) \Rightarrow \exists q \in \mathbb{Z} \mid \frac{n}{m} = qd$
+
+$d|(\frac{n}{m}) \Rightarrow n = q(dm) \Rightarrow dm|n$ $\square$
+
+
+\begin{corollary}\label{corolario_divisibilidade_1}
+Dado um subconjunto dos inteiros $S = \{S_1, S_2, S_3, ..., S_n\}$ ordenado crescentemente, e um número inteiro $d$, tal que, $d|(S_i-S_{i-1})$, $2 \leq i \leq n$, 
+temos que: 
+
+$d|(S_i-S_j)$, $\forall S_i, S_j \in S$.
+
 \end{corollary}
 \textbf{Demonstração:}
 Tome $S_i,S_j \in S$ quaisquer, e sem perda de generalidade assuma que $S_i \geq S_j$ (ie, $i \geq j$, pois $S$ está ordenado crescentemente).
@@ -33,7 +57,9 @@ Assuma que o corolário funciona para $(r-1)$, ie, $d|(S_{j+r-1}-S_j)$.
 
 Temos então que: 
 
-$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j) \Rightarrow d|(S_{j+r}-S_j)$ 
+$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j)$ ($\triangleright$ \textbf{Corolário} \autoref{divisibilidade_transitiva})
+
+$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_j)$ $\square$ 
 
 
 \begin{corollary}
@@ -61,6 +87,33 @@ Porém, como $r \neq r^*$, e tanto $r$ quanto $r^*$ são menores que $n$, temos 
 $r \not\equiv r^* (mod$ $n) \Rightarrow (r - r^*) \not\equiv 0 (mod$ $n)$
 
 Chegando numa contradição, e assim $q$ e $r$ são únicos $\square$ \\
+
+\begin{corollary}\label{divisibilidade_modular}
+$d|n$ , $d|m \Rightarrow d|(n \bmod m)$
+\end{corollary}
+\textbf{Demonstração:}
+
+$d|n \Rightarrow n = k_1d, k_1 \in \mathbb{Z}$
+
+$d|m \Rightarrow m = k_2d, k_2 \in \mathbb{Z}$
+
+$n = qm + (n \bmod m) \Rightarrow (n \bmod m) = n - qm$ ($\triangleright$ \autoref{algoritmo_divisao})
+
+$(n \bmod m) = k_1d - qk_2d = (k_1 - qk_2)d \Rightarrow d|(n \bmod m)$ $\square$
+
+
+\begin{corollary}\label{divisibilidade_modular2}
+$d|m$ , $d|(n \bmod m) \Rightarrow d|n$
+\end{corollary}
+\textbf{Demonstração:}
+
+$d|m \Rightarrow m = k_1d, k_1 \in \mathbb{Z}$
+
+$d|(n \bmod m) \Rightarrow (n \bmod m) = k_2d, k_2 \in \mathbb{Z}$
+
+$n = qm + (n \bmod m) \Rightarrow n = qk_1d + k_2d$ ($\triangleright$ \autoref{algoritmo_divisao})
+
+$n = (qk_1 + k_2)d \Rightarrow d|n$ $\square$
 
 %-----------------------------------
 %	SECTION 2
@@ -94,15 +147,28 @@ O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferen
 Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(b, a \bmod b)$
 \end{corollary}
 \textbf{Demonstração:}
-TODO
+Pelo \textbf{Corolário} \autoref{divisibilidade_modular} e \autoref{divisibilidade_modular2}, temos:
+
+$d|a, d|b \Leftrightarrow d|b, d|(a \bmod b)$
+
+Assim, qualquer divisor de $a$ e $b$ é também divisor de $b$ e $(a \bmod b)$ (e vise versa). Implicando que o \textbf{Máximo Divisor Comum} de $a$ e $b$
+é igual ao \textbf{Máximo Divisor Comum} de $b$ e $(a \bmod b)$. $\square$
+
 
 
 \begin{corollary}\label{divisibilidade_mdc}
-$MDC(a,b) = d \Rightarrow MDC(a/d, b/d) = 1$
+$MDC(a,b) = d \Rightarrow MDC(\frac{a}{d}, \frac{b}{d}) = 1$
 \end{corollary}
 \textbf{Demonstração:}
-TODO
+Suponha que $MDC(\frac{a}{d}, \frac{b}{d}) = r > 1$. Assim temos:
 
+$r|\frac{a}{d} \Rightarrow dr|a$ ($\triangleright$ \textbf{Corolário} \autoref{divisibilidade_fracao})
+
+$r|\frac{b}{d} \Rightarrow dr|b$ ($\triangleright$ \textbf{Corolário} \autoref{divisibilidade_fracao})
+
+$r > 1 \Rightarrow dr > d \Rightarrow dr > MDC(a,b)$
+
+Chegamos então numa contradição, pos $dr$ é divisor comum de $a$ e $b$, e $dr$ é maior que o \textbf{Máximo Divisor Comum} de $a$ e $b$. $\square$
 
 \subsection{Algoritmo de Euclides}
 A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o \textbf{Máximo Divisor Comum} de dois números baseando-se no 
