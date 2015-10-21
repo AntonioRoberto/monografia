@@ -18,19 +18,43 @@ $\Phi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
 \end{definition}
 
 
-\begin{theorem}\label{phi_potencia}
-$\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positiovos quaisquer $n$ e $k$. Em particular 
-$\Phi(p^k) = (p^k - p^{k-1})$, para $p$ primo.%, e $k \in \mathbb{N}^{*}$.
-\end{theorem}
-\textbf{Demonstração:}
-TODO
-
 
 \begin{theorem}\label{phi_multiplicativa}
 $\Phi(n)$ é função multiplicativa, ie, $\Phi(mn) = \Phi(m)\Phi(n)$ para $MDC(m,n) = 1$.
 \end{theorem}
 \textbf{Demonstração:}
-TODO
+A demonstração asseguir foi retirada livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 72 p.}
+
+Vamos dispor os números de 1 até $mn$ da seguinte forma:\\
+
+$1\quad(m+1)\quad(2m+1)\quad...\quad(n-1)m+1$
+
+$2\quad(m+2)\quad(2m+2)\quad...\quad(n-1)m+2$
+
+$3\quad(m+3)\quad(2m+3)\quad...\quad(n-1)m+3$
+
+$\vdots$
+
+$m\quad\quad2m\quad\quad\quad3m\quad\quad...\quad\quad\quad\quad{nm}$\\
+
+Se na linha $r$, onde estão os termos $r,m+r,2m+r,...,(n-1)m+r$, tivermos $MDC(m,r) = d > 1$, então nenhum termo nesta linha será primo com $mn$, uma vez que estes termos, sendo da forma $km+r, 0 \leq k \leq n-1$, são todos divisíveis por $d$ que é o 
+\textbf{Máximo Divisor Comum} de $m$ e $r$. Logo, para encontrarmos os inteiros desta tabela que são primos com $mn$, devemos olhar na linha $r$ somente se $MDC(m,r)=1$.
+Portato temos $\Phi(m)$ linhas onde todos os elementos são primos com $m$.
+
+Devemos, pois, procurar em cada uma dessas $\Phi(m)$ linhas, quantos elementos são primos com $n$, uma vez que todos são primos com $m$. Como $MDC(m,n)=1$ os elementos $r,m+r,2m+r,...,(n-1)m+r$ formam um sistema completo de resíduos módulo $n$ (\autoref{sistemo_completp_residuo}).
+Logo, cada uma destas linhas possui $\Phi(n)$ elementos primos com $n$ e, portanto, como eles são primos com $m$, eles são primos com $mn$. Isto nos garante que $\Phi(m) = \Phi(m)\Phi(n)$. $\square$
+
+
+\begin{theorem}\label{phi_potencia}
+$\Phi(p^k) = (p^k - p^{k-1})$, para $p$ primo e $k$ inteiro positivo.
+\end{theorem}
+\textbf{Demonstração:}
+Como $p$ é um número primo, para qualquer inteiro $n$, os únicos valores possíveis para $MDC(p^k,n)$ são: $1, p, p^2,...,p^k$, 
+e desse modo, se $MDC(p^k,n)\neq1$ temos que $p|n$ ($n$ é múltiplo de $p$). Assim, o quantidade de números não-primos e menores do que $p^k$ é $p^{k-1}$.
+
+Logo, temos que: $\Phi(p^k) = p^k - p^{k-1}$ $\square$
+
+
 
 
 \begin{theorem}[Fórmula Produto de Euler]
@@ -74,6 +98,14 @@ $\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
+
+
+\begin{corollary}\label{phi_potencia_nk}
+$\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positivos $n$ e $k$. 
+\end{corollary}
+\textbf{Demonstração:}
+
+
 
 \subsection{Teorema de Euler}
 
@@ -179,7 +211,7 @@ $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)
 \end{theorem}
 \textbf{Demonstração:}
 
-A demostrção asseguir foi baseada no no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 85 p.}
+A demonstração asseguir foi baseada no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 85 p.}
 
 $Fib_{n+1} = Fib_n + Fib_{n-1}$
 
@@ -299,7 +331,7 @@ O problema consiste em calcular a expressão: $\Phi(n^m) \bmod d$.
 \\
 
 \textbf{Solução:}
-Pelo \autoref{phi_potencia}, temos: 
+Pelo \textbf{Corolário} \autoref{phi_potencia_nk}, temos: 
 
 $\Phi(n^m) \bmod d = (n^{m-1}\Phi(n)) \bmod d$
 
