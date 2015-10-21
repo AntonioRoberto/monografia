@@ -124,6 +124,7 @@ $n = (qk_1 + k_2)d \Rightarrow d|n$ $\square$
 Todo número inteiro n (n > 1) que têm apenas dois divisores distintos (1 e n) é chamado de número primo. Se n (n > 1) não for primo, dizemos que n é número composto.
 \end{definition}
 
+
 \begin{theorem}[Fatoração Única]\label{fatoracao_unica}
 Um número natural qualquer $n$, pode ser escrito unicamente como um produto da forma: 
 $n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 < p_2 < ... < p_k$, e os números $a_i$ são inteiros positivos.
@@ -132,6 +133,42 @@ $n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 <
 Deixaremos a demostração a cargo do leitor.
 \textbf{Dica:} Use o fato de que o conjunto dos primos que divide um número inteiro é único, e fato de que se qualquer potência $a_i$ for alterado o valor de $n$ será alterado.
 
+\subsection{Crivo de Erastótenes}
+
+O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf{Erastótenes} (a.C. 285-194 a.C.) para o cálculo de números primos
+até um certo valor limite $N$.
+O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
+Desse modo, ao final do algoritmo, os elementos não marcados são números primos.\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Crivo de Erastótenes paro o cálculo de números primos}\label{crivo_erastotenes}
+\begin{algorithmic}[1]
+\Procedure{CrivoErastótenes (N)}{}
+\State $isPrime[] \gets \text{new Array}[N]$ \Comment{$isPrime[]$ é um vetor booleano}
+
+\For {($p = 2 \text{; } p \leq N \text{; } p++)$}
+\State $isPrime[p] \gets true$
+\EndFor
+
+\For {($p = 2 \text{; } p^2 \leq N \text{; } p++)$}
+\If {$isPrime[p] = false$}
+\State \textbf{continue}
+\EndIf
+\For {($n = p^2 \text{; } n \leq N \text{; } n = n+p)$}
+\State $isPrime[n] \gets false$
+\EndFor
+\EndFor
+
+\State \Return{$isPrime[]$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+TODO
+
+
 
 %-----------------------------------
 %	SECTION 3
@@ -139,7 +176,8 @@ Deixaremos a demostração a cargo do leitor.
 \section{Máximo Divisor Comum}
 
 \begin{definition}
-O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferente de zero), denotado por $MDC(a,b)$, é o maior inteiro que divide ambos $a$ e $b$.
+O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferente de zero), denotado por $MDC(a,b)$, é o maior inteiro que divide ambos $a$ e $b$. 
+Se $MDC(a,b) = 1$ dizemos que $a$ e $b$ são primos entre si.
 \end{definition}
 
 

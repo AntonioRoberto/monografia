@@ -4,9 +4,6 @@
 
 \label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-TODO
-JsaSHahslasHashalhs JLahsjlahsJLahsjahSH ahsjlhaSLJHalshahjls
-
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
@@ -14,13 +11,15 @@ JsaSHahslasHashalhs JLahsjlahsJLahsjahSH ahsjlhaSLJHalshahjls
 \section{Congruência}
 
 \begin{definition}
-TODO explicar sobre congruenci, introdizi $\equiv mod b$
+Para $a$ e $b$ inteiros, dizemos que $a$ é congruente à $b$ módulo $m$ ($a \equiv b (mod$ $m), m > 0$) 
+se $a$ e $b$ produzem o mesmo resto na divisão por $m$ (ie, $m|(a-b)$).
+Caso contrário ($m\nmid (a-b)$), dizemos que $a$ não é congruente à $b$ módulo $m$ ($a \not\equiv b (mod $ $m)$).
 \end{definition}
 
 \begin{definition}
 Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos modulo $n$ se:
 \begin{enumerate}
-\item$\forall a \in mathbb{Z}, \exists s_i \in S \mid a \equiv s_i (mod$ $n)$
+\item$\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$
 \item$s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$
 \end{enumerate}
 \end{definition}
@@ -31,7 +30,15 @@ Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema co
 
 \section{Congruência Linear}
 
+\begin{definition}
+Congruências da forma $ax \equiv b (mod$ $m)$, onde $a$, $b$ e $m$ são inteiros e $x$ é uma incógnita, são chamadas de \textit{Congruências Lineares}.
+\end{definition}
 
+\begin{theorem}
+$ax \equiv b (mod$ $m)$ tem solução, se e somente se, $MDC(a,m)|b$
+\end{theorem}
+\textbf{Demonstração:}
+TODO
 
 %----------------------------------------------------------------------------------------
 %	SECTION
