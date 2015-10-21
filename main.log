@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2015 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2015 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1842,33 +1842,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--371
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 392.
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
-
- []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 395.
+(babel)             in language  on input line 423.
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 402--405
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--408
-
- []
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 429.
+(babel)             in language  on input line 423.
+ [14]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 423.
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--431
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--436
+Underfull \hbox (badness 10000) in paragraph at lines 433--436
 
  []
 
@@ -1878,26 +1865,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 437--439
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 456.
+(babel)             in language  on input line 460.
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--461
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--464
+Underfull \hbox (badness 10000) in paragraph at lines 463--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 487.
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--495
 
  []
 
 ) (./Chapters/Chapter4.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [14]
+ [15]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [16]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -1907,12 +1914,12 @@ Package babel Info: Redefining portuges shorthand "|
 ) (./Appendices/AppendixA.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [15
+ [17
 
 ]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [16
+ [18
 
 ]
 Ap\^endice A.
@@ -1921,7 +1928,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=433, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=442, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -1930,10 +1937,10 @@ Package pdftex.def Info: Figures/grafico.png used on input line 22.
 ) (./Appendices/AppendixB.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [17 <./Figures/grafico.png>]
+ [19 <./Figures/grafico.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [18
+ [20
 
 ]
 Ap\^endice B.
@@ -1953,10 +1960,10 @@ Package babel Info: Redefining portuges shorthand "|
 )
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 279.
- [19]
+ [21]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 279.
- [20
+ [22
 
 ]
 Package babel Info: Redefining portuges shorthand "|
@@ -1969,7 +1976,7 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 283.
 
-[21]
+[23]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
@@ -1981,10 +1988,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27612 strings out of 493089
- 493122 string characters out of 6134842
- 640479 words of memory out of 5000000
- 30617 multiletter control sequences out of 15000+600000
+ 27618 strings out of 493089
+ 493202 string characters out of 6134842
+ 644479 words of memory out of 5000000
+ 30621 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,51p,10403b,2190s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2009,10 +2016,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (35 pages, 396314 bytes).
+Output written on main.pdf (37 pages, 400000 bytes).
 PDF statistics:
- 566 PDF objects out of 1000 (max. 8388607)
- 502 compressed objects within 6 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 132 named destinations out of 1000 (max. 500000)
  310 words of extra memory for PDF output out of 10000 (max. 10000000)
 

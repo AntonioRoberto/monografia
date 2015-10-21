@@ -375,8 +375,33 @@ $\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a
 \begin{algorithmic}[1]
 \Procedure{$Factorization (N, \Phi_N)$}{}
 \State $S \gets \emptyset$ \Comment{$S$ contém os fatores primos de $N$}
-\If {$\Phi_N = N-1$}
+\State $M \gets N$
+\State $\Phi_M \gets \Phi_N$
+\\
+\If {$\Phi_N = N-1$} \Comment{Se $N$ for primo}
+\State $S \gets S \cup \{N\}$
+\State \Return {$S$}
 \EndIf
+\\
+\For {\textbf{each} $p \text{ primo menor igual à } \sqrt[3]{N}$}
+\While {$M \equiv 0 (mod $ $p)$}
+\State $M \gets \frac{M}{p}$
+\State $S \gets S \cup \{p\}$
+\EndWhile
+\EndFor
+\\
+\For {\textbf{each} $p \in S$}
+\State $\Phi_M \gets \frac{\Phi_m}{p^a - p^{a-1}}$ \Comment{$a :=$ número de vezes que o primo $p$ é inserido em $S$}
+\EndFor
+\\
+\If {$\Phi_M = M-1$} \Comment{Se $M$ for primo}
+\State $S \gets S \cup \{M\}$
+\State \Return {$S$}
+\EndIf
+\\
+\State $(p, q) \gets System(M, \Phi_M)$ \Comment{Resolve o sistema de 2 equações e 2 incógnitas}
+\State $S \gets S \cup \{p, q\}$
+\State \Return {$S$}
 
 \EndProcedure
 \end{algorithmic}
@@ -384,7 +409,13 @@ $\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a
 
 
 \textbf{Análise:}
+O laço da linha $10$ consome tempo proporcional à $O(\sqrt[3]N)$. Já o laço da linha $11$ consome tempo proporcional à $O(\log_pN)$, pois tem no máximo $a$ iterações ($a$ é o número de vezes que o fator primo $p$ aparece em $N$) e assim, $p^a < N \Rightarrow a < \log_p{N}$. 
 
+As linhas 15-16 rodam em $O(log_pN)$, já que o número máximo de elementos distintos em $S$ é $log_pN$ ($p$ é o menor primo que divide $N$).
+E as linhas 18-23 rodam em $O(1)$.
+
+Assim, o algoritmo total consome tempo proporcional à $O(\sqrt[3]N \log N)$. 
+Obeserve que esse algoritmo é bem mais eficiente que o algoritmo trivial para fatoração $O(\sqrt N)$.
 
 
 
