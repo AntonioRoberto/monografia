@@ -34,11 +34,38 @@ Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema co
 Congruências da forma $ax \equiv b (mod$ $m)$, onde $a$, $b$ e $m$ são inteiros e $x$ é uma incógnita, são chamadas de \textit{Congruências Lineares}.
 \end{definition}
 
+
+
+\begin{corollary}\label{congruencia_linear_ida}
+$ax \equiv b (mod$ $m)$ tem solução $\Rightarrow$ $MDC(a,m)|b$
+\end{corollary}
+\textbf{Demonstração:}
+Suponha que $\exists x\in\mathbb{Z}$, tal que $ax\equiv b(mod$ $m)$, assim temos:
+
+$ax\equiv b(mod$ $m) \Rightarrow m|(b-ax) \Rightarrow \exists! r\in\mathbb{Z}$ tal que $(b-ax) = mr$
+
+$\Rightarrow b = mr + ax \Rightarrow MDC(a,m)|b$, pois $MDC(a,m)$ divide tanto $a$ como $m$. $\square$
+
+
+
+\begin{corollary}\label{congruencia_linear_volta}
+$ax \equiv b (mod$ $m)$ tem solução $\Leftarrow$ $MDC(a,m)|b$
+\end{corollary}
+\textbf{Demonstração:}
+
+$MDC(a,m)|b \Rightarrow (ax+my)|b$ ($\triangleright$ \autoref{teorema_bezout})
+
+$\Rightarrow \exists!r\in\mathbb{Z}$ tal que, $b=(ax + my)r \Rightarrow b = (xr)a + (yr)m$
+
+$\Rightarrow b \equiv xra + yrm$ $(mod$ $m) \Rightarrow b \equiv xra$ $(mod$ $m)$
+
+E assim, a \textbf{Congruência Linear} $az\equiv b (mod$ $m)$, tem solução $z=xr$. $\square$
+
 \begin{theorem}
-$ax \equiv b (mod$ $m)$ tem solução, se e somente se, $MDC(a,m)|b$
+$ax \equiv b (mod$ $m)$ tem solução $\Leftrightarrow$ $MDC(a,m)|b$
 \end{theorem}
 \textbf{Demonstração:}
-TODO
+Segue trivialmente dos \textbf{Corolários} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}
 
 %----------------------------------------------------------------------------------------
 %	SECTION
