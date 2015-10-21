@@ -133,41 +133,6 @@ $n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 <
 Deixaremos a demostração a cargo do leitor.
 \textbf{Dica:} Use o fato de que o conjunto dos primos que divide um número inteiro é único, e fato de que se qualquer potência $a_i$ for alterado o valor de $n$ será alterado.
 
-\subsection{Crivo de Erastótenes}
-
-O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf{Erastótenes} (a.C. 285-194 a.C.) para o cálculo de números primos
-até um certo valor limite $N$.
-O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
-Desse modo, ao final do algoritmo, os elementos não marcados são números primos.\\
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Crivo de Erastótenes paro o cálculo de números primos}\label{crivo_erastotenes}
-\begin{algorithmic}[1]
-\Procedure{CrivoErastótenes (N)}{}
-\State $isPrime[] \gets \text{new Array}[N]$ \Comment{$isPrime[]$ é um vetor booleano}
-
-\For {($p = 2 \text{; } p \leq N \text{; } p++)$}
-\State $isPrime[p] \gets true$
-\EndFor
-
-\For {($p = 2 \text{; } p^2 \leq N \text{; } p++)$}
-\If {$isPrime[p] = false$}
-\State \textbf{continue}
-\EndIf
-\For {($n = p^2 \text{; } n \leq N \text{; } n = n+p)$}
-\State $isPrime[n] \gets false$
-\EndFor
-\EndFor
-
-\State \Return{$isPrime[]$}
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-\textbf{Análise:}
-TODO
-
 
 
 %-----------------------------------
@@ -208,6 +173,27 @@ $r > 1 \Rightarrow dr > d \Rightarrow dr > MDC(a,b)$
 
 Chegamos então numa contradição, pos $dr$ é divisor comum de $a$ e $b$, e $dr$ é maior que o \textbf{Máximo Divisor Comum} de $a$ e $b$. $\square$
 
+
+
+\begin{corollary}\label{corolario_gcd_soma}
+Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(a,a \pm b)$
+\end{corollary}
+\textbf{Demonstração:}
+A prova dessa expressão vem do fato de que qualder divisor de $a$ e $b$, é também divisor de $(a \pm b)$.
+
+
+
+\begin{corollary}\label{corolario_gcd_produto}
+Para números inteiros quaisquer $a$ e $b$, temos:
+
+$MDC(a,b) = 1 \Rightarrow MDC(a,bk) = MDC(a,k)$, com $k \in \mathbb{Z}$
+\end{corollary}
+\textbf{Demonstração:}
+A prova dessa expressão vem do fato de que qualder divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
+
+
+
+
 \subsection{Algoritmo de Euclides}
 A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o \textbf{Máximo Divisor Comum} de dois números baseando-se no 
 \textbf{Corolário} \autoref{gcd_modular}.\\
@@ -231,30 +217,67 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 
 \subsection{Teorema de Bézout}
 
+\begin{corollary}\label{bezout_conjunto_nao_nulo}
+Dado o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
+e pelo menos um desses números é diferente de zero. Temos então que $S \neq \emptyset$. 
+\end{corollary}
+\textbf{Demonstração:}
+As combinações possíveis para $a$ e $b$ são:
+
+$a > 0 \Rightarrow |a| = 1.a + 0.b$
+
+$a < 0 \Rightarrow |a| = (-1).a + 0.b$
+
+$b > 0 \Rightarrow |b| = 0.a + 1.b$
+
+$b < 0 \Rightarrow |b| = 0.a + (-1).b$
+
+Como não temos ambos $a$ e $b$ iguais à zero, então $S$ deve conter pelo menos $|a|$ ou $|b|$, e assim $S \neq \emptyset$ $\square$
+
+
+\begin{corollary}\label{bezout_conjunto_divide}
+Dado o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
+e pelo menos um desses números é diferente de zero. Temos então que o menor número $d \in S$ divide todos elementos de $S$.
+\end{corollary}
+\textbf{Demonstração:}
+Como $d \in S$, $\exists m,n\in\mathbb{Z} \mid d = ma + nb$.
+
+Tome $x \in S$ qualquer. Pelo \autoref{algoritmo_divisao} $x = qd + r$, $0 \leq r < d$.
+
+Suponha que $d\nmid x$, ie, $x \neq qd$ e $0 < r$. Como $x \in S$, $\exists m^*,n^*\in\mathbb{Z} \mid x = m^*a + n^*b$, e assim:
+
+$x = m^*a + n^*b, x = qd + r \Rightarrow r = m^*a + n^*b - qd = m^*a + n^*b - q(ma + nb)$ 
+
+$\Rightarrow r = (m^* - qm)a + (n^* - qn)b \Rightarrow r \in S$, pois $r > 0$
+
+Chegando numa contrdição, pois $r \in S$, $d \in S$, $r < d$ e $d$ é o menor elemento em $S$.
+
+Desse modo, temos que $d$ divide todos os elementos de $S$. $\square$
+
+
 \begin{theorem}[Teorema de Bézout]\label{teorema_bezout}
-$\forall$ $a$, $b \in \mathbb{Z}$, $\exists$ $x, y \in \mathbb{Z} \mid ax + by = mdc(a, b).$
+$\forall$ $a$, $b \in \mathbb{Z}$ (com pelo menos um dos dois números diferente de zero), $\exists$ $x, y \in \mathbb{Z} \mid ax + by = mdc(a, b).$
 \end{theorem}
 \textbf{Demonstração:}
-De acordo com \autoref{teorema_bezout}
+Tome o conjunto das combinações lineares de $a$ e $b$:
 
+$S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$.
 
+Pelo \textbf{Corolário} \autoref{bezout_conjunto_nao_nulo} sabemos que $S \neq \emptyset$. Como $S$ contém somente números positivos e não é vazio, 
+$S$ está limitado inferiormente por \textit{zero} e assim, $S$ tem um elemento mínimo que chamaremos de $d$.
 
+Como $d \in S$, então existe $u, v\in \mathbb{Z}$, tal que, $d = ua + vb$. Pelo \textbf{Corolário} \autoref{bezout_conjunto_divide}, sabemos que $d$ divide todos elementos em $S$, em particular:
 
-\begin{corollary}\label{corolario_gcd_soma}
-Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(a,a \pm b)$
-\end{corollary}
-\textbf{Demonstração:}
-A prova dessa expressão vem do fato de que qualder divisor de $a$ e $b$, é também divisor de $(a \pm b)$.
+$d$ divide $|a|$ e $|b| \Rightarrow d|MDC(a,b) \Rightarrow 0 < d \leq MDC(a,b)$
 
+Por outro lado, $MDC(a,b)$ também divide $a$ e $b$:
 
+$MDC(a,b)|a$ e $MDC(a,b)|b \Rightarrow MDC(a,b)|(ua + vb)$
 
-\begin{corollary}\label{corolario_gcd_produto}
-Para números inteiros quaisquer $a$ e $b$, temos:
+$ \Rightarrow MDC(a,b)|d \Rightarrow MDC(a,b) \leq d$
 
-$MDC(a,b) = 1 \Rightarrow MDC(a,bk) = MDC(a,k)$, com $k \in \mathbb{Z}$
-\end{corollary}
-\textbf{Demonstração:}
-A prova dessa expressão vem do fato de que qualder divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
+$MDC(a,b)\leq d$ e $d \leq MDC(a,b) \Rightarrow MDC(a,b) = d \Rightarrow MDC(a,b) \in S$ $\square$
+
 
 
 %----------------------------------------------------------------------------------------
@@ -262,6 +285,39 @@ A prova dessa expressão vem do fato de que qualder divisor $d$ de $a$ e $bk$, �
 %----------------------------------------------------------------------------------------
 
 \section{Crivo de Erastóteles}
+
+O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf{Erastótenes} (a.C. 285-194 a.C.) para o cálculo de números primos
+até um certo valor limite $N$.
+O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
+Desse modo, ao final do algoritmo, os elementos não marcados são números primos.\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Crivo de Erastótenes paro o cálculo de números primos}\label{crivo_erastotenes}
+\begin{algorithmic}[1]
+\Procedure{CrivoErastótenes (N)}{}
+\State $isPrime[] \gets \text{new Array}[N]$ \Comment{$isPrime[]$ é um vetor booleano}
+
+\For {($p = 2 \text{; } p \leq N \text{; } p++)$}
+\State $isPrime[p] \gets true$
+\EndFor
+
+\For {($p = 2 \text{; } p^2 \leq N \text{; } p++)$}
+\If {$isPrime[p] = false$}
+\State \textbf{continue}
+\EndIf
+\For {($n = p^2 \text{; } n \leq N \text{; } n = n+p)$}
+\State $isPrime[n] \gets false$
+\EndFor
+\EndFor
+
+\State \Return{$isPrime[]$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+TODO
 
 
 
