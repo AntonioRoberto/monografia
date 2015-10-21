@@ -8,69 +8,69 @@
 %	SECTION
 %----------------------------------------------------------------------------------------
 
-\section{$\varphi$ de Euler}
+\section{$\Phi$ de Euler}
 
 \begin{definition}
-A Função Totiente de Euler, denotada por $\varphi(n)$, é a função aritmética que conta o número 
+A Função Totiente de Euler, denotada por $\Phi(n)$, é a função aritmética que conta o número 
 de inteiros positivos menores ou iguais a $n$ que são primos entre si com $n$.
 
-$\varphi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
+$\Phi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
 \end{definition}
 
 
 \begin{theorem}\label{phi_potencia}
-$\varphi(n^k) = n^{k-1}\varphi(n)$, para inteiros positiovos quaisquer $n$ e $k$. Em particular 
-$\varphi(p^k) = (p^k - p^{k-1})$, para $p$ primo.%, e $k \in \mathbb{N}^{*}$.
+$\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positiovos quaisquer $n$ e $k$. Em particular 
+$\Phi(p^k) = (p^k - p^{k-1})$, para $p$ primo.%, e $k \in \mathbb{N}^{*}$.
 \end{theorem}
 \textbf{Demonstração:}
 TODO
 
 
 \begin{theorem}\label{phi_multiplicativa}
-$\varphi(n)$ é função multiplicativa, ie, $\varphi(mn) = \varphi(m)\varphi(n)$ para $MDC(m,n) = 1$.
+$\Phi(n)$ é função multiplicativa, ie, $\Phi(mn) = \Phi(m)\Phi(n)$ para $MDC(m,n) = 1$.
 \end{theorem}
 \textbf{Demonstração:}
 TODO
 
 
 \begin{theorem}[Fórmula Produto de Euler]
-$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$
+$\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$
 \end{theorem}
 \textbf{Demonstração:}
 
-$\varphi(n) = \varphi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$ ($\triangleright$ \autoref{fatoracao_unica})
+$\Phi(n) = \Phi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$ ($\triangleright$ \autoref{fatoracao_unica})
 
-$\varphi(n) = \varphi(p_1^{a_1})\varphi(p_2^{a_2})...\varphi(p_k^{a_k})$ ($\triangleright$ \autoref{phi_multiplicativa})
+$\Phi(n) = \Phi(p_1^{a_1})\Phi(p_2^{a_2})...\Phi(p_k^{a_k})$ ($\triangleright$ \autoref{phi_multiplicativa})
 
-$\varphi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$ ($\triangleright$ \autoref{phi_potencia})
+$\Phi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$ ($\triangleright$ \autoref{phi_potencia})
 
-$\varphi(n) = p_1^{a_1}p_2^{a_2}...p_k^{a_k}(1 - 1/p_1)(1 - 1/p_2)...(1 - 1/p_k)$
+$\Phi(n) = p_1^{a_1}p_2^{a_2}...p_k^{a_k}(1 - 1/p_1)(1 - 1/p_2)...(1 - 1/p_k)$
 
-$\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
+$\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Calcula os primeiros N termos da função $\varphi$}
+\caption{Calcula os primeiros N termos da função $\Phi$}
 \begin{algorithmic}[1]
 \Procedure{$PHI (N)$}{}
-\State $\varphi[] \gets new Array[N]$
+\State $\Phi[] \gets new Array[N]$
 \For {$(p = 1 \text{; } p \leq N \text{; } p++)$}
-\State $\varphi[p] \gets p$
+\State $\Phi[p] \gets p$
 \EndFor
 
 \For {$(p = 2\text{; } p \leq N\text{; } p++)$}
 
-\If {$\varphi[p] \neq p$} \Comment{$\varphi[p] \neq p \Leftrightarrow p\text{ não é primo}$}
+\If {$\Phi[p] \neq p$} \Comment{$\Phi[p] \neq p \Leftrightarrow p\text{ não é primo}$}
 \State \textbf{continue}
 \EndIf
 
 \For {$(n = p\text{; } n \leq N\text{; } n = n+p)$}
-\State $\varphi[n] \gets \varphi[n] (\frac{p-1}{p})$
+\State $\Phi[n] \gets \Phi[n] (\frac{p-1}{p})$
 \EndFor
 
 \EndFor
 
-\State \Return {$\varphi[]$}
+\State \Return {$\Phi[]$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
@@ -79,7 +79,7 @@ $\varphi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
 
 \begin{theorem}[Teorema de Euler]\label{teorema_de_euler}
 Dados números inteiros $a$ e $n$ primos entre si, temos que:
-$a^{\varphi(n)} \equiv 1 (\bmod$ $n)$
+$a^{\Phi(n)} \equiv 1 (\bmod$ $n)$
 \end{theorem}
 \textbf{Demonstração:}
 TODO usa residuos completo mod m
@@ -246,13 +246,13 @@ Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(
 $F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^{n}\lambda_l d_l$, em que, $d_1, d_2,..., d_n$ são os divisores de $M$, $\lambda_l$ é o número de vezes que o divisor $d_l$ aparece na somatória $\sum_{i=1}^{M-1}MDC(i,N)$, e $n$ é o número de divisores de $M$.
 \\
 
-Pelo Corolario \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória, será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \varphi(M/d_l)$.
+Pelo Corolario \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória, será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
 
 Reescrevendo novamente $F(M)$, temos:
 
-$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^n \lambda_l d_l = \sum_{l=1}^n \varphi(M/d_l) d_l$.
+$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^n \lambda_l d_l = \sum_{l=1}^n \Phi(M/d_l) d_l$.
 
-$G(N) = \sum_{j=2}^N \sum_{l=1}^n \varphi(j/d_l)d_l$ $\square$.
+$G(N) = \sum_{j=2}^N \sum_{l=1}^n \Phi(j/d_l)d_l$ $\square$.
 \\
 
 \textbf{Pseudocódigo:}
@@ -260,11 +260,11 @@ $G(N) = \sum_{j=2}^N \sum_{l=1}^n \varphi(j/d_l)d_l$ $\square$.
 \caption{GCD - Etreme(I)}\label{gcd_extreme}
 \begin{algorithmic}[1]
 \Procedure{G (N)}{}
-\State $\varphi[] \gets PHI(N)$
+\State $\Phi[] \gets PHI(N)$
 \State $solution \gets 0$
 \For {$j$ := $2$ to $N$}
 \For {\textbf{each} divisor $d$ de $j$}
-\State $solution \gets solution + \varphi[j/d] d$
+\State $solution \gets solution + \Phi[j/d] d$
 \EndFor
 \EndFor
 \State \Return{$solution$}
@@ -295,15 +295,15 @@ Complexidade final do algoritmo: $O(N\sqrt{N})$.
 
 \textbf{Resumo:}
 São dados três números positivos $n$, $m$ ($1 < n < 10^7$, $1 < m < 10^9$) e $d = 201004$.
-O problema consiste em calcular a expressão: $\varphi(n^m) \bmod d$.
+O problema consiste em calcular a expressão: $\Phi(n^m) \bmod d$.
 \\
 
 \textbf{Solução:}
 Pelo \autoref{phi_potencia}, temos: 
 
-$\varphi(n^m) \bmod d = (n^{m-1}\varphi(n)) \bmod d$
+$\Phi(n^m) \bmod d = (n^{m-1}\Phi(n)) \bmod d$
 
-$\varphi(n^m) \bmod d = ((n^{m-1} \bmod d)(\varphi(n)) \bmod d) \bmod d)$
+$\Phi(n^m) \bmod d = ((n^{m-1} \bmod d)(\Phi(n)) \bmod d) \bmod d)$
 
 Desse modo, podemos calcular a primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e a segundo fator com o método $PHI()$.
 \\
@@ -313,9 +313,9 @@ Desse modo, podemos calcular a primeiro fator do produto ($n^{m-1} \bmod d$) usa
 \caption{Euler Functions}
 \begin{algorithmic}[1]
 \Procedure{$PhiEulerPotential (n, m, d)$}{}
-\State $\varphi[] \gets PHI(n)$
+\State $\Phi[] \gets PHI(n)$
 \State $exp \gets EXPMOD(n, m-1, d)$
-\State $solution \gets (exp$ $\varphi[n]) \bmod d$
+\State $solution \gets (exp$ $\Phi[n]) \bmod d$
 \State \Return{$solution$}
 \EndProcedure
 \end{algorithmic}
@@ -323,7 +323,7 @@ Desse modo, podemos calcular a primeiro fator do produto ($n^{m-1} \bmod d$) usa
 
 \textbf{Análise:}
 As linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(\log m)$ e $O(1)$ respectivamente.
-Se precalcular-mos o vetor $\varphi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
+Se precalcular-mos o vetor $\Phi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
 
 
 
@@ -332,19 +332,51 @@ Se precalcular-mos o vetor $\varphi[]$, temos que a complexidade total para calc
 \href{https://www.codechef.com/problems/IITK2P05}{IITK2P05 - Factorization}\\
 
 \textbf{Resumo:}
-É dado um inteiro $N$ ($2 \leq N \leq 10^18$) e o valora de $\varphi(N)$.
+É dado um inteiro $N$ ($2 \leq N \leq 10^{18}$) e o valora de $\Phi(N)$.
 
 O problema consiste em fatorizar $N$. 
 \\
 
 \textbf{Solução:}
+A solução trivial para fatorar $N$ consome tempo proporcional à $O(\sqrt{N})$ (veja X), porém para uma entrada na ordem de $10^{18}$ precisames de um algoritmo mais eficiente.
+
+Se $N$ for primo, ie, $\Phi(N) = N-1$, já temos a solução.
+
+Assuma então que $N$ é um número composto. Primeiro vamos iterar nos primeiros $\sqrt[3]{N}$ inteiros e remover todos os fatores primos de $N$ nesse intervalo. Tome $M$ como sendo o valor resultante.
+
+Imagine que $M$ tenha três ou mais fatores primos. Sabemos que $M$ não tem nenhum fator primo menor que $\sqrt[3]{N}$, temos que: $M > (\sqrt[3]{N})^3 \Rightarrow M > N$ (contradição).
+Desse modo, temos que $M$ tem no máximo dois fatores primos, e esses valores são maiores que $\sqrt[3]{N}$.
+
+\begin{itemize}
+  \item \textbf{Caso 1:} $M$ tem só um fator primo, ie, $M$ é primo:
+		Basta checar se $\Phi(M) = M-1$
+
+  \item \textbf{Caso 2:} $M$ tem dois fatores primos iguais, $M = p ^2$:
+		Basta verificar se $M$ é um quadrado perfeito. Pode ser feito facilmente com busca binária.
+
+  \item \textbf{Caso 3:} $M$ tem dois fatores primos distintos, $M = pq$:
+		Se $M=pq$ então $\Phi(M) = (p-1)(q-1)$. Temos então um sistema com duas equações e duas incógnitas. Se resolvermos o sistema encontraremos a fatoração de $M$ e assim a fatoração de $N$.
+\end{itemize}
+O único problema agora é calcular $\Phi(M)$ a partir de $\Phi(N)$. Assuma que $N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M$, com $k \geq 0$ e 
+ $p_i$ os fatores primos distintos de $N$ removidos na primeira etapa do algoritmo. Temos então:
+
+$N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1}p_2^{a_2}...p_k^{a_k}M)$
+
+$N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1})\Phi(p_2^{a_2})...\Phi(p_k^{a_k})\Phi(M)$ ($\triangleright$ \autoref{phi_multiplicativa})
+
+$\Rightarrow \Phi(N) = (p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})\Phi(M)$ ($\triangleright$ \autoref{phi_potencia})
+
+$\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})}$
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Fatoração de $N$}
 \begin{algorithmic}[1]
-\Procedure{Factorization (N)}{}
+\Procedure{$Factorization (N, \Phi_N)$}{}
+\State $S \gets \emptyset$ \Comment{$S$ contém os fatores primos de $N$}
+\If {$\Phi_N = N-1$}
+\EndIf
 
 \EndProcedure
 \end{algorithmic}
@@ -365,7 +397,7 @@ São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 50000$, $1 \leq K \le
 
 Tome a seguinte função:
 
-$F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\varphi(n^m) \bmod 201004.$
+$F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\Phi(n^m) \bmod 201004.$
 
 O problema consiste em calcular a expressão:  
 $F(S) \bmod 99991 $

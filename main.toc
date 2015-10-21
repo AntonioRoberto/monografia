@@ -21,15 +21,15 @@
 \contentsline {subsection}{\numberline {2.4.1}UVA-10090}{6}{subsection.51}
 \contentsline {subsection}{\numberline {2.4.2}CodeChef-IITK2P10}{6}{subsection.53}
 \contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{9}{chapter.55}
-\contentsline {section}{\numberline {3.1}$\varphi $ de Euler}{9}{section.56}
+\contentsline {section}{\numberline {3.1}$\Phi $ de Euler}{9}{section.56}
 \contentsline {subsection}{\numberline {3.1.1}Teorema de Euler}{10}{subsection.62}
 \contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{10}{section.64}
 \contentsline {section}{\numberline {3.3}Problemas Propostos}{11}{section.70}
 \contentsline {subsection}{\numberline {3.3.1}UVA-11424}{11}{subsection.71}
 \contentsline {subsection}{\numberline {3.3.2}TJU-3506}{12}{subsection.73}
-\contentsline {subsection}{\numberline {3.3.3}CodeChef-MODEFB}{13}{subsection.75}
-\contentsline {subsection}{\numberline {3.3.4}CodeChef-IITK2P05}{13}{subsection.77}
-\contentsline {subsection}{\numberline {3.3.5}UVA-10311}{13}{subsection.79}
+\contentsline {subsection}{\numberline {3.3.3}CodeChef-IITK2P05}{13}{subsection.75}
+\contentsline {subsection}{\numberline {3.3.4}CodeChef-MODEFB}{14}{subsection.77}
+\contentsline {subsection}{\numberline {3.3.5}UVA-10311}{14}{subsection.79}
 \contentsline {subsection}{\numberline {3.3.6}Codeforces-227E}{14}{subsection.81}
 \contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{15}{chapter.83}
 \contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{17}{appendix.84}
