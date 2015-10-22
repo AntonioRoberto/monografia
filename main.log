@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2015 23:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2015 00:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1684,58 +1684,58 @@ pl/m/it/10.95 , e $\OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 123.
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 125.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 127.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 170.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 175.
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 179.
+(babel)             in language  on input line 164.
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 179--183
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 172.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 177.
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 203.
+(babel)             in language  on input line 205.
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--221
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--243
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 243.
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 ) (./Chapters/Chapter3.tex
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [9]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
  [10]
@@ -2036,7 +2036,7 @@ Here is how much of TeX's memory you used:
  30628 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,51p,10403b,1608s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,12n,51p,10403b,1624s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local
@@ -2058,7 +2058,7 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (39 pages, 409808 bytes).
+Output written on main.pdf (39 pages, 410139 bytes).
 PDF statistics:
  599 PDF objects out of 1000 (max. 8388607)
  531 compressed objects within 6 object streams
