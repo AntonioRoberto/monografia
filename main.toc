@@ -31,14 +31,15 @@
 \contentsline {subsection}{\numberline {3.3.1}UVA-11424}{16}{subsection.87}
 \contentsline {subsection}{\numberline {3.3.2}TJU-3506}{17}{subsection.89}
 \contentsline {subsection}{\numberline {3.3.3}CodeChef-IITK2P05}{17}{subsection.91}
-\contentsline {subsection}{\numberline {3.3.4}CodeChef-MODEFB}{19}{subsection.93}
-\contentsline {subsection}{\numberline {3.3.5}UVA-10311}{19}{subsection.95}
-\contentsline {subsection}{\numberline {3.3.6}Codeforces-227E}{19}{subsection.97}
-\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{21}{chapter.99}
-\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{23}{appendix.100}
-\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{25}{appendix.102}
-\contentsline {section}{\numberline {B.1}UVa}{25}{section.103}
-\contentsline {section}{\numberline {B.2}Topcoder}{25}{section.104}
-\contentsline {section}{\numberline {B.3}Codeforces}{25}{section.105}
-\contentsline {section}{\numberline {B.4}CodeChef}{25}{section.106}
-\contentsline {chapter}{Bibliografia}{27}{appendix*.107}
+\contentsline {subsection}{\numberline {3.3.4}CodeChef-PUPPYGCD}{19}{subsection.93}
+\contentsline {subsection}{\numberline {3.3.5}CodeChef-MODEFB}{19}{subsection.95}
+\contentsline {subsection}{\numberline {3.3.6}UVA-10311}{20}{subsection.97}
+\contentsline {subsection}{\numberline {3.3.7}Codeforces-227E}{20}{subsection.99}
+\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{21}{chapter.101}
+\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{23}{appendix.102}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{25}{appendix.104}
+\contentsline {section}{\numberline {B.1}UVa}{25}{section.105}
+\contentsline {section}{\numberline {B.2}Topcoder}{25}{section.106}
+\contentsline {section}{\numberline {B.3}Codeforces}{25}{section.107}
+\contentsline {section}{\numberline {B.4}CodeChef}{25}{section.108}
+\contentsline {chapter}{Bibliografia}{27}{appendix*.109}

@@ -450,6 +450,44 @@ Assim, o algoritmo total consome tempo proporcional à $O(\sqrt[3]N \log N)$.
 Obeserve que esse algoritmo é bem mais eficiente que o algoritmo trivial para fatoração $O(\sqrt N)$.
 
 
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-PUPPYGCD}
+\href{https://www.codechef.com/problems/PUPPYGCD}{PUPPYGCD - Puppy and GCD}\\
+
+
+\textbf{Resumo:}
+São dados inteiros positivos $N$ e $D$. O problema consite em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq N$ e $MDC(A,B)=D$.
+\\
+
+\textbf{Solução:}
+Pelo \textbf{Corolário} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema
+em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
+Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$, já que $\Phi(r)$ nos dá a qunatidade de números menores ou iguais a $r$ e primo com entre si com $r$. Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Puppy and GCD}
+\begin{algorithmic}[1]
+\Procedure{$CalculatePairs (N, P)$}{}
+\State $\Phi[] \gets PHI(\frac{N}{D})$
+\State $count \gets 0$
+\\
+\For {($A = 1 \text{; } A \leq \frac{N}{D} \text{; } A++)$}
+\State $count \gets count + \Phi[A]$
+\EndFor
+\\
+\State $count \gets 2$ $count$
+\State \Return $count$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+Se precalcular $\Phi[]$ teremos que o fator limitando do algoritmo será o laço da linha $5$, e a complexidade do algoritmo será $O(\frac{N}{D})$.
+
+
+
 
 %----------------------------------------------------------------------------------------
 \subsection{CodeChef-MODEFB}

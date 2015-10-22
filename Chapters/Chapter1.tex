@@ -218,7 +218,7 @@ $r|\frac{b}{d} \Rightarrow dr|b$ ($\triangleright$ \textbf{Corolário} \autoref{
 
 $r > 1 \Rightarrow dr > d \Rightarrow dr > MDC(a,b)$
 
-Chegamos então numa contradição, pos $dr$ é divisor comum de $a$ e $b$, e $dr$ é maior que o \textbf{Máximo Divisor Comum} de $a$ e $b$. $\square$
+Chegamos então numa contradição, pois $dr$ é divisor comum de $a$ e $b$, e $dr$ é maior que o \textbf{Máximo Divisor Comum} de $a$ e $b$. $\square$
 
 
 
@@ -377,7 +377,21 @@ TODO
 
 \section{Equações Diofantinas}
 
-TODO - COLOCAR DEFINIÇNAO AKI
+\textit{Equações Diofantinas} são equações polinomiais com variáveis inteiras. Alguns exemplos são mostrados a seguir, sendo $x$, $y$, $z$ incógnitas, e $a$, $b$, $n$ constantes inteiras:
+
+$ax + by = n$ ($\triangleright$ \textit{Equação Diofantina Linear})
+
+$x^n + y^n = z^n$ ($\triangleright$ Equação base do \textit{Último Teorema de Fermat})
+
+$x^2 - ny^2 = \pm 1$ ($\triangleright$ \textit{Equação de Pell})\\
+
+
+Nesse trabalho abordaremos somente \textit{Equações Diofantinas Lineares}, da forma:
+
+$\sum_{i=1}^{k}a_i x_i = c$
+
+onde $c$ e $a_i$ são constantes, e $x_i$ variáveis inteiras.\\
+
 
 \begin{theorem}\label{equacao_diofantina_implicacao}
 Dados inteiros $a$, $b$, $c$ , temos que:
@@ -426,7 +440,7 @@ Solução é decorrente do \autoref{equacao_diofantina_implicacao}, bastando che
 \begin{algorithm}
 \caption{Fight for Attendence}
 \begin{algorithmic}[1]
-\Procedure{EquationSolution (a, b, c)}{}
+\Procedure{$EquationSolution (a, b, c)$}{}
 \If {$MDC(a,b)|c$}
 \State \Return $true$
 \EndIf
@@ -437,7 +451,6 @@ Solução é decorrente do \autoref{equacao_diofantina_implicacao}, bastando che
 
 \textbf{Análise:}
 O algoritmo tem a mesma complexidado do \textit{Algoritmo de Euclides}, $O(\log{(a+b)})$. 
-
 
 
 
