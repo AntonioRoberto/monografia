@@ -248,7 +248,7 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Algoritmo de Euclides}\label{mdc}
-\begin{algorithmic}[1]
+\begin{algorithmic}
 \Procedure{$MDC (a, b)$}{}
 \If {$b = 0$}
 \State \Return $a$
@@ -259,6 +259,8 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \end{algorithmic}
 \end{algorithm}
 
+\textbf{Análise:}
+TODO
 
 
 
@@ -327,6 +329,8 @@ $MDC(a,b)\leq d$ e $d \leq MDC(a,b) \Rightarrow MDC(a,b) = d \Rightarrow MDC(a,b
 
 
 
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
@@ -367,6 +371,34 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
 TODO
 
 
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Equações Diofantinas}
+
+TODO - COLOCAR DEFINIÇNAO AKI
+
+\begin{theorem}\label{equacao_diofantina_implicacao}
+Dados inteiros $a$, $b$, $c$ , temos que:
+
+$MDC(a,b)|c \Leftrightarrow$ a \textit{Equação Diofantina} $ax + by=c$, tem solução inteira.
+\end{theorem}
+\textbf{Demonstração:}
+Provaremos primeiro a ida da implicação.
+
+Pelo \autoref{teorema_bezout} sabemos que existe $x^*$ e $y^*$, tal que, $ax^* + by^* = MDC(a,b)$. Logo:
+
+$MDC(a,b)|c \Rightarrow \exists! q\in\mathbb{Z} \mid c = MDC(a,b)q \Rightarrow a(x^*q) + b(y^*q) = MDC(a,b)q = c$ $\square$
+
+Provaremos agora a volta da implicação.
+
+Sabemos que existe inteiros $u$ e $v$, tal que, $a=MDC(a,b)u$ e $b=MDC(a,b)v$. Logo:
+
+$ax + by=c$, tem solução inteira $\Rightarrow MDC(a,b)ux + MDC(a,b)vy = c$
+
+$\Rightarrow MDC(a,b)(ux + vy) = c \Rightarrow MDC(a,b)|c$. $\square$ 
+
 
 
 
@@ -375,6 +407,38 @@ TODO
 %----------------------------------------------------------------------------------------
 
 \section{Problemas Propostos}
+
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-GOC203}
+\href{https://www.codechef.com/problems/GOC203}{GOC203 - Fight for Attendence}\\
+
+\textbf{Resumo:}
+São dados inteiros $a$, $b$, $c$ ($1 \leq a, b, c \leq 10^6$) e a equação $ax+by=c$. O problema consiste em determinar 
+quando tal equação tem solução inteira.
+\\
+
+\textbf{Solução:}
+Solução é decorrente do \autoref{equacao_diofantina_implicacao}, bastando checar se $MDC(a,b)|c$.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Fight for Attendence}
+\begin{algorithmic}[1]
+\Procedure{EquationSolution (a, b, c)}{}
+\If {$MDC(a,b)|c$}
+\State \Return $true$
+\EndIf
+\State \Return $false$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+O algoritmo tem a mesma complexidado do \textit{Algoritmo de Euclides}, $O(\log{(a+b)})$. 
+
+
 
 
 %----------------------------------------------------------------------------------------
