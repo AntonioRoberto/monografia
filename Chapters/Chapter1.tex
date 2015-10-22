@@ -115,6 +115,53 @@ $n = qm + (n \bmod m) \Rightarrow n = qk_1d + k_2d$ ($\triangleright$ \autoref{a
 
 $n = (qk_1 + k_2)d \Rightarrow d|n$ $\square$
 
+
+\subsection{Divisores}
+Nessa subsessão mostraremos um algoritmo simples para calcular todos os divisores de um determinado número inteiro positivo qualquer.
+
+\begin{theorem} 
+O número de divisores de $n \in \mathbb{Z}^{+}$ é da ordem de $O(\sqrt{n})$.
+\end{theorem}
+\textbf{Demonstração:}
+Tome um divisor $d$ de $n$ qualquer, com $d > \sqrt{n}$. Dessa forma sabemos que existe um inteiro $q$, com $n=qd$ (observe que $q$ também é divisor de $n$). 
+Como $d > \sqrt{n}$ então $q < \sqrt{n}$. Assim, para qualquer divisor $d$ de $n$ maior que $\sqrt{n}$, existe exatamente um divisor $q$ de $n$ menor que $\sqrt{n}$ correspondente ao mesmo.
+O que implica que só existe no máximo $\sqrt{n}$ divisores maiores que $\sqrt{n}$. Por outro lado, claramente só existem $\sqrt{n}$ divisores menores que $\sqrt{n}$.
+Concluímos então que o número total de divisores de $n$ é da ordem de $O(\sqrt{n})$. $\square$
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Encontra todos os divisores de N}\label{encontra_divisores}
+\begin{algorithmic}[1]
+\Procedure{FindDivisors (N)}{}
+\State $D \gets \emptyset$ \Comment{Conjunto $D$ contém os divisores de $N$}
+
+\For {($d = 1 \text{; } d^2 \leq N \text{; } d++)$}
+
+\If {$d\nmid N$}
+\State \textbf{continue}
+\EndIf
+\State $D \gets D \cup \{d\}$
+\State $q \gets \frac{N}{d}$
+\If {$q\neq d$}
+\State $D \gets D \cup \{q\}$
+\EndIf
+
+\EndFor
+
+\State \Return{$D$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+O laço da linha 3 consome tempo  $O(\sqrt{N})$, testando se os números menores que $\sqrt{N}$ são divisores. Na linha 7 são calculados os divisores correspondentes maiores 
+que $\sqrt{N}$. E a condição da linha 8 garante que se $N$ for quadrado perfeito, então é inserido $\sqrt{N}$ somente uma vez no conjunto $D$.
+Assim a complexidade total do algoritmo é $O(\sqrt{N})$.
+
+
+
+
 %-----------------------------------
 %	SECTION 2
 %-----------------------------------
@@ -368,4 +415,51 @@ E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o 
 \end{algorithmic}
 \end{algorithm}
 
+
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-MAANDI}
+\href{https://www.codechef.com/problems/MAANDI}{MAANDI - Maxim and Dividers}\\
+
+\textbf{Resumo:}
+Calcular quantos divisores de um número inteiro $n$ ($1\leq n \leq 10^9$), contém os dígitos $4$ e $7$ na forma decimal.
+Por exemplo, para $n=94$ os únicos divisore que contém tais dígitos são: $47, 94$.
+
+\textbf{Solução:}
+Para esse problema, basta calcular todos os divisores de $n$, com o \textbf{Algoritmo} \autoref{encontra_divisores}, e depois verificar quais deles contêm os digitos $4$ ou $7$.
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Maxim and Dividers}
+\begin{algorithmic}[1]
+\Procedure{FindOverluckiDivisors (n)}{}
+\State $D \gets FindDivisors(n)$ \Comment{\textbf{Algoritmo} \autoref{encontra_divisores}}
+\State $count \gets 0$
+\\
+\For {\textbf{each } $d \in D$}
+\State $hasDigits \gets false$
+\\
+\While {d > 0}
+\State $resto \gets d \bmod 10$
+\If {$resto = 4$ || $resto = 7$}
+\State $hasDigits \gets true$
+\EndIf
+\State $d \gets \frac{d}{10}$
+\EndWhile
+\\
+\If {$hasDigits$}
+\State $count \gets count + 1$
+\EndIf
+\EndFor
+\\
+\State \Return $count$
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O laço da linha $5$ roda em tempo $O(\sqrt{n})$, já que o número de elementos em $D$ é da ordem de $O(\sqrt{N})$. O número de dígitos de cada divisor $d$ é da ordem de 
+$O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo proporcional à $O(\log n)$ e a complexidade total do algoritmo é $O(\sqrt n\log n)$. 
 
