@@ -26,22 +26,27 @@ Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema co
 \end{definition}
 
 
+\begin{corollary}\label{residuo_completo_1n}
+O conjunto $R = \{r_0, r_2, r_3,...,r_{n-1}\}$ com $r_i = i$, é um sistema completo de resíduos módulo $n$.
+\end{corollary}
+\textbf{Demonstração:}
+Pelo \autoref{algoritmo_divisao} sabemos que para qualquer inteiro $a$, existe $q, r$ tal que, $a = qn + r, 0 \leq r < n$. Assim, $a\equiv r(mod$ $n)$, sendo $r$ um dos $r_i$ em $R$.
+Sabemos também que, $0 < |r_i-r_j| < (n-1)$, para $i\neq j$, e assim $r_i\not\equiv r_j(mod$ $n)$.
+Portanto o conjunto $R$ é um sistema completo de resíduos módulo $n$. $\square$
+
+
 \begin{theorem}
-TODO reescrever theorem
-Se k inteiros $r_1, r_2,...,r_4$
- formam um sistema completo de resíduos módulo m; então k=m 
+Se o conjunto $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos módulo $n$, então $k=n$.
 \end{theorem}
 \textbf{Demonstração:}
-TODO
+Tome o conjunto $R = \{r_0, r_2, r_3,...,r_{n-1}\}$ com $r_i = i$. Pelo \textbf{Corolário} \autoref{residuo_completo_1n} sabemos que $R$ é um sistema completo de resíduos módulo $n$.
+
+Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente à exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$, ou simplesmente $k\leq n$. 
+Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente à exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
+Disso temos que, $|R| = |S|$, ou melhor, $k=n$. $\square$
 
 
 
-
-\begin{theorem}\label{sistemo_completp_residuo}
-Dados inteiros $n, m$ com $MDC(m,n)=1$, temos que os elementos $r,m+r,2m+r,...,(n-1)m+r$ formam um sistema completo de resíduos módulo $n$.
-\end{theorem}
-\textbf{Demonstração:}
-TODO
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -80,11 +85,36 @@ $\Rightarrow b \equiv xra + yrm$ $(mod$ $m) \Rightarrow b \equiv xra$ $(mod$ $m)
 
 E assim, a \textbf{Congruência Linear} $az\equiv b (mod$ $m)$, tem solução $z=xr$. $\square$
 
-\begin{theorem}
+\begin{theorem}\label{teorema_congruencia_linear_ida_volta}
 $ax \equiv b (mod$ $m)$ tem solução $\Leftrightarrow$ $MDC(a,m)|b$
 \end{theorem}
 \textbf{Demonstração:}
-Segue trivialmente dos \textbf{Corolários} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}
+Segue trivialmente dos \textbf{Corolários} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}.
+
+
+
+
+\begin{theorem}\label{sistemo_completp_residuo}
+O conjunto $S = \{s_0, s_1, s_2,..., s_{n-1}\}$ com $s_i = im + p$, $m, n, p \in \mathbb{Z}$, e $MDC(m,n) = 1$ é um sistema completo de resíduos módulo $n$.
+\end{theorem}
+\textbf{Demonstração:}
+Primeiro provaremos que $\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$.
+
+Tome um inteiro $a$ qualquer e a Congruência Linear: $(a-p)\equiv xm(mod$ $n)$. Pelo \autoref{teorema_congruencia_linear_ida_volta} sabemos que essa Congruência Linear tem solução, já que $MDC(m,n)=1$. Assim:
+
+$(a-p)\equiv xm(mod$ $n) \Rightarrow a\equiv xm+p(mod$ $n) \Rightarrow a\equiv im + p (mod$ $n), i=x\bmod n$
+
+$\Rightarrow a\equiv s_i(mod$ $n)$
+
+Agora provaremos que $s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$.
+
+Tome $s_i$ e $s_j$ em $S$ com $i\neq j$, $0 < |i-j| < n$. Claramente $(i-j)\not\equiv 0(mod$ $n)$, já que que $i$ e $j$ são distintos e $0 \leq i,j < n$.
+Portanto $(i-j)m\not\equiv 0(mod$ $n)$, já que $MDC(m,n)=1$, e assim:
+
+$(i-j)m\not\equiv 0(mod$ $n) \Rightarrow im \not\equiv jm(mod$ $n) \Rightarrow im+p \not\equiv jm+p(mod$ $n)$
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -99,7 +129,7 @@ Dado um número primo qualquer $p$, temos que:
 $a^{p-1} \equiv 1 (\bmod$ $p), \forall a \in \mathbb{Z} \mid MDC(a, p) = 1$
 \end{theorem}
 \textbf{Demonstração:}
-Deixaremos a demostração a cargo do leitor.
+TODO
 
 
 \begin{theorem}\label{teorema_fermat_expansao}
@@ -108,9 +138,8 @@ Dados os inteiros quaisquer $a$, $b$, $c$ e um número primo $p$, com $MDC(a, p)
 $a^{b^c} \equiv a^{b^c \bmod (p-1)} (\bmod$ $p)$
 
 \end{theorem}
-
 \textbf{Demonstração:}
-Deixaremos a demostração a cargo do leitor.
+TODO
 
 
 \subsection{Teorema do Resto Chinês}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2015 21:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2015 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1658,63 +1658,77 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 11.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 50.
 
-Package hyperref Warning: No autoref name for `corollary' on input line 87.
-
-
-Package hyperref Warning: No autoref name for `corollary' on input line 87.
+Package hyperref Warning: No autoref name for `corollary' on input line 42.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 93.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 95.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 100.
+(babel)             in language  on input line 80.
 [7]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Package hyperref Warning: No autoref name for `corollary' on input line 92.
+
+
+Package hyperref Warning: No autoref name for `corollary' on input line 92.
+
+
+Overfull \hbox (15.86432pt too wide) in paragraph at lines 98--99
+[]\T1/ppl/m/it/10.95 O con-junto $\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 = \O
+MS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 s[]; s[]; s[]; :::; s[]\OMS/cmsy/m/n/10.
+95 g$ \T1/ppl/m/it/10.95 com $\OML/cmm/m/it/10.95 s[] \OT1/cmr/m/n/10.95 = \OML
+/cmm/m/it/10.95 im \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 p$\T1/ppl/m/it/10.9
+5 , $\OML/cmm/m/it/10.95 m; n; p \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 Z$\T1/p
+pl/m/it/10.95 , e $\OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
+95 m; n\OT1/cmr/m/n/10.95 ) =
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 123.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 125.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 145.
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 170.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 146.
+(babel)             in language  on input line 175.
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--154
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 174.
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
-
- []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 188.
+(babel)             in language  on input line 179.
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
+Underfull \hbox (badness 10000) in paragraph at lines 179--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 203.
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
@@ -1724,9 +1738,7 @@ Package babel Info: Redefining portuges shorthand "|
  [9]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [10
-
-]
+ [10]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -1759,7 +1771,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 67.
-[11]
+[11
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
@@ -1956,7 +1970,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=458, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=462, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2010,16 +2024,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 415F72C3DCD32098BA153098DA517709;5032.
+(rerunfilecheck)             Checksum: FA122B6973FAF9BA8D7A3C8EC171D440;5032.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27631 strings out of 493089
- 493411 string characters out of 6134842
- 641479 words of memory out of 5000000
- 30626 multiletter control sequences out of 15000+600000
+ 27634 strings out of 493089
+ 493482 string characters out of 6134842
+ 640479 words of memory out of 5000000
+ 30628 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,51p,10403b,1608s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2044,10 +2058,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (39 pages, 407177 bytes).
+Output written on main.pdf (39 pages, 409808 bytes).
 PDF statistics:
- 595 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 140 named destinations out of 1000 (max. 500000)
+ 599 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
  302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
