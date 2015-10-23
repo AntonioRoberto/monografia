@@ -590,7 +590,7 @@ $O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo
 \textbf{Resumo:}
 É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem um posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$), 
 de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro. 
-Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores que $F$, ie, $Y_i \leq Y_i+X_it \leq F$, ou melhor, $0 \leq t \leq \frac{F-Y_i}{X_i}$.
+Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais à $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
 Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consite em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
 usando os $E$ elevadores.
 \\
@@ -604,24 +604,67 @@ nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ 
 
 Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
 
-Dois elevadores $u$ e $v$ tem um andar em comum, se exite inteiros $t_u$ ($0\leq t_u\leq \frac{F-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-Y_v}{X_v}$), tal que
+Dois elevadores $u$ e $v$ tem um andar em comum, se exite inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
 $Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
+
+Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
+Pelo \autoref{equacao_diofantina_implicacao}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão
+conexos pelo andar $Y_u$.
+
+Tome $d$, $t_1$, $t_2$ como sendo os valores retornados por $ExtendedMDC(a,b)$, temos então pelo \textbf{Corolário} TODO\autoref{TODO} que todas as soluções da
+equação $at_u + bt_v = c$, são da forma $t_u = (t_1 + \frac{bq}{d})\frac{c}{d}$ e $t_v = (t_2 - \frac{aq}{d})\frac{c}{d}$, com $q \in\mathbb{Z}$. Logo:
+\\
+
+$t_u = (t_1 + \frac{bq}{d})\frac{c}{d} \Rightarrow \frac{-t_1d}{b} \leq q \leq \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big]\frac{d}{b}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Analogamente temos:
+\\
+
+$t_v = (t_2 - \frac{aq}{d})\frac{c}{d} \Rightarrow \frac{t_2d}{a} \geq q \geq \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Das duas inequações acima, temos:
+\\
+
+$max\Big(\frac{-t_1d}{b}, \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}  \Big) \leq q \leq min\Big(\frac{t_2d}{a}, \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big]\frac{d}{b} \Big)$
+\\
+
+Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Skyscraper Floors}\label{euclid}
+\caption{Verifica se os elevadores $u$ e $v$ estão conexos.}\label{euclid}
 \begin{algorithmic}[1]
-\Procedure{GetMaximumValue (S)}{}
-\State $S \gets sort(S)$ \Comment{sort(X) retorna o conjunto X ordenado.} 
-\State $maxValue \gets 0$
-\For {i := 2 to |S|} 
-\State $maxValue \gets MDC(maxValue, S_i - S_{i-1})$
-\EndFor
-\State \Return{$maxValue$}
+\Procedure{$ElevatorsConected (X_u, Y_u, X_v, Y_y, F)$}{}
+\State $a \gets X_u$
+\State $b \gets -X_v$
+\State $c \gets Y_v-Y_u$
+\State $[d,t_1,t_2] \gets ExtendedMDC(a,b)$
+\\
+\If {$Y_u = Y_v$} %\Comment{Se $Y_u=Y_v$ então os elevadores estão conexos}
+\State \Return {$true$}
+\EndIf
+\\
+\If {$d \nmid c$}
+\State \Return {$false$}
+\EndIf
+\\
+\Comment{A partir desse ponto temos: $c\neq0$ e $d|c$}
+\\
+\State {$letf \gets max\Big(\frac{-t_1d}{b}, \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}  \Big)$}
+\State {$right \gets min\Big(\frac{t_2d}{a}, \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big] \frac{d}{b} \Big)$}
+\\
+\If {$\lceil left \rceil \leq \lfloor right \rfloor$}
+\State \Return {$true$}
+\EndIf
+\\
+\State \Return {$false$}
+
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 \textbf{Análise:}
-
+O único trecho do algoritmo que não roda em tempo constante é a chamada $ExtendedMDC(a,b)$ na linha $5$, logo a complexidade total do algoritmo é $O(\log(a+b)) = O(\log|X_u=X_v|)$.
