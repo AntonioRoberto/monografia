@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2015 22:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 OCT 2015 13:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1227,7 +1227,11 @@ File: brazilian.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `euclid' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
@@ -1691,27 +1695,47 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 479.
 [6]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 498.
+(babel)             in language  on input line 500.
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 506.
+Package hyperref Warning: No autoref name for `algorithm' on input line 508.
 
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 513.
+Package hyperref Warning: No autoref name for `algorithm' on input line 515.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 549.
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 552.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 552--559
+
+ []
+
+
+Overfull \hbox (3.4236pt too wide) in paragraph at lines 567--568
+\T1/ppl/m/n/10.95 gra-fos. Nos fo-ca-re-mos na parte ma-te-má-tica do pro-blema
+, que en-volve des-co-brir quando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--572
+
+ []
 
 ) (./Chapters/Chapter2.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [7]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [8
-
-]
+ [8]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -1727,7 +1751,9 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 55.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 80.
-[9]
+[9
+
+]
 
 Package hyperref Warning: No autoref name for `corollary' on input line 92.
 
@@ -2052,7 +2078,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=509, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=518, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2106,16 +2132,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B1475C0D89EBA4BF8BE7BCBADEC8EA64;5718.
+(rerunfilecheck)             Checksum: A8D1E545A4C42EC367E81731701AF86D;5812.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27659 strings out of 493089
- 493842 string characters out of 6134842
+ 27662 strings out of 493089
+ 493885 string characters out of 6134842
  641479 words of memory out of 5000000
- 30640 multiletter control sequences out of 15000+600000
+ 30641 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,51p,10403b,2185s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2140,10 +2170,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (41 pages, 422174 bytes).
+Output written on main.pdf (41 pages, 427686 bytes).
 PDF statistics:
- 649 PDF objects out of 1000 (max. 8388607)
- 579 compressed objects within 6 object streams
- 154 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 588 compressed objects within 6 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

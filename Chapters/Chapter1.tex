@@ -492,6 +492,8 @@ E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o 
 \end{algorithmic}
 \end{algorithm}
 
+\textbf{Análise:}
+
 
 
 %----------------------------------------------------------------------------------------
@@ -539,4 +541,49 @@ Para esse problema, basta calcular todos os divisores de $n$, com o \textbf{Algo
 \textbf{Análise:}
 O laço da linha $5$ roda em tempo $O(\sqrt{n})$, já que o número de elementos em $D$ é da ordem de $O(\sqrt{N})$. O número de dígitos de cada divisor $d$ é da ordem de 
 $O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo proporcional à $O(\log n)$ e a complexidade total do algoritmo é $O(\sqrt n\log n)$. 
+
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-718}
+\href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=659}{718 - Skyscraper Floors}\\
+
+\textbf{Resumo:}
+É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem um posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$), 
+de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro. 
+Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores que $F$, ie, $Y_i \leq Y_i+X_it \leq F$, ou melhor, $0 \leq t \leq \frac{F-Y_i}{X_i}$.
+Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consite em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
+usando os $E$ elevadores.
+\\
+
+\textbf{Solução:} 
+Primeiro imagine que temos um grafo bidirecionado com $E$ vértices, onde cada vértice representa um elevador e cada aresta $(u,v)$ nos diz que os elevadores $u$ e $v$ 
+conseguem chegar em algum andar em comum.
+Sabemos quais elevadores atingem o andar $A$, basta verificar se $Y_i+X_it=A$ tem solução $t$ inteira. Analogamente sabemos quais elevadores atingem o andar
+$B$. Então só precisaríamos fazer uma busca (\href{https://en.wikipedia.org/wiki/Breadth-first_search}{BFS} ou \href{https://en.wikipedia.org/wiki/Depth-first_search}{DFS})
+nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ até algum elevador que atinge o andar $B$.
+
+Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
+
+Dois elevadores $u$ e $v$ tem um andar em comum, se exite inteiros $t_u$ ($0\leq t_u\leq \frac{F-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-Y_v}{X_v}$), tal que
+$Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Skyscraper Floors}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{GetMaximumValue (S)}{}
+\State $S \gets sort(S)$ \Comment{sort(X) retorna o conjunto X ordenado.} 
+\State $maxValue \gets 0$
+\For {i := 2 to |S|} 
+\State $maxValue \gets MDC(maxValue, S_i - S_{i-1})$
+\EndFor
+\State \Return{$maxValue$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
 
