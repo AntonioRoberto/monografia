@@ -460,6 +460,8 @@ São dados inteiros positivos $N$ e $D$. O problema consite em calcular o númer
 \\
 
 \textbf{Solução:}
+Claramente se $D$ for maior que $N$, não há nenhum par que satisfaz as condições. Logo, assumiremos que $D \leq N$.
+
 Pelo \textbf{Corolário} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema
 em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
 Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$, já que $\Phi(r)$ nos dá a qunatidade de números menores ou iguais a $r$ e primo com entre si com $r$. Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
@@ -470,6 +472,10 @@ Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \le
 \caption{Puppy and GCD}
 \begin{algorithmic}[1]
 \Procedure{$CalculatePairs (N, P)$}{}
+\If {$D > N$}
+\State \Return $0$
+\EndIf
+\\
 \State $\Phi[] \gets PHI(\frac{N}{D})$
 \State $count \gets 0$
 \\
@@ -477,14 +483,17 @@ Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \le
 \State $count \gets count + \Phi[A]$
 \EndFor
 \\
-\State $count \gets 2$ $count$
+\State $count \gets 2$ $count - 1$
 \State \Return $count$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 \textbf{Análise:}
-Se precalcular $\Phi[]$ teremos que o fator limitando do algoritmo será o laço da linha $5$, e a complexidade do algoritmo será $O(\frac{N}{D})$.
+Se precalcular $\Phi[]$ teremos que o fator limitando do algoritmo será o laço da linha $8$, e a complexidade do algoritmo será $O(\frac{N}{D})$.
+
+Obs.: Quando dobramos o valor de $count$ na linha $11$, tem um único $\{1,1\}$ que é contado duas vezes, e por isso precisamos subtrair $1$ do valor final. 
+Esse par corresponde ao par $\{D,D\}$ do problema original.
 
 
 

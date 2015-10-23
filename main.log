@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2015 21:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2015 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1965,64 +1965,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--461
  []
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 463.
+Package hyperref Warning: No autoref name for `corollary' on input line 465.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--467
-
- []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 493.
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 503--506
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 507--509
+Underfull \hbox (badness 10000) in paragraph at lines 465--469
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 510.
+(babel)             in language  on input line 502.
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 505.
 [19]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 530.
-
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 512--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--537
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 538--540
+Underfull \hbox (badness 10000) in paragraph at lines 516--518
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 557.
+(babel)             in language  on input line 539.
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--559
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 560--562
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--565
+Underfull \hbox (badness 10000) in paragraph at lines 542--546
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--549
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 566.
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--574
 
  []
 
@@ -2141,7 +2140,7 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (41 pages, 421440 bytes).
+Output written on main.pdf (41 pages, 422174 bytes).
 PDF statistics:
  649 PDF objects out of 1000 (max. 8388607)
  579 compressed objects within 6 object streams

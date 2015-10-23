@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {3.3.2}TJU-3506}{17}{subsection.89}
 \contentsline {subsection}{\numberline {3.3.3}CodeChef-IITK2P05}{17}{subsection.91}
 \contentsline {subsection}{\numberline {3.3.4}CodeChef-PUPPYGCD}{19}{subsection.93}
-\contentsline {subsection}{\numberline {3.3.5}CodeChef-MODEFB}{19}{subsection.95}
+\contentsline {subsection}{\numberline {3.3.5}CodeChef-MODEFB}{20}{subsection.95}
 \contentsline {subsection}{\numberline {3.3.6}UVA-10311}{20}{subsection.97}
 \contentsline {subsection}{\numberline {3.3.7}Codeforces-227E}{20}{subsection.99}
 \contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{21}{chapter.101}
