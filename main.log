@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 OCT 2015 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 OCT 2015 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1646,132 +1646,156 @@ Underfull \hbox (badness 10000) in paragraph at lines 395--396
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 420.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 461.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 465.
+(babel)             in language  on input line 421.
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 423--426
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--472
+Underfull \hbox (badness 10000) in paragraph at lines 452--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 472.
+(babel)             in language  on input line 466.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 473--476
+Underfull \hbox (badness 10000) in paragraph at lines 471--473
 
  []
 
 
-Overfull \hbox (25.47603pt too wide) in paragraph at lines 490--492
+Underfull \hbox (badness 10000) in paragraph at lines 476--479
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 485.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 489.
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--496
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--500
+
+ []
+
+
+Overfull \hbox (25.47603pt too wide) in paragraph at lines 514--516
 []\T1/ppl/b/n/10.95 Análise: \T1/ppl/m/n/10.95 O al-go-ritmo tem a mesma com-pl
 e-xi-dado do \T1/ppl/m/it/10.95 Al-go-ritmo de Eu-cli-des\T1/ppl/m/n/10.95 , $\
 OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 ([] [])$\T1/ppl/m/n/10.95 . 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 496.
+(babel)             in language  on input line 520.
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 502--504
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 511.
+Underfull \hbox (badness 10000) in paragraph at lines 526--528
+
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 515--517
+Package hyperref Warning: No autoref name for `corollary' on input line 535.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--541
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 538.
-
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
-
- []
-
-
-Package hyperref Warning: No autoref name for `algorithm' on input line 546.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 548.
+(babel)             in language  on input line 541.
 [7]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 562.
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 553.
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+
+Package hyperref Warning: No autoref name for `algorithm' on input line 570.
+
+
+Package hyperref Warning: No autoref name for `algorithm' on input line 577.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 587.
+(babel)             in language  on input line 611.
 
-Underfull \hbox (badness 10000) in paragraph at lines 588--589
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 614.
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 614--621
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 590--597
-
- []
-
-
-Overfull \hbox (3.4236pt too wide) in paragraph at lines 605--606
+Overfull \hbox (3.4236pt too wide) in paragraph at lines 629--630
 \T1/ppl/m/n/10.95 gra-fos. Nos fo-ca-re-mos na parte ma-te-má-tica do pro-blema
 , que en-volve des-co-brir quando
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 607.
-[8]
 
-LaTeX Warning: Reference `TODO' on page 9 undefined on input line 614.
+Package hyperref Warning: No autoref name for `corollary' on input line 638.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--617
+Underfull \hbox (badness 10000) in paragraph at lines 638--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--620
+Underfull \hbox (badness 10000) in paragraph at lines 642--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--623
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+Underfull \hbox (badness 10000) in paragraph at lines 648--650
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--629
+Underfull \hbox (badness 10000) in paragraph at lines 651--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--632
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--635
+Underfull \hbox (badness 10000) in paragraph at lines 657--659
 
  []
 
 ) (./Chapters/Chapter2.tex
-Overfull \hbox (8.92628pt too wide) in paragraph at lines 669--2
+Overfull \hbox (8.92628pt too wide) in paragraph at lines 693--2
 \T1/ppl/m/n/10.95 mada $\OML/cmm/m/it/10.95 ExtendedMDC\OT1/cmr/m/n/10.95 (\OML
 /cmm/m/it/10.95 a; b\OT1/cmr/m/n/10.95 )$ \T1/ppl/m/n/10.95 na li-nha $\OT1/cmr
 /m/n/10.95 5$\T1/ppl/m/n/10.95 , logo a com-ple-xi-dade to-tal do al-go-ritmo é
@@ -1780,7 +1804,7 @@ n/10.95 +
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 2.
 [9]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -2127,7 +2151,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=535, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=537, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2181,10 +2205,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C62358FAD564E5641FBE70B1A1385A12;6035.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 6852D9388D17DB4EB6D0F95CA04193D3;6036.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2194,9 +2215,9 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27666 strings out of 493089
- 493919 string characters out of 6134842
- 643479 words of memory out of 5000000
+ 27667 strings out of 493089
+ 493951 string characters out of 6134842
+ 645479 words of memory out of 5000000
  30641 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2222,10 +2243,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (43 pages, 436036 bytes).
+Output written on main.pdf (43 pages, 437656 bytes).
 PDF statistics:
- 676 PDF objects out of 1000 (max. 8388607)
- 603 compressed objects within 7 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 678 PDF objects out of 1000 (max. 8388607)
+ 605 compressed objects within 7 object streams
+ 161 named destinations out of 1000 (max. 500000)
  358 words of extra memory for PDF output out of 10000 (max. 10000000)
 

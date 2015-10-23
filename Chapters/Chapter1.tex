@@ -415,13 +415,14 @@ $ax + by=c$, tem solução inteira $\Rightarrow MDC(a,b)ux + MDC(a,b)vy = c$
 
 $\Rightarrow MDC(a,b)(ux + vy) = c \Rightarrow MDC(a,b)|c$. $\square$ 
 
+
 %----------------------------------------------------------------------------------------
 
 \subsection{Algoritmo de Euclides Extendido}
 
 \textit{Algoritmo de Euclides Extendido} é uma extensão do \textit{Algoritmo de Euclides} que calcula não só o $MDC(a,b)$, para dados $a$ e $b$, mas também encontra
 uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$. 
-
+\\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -449,9 +450,32 @@ $(b\bmod a)x + ay = d \Rightarrow (b - \lfloor \frac{b}{a} \rfloor a)x + ay = d$
 $\Rightarrow a(y-\lfloor \frac{b}{a} \rfloor x) + b(x) = ax^* + by^* = d = MDC(a,b)$
 
 Observe que o \textit{Algoritmo de Euclides Extendido} é baseado no \textit{Algoritmo de Euclides}, tendo a mesma complexidade $O(\log(a+b))$.
+\\
 
 
+\begin{corollary}\label{mdc_extended_solutions}
+Tome $[d,x_0,y_0]$ como sendo a tupla retornada pelo $ExtendedMDC(a,b)$, com $a$, $b$, $c$ inteiros e $MDC(a,b)|c$.
+Então temos que todas as soluções da equação $ax+by=c$ são da forma: $x=(x_0\frac{c}{d} + \frac{bq}{d})$, $y=(y_0\frac{c}{d} - \frac{aq}{d})$, em que $q\in\mathbb{Z}$.
+\end{corollary}
+\textbf{Demonstração:}
+Pelo \textit{Algoritmo de Euclides Extendido} sabemos que $ax_0 + by_0=d$. Sabemos também que $d|c$ por definição, ie, existe $k\in\mathbb{Z}$ tal que $c=kd$.
+Assim temos que $x=x_0k$ e $y=y_0k$ é solução, já que $a(x_0k)+b(y_0k) = kd = c$. 
 
+Agora tome a solução $x^*,y^*$ qualquer ($ax^*+by^*=c$). Subtraindo as últimas duas equações temos:
+\\
+
+$a(x_0k-x^*) + b(y_0k-y^*) = 0 \Rightarrow a(x_0k-x^*) = b(y^* - y_0k) \Rightarrow a|[b(y^* - y_0k)]$
+
+$\Rightarrow \frac{a}{MDC(a,b)}|(y^* - y_0k) \Rightarrow \exists! q\in\mathbb{Z}$, tal que $\frac{a}{MDC(a,b)}q = (y^* - y_0k)$
+
+$\Rightarrow y^* = y_0k + \frac{a}{MDC(a,b)}q \Rightarrow y^* = y_0\frac{c}{d} - \frac{aq}{d}$
+\\
+
+Analogamente, temos: $x^* = x_0\frac{c}{d} + \frac{bq}{d}$
+
+Assim todas as soluções de $ax+by=c$ são da forma:
+$x = x_0\frac{c}{d} + \frac{bq}{d}$, $y = y_0\frac{c}{d} - \frac{aq}{d}$ $\square$
+\\
 
 
 %----------------------------------------------------------------------------------------
@@ -604,30 +628,30 @@ nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ 
 
 Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
 
-Dois elevadores $u$ e $v$ tem um andar em comum, se exite inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
+Dois elevadores $u$ e $v$ tem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
 $Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
 
 Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
 Pelo \autoref{equacao_diofantina_implicacao}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão
-conexos pelo andar $Y_u$.
+conexos pelo andar $Y_u$. Checaremos essas restrições no começo do algoritmo, e daqui para frente assumiremos que $MDC(a,b)|c$ e $Y_u\neq Y_v$.
 
-Tome $d$, $t_1$, $t_2$ como sendo os valores retornados por $ExtendedMDC(a,b)$, temos então pelo \textbf{Corolário} TODO\autoref{TODO} que todas as soluções da
-equação $at_u + bt_v = c$, são da forma $t_u = (t_1 + \frac{bq}{d})\frac{c}{d}$ e $t_v = (t_2 - \frac{aq}{d})\frac{c}{d}$, com $q \in\mathbb{Z}$. Logo:
+Tome $d$, $t_1$, $t_2$ como sendo os valores retornados por $ExtendedMDC(a,b)$, temos então pelo \textbf{Corolário} \autoref{mdc_extended_solutions} que todas as soluções da
+equação $at_u + bt_v = c$, são da forma $t_u = (t_1\frac{c}{d} + \frac{bq}{d})$ e $t_v = (t_2\frac{c}{d} - \frac{aq}{d})$, com $q \in\mathbb{Z}$. Logo:
 \\
 
-$t_u = (t_1 + \frac{bq}{d})\frac{c}{d} \Rightarrow \frac{-t_1d}{b} \leq q \leq \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big]\frac{d}{b}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+$t_u = (t_1\frac{c}{d} + \frac{bq}{d}) \Rightarrow \frac{-t_1c}{b} \leq q \leq \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
 \\
 
 Analogamente temos:
 \\
 
-$t_v = (t_2 - \frac{aq}{d})\frac{c}{d} \Rightarrow \frac{t_2d}{a} \geq q \geq \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+$t_v = (t_2\frac{c}{d} - \frac{aq}{d}) \Rightarrow \frac{t_2c}{a} \geq q \geq \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
 \\
 
 Das duas inequações acima, temos:
 \\
 
-$max\Big(\frac{-t_1d}{b}, \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}  \Big) \leq q \leq min\Big(\frac{t_2d}{a}, \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big]\frac{d}{b} \Big)$
+$max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Big) \leq q \leq min\Big(\frac{t_2c}{a}, \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}  \Big)$
 \\
 
 Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
@@ -653,8 +677,8 @@ Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ 
 \\
 \Comment{A partir desse ponto temos: $c\neq0$ e $d|c$}
 \\
-\State {$letf \gets max\Big(\frac{-t_1d}{b}, \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}  \Big)$}
-\State {$right \gets min\Big(\frac{t_2d}{a}, \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big] \frac{d}{b} \Big)$}
+\State {$letf \gets max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Big)$}% max\Big(\frac{-t_1d}{b}, \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}  \Big)$}
+\State {$right \gets min\Big(\frac{t_2c}{a}, \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}  \Big) $}%min\Big(\frac{t_2d}{a}, \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big] \frac{d}{b} \Big)$}
 \\
 \If {$\lceil left \rceil \leq \lfloor right \rfloor$}
 \State \Return {$true$}
