@@ -248,13 +248,12 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Algoritmo de Euclides}\label{mdc}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 \Procedure{$MDC (a, b)$}{}
-\If {$b = 0$}
-\State \Return $a$
-\Else
-\State \Return $MDC(b, a \bmod b)$
+\If {$a = 0$}
+\State \Return $b$
 \EndIf
+\State \Return $MDC(b \bmod a, a)$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
@@ -381,9 +380,12 @@ TODO
 
 $ax + by = n$ ($\triangleright$ \textit{Equação Diofantina Linear})
 
+$ax + by = MDC(a,b)$ ($\triangleright$ \textit{Identidade de Bézout})
+
 $x^n + y^n = z^n$ ($\triangleright$ Equação base do \textit{Último Teorema de Fermat})
 
 $x^2 - ny^2 = \pm 1$ ($\triangleright$ \textit{Equação de Pell})\\
+
 
 
 Nesse trabalho abordaremos somente \textit{Equações Diofantinas Lineares}, da forma:
@@ -412,6 +414,42 @@ Sabemos que existe inteiros $u$ e $v$, tal que, $a=MDC(a,b)u$ e $b=MDC(a,b)v$. L
 $ax + by=c$, tem solução inteira $\Rightarrow MDC(a,b)ux + MDC(a,b)vy = c$
 
 $\Rightarrow MDC(a,b)(ux + vy) = c \Rightarrow MDC(a,b)|c$. $\square$ 
+
+%----------------------------------------------------------------------------------------
+
+\subsection{Algoritmo de Euclides Extendido}
+
+\textit{Algoritmo de Euclides Extendido} é uma extensão do \textit{Algoritmo de Euclides} que calcula não só o $MDC(a,b)$, para dados $a$ e $b$, mas também encontra
+uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$. 
+
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Algoritmo de Euclides Extendido}\label{mdc_extended}
+\begin{algorithmic}[1]
+\Procedure{$ExtendedMDC (a, b)$}{}
+\If {$a = 0$}
+\State \Return $[b,0,1]$
+\EndIf
+\\
+\State $[d,x,y] \gets Extended(b \bmod a, a)$
+\State $x^* \gets y - \lfloor \frac{b}{a} \rfloor x$
+\State $y^* \gets x$
+\State \Return $[d,x^*,y^*]$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+Em vez de retornar um inteiro, $ExtendedMDC(a,b)$ retorna uma tupla $[d,x,y]$, onde $d=MDC(a,b)$ e $x$,$y$ são a solução da equação $ax+by=d=MDC(a,b)$.
+Sabemos que $[d,x,y]$ na linha $5$ satisfaz a equação, $(b\bmod a)x + ay = d$, assim:
+
+$(b\bmod a)x + ay = d \Rightarrow (b - \lfloor \frac{b}{a} \rfloor a)x + ay = d$
+
+$\Rightarrow a(y-\lfloor \frac{b}{a} \rfloor x) + b(x) = ax^* + by^* = d = MDC(a,b)$
+
+Observe que o \textit{Algoritmo de Euclides Extendido} é baseado no \textit{Algoritmo de Euclides}, tendo a mesma complexidade $O(\log(a+b))$.
+
 
 
 
