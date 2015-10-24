@@ -14,6 +14,7 @@
 Para $a$ e $b$ inteiros, dizemos que $a$ é congruente à $b$ módulo $m$ ($a \equiv b (mod$ $m), m > 0$) 
 se $a$ e $b$ produzem o mesmo resto na divisão por $m$ (ie, $m|(a-b)$).
 Caso contrário ($m\nmid (a-b)$), dizemos que $a$ não é congruente à $b$ módulo $m$ ($a \not\equiv b (mod $ $m)$).
+\\
 \end{definition}
 
 
@@ -22,8 +23,22 @@ Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema co
 \begin{enumerate}
 \item$\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$
 \item$s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$
+\\
 \end{enumerate}
 \end{definition}
+
+
+\begin{corollary}\label{corolario_implicacao_mdc}
+Dados inteiros $a$, $b$, $c$, $d$ com $MDC(c,d)=1$, temos que: 
+
+$ac \equiv bc (mod$ $d) \Rightarrow a \equiv b (mod$ $d)$.
+\end{corollary}
+\textbf{Demonstração:}
+
+$ac \equiv bc (mod$ $d) \Rightarrow d|(ac-bc) \Rightarrow d|c(a-b) \Rightarrow d|(a-b)$, já que $MDC(c,d)=1$
+
+$\Rightarrow a \equiv b (mod$ $d)$. $\square$
+\\
 
 
 \begin{corollary}\label{residuo_completo_1n}
@@ -33,7 +48,7 @@ O conjunto $R = \{r_0, r_2, r_3,...,r_{n-1}\}$ com $r_i = i$, é um sistema comp
 Pelo \autoref{algoritmo_divisao} sabemos que para qualquer inteiro $a$, existe $q, r$ tal que, $a = qn + r, 0 \leq r < n$. Assim, $a\equiv r(mod$ $n)$, sendo $r$ um dos $r_i$ em $R$.
 Sabemos também que, $0 < |r_i-r_j| < (n-1)$, para $i\neq j$, e assim $r_i\not\equiv r_j(mod$ $n)$.
 Portanto o conjunto $R$ é um sistema completo de resíduos módulo $n$. $\square$
-
+\\
 
 \begin{theorem}
 Se o conjunto $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos módulo $n$, então $k=n$.
@@ -44,7 +59,7 @@ Tome o conjunto $R = \{r_0, r_2, r_3,...,r_{n-1}\}$ com $r_i = i$. Pelo \textbf{
 Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente à exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$, ou simplesmente $k\leq n$. 
 Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente à exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
 Disso temos que, $|R| = |S|$, ou melhor, $k=n$. $\square$
-
+\\
 
 
 
@@ -131,17 +146,36 @@ Dado um número primo qualquer $p$, temos que:
 $a^{p-1} \equiv 1 (\bmod$ $p), \forall a \in \mathbb{Z} \mid MDC(a, p) = 1$
 \end{theorem}
 \textbf{Demonstração:}
-TODO
+Tome os conjuntos $S = \{s_0, s_1, s_2, ..., s_{p-1}\}$, com $s_i = ai$, e $T = \{t_0, t_1, t_2, t_3, ..., t_{p-1}\}$, com $t_i = i$. 
+Claramente o conjunto $T$ é um \textit{Sistema completo de resíduos módulo $p$}.
+Pelo Teoremo TODO sabemos que $S$ também é um \textit{Sistema completo de resíduos módulo $p$},
+e assim, $\forall s_i\in S$, $\exists! t_j\in T, 0\leq t_j\leq(p-1)$, tal que $s_i\equiv t_j(mod$ $p)$. Dessa informação podemos derivar a seguinte congruência modular:
+
+$s_1.s_2.s_3...s_{p-1} \equiv t_1.t_2.t_3...s_{p-1} (mod$ $p)$ ($\triangleright$ Observe que o correspondente à $s_0$ é $t_0$)
+
+$\Rightarrow a.2a.3a....(p-1)a \equiv 1.2.3....(p-1) (mod$ $p) \Rightarrow a^{p-1}(p-1)! \equiv (p-1)! (mod$ $p)$
+
+E aplicando os \textbf{Corolários} \autoref{mdc_primo_fatorial} e \autoref{corolario_implicacao_mdc}, temos:
+
+$a^{p-1}\equiv 1(mod$ $p)$. $\square$
+\\
 
 
 \begin{theorem}\label{teorema_fermat_expansao}
-Dados os inteiros quaisquer $a$, $b$, $c$ e um número primo $p$, com $MDC(a, p) = 1$, temos que:
+Dados os inteiros quaisquer $a$, $b$ e um número primo $p$, com $MDC(a, p) = 1$, temos que:
 
-$a^{b^c} \equiv a^{b^c \bmod (p-1)} (\bmod$ $p)$
+$a^{b} \equiv a^{b \bmod (p-1)} (\bmod$ $p)$
 
 \end{theorem}
 \textbf{Demonstração:}
-TODO
+Pelo \autoref{algoritmo_divisao} pode escrever $b=q(p-1)+r$, onde $r=b\bmod(p-1)$. Assim temos:
+
+$a^b = a^{q(p-1)+r} = a^{q(p-1)}a^r = (a^{p-1})^qa^r \Rightarrow a^b \equiv (a^{p-1})^qa^r (mod$ $p)$ 
+
+Pelo \autoref{teorema_fermat} temos $a^{p-1} \equiv 1 (\bmod$ $p)$. Logo:
+
+$a^b \equiv (1)^qa^r \equiv a^r \equiv a^{b \bmod (p-1)} (mod$ $p)$. $\square$
+\\
 
 
 \subsection{Teorema do Resto Chinês}
@@ -163,7 +197,10 @@ Em que $c_i \in \mathbb{Z}$, $MDC(a_i,m_i) = 1$, e $MDC(m_i, m_j) = 1$ para $i \
 Nessas condições o sistema acima tem solução única módulo $M$, em que $M = m_1m_2m_3...m_n$.
 \end{theorem}
 \textbf{Demonstração:}
-Deixaremos a demostração a cargo do leitor.
+TODO
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION

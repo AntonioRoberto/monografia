@@ -237,7 +237,15 @@ $MDC(a,b) = 1 \Rightarrow MDC(a,bk) = MDC(a,k)$, com $k \in \mathbb{Z}$
 \end{corollary}
 \textbf{Demonstração:}
 A prova dessa expressão vem do fato de que qualder divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
+\\
 
+\begin{corollary}\label{mdc_primo_fatorial}
+$MDC((p-1)!, p)=1$, para $p$ primo qualquer.
+\end{corollary}
+\textbf{Demonstração:}
+Tome um inteiro positivo $d < p$. Como $p$ é primo, sabemos que $MDC(p,d)=1$, ie, $d$ não tem nenhum fator primo em comum com $p$. Assim
+o produto $(p-1)!$ de todos os inteiros positivos menores que $p$ também não terá nenhum fator primo em comum com $p$. $\square$
+\\
 
 
 
