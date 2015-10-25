@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 OCT 2015 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 OCT 2015 21:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1234,23 +1234,23 @@ LaTeX Warning: Label `euclid' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 89.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -1416,7 +1416,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 142.
 )
-Package hyperref Info: Link coloring ON on input line 88.
+Package hyperref Info: Link coloring ON on input line 89.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1426,9 +1426,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 88.
-LaTeX Info: Redefining \pageref on input line 88.
-LaTeX Info: Redefining \nameref on input line 88.
+LaTeX Info: Redefining \ref on input line 89.
+LaTeX Info: Redefining \pageref on input line 89.
+LaTeX Info: Redefining \nameref on input line 89.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1447,49 +1447,49 @@ Package biblatex Warning: Data encoding is 'utf8'.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 88.
-Package biblatex Info: Reference segment=0 on input line 88.
+Package biblatex Info: Reference section=0 on input line 89.
+Package biblatex Info: Reference segment=0 on input line 89.
 \c__siunitx_mathsf_int=\count343
-LaTeX Font Info:    Try loading font information for U+msa on input line 88.
+LaTeX Font Info:    Try loading font information for U+msa on input line 89.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 88.
+LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count344
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 105.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 106.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 135.
  [1
 
 
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 150.
  [2]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 154.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 155.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 164.
  [3
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 177.
  [4
 
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 182.
  [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 194.
 
 [6
 
@@ -1498,24 +1498,24 @@ Package babel Info: Redefining portuges shorthand "|
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 4.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 42.
+(babel)             in language  on input line 44.
  [7])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 196.
  [8] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 197.
+(babel)             in language  on input line 198.
  [9
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 197.
+(babel)             in language  on input line 198.
  [10
 
 ] (./main.lot)
@@ -1523,10 +1523,10 @@ Package babel Info: Redefining portuges shorthand "|
 \openout7 = `main.lot'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 244.
  [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 243.
+(babel)             in language  on input line 244.
  [12
 
 ]
@@ -1534,10 +1534,10 @@ Package babel Info: Redefining portuges shorthand "|
  Dedicatory
 --------------------
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 250.
 [13]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 250.
  [14
 
 ] (./Chapters/Chapter1.tex
@@ -2189,17 +2189,149 @@ Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
 --------------------
- 4. Conclus\IeC {\~a}o
+ 4. Lista de Problemas
+--------------------
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--15
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 19.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 21.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 24--25
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 26--27
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 27--28
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 28--29
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 29--30
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 33--34
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 35--36
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 39.
+[23
+
+]
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 41--42
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 43--44
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 44--45
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 46--47
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 47--48
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 53--54
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 56--57
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 64.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 76.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 84.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 92.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 100.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 108.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 116.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 124.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 132.
+) (./Chapters/Chapter5.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [24]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [25]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [26
+
+]
+Cap\'{\i }tulo 5.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+--------------------
+ 5. Conclus\IeC {\~a}o
 --------------------
 ) (./Appendices/AppendixA.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [23
-
-]
+ [27]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [24
+ [28
 
 ]
 Ap\^endice A.
@@ -2208,7 +2340,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=544, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=671, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2217,10 +2349,10 @@ Package pdftex.def Info: Figures/grafico.png used on input line 22.
 ) (./Appendices/AppendixB.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [25 <./Figures/grafico.png>]
+ [29 <./Figures/grafico.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [26
+ [30
 
 ]
 Ap\^endice B.
@@ -2239,30 +2371,25 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 39.
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 279.
- [27]
+(babel)             in language  on input line 280.
+ [31]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 279.
- [28
+(babel)             in language  on input line 280.
+ [32
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 279.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 279.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+(babel)             in language  on input line 280.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 283.
-
-[29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
+(babel)             in language  on input line 284.
+ [33]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FBBFEA1223C740299CBFF164AA5807C8;6037.
+(rerunfilecheck)             Checksum: 03065E741C71BB599BD0436DD1C67107;7164.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2272,13 +2399,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27671 strings out of 493089
- 494024 string characters out of 6134842
- 641479 words of memory out of 5000000
- 30643 multiletter control sequences out of 15000+600000
+ 27704 strings out of 493089
+ 494451 string characters out of 6134842
+ 641446 words of memory out of 5000000
+ 30658 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,51p,10403b,2190s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,12n,51p,10403b,2185s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local
@@ -2300,10 +2427,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (43 pages, 440202 bytes).
+Output written on main.pdf (47 pages, 452093 bytes).
 PDF statistics:
- 686 PDF objects out of 1000 (max. 8388607)
- 613 compressed objects within 7 object streams
- 163 named destinations out of 1000 (max. 500000)
- 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 814 PDF objects out of 1000 (max. 8388607)
+ 736 compressed objects within 8 object streams
+ 178 named destinations out of 1000 (max. 500000)
+ 446 words of extra memory for PDF output out of 10000 (max. 10000000)
 
