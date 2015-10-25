@@ -42,12 +42,12 @@
 \contentsline {section}{\numberline {4.2}N\IeC {\'\i }vel 2}{24}{section.110}
 \contentsline {section}{\numberline {4.3}N\IeC {\'\i }vel 3}{25}{section.111}
 \contentsline {section}{\numberline {4.4}N\IeC {\'\i }vel 4}{26}{section.112}
-\contentsline {section}{\numberline {4.5}N\IeC {\'\i }vel 5}{26}{section.113}
-\contentsline {section}{\numberline {4.6}N\IeC {\'\i }vel 6}{26}{section.114}
-\contentsline {section}{\numberline {4.7}N\IeC {\'\i }vel 7}{26}{section.115}
-\contentsline {section}{\numberline {4.8}N\IeC {\'\i }vel 8}{26}{section.116}
-\contentsline {section}{\numberline {4.9}N\IeC {\'\i }vel 9}{27}{section.117}
-\contentsline {section}{\numberline {4.10}N\IeC {\'\i }vel 10}{27}{section.118}
+\contentsline {section}{\numberline {4.5}N\IeC {\'\i }vel 5}{27}{section.113}
+\contentsline {section}{\numberline {4.6}N\IeC {\'\i }vel 6}{27}{section.114}
+\contentsline {section}{\numberline {4.7}N\IeC {\'\i }vel 7}{27}{section.115}
+\contentsline {section}{\numberline {4.8}N\IeC {\'\i }vel 8}{28}{section.116}
+\contentsline {section}{\numberline {4.9}N\IeC {\'\i }vel 9}{28}{section.117}
+\contentsline {section}{\numberline {4.10}N\IeC {\'\i }vel 10}{28}{section.118}
 \contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{29}{chapter.119}
 \contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{31}{appendix.120}
 \contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{33}{appendix.122}
