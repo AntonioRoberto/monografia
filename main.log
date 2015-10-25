@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 OCT 2015 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 OCT 2015 21:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2292,31 +2292,72 @@ tion = onlinejudge & page =
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 64.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 76.
+(babel)             in language  on input line 73.
+[24]
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 73--74
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 75--76
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 76--77
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 87--88
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
+
+Overfull \hbox (17.88168pt too wide) in paragraph at lines 88--89
+[][][]$\T1/pcr/m/n/10.95 https : / / uva . onlinejudge . org / index . php ? op
+tion = onlinejudge & page =
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 96.
+
+Overfull \hbox (31.02167pt too wide) in paragraph at lines 101--102
+[][][]$\T1/pcr/m/n/10.95 https : / / icpcarchive . ecs . baylor . edu / index .
+ php ? option = onlinejudge &
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 107.
+[25]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 100.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 108.
+(babel)             in language  on input line 135.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 159.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 171.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 183.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 187.
+ [26]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 195.
 ) (./Chapters/Chapter5.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [24]
+ [27]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [25]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [26
+ [28
 
 ]
 Cap\'{\i }tulo 5.
@@ -2328,10 +2369,10 @@ Package babel Info: Redefining portuges shorthand "|
 ) (./Appendices/AppendixA.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [27]
+ [29]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [28
+ [30
 
 ]
 Ap\^endice A.
@@ -2340,7 +2381,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=671, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=738, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2349,10 +2390,10 @@ Package pdftex.def Info: Figures/grafico.png used on input line 22.
 ) (./Appendices/AppendixB.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [29 <./Figures/grafico.png>]
+ [31 <./Figures/grafico.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [30
+ [32
 
 ]
 Ap\^endice B.
@@ -2372,10 +2413,10 @@ Package babel Info: Redefining portuges shorthand "|
 )
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 280.
- [31]
+ [33]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 280.
- [32
+ [34
 
 ]
 Package babel Info: Redefining portuges shorthand "|
@@ -2383,7 +2424,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 284.
- [33]
+ [35]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
@@ -2399,9 +2440,9 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27704 strings out of 493089
- 494451 string characters out of 6134842
- 641446 words of memory out of 5000000
+ 27706 strings out of 493089
+ 494465 string characters out of 6134842
+ 642446 words of memory out of 5000000
  30658 multiletter control sequences out of 15000+600000
  53627 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2427,10 +2468,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (47 pages, 452093 bytes).
+Output written on main.pdf (49 pages, 456110 bytes).
 PDF statistics:
- 814 PDF objects out of 1000 (max. 8388607)
- 736 compressed objects within 8 object streams
- 178 named destinations out of 1000 (max. 500000)
+ 882 PDF objects out of 1000 (max. 8388607)
+ 801 compressed objects within 9 object streams
+ 180 named destinations out of 1000 (max. 500000)
  446 words of extra memory for PDF output out of 10000 (max. 10000000)
 

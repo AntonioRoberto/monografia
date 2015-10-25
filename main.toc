@@ -41,18 +41,18 @@
 \contentsline {section}{\numberline {4.1}N\IeC {\'\i }vel 1}{23}{section.109}
 \contentsline {section}{\numberline {4.2}N\IeC {\'\i }vel 2}{24}{section.110}
 \contentsline {section}{\numberline {4.3}N\IeC {\'\i }vel 3}{25}{section.111}
-\contentsline {section}{\numberline {4.4}N\IeC {\'\i }vel 4}{25}{section.112}
-\contentsline {section}{\numberline {4.5}N\IeC {\'\i }vel 5}{25}{section.113}
-\contentsline {section}{\numberline {4.6}N\IeC {\'\i }vel 6}{25}{section.114}
-\contentsline {section}{\numberline {4.7}N\IeC {\'\i }vel 7}{25}{section.115}
-\contentsline {section}{\numberline {4.8}N\IeC {\'\i }vel 8}{25}{section.116}
-\contentsline {section}{\numberline {4.9}N\IeC {\'\i }vel 9}{25}{section.117}
-\contentsline {section}{\numberline {4.10}N\IeC {\'\i }vel 10}{25}{section.118}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{27}{chapter.119}
-\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{29}{appendix.120}
-\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{31}{appendix.122}
-\contentsline {section}{\numberline {B.1}UVa}{31}{section.123}
-\contentsline {section}{\numberline {B.2}Topcoder}{31}{section.124}
-\contentsline {section}{\numberline {B.3}Codeforces}{31}{section.125}
-\contentsline {section}{\numberline {B.4}CodeChef}{31}{section.126}
-\contentsline {chapter}{Bibliografia}{33}{appendix*.127}
+\contentsline {section}{\numberline {4.4}N\IeC {\'\i }vel 4}{26}{section.112}
+\contentsline {section}{\numberline {4.5}N\IeC {\'\i }vel 5}{26}{section.113}
+\contentsline {section}{\numberline {4.6}N\IeC {\'\i }vel 6}{26}{section.114}
+\contentsline {section}{\numberline {4.7}N\IeC {\'\i }vel 7}{26}{section.115}
+\contentsline {section}{\numberline {4.8}N\IeC {\'\i }vel 8}{26}{section.116}
+\contentsline {section}{\numberline {4.9}N\IeC {\'\i }vel 9}{27}{section.117}
+\contentsline {section}{\numberline {4.10}N\IeC {\'\i }vel 10}{27}{section.118}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{29}{chapter.119}
+\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{31}{appendix.120}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{33}{appendix.122}
+\contentsline {section}{\numberline {B.1}UVa}{33}{section.123}
+\contentsline {section}{\numberline {B.2}Topcoder}{33}{section.124}
+\contentsline {section}{\numberline {B.3}Codeforces}{33}{section.125}
+\contentsline {section}{\numberline {B.4}CodeChef}{33}{section.126}
+\contentsline {chapter}{Bibliografia}{35}{appendix*.127}
