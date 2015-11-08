@@ -17,6 +17,9 @@ A notação $d|n$ ("$d$ \textbf{divive} $n$"), significa que existe um inteiro $
 Se $d|n$ dizemos que $n$ é múltiplo de $d$. Caso $n$ não seja múltiplo de $d$ (ou seja, $d$ não divide $n$), escrevemos $d \nmid n$.
 \end{definition}
 
+\begin{definition}
+A notação $d\bmod n$ ("$d$ \textbf{módulo} $n$"), significa o resta da divisão de $d$ por $n$.
+\end{definition}
 
 \begin{corollary}\label{divisibilidade_transitiva}
 $d|n$ , $d|m \Rightarrow d|(n+m)$
@@ -62,7 +65,7 @@ $d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j)$ ($\tri
 $d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_j)$ $\square$ 
 
 
-\begin{corollary}
+\begin{corollary}\label{corolario_divisibilidade_1.1}
 O \textbf{Corolário} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
 \end{corollary}
 \textbf{Demonstração:}
@@ -80,11 +83,11 @@ O valor $q$ ($q = \lfloor  \frac{a}{n} \rfloor$) é chamado de \textbf{quociente
 \textbf{Demonstração:}
 Suponha que $q$ e $r$ não sejam únicos, ie, que exista $q^*$ e $r^*$ tal que: $a = q^*n + r^*, 0 \leq r^* < n$.
 
-$a = qn + r = q^*n + r^* \Rightarrow (r - r^*) = (q^* - q)n \Rightarrow (r - r^*) \equiv (q^* - q)n \equiv 0 (mod$ $n)$
+$a = qn + r = q^*n + r^* \Rightarrow (r - r^*) = (q^* - q)n \Rightarrow n|(r - r^*)$ já que $n|(q^* - q)n$.
 
 Porém, como $r \neq r^*$, e tanto $r$ quanto $r^*$ são menores que $n$, temos que: 
 
-$r \not\equiv r^* (mod$ $n) \Rightarrow (r - r^*) \not\equiv 0 (mod$ $n)$
+$(r\bmod n) \neq (r^*\bmod n) \Rightarrow n \nmid (r - r^*)$.
 
 Chegando numa contradição, e assim $q$ e $r$ são únicos $\square$ \\
 
@@ -129,6 +132,7 @@ O que implica que só existe no máximo $\sqrt{n}$ divisores maiores que $\sqrt{
 Concluímos então que o número total de divisores de $n$ é da ordem de $O(\sqrt{n})$. $\square$
 \\
 
+\clearpage
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Encontra todos os divisores de N}\label{encontra_divisores}
@@ -178,7 +182,7 @@ $n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 <
 \end{theorem}
 \textbf{Demonstração:}
 Deixaremos a demostração a cargo do leitor.
-\textbf{Dica:} Use o fato de que o conjunto dos primos que divide um número inteiro é único, e fato de que se qualquer potência $a_i$ for alterado o valor de $n$ será alterado.
+\textbf{Dica:} Use o fato de que o conjunto dos primos que divide um número inteiro é único, e o fato de que se qualquer potência $a_i$ for alterado o valor de $n$ será alterado.
 
 
 
@@ -267,7 +271,8 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \end{algorithm}
 
 \textbf{Análise:}
-TODO
+O \textit{Algoritmo de Euclides} consome tempo proporcional à $O(\log b)$. Para provar a análise do custo do algoritmo é preciso conhecer algumas propriedades da \textit{Sequência de Fibonacci}, e desse modo, a 
+demostração será feita no \textbf{Capítulo 3}, \textbf{Subsessão 3.2}.
 
 
 
@@ -348,6 +353,7 @@ O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf
 até um certo valor limite $N$.
 O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
 Desse modo, ao final do algoritmo, os elementos não marcados são números primos.\\
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -355,11 +361,11 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
 \begin{algorithmic}[1]
 \Procedure{CrivoErastótenes (N)}{}
 \State $isPrime[] \gets \text{new Array}[N]$ \Comment{$isPrime[]$ é um vetor booleano}
-
+\\
 \For {($p = 2 \text{; } p \leq N \text{; } p++)$}
 \State $isPrime[p] \gets true$
 \EndFor
-
+\\
 \For {($p = 2 \text{; } p^2 \leq N \text{; } p++)$}
 \If {$isPrime[p] = false$}
 \State \textbf{continue}
@@ -368,16 +374,20 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
 \State $isPrime[n] \gets false$
 \EndFor
 \EndFor
-
+\\
 \State \Return{$isPrime[]$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 \textbf{Análise:}
-TODO
+O laço da linha $4$ itera sobre todos os valores de $2$ até $N$ e assim consome tempo $O(N)$.
+Já o laço mais interno na linha $9$ itera sobre de $p^2$ até $N$ múltiplos de $p$, e assim consome tempo
+$O(N/p)$. 
 
+Desse modo a complexidade conjunta dos laços das linhas $6$ e $9$, será $O(\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p})$(observe que o laço da linha $6$ itera sobre os primos menores que $sqrt(N)$). 
 
+Como foi sugerido por \textit{Leonhard Euler} no século XVIII, temos que $\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p} = O(N\log \log N)$. E assim a complexidade final do algoritmo é $O(N \log \log N)$.
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
@@ -441,7 +451,7 @@ uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$.
 \State \Return $[b,0,1]$
 \EndIf
 \\
-\State $[d,x,y] \gets Extended(b \bmod a, a)$
+\State $[d,x,y] \gets ExtendedMDC(b \bmod a, a)$
 \State $x^* \gets y - \lfloor \frac{b}{a} \rfloor x$
 \State $y^* \gets x$
 \State \Return $[d,x^*,y^*]$
@@ -563,6 +573,8 @@ E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o 
 \end{algorithm}
 
 \textbf{Análise:}
+Pelo \textbf{Corolário} \autoref{corolario_divisibilidade_1.1} sabemos que não é preciso o conjunto $S$ ser ordenado.
+Assim a complexidade do algoritmo final será $O(|S|\log (\max (S_i-S_{i-1})))$.
 
 
 
@@ -664,6 +676,7 @@ $max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Bi
 
 Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
 \\
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
