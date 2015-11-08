@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 NOV 2015 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 NOV 2015 23:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,11 +1261,11 @@ r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Info: Redefining \includegraphics on input line 66.
- (./poster.nav) <figures/logo.png, id=13, 1003.75pt x 501.875pt>
+ (./poster.nav) <figures/logo.png, id=13, 1204.5pt x 501.875pt>
 File: figures/logo.png Graphic file (type png)
  <use figures/logo.png>
 Package pdftex.def Info: figures/logo.png used on input line 66.
-(pdftex.def)             Requested size: 567.36038pt x 283.69008pt.
+(pdftex.def)             Requested size: 567.36038pt x 236.40967pt.
 LaTeX Font Info:    Calculating math sizes for size <34.83> on input line 321.
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
 line 321.
@@ -1289,13 +1289,13 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <29.04> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 5.
 
 )
-Overfull \vbox (185.46709pt too high) detected at line 321
+Overfull \vbox (138.18668pt too high) detected at line 321
  []
 
 File: figures/logo.png Graphic file (type png)
 <use figures/logo.png>
 Package pdftex.def Info: figures/logo.png used on input line 321.
-(pdftex.def)             Requested size: 567.36038pt x 283.69008pt.
+(pdftex.def)             Requested size: 567.36038pt x 236.40967pt.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./figures/logo.png> <./figures/placeholder.jpg>]
@@ -1337,7 +1337,7 @@ usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfso1728.pfb>
 
-Output written on poster.pdf (1 page, 273248 bytes).
+Output written on poster.pdf (1 page, 306881 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
