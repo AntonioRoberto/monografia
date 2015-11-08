@@ -20,19 +20,19 @@ Caso contrário ($m\nmid (a-b)$), dizemos que $a$ não é congruente à $b$ mód
 
 \begin{definition}
 Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos modulo $n$ se:
-\begin{enumerate}
-\item$\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$
-\item$s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$
-\\
-\end{enumerate}
+%\begin{enumerate}
+$\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$
+%\item$s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$
+%\\
+%\end{enumerate}
 \end{definition}
 
 
-\begin{corollary}\label{corolario_implicacao_mdc}
+\begin{proposition}\label{corolario_implicacao_mdc}
 Dados inteiros $a$, $b$, $c$, $d$ com $MDC(c,d)=1$, temos que: 
 
 $ac \equiv bc (mod$ $d) \Rightarrow a \equiv b (mod$ $d)$.
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 
 $ac \equiv bc (mod$ $d) \Rightarrow d|(ac-bc) \Rightarrow d|c(a-b) \Rightarrow d|(a-b)$, já que $MDC(c,d)=1$
@@ -41,23 +41,21 @@ $\Rightarrow a \equiv b (mod$ $d)$. $\square$
 \\
 
 
-\begin{corollary}\label{residuo_completo_1n}
-O conjunto $R = \{r_0, r_2, r_3,...,r_{n-1}\}$ com $r_i = i$, é um sistema completo de resíduos módulo $n$.
-\end{corollary}
+\begin{proposition}\label{residuo_completo_1n}
+O conjunto $R = \{0, 1, 2, 3,...,n-1\}$, é um sistema completo de resíduos módulo $n$.
+\end{proposition}
 \textbf{Demonstração:}
-Pelo \autoref{algoritmo_divisao} sabemos que para qualquer inteiro $a$, existe $q, r$ tal que, $a = qn + r, 0 \leq r < n$. Assim, $a\equiv r(mod$ $n)$, sendo $r$ um dos $r_i$ em $R$.
-Sabemos também que, $0 < |r_i-r_j| < (n-1)$, para $i\neq j$, e assim $r_i\not\equiv r_j(mod$ $n)$.
-Portanto o conjunto $R$ é um sistema completo de resíduos módulo $n$. $\square$
+Pelo \autoref{algoritmo_divisao} sabemos que para qualquer inteiro $a$, existe $q, r$ tal que, $a = qn + r, 0 \leq r < n$. Assim, $a\equiv r(mod$ $n)$, com $r \in R$. $\square$
 \\
 
 \begin{theorem}
-Se o conjunto $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos módulo $n$, então $k=n$.
+Se o conjunto $S = \{s_0, s_1, s_2, ..., s_{k-1}\}$ é um sistema completo de resíduos módulo $n$, então $k=n$.
 \end{theorem}
 \textbf{Demonstração:}
-Tome o conjunto $R = \{r_0, r_2, r_3,...,r_{n-1}\}$ com $r_i = i$. Pelo \textbf{Corolário} \autoref{residuo_completo_1n} sabemos que $R$ é um sistema completo de resíduos módulo $n$.
+Tome o conjunto $R = \{0, 1, 2, 3,...,n-1\}$. Pela \textbf{Proposição} \autoref{residuo_completo_1n} sabemos que $R$ é um sistema completo de resíduos módulo $n$.
 
-Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente à exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$, ou simplesmente $k\leq n$. 
-Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente à exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
+Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente a exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$, ou simplesmente $k\leq n$. 
+Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente a exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
 Disso temos que, $|R| = |S|$, ou melhor, $k=n$. $\square$
 \\
 
@@ -75,9 +73,9 @@ Congruências da forma $ax \equiv b (mod$ $m)$, onde $a$, $b$ e $m$ são inteiro
 
 
 
-\begin{corollary}\label{congruencia_linear_ida}
+\begin{proposition}\label{congruencia_linear_ida}
 $ax \equiv b (mod$ $m)$ tem solução $\Rightarrow$ $MDC(a,m)|b$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 Suponha que $\exists x\in\mathbb{Z}$, tal que $ax\equiv b(mod$ $m)$, assim temos:
 
@@ -87,9 +85,9 @@ $\Rightarrow b = mr + ax \Rightarrow MDC(a,m)|b$, pois $MDC(a,m)$ divide tanto $
 
 
 
-\begin{corollary}\label{congruencia_linear_volta}
+\begin{proposition}\label{congruencia_linear_volta}
 $ax \equiv b (mod$ $m)$ tem solução $\Leftarrow$ $MDC(a,m)|b$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 
 $MDC(a,m)|b \Rightarrow (ax+my)|b$ ($\triangleright$ \autoref{teorema_bezout})
@@ -100,11 +98,11 @@ $\Rightarrow b \equiv xra + yrm$ $(mod$ $m) \Rightarrow b \equiv xra$ $(mod$ $m)
 
 E assim, a \textbf{Congruência Linear} $az\equiv b (mod$ $m)$, tem solução $z=xr$. $\square$
 
-\begin{theorem}\label{teorema_congruencia_linear_ida_volta}
+\begin{corollary}\label{teorema_congruencia_linear_ida_volta}
 $ax \equiv b (mod$ $m)$ tem solução $\Leftrightarrow$ $MDC(a,m)|b$
-\end{theorem}
+\end{corollary}
 \textbf{Demonstração:}
-Segue trivialmente dos \textbf{Corolários} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}.
+Segue trivialmente das \textbf{Proposições} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}.
 
 
 
@@ -115,7 +113,7 @@ O conjunto $S = \{s_0, s_1, s_2,..., s_{n-1}\}$ com $s_i = im + p$, $m, n, p \in
 \textbf{Demonstração:}
 Primeiro provaremos que $\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$.
 
-Tome um inteiro $a$ qualquer e a Congruência Linear: $(a-p)\equiv xm(mod$ $n)$. Pelo \autoref{teorema_congruencia_linear_ida_volta} sabemos que essa Congruência Linear tem solução, já que $MDC(m,n)=1$. Assim:
+Tome um inteiro $a$ qualquer e a Congruência Linear: $(a-p)\equiv xm(mod$ $n)$. Pelo \textbf{Corolário} \autoref{teorema_congruencia_linear_ida_volta} sabemos que essa Congruência Linear tem solução, já que $MDC(m,n)=1$. Assim:
 
 $(a-p)\equiv xm(mod$ $n) \Rightarrow a\equiv xm+p(mod$ $n) \Rightarrow a\equiv im + p (mod$ $n), i=x\bmod n$
 
@@ -130,7 +128,7 @@ $(i-j)m\not\equiv 0(mod$ $n) \Rightarrow im \not\equiv jm(mod$ $n) \Rightarrow i
 
 $\Rightarrow s_i \not\equiv s_j(mod$ $n)$.
 
-Disso seque que $S$ é um sistema completo de resíduos módulo $n$. $\square$
+Disso segue que $S$ é um sistema completo de resíduos módulo $n$. $\square$
 
 
 %----------------------------------------------------------------------------------------
@@ -146,29 +144,29 @@ Dado um número primo qualquer $p$, temos que:
 $a^{p-1} \equiv 1 (\bmod$ $p), \forall a \in \mathbb{Z} \mid MDC(a, p) = 1$
 \end{theorem}
 \textbf{Demonstração:}
-Tome os conjuntos $S = \{s_0, s_1, s_2, ..., s_{p-1}\}$, com $s_i = ai$, e $T = \{t_0, t_1, t_2, t_3, ..., t_{p-1}\}$, com $t_i = i$. 
+Tome os conjuntos $S = \{s_0, s_1, s_2, ..., s_{p-1}\}$, com $s_i = ai$, e $T = \{0, 1, 2,..., p-1\}$. 
 Claramente o conjunto $T$ é um \textit{Sistema completo de resíduos módulo $p$}.
-Pelo Teoremo TODO sabemos que $S$ também é um \textit{Sistema completo de resíduos módulo $p$},
+Pelo \autoref{sistemo_completp_residuo} sabemos que $S$ também é um \textit{Sistema completo de resíduos módulo $p$},
 e assim, $\forall s_i\in S$, $\exists! t_j\in T, 0\leq t_j\leq(p-1)$, tal que $s_i\equiv t_j(mod$ $p)$. Dessa informação podemos derivar a seguinte congruência modular:
 
-$s_1.s_2.s_3...s_{p-1} \equiv t_1.t_2.t_3...s_{p-1} (mod$ $p)$ ($\triangleright$ Observe que o correspondente à $s_0$ é $t_0$)
+$s_1.s_2.s_3...s_{p-1} \equiv t_1.t_2.t_3...t_{p-1} (mod$ $p)$ ($\triangleright$ Observe que o correspondente a $s_0$ é $t_0$)
 
 $\Rightarrow a.2a.3a....(p-1)a \equiv 1.2.3....(p-1) (mod$ $p) \Rightarrow a^{p-1}(p-1)! \equiv (p-1)! (mod$ $p)$
 
-E aplicando os \textbf{Corolários} \autoref{mdc_primo_fatorial} e \autoref{corolario_implicacao_mdc}, temos:
+E aplicando os \textbf{Corolários} \autoref{mdc_primo_fatorial} e \textbf{Proposição} \autoref{corolario_implicacao_mdc}, temos:
 
 $a^{p-1}\equiv 1(mod$ $p)$. $\square$
 \\
 
 
 \begin{theorem}\label{teorema_fermat_expansao}
-Dados os inteiros quaisquer $a$, $b$ e um número primo $p$, com $MDC(a, p) = 1$, temos que:
+Dados os inteiros $a$ e $b$ quaisquer e um número primo $p$, com $MDC(a, p) = 1$, temos que:
 
 $a^{b} \equiv a^{b \bmod (p-1)} (\bmod$ $p)$
 
 \end{theorem}
 \textbf{Demonstração:}
-Pelo \autoref{algoritmo_divisao} pode escrever $b=q(p-1)+r$, onde $r=b\bmod(p-1)$. Assim temos:
+Pelo \autoref{algoritmo_divisao} podemos escrever $b=q(p-1)+r$, onde $r=b\bmod(p-1)$. Assim temos:
 
 $a^b = a^{q(p-1)+r} = a^{q(p-1)}a^r = (a^{p-1})^qa^r \Rightarrow a^b \equiv (a^{p-1})^qa^r (mod$ $p)$ 
 
@@ -200,6 +198,51 @@ Nessas condições o sistema acima tem solução única módulo $M$, em que $M =
 TODO
 
 
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Exponenciação Modular}
+
+\textit{Exponenciação Modular} é um algoritmo muito usado em \textit{Ciência da Computação} principalmente no campo da \textit{Criptografia}.
+
+O algoritmo recebe inteiros $a$, $b$, e $m$ e calcula $a^b\bmod m$, usando divisão e conquista sobre a seguinte equação:
+\[
+ a^b\bmod m = 
+  \begin{cases} 
+   (a^{\lfloor \frac{b}{2} \rfloor})^2 \mod m& \text{se } b \text{ for par} \\
+   a(a^{\lfloor \frac{b}{2} \rfloor})^2 \mod m& \text{se } b \text{ for impar} 
+  \end{cases}
+\]
+\clearpage
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Exponenciação Modular}
+\begin{algorithmic}[1]
+\Procedure{$EXPMOD (a, b, m)$}{}
+\If {$b = 0$}
+\State \Return $1$
+\EndIf 
+\\
+\State $pot \gets EXPMOD(a, \lfloor \frac{b}{2} \rfloor, m)$
+\State $pot \gets pot^2 \mod m$
+\\
+\If {$b \equiv 0 (mod$ $2)$}
+\State \Return $pot$
+\Else
+\State \Return $a(pot) \mod m$
+\EndIf
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O tempo $T(a,b,m)$ que o algoritmo consome é dado por: $T(a,b,m) = T(a,b/2,m)+O(1)$.
+
+Assim temos que a complexidade do algoritmo é $O(\log b)$.
 
 
 %----------------------------------------------------------------------------------------
@@ -255,11 +298,11 @@ Tome a seguinte função $f_K:\mathbb{N}^* \longmapsto \mathbb{N}$:
   \end{cases}
 \]
 
-São dados dois número inteiro $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod p$, em que $p = (10^9+7)$.
+São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod p$, em que $p = (10^9+7)$.
 \\
 
 \textbf{Solução:}
-Escrevendo os valores dos primeiros termos que a função assume, temos: $f(1)=1, f(2)=K, f(3)=K, f=(4)=K^2, f(5)=K^4, f(6)=K^8, f(7)=K^{16}$.
+Escrevendo os valores dos primeiros termos que a função assume, temos: $f_K(1)=1, f_K(2)=K, f_K(3)=K, f_K(4)=K^2, f_K(5)=K^4, f_K(6)=K^8, f_K(7)=K^{16}$.
 
 Provaremos, por indução, que $f_K(N) = K^{2^{N-3}}, N \geq 3$.
 
