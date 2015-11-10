@@ -28,6 +28,9 @@
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 %\usepackage[T1]{fontenc}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
 
 \usepackage{amsmath,amsthm,amssymb,latexsym} % For including math equations, theorems, symbols, etc
 
@@ -106,42 +109,18 @@ Equações diofantinas, Congruência Modular, Números de Fibonacci, são alguns
 \end{block}
 
 %----------------------------------------------------------------------------------------
-%	MATERIALS
+%	Problema
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Materials}
+\begin{block}{Problema exemplo: Skyscraper Floor}
 
-\begin{columns} % Subdivide the first main column
-\begin{column}{.54\textwidth} % The first subdivided column within the first main column
-\begin{itemize}
-\item Vestibulum nisl, quis euismod velit eros in ligula.
-\begin{itemize}
-\item Cras rhoncus quam et augue convallis in elementum urna tincidunt.
-\end{itemize}
-\item Proin ut vestibulum augue.
-\begin{itemize}
-\item Donec dapibus sagittis neque eu ultrices.
-\end{itemize}
-\end{itemize}
-\end{column}
+\textbf{Resumo do problema: }
+É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem um posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$),
+de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro.
+Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais à $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
+Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consite em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
+usando os $E$ elevadores.
 
-\begin{column}{.43\textwidth} % The second subdivided column within the first main column
-\centering
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{placeholder.jpg}
-\caption{Figure caption}
-\end{figure}
-\end{column}
-\end{columns} % End of the subdivision
-
-\begin{itemize}
-\item Curabitur sapien ligula, faucibus in feugiat quis, vestibulum a turpis.
-\begin{itemize}
-\item Phasellus quis nunc neque. Suspendisse mauris diam, suscipit non gravida in, placerat id enim. Ut nec ipsum in lectus ultrices sagittis.
-\item Ut nec ipsum in lectus ultrices sagittis.
-\item Phasellus quis nunc neque.
-\end{itemize}
-\end{itemize}
 
 \end{block}
 
@@ -149,51 +128,33 @@ Equações diofantinas, Congruência Modular, Números de Fibonacci, são alguns
 %	METHODS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Methods}
+\begin{block}{Solução Parte 1}
 
-\begin{itemize}
-\item Maecenas Vel Nisl Elit
-\begin{itemize}
-\item Suspendisse potenti. Fusce a est eget turpis rhoncus varius sed sed dui. Cras justo nibh, bibendum a cursus eget, consequat et dui. Maecenas vel nisl elit, sed dignissim dolor. 
-\item In hac habitasse platea dictumst.
-\end{itemize}
+\textbf{Proposição 1: }
+Tome $[d,x_0,y_0]$ como sendo a tupla retornada pelo $ExtendedMDC(a,b)$, com $a$, $b$, $c$ inteiros e $MDC(a,b)|c$.
+Então temos que todas as soluções da equação $ax+by=c$ são da forma: $x=(x_0\frac{c}{d} + \frac{bq}{d})$, $y=(y_0\frac{c}{d} - \frac{aq}{d})$, em que $q\in\mathbb{Z}$.
 
-\item Viewpoint Matching Constraints
-\begin{itemize}
-\item Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-\item Proin in nisi diam.
-\item Nam ultricies pellentesque nunc, ultrices volutpat nisl ultrices a.
-\end{itemize}
+\textbf{Teorema 1: }
+Dados inteiros $a$, $b$, $c$ , temos que:
+$MDC(a,b)|c \Leftrightarrow$ a \textit{Equação Diofantina} $ax + by=c$, tem solução inteira.
 
-\item Volutpat 
-\begin{itemize}
-\item Duis semper lorem eget dui dignissim porttitor.
-\item Nulla facilisi. In ullamcorper lorem quis dolor.
-\end{itemize}
-\end{itemize}
+\textbf{Obs.:} A proposição e o teorema citados acima foram devidamente demonstrados na monografia correspondente a esse poster encontrada em: \href{https://github.com/AntonioRoberto/monografia/blob/master/main.pdf}{https://github.com/AntonioRoberto/monografia/blob/master/main.pdf}.
+\newline
 
-\end{block}
+\textbf{Solução: }Primeiro imagine que temos um grafo bidirecionado com $E$ vértices, onde cada vértice representa um elevador e cada aresta $(u,v)$ nos diz que os elevadores $u$ e $v$
+conseguem chegar em algum andar em comum.
+Sabemos quais elevadores atingem o andar $A$, basta verificar se $Y_i+X_it=A$ tem solução $t$ inteira. Analogamente sabemos quais elevadores atingem o andar
+$B$. Então só precisaríamos fazer uma busca (\href{https://en.wikipedia.org/wiki/Breadth-first_search}{BFS} ou \href{https://en.wikipedia.org/wiki/Depth-first_search}{DFS})
+nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ até algum elevador que atinge o andar $B$.
 
-%----------------------------------------------------------------------------------------
-%	MATHEMATICAL SECTION
-%----------------------------------------------------------------------------------------
+Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
 
-\begin{block}{Mathematical Section}
+Dois elevadores $u$ e $v$ tem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
+$Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
 
-\begin{itemize}
-\item Maecenas Ultricies Feugiat Velit Non Mattis.
-\begin{itemize}
-\item Duis ante erat, bibendum nec tempus nec, interdum quis est. Nulla at mollis tortor. Phasellus quis leo dolor, aliquam laoreet orci $X$ Donec dapibus sagittis neque eu nec, interdum quis est. $Y_n, n=1,\cdots,N$ ndum nec tempus nec, interd
-\begin{align*}
-X \rightarrow r(X) & = \arg \max_{c} \Big\{ \max_n \big\{ \sum_{x_i \in X} \delta(x_i,Y_{n,c})\big\} \Big\} 
-\end{align*}
-\item Cras faucibus scelerisque cursus. Proin ut vestibulum augue. $\delta(x_i,Y_{n,c})$
-\end{itemize}
-\item Fusce tempus arcu id ligula varius dictum. Donec ut nisl dui, ac consectetur elit. In nec enim porta augue venenatis sollicitudin. Phasellus quis nunc neque. Suspendisse mauris diam, suscipit non gravida in, placerat id enim. Ut nec ipsum in lectus ultrices sagittis.
-\end{itemize}
+
 
 \end{block}
-
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of the first column
@@ -201,87 +162,73 @@ X \rightarrow r(X) & = \arg \max_{c} \Big\{ \max_n \big\{ \sum_{x_i \in X} \delt
 \begin{column}{.03\textwidth}\end{column} % Empty spacer column
  
 \begin{column}{.465\textwidth} % The second column
-
 %----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
+\begin{block}{Solução Parte 2}
 
-\begin{block}{Results: Table}
 
-\begin{itemize}
-\item Ased Aliquet Luctus Lectus
-\end{itemize}
+Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
+Pelo \textbf{Teorema 1}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão
+conexos pelo andar $Y_u$. Checaremos essas restrições no começo do algoritmo, e daqui para frente assumiremos que $MDC(a,b)|c$ e $Y_u\neq Y_v$.
 
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+Tome $t_1$, $t_2$ como sendo uma solução qualquer da equação diofantina $at_1+bt_2 = MDC(a,b)=d$ (Observe que $t_1$ e $t_2$ podem ser calculados com o \textit{Algoritmo Extendido de Euclides}), temos então pelo \textbf{Proposição 1} que todas as soluções da
+equação $at_u + bt_v = c$, são da forma $t_u = (t_1\frac{c}{d} + \frac{bq}{d})$ e $t_v = (t_2\frac{c}{d} - \frac{aq}{d})$, com $q \in\mathbb{Z}$. Logo:
+\\
 
-\begin{itemize}
-\item Sollicitudin Vel Orci
-\item Maecenas Ultricies Feugiat Velit Non Mattis.
-\end{itemize}
+$t_u = (t_1\frac{c}{d} + \frac{bq}{d}) \Rightarrow \frac{-t_1c}{b} \leq q \leq \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
 
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-     
+Analogamente temos:
+\\
+
+$t_v = (t_2\frac{c}{d} - \frac{aq}{d}) \Rightarrow \frac{t_2c}{a} \geq q \geq \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Das duas inequações acima, temos:
+\\
+
+$max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Big) \leq q \leq min\Big(\frac{t_2c}{a}, \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}  \Big)$
+\\
+
+Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
+\\
 \end{block}
 
-%------------------------------------------------
 
-\begin{block}{Results: Figure}
 
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{placeholder.jpg}
-\caption{Figure caption}
+%----------------------------------------------------------------------------------------
+% Codigo
+%----------------------------------------------------------------------------------------
+
+     
+%----------------------------------------------------------------------------------------
+%Curiosidades
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Curiosidades da ACM-ICPC}
+
+ACM-ICPC (International Collegiate Programming Contest) é uma competição de programação
+de várias etapas e baseada em equipe. O principal objetivo é encontrar algoritmos
+eficientes, que resolvem os problemas abordados pela competição, o mais rápido
+possível.
+
+
+Nos últimos anos a ACM-ICPC teve um crescimento significativo. Se compararmos
+o número de competidores, temos que de 1997 (ano em que começou o patrocinio
+da IBM) até 2014 houve um aumento maior que $1500\%$, totalizando 38160
+competidores de 2534 universidades em 101 países ao redor do mundo.
+
+Para mais informa\c{c}\~oes sobre as competi\c{c}\~oes passadas acesse \href{icpc.baylor.edu}{icpc.baylor.edu}.
+\newline
+\begin{figure}%[!htb]
+    %\centering
+    \includegraphics[width=0.8\linewidth]{grafico.png}
+    \caption{Crescimento do n\'umero de participantes por ano.}
 \end{figure}
 
-\end{block}
 
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Conclusion}
-
-\begin{itemize}
-\item Opet volutpat ligula. Duis semper lorem eget dui dignissim porttitor. Nulla facilisi. In ullamcorper lorem quis dolor iaculis nec egestas enim ultricies. Cras ut mauris elit, ut lacinia dui. Proin in ante et libero hendrerit iaculis.
-\item Nulla eu erat a urna laoreet auctor id a turpis. Nam mollis tristique neque eu luctus. Suspendisse rutrum congue nisi sed convallis. 
-\item Aenean id neque dolor.
-\item Opet volutpat ligula. Duis semper lorem eget dui dignissim porttitor. Nulla facilisi. In ullamcorper lorem quis dolor iaculis nec egestas enim ultricies. Cras ut mauris elit, ut lacinia dui. Proin in ante et libero hendrerit iaculis.
-\end{itemize}
 
 \end{block}
 
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-
-\begin{block}{References}
-        
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{\bibliographystyle{unsrt}
-\bibliography{sample}}
-
-\end{block}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -290,7 +237,8 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \begin{block}{Acknowledgments}
 
 \begin{itemize}
-\item Nam mollis tristique neque eu luctus. Suspendisse rutrum congue nisi sed convallis. Aenean id neque dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+\item Carlos Eduardo Ferreira - Auxílio durante todo o desenvolvimento desse trabalho
+\item Renzo Gomez Dias - Revisão dos textos
 \end{itemize}
 
 \end{block}
