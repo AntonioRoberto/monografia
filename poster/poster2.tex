@@ -32,10 +32,6 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{hyperref}
 
-\usepackage{amssymb}
-\usepackage{amsmath}
-
-
 \usepackage{amsmath,amsthm,amssymb,latexsym} % For including math equations, theorems, symbols, etc
 
 %\usepackage{times}\usefonttheme{professionalfonts}  % Uncomment to use Times as the main font
@@ -116,19 +112,15 @@ Equações diofantinas, Congruência Modular, Números de Fibonacci, são alguns
 %	Problema
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Crivo de Erastótenes}
+\begin{block}{Problema exemplo: Skyscraper Floor}
 
-O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf{Erastótenes} (a.C. 285-194 a.C.) para o cálculo de números primos
-até um certo valor limite $N$.
-O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
-Desse modo, ao final do algoritmo, os elementos não marcados são números primos.
-\newline
+\textbf{Resumo do problema: }
+É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem um posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$),
+de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro.
+Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais à $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
+Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consite em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
+usando os $E$ elevadores.
 
-\begin{figure}%[!htb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{crivo.jpg}
-    \caption{Tabela usado no \textit{Crivo de Erastóteles} com $N=100$.}
-\end{figure}
 
 \end{block}
 
@@ -136,12 +128,31 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
 %	METHODS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Pseudocódigo}
-\begin{figure}%[!htb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{code.png}
-    \caption{Pseudocódigo do \textit{Crivo de Erastóteles}.}
-\end{figure}
+\begin{block}{Solução Parte 1}
+
+\textbf{Proposição 1: }
+Tome $[d,x_0,y_0]$ como sendo a tupla retornada pelo $ExtendedMDC(a,b)$, com $a$, $b$, $c$ inteiros e $MDC(a,b)|c$.
+Então temos que todas as soluções da equação $ax+by=c$ são da forma: $x=(x_0\frac{c}{d} + \frac{bq}{d})$, $y=(y_0\frac{c}{d} - \frac{aq}{d})$, em que $q\in\mathbb{Z}$.
+
+\textbf{Teorema 1: }
+Dados inteiros $a$, $b$, $c$ , temos que:
+$MDC(a,b)|c \Leftrightarrow$ a \textit{Equação Diofantina} $ax + by=c$, tem solução inteira.
+
+\textbf{Obs.:} A proposição e o teorema citados acima foram devidamente demonstrados na monografia correspondente a esse poster encontrada em: \href{https://github.com/AntonioRoberto/monografia/blob/master/main.pdf}{https://github.com/AntonioRoberto/monografia/blob/master/main.pdf}.
+\newline
+
+\textbf{Solução: }Primeiro imagine que temos um grafo bidirecionado com $E$ vértices, onde cada vértice representa um elevador e cada aresta $(u,v)$ nos diz que os elevadores $u$ e $v$
+conseguem chegar em algum andar em comum.
+Sabemos quais elevadores atingem o andar $A$, basta verificar se $Y_i+X_it=A$ tem solução $t$ inteira. Analogamente sabemos quais elevadores atingem o andar
+$B$. Então só precisaríamos fazer uma busca (\href{https://en.wikipedia.org/wiki/Breadth-first_search}{BFS} ou \href{https://en.wikipedia.org/wiki/Depth-first_search}{DFS})
+nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ até algum elevador que atinge o andar $B$.
+
+Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
+
+Dois elevadores $u$ e $v$ tem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
+$Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
+
+
 
 \end{block}
 %----------------------------------------------------------------------------------------
@@ -152,31 +163,41 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
  
 \begin{column}{.465\textwidth} % The second column
 %----------------------------------------------------------------------------------------
-\begin{block}{Problema Exemplo: Goldbach's Conjecture}
+\begin{block}{Solução Parte 2}
 
-\textbf{Link do Problema: }\url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=484}
-\newline
 
-\textbf{Resumo: }
-É dado um número inteiro $n$ ($6 \leq n < 10^6$). O problema consiste em verificar se $n$ pode ser escrito como a soma de dois números primos ímpares. E em caso positivo dizer quais são esses primos.
+Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
+Pelo \textbf{Teorema 1}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão
+conexos pelo andar $Y_u$. Checaremos essas restrições no começo do algoritmo, e daqui para frente assumiremos que $MDC(a,b)|c$ e $Y_u\neq Y_v$.
 
+Tome $t_1$, $t_2$ como sendo uma solução qualquer da equação diofantina $at_1+bt_2 = MDC(a,b)=d$ (Observe que $t_1$ e $t_2$ podem ser calculados com o \textit{Algoritmo Extendido de Euclides}), temos então pelo \textbf{Proposição 1} que todas as soluções da
+equação $at_u + bt_v = c$, são da forma $t_u = (t_1\frac{c}{d} + \frac{bq}{d})$ e $t_v = (t_2\frac{c}{d} - \frac{aq}{d})$, com $q \in\mathbb{Z}$. Logo:
+\\
+
+$t_u = (t_1\frac{c}{d} + \frac{bq}{d}) \Rightarrow \frac{-t_1c}{b} \leq q \leq \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Analogamente temos:
+\\
+
+$t_v = (t_2\frac{c}{d} - \frac{aq}{d}) \Rightarrow \frac{t_2c}{a} \geq q \geq \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Das duas inequações acima, temos:
+\\
+
+$max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Big) \leq q \leq min\Big(\frac{t_2c}{a}, \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}  \Big)$
+\\
+
+Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
+\\
 \end{block}
+
 
 
 %----------------------------------------------------------------------------------------
 % Codigo
 %----------------------------------------------------------------------------------------
-
-\begin{block}{Solução}
-Para resolver esse problema basta rodar o \textbf{Crivo de Erastótenes} para $N=n$, e fazer uma varredura linear no vetor $isPrime[]$. Se existir um índice $a$ ($6 \leq a \leq n$) tal que $isPrime[a]$ é $true$ e $isPrime[n-a]$ também é $true$, então o problema acima tem solução.
-\newline
-
-\begin{figure}%[!htb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{solution.png}
-    \caption{Pseudocódigo da solução acima.}
-\end{figure}
-\end{block}
 
      
 %----------------------------------------------------------------------------------------

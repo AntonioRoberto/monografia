@@ -503,6 +503,41 @@ $x = x_0\frac{c}{d} + \frac{bq}{d}$, $y = y_0\frac{c}{d} - \frac{aq}{d}$ $\squar
 \section{Problemas Propostos}
 
 
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-543}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=484}{543 - Goldbach's Conjecture}\\
+
+\textbf{Resumo:} 
+É dado um número inteiro $n$ ($6 \leq n < 10^6$). O problema consiste em verificar se $n$ pode ser escrito como a soma de dois números
+primos ímpares. E em caso positivo dizer quais são esses primos.
+\\
+
+\textbf{Solução:}
+Para resolver esse problema basta rodar o \textbf{Algoritmo} \autoref{crivo_erastotenes} para $N=n$, e fazer uma varredura linear no vetor $isPrime[]$. Se existir um índice $a$ ($6 \leq a \leq n$) tal que $isPrime[a]$ é $true$ e $isPrime[n-a]$ também é $true$, então o problema acima tem solução. 
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Sum of odd primes}
+\begin{algorithmic}[1]
+\Procedure{$SumOfPrimes(n)$}{}
+\State $isPrime[] \gets CrivoErastotenes(n)$
+\\
+\For {i := 6 to n}
+\If {$isPrime[i]$ e $isPrime[n-i]$} 
+\State \Return $[i, n-i]$
+\EndIf
+\EndFor
+\\
+\State \Return $"No$ $Solution"$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+O \textit{Crivo de Erastótenes} consome tempo proporcional a $O(n \log \log n)$, e o laço na linha $4$ consome tempo $O(n)$. Assim a complecidade do algoritmo $SumOfPrimes(n)$ é $O(n \log \log n)$.
+
 %----------------------------------------------------------------------------------------
 \subsection{CodeChef-GOC203}
 \href{https://www.codechef.com/problems/GOC203}{GOC203 - Fight for Attendence}\\
