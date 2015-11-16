@@ -29,9 +29,9 @@
 \floatname{algorithm}{Algoritmo}
 \newcommand{\GL}{Gyárfás \& Lehel}
 
-
-\title{Empacotamento de árvores em grafos completos}
-\author{Renzo Gonzalo Gómez Diaz \\ {Orientadora: Yoshiko Wakabayashi} }
+\title{Teoria dos Números e Computação: Uma abordagem utilizando problemas de competições de programação}
+%\title{Teoria dos Números e Computação: Uma abordagem utilizando problemas de competições de programação}
+\author{Antonio Roberto de Campos Junior \\ {Supervisor: Carlos Eduardo Ferreira } }
 \institute{Instituto de Matemática e Estatística\\Universidade de São Paulo}
 %\date{}
 
@@ -52,51 +52,27 @@
 \section{Introdução}
 
 \frame{
-	\frametitle{Empacotamento}
-	Queremos \textbf{empacotar} $C_4$ e $P_3$ em $G$.
-	\begin{figure}[h]
-		\centering
-  		\subfloat[$C_4$]{\includegraphics[scale=0.45]{C_4.pdf}}
-		\qquad \qquad
-		\subfloat[$P_3$]{\raisebox{12mm}{\includegraphics[scale=0.45]{P_3.pdf}} } 
-		\\
-		\subfloat[$G$]{\includegraphics[scale=0.55]{G.pdf}} 
-	\end{figure}
+	\frametitle{Objetivos}
+	\begin{itemize}[<+->]
+		\setlength{\itemsep}{5pt}
+		\item Estudar tópicos específicos relacionados à Teoria dos Números
+		\item Criar um material que mostre a aplicação direta dessa teoria na solução de problemas de competições de programação
+		\item Demonstração da teoria e implementação dos algoritmos que resolvem os problemas que serão abordados
+	\end{itemize}
 }
-
 \setcounter{subfigure}{0}
 
-\frame{
-	\frametitle{Empacotamento}
-	Queremos \textbf{empacotar} $C_4$ e $P_3$ em $G$.
-	\begin{figure}[h]
-		\centering
-  		\subfloat[$C_4$]{\includegraphics[scale=0.45]{C_4.pdf}}
-		\qquad \qquad
-		\subfloat[$P_3$]{\raisebox{12mm}{\includegraphics[scale=0.45]{P_3.pdf}} } 
-		\\
-		\subfloat[$G$]{\includegraphics[scale=0.55]{G-emp.pdf}} 
-		\caption{Um empacotamento de $C_4$ e $P_3$ em $G$.}
-	\end{figure}
-}
 
+\frame{
+	\frametitle{Motivação}
+	\begin{itemize}[<+->]
+		\setlength{\itemsep}{5pt}
+		\item Experiência nesse tipo de competição
+		\item Falta de um bom material didático nesse molde
+	\end{itemize}
+}
 \setcounter{subfigure}{0}
 
-\frame{
-	\frametitle{A conjectura}
-	O problema que estudamos foi
-	\vfill
-	\begin{conjecture}[{\GL}, 1976]
-		Uma sequência de árvores $T_1,\ldots,T_n$ pode ser empacotada no~$K_n$.
-	\end{conjecture}
-	\vfill
-	\pause
-	\begin{figure}[H]
-		\includegraphics[scale=0.9]{figura1.pdf}
-		\caption{Empacotamento de estrelas no $K_5$.}
-		\label{fig:packing}
-	\end{figure} 
-}
 
 \frame{
 	\frametitle{A conjectura}

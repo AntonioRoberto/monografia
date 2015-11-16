@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 NOV 2015 11:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 NOV 2015 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1437,8 +1437,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
  (./slides.nav)
-Overfull \hbox (8.88795pt too wide) in paragraph at lines 38--38
+Overfull \hbox (34.20236pt too wide) in paragraph at lines 38--38
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) in paragraph at lines 38--38
+ [][][][]  
  []
 
 
@@ -1446,8 +1451,13 @@ LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 40.
 
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -1470,630 +1480,876 @@ line 9.
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 ))
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [2
 
-] <./figuras/C_4.pdf, id=146, 124.21106pt x 124.21106pt>
-File: ./figuras/C_4.pdf Graphic file (type pdf)
-
-<use ./figuras/C_4.pdf>
-Package pdftex.def Info: ./figuras/C_4.pdf used on input line 65.
-(pdftex.def)             Requested size: 55.89444pt x 55.89444pt.
- <./figuras/P_3.pdf, id=147, 124.21106pt x 10.39986pt>
-File: ./figuras/P_3.pdf Graphic file (type pdf)
-
-<use ./figuras/P_3.pdf>
-Package pdftex.def Info: ./figuras/P_3.pdf used on input line 65.
-(pdftex.def)             Requested size: 55.89444pt x 4.67989pt.
- <./figuras/G.pdf, id=148, 181.11665pt x 124.21106pt>
-File: ./figuras/G.pdf Graphic file (type pdf)
-
-<use ./figuras/G.pdf>
-Package pdftex.def Info: ./figuras/G.pdf used on input line 65.
-(pdftex.def)             Requested size: 99.61446pt x 68.31628pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [3
 
- <./figuras/C_4.pdf> <./figuras/P_3.pdf> <./figuras/G.pdf>]
-File: ./figuras/C_4.pdf Graphic file (type pdf)
-
-<use ./figuras/C_4.pdf>
-Package pdftex.def Info: ./figuras/C_4.pdf used on input line 81.
-(pdftex.def)             Requested size: 55.89444pt x 55.89444pt.
-File: ./figuras/P_3.pdf Graphic file (type pdf)
- <use ./figuras/P_3.pdf>
-Package pdftex.def Info: ./figuras/P_3.pdf used on input line 81.
-(pdftex.def)             Requested size: 55.89444pt x 4.67989pt.
-
-<./figuras/G-emp.pdf, id=188, 181.11665pt x 124.21106pt>
-File: ./figuras/G-emp.pdf Graphic file (type pdf)
-
-<use ./figuras/G-emp.pdf>
-Package pdftex.def Info: ./figuras/G-emp.pdf used on input line 81.
-(pdftex.def)             Requested size: 99.61446pt x 68.31628pt.
-
-Overfull \vbox (10.1255pt too high) detected at line 81
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
+ [][]  
  []
 
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
- [][]  
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [4
 
- <./figuras/G-emp.pdf>]
-<./figuras/figura1.pdf, id=223, 113.34344pt x 118.64124pt>
-File: ./figuras/figura1.pdf Graphic file (type pdf)
-
-<use ./figuras/figura1.pdf>
-Package pdftex.def Info: ./figuras/figura1.pdf used on input line 99.
-(pdftex.def)             Requested size: 102.00813pt x 106.77611pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [5
 
- <./figuras/figura1.pdf>]
-File: ./figuras/figura1.pdf Graphic file (type pdf)
- <use ./figuras/figura1.pdf>
-Package pdftex.def Info: ./figuras/figura1.pdf used on input line 99.
-(pdftex.def)             Requested size: 102.00813pt x 106.77611pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [6
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [7
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [8
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [9
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [10
 
-] (./slides.toc)
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [11
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+] (./slides.toc)
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [12
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [13
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [14
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [15
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [16
 
-] <./figuras/stars1.pdf, id=620, 113.34344pt x 118.64124pt>
-File: ./figuras/stars1.pdf Graphic file (type pdf)
-
-<use ./figuras/stars1.pdf>
-Package pdftex.def Info: ./figuras/stars1.pdf used on input line 156.
-(pdftex.def)             Requested size: 113.34315pt x 118.64093pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [17
 
- <./figuras/stars1.pdf>]
+] <./figuras/stars1.pdf, id=636, 113.34344pt x 118.64124pt>
 File: ./figuras/stars1.pdf Graphic file (type pdf)
- <use ./figuras/stars1.pdf>
-Package pdftex.def Info: ./figuras/stars1.pdf used on input line 156.
+
+<use ./figuras/stars1.pdf>
+Package pdftex.def Info: ./figuras/stars1.pdf used on input line 132.
 (pdftex.def)             Requested size: 113.34315pt x 118.64093pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [18
 
-] <./figuras/stars2.pdf, id=688, 113.34344pt x 118.64124pt>
-File: ./figuras/stars2.pdf Graphic file (type pdf)
-
-<use ./figuras/stars2.pdf>
-Package pdftex.def Info: ./figuras/stars2.pdf used on input line 172.
+ <./figuras/stars1.pdf>]
+File: ./figuras/stars1.pdf Graphic file (type pdf)
+ <use ./figuras/stars1.pdf>
+Package pdftex.def Info: ./figuras/stars1.pdf used on input line 132.
 (pdftex.def)             Requested size: 113.34315pt x 118.64093pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [19
 
- <./figuras/stars2.pdf>]
-<./figuras/bistar.pdf, id=724, 52.63866pt x 89.4251pt>
-File: ./figuras/bistar.pdf Graphic file (type pdf)
+] <./figuras/stars2.pdf, id=708, 113.34344pt x 118.64124pt>
+File: ./figuras/stars2.pdf Graphic file (type pdf)
 
-<use ./figuras/bistar.pdf>
-Package pdftex.def Info: ./figuras/bistar.pdf used on input line 188.
-(pdftex.def)             Requested size: 52.63852pt x 89.42485pt.
+<use ./figuras/stars2.pdf>
+Package pdftex.def Info: ./figuras/stars2.pdf used on input line 148.
+(pdftex.def)             Requested size: 113.34315pt x 118.64093pt.
 
-<./figuras/bistar2.pdf, id=725, 116.37578pt x 120.81136pt>
-File: ./figuras/bistar2.pdf Graphic file (type pdf)
-
-<use ./figuras/bistar2.pdf>
-Package pdftex.def Info: ./figuras/bistar2.pdf used on input line 188.
-(pdftex.def)             Requested size: 104.73721pt x 108.7292pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [20
 
- <./figuras/bistar.pdf> <./figuras/bistar2.pdf>]
+ <./figuras/stars2.pdf>]
+<./figuras/bistar.pdf, id=742, 52.63866pt x 89.4251pt>
 File: ./figuras/bistar.pdf Graphic file (type pdf)
- <use ./figuras/bistar.pdf>
-Package pdftex.def Info: ./figuras/bistar.pdf used on input line 188.
+
+<use ./figuras/bistar.pdf>
+Package pdftex.def Info: ./figuras/bistar.pdf used on input line 164.
 (pdftex.def)             Requested size: 52.63852pt x 89.42485pt.
+
+<./figuras/bistar2.pdf, id=743, 116.37578pt x 120.81136pt>
 File: ./figuras/bistar2.pdf Graphic file (type pdf)
 
 <use ./figuras/bistar2.pdf>
-Package pdftex.def Info: ./figuras/bistar2.pdf used on input line 188.
+Package pdftex.def Info: ./figuras/bistar2.pdf used on input line 164.
 (pdftex.def)             Requested size: 104.73721pt x 108.7292pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [21
 
-]
+ <./figuras/bistar.pdf> <./figuras/bistar2.pdf>]
 File: ./figuras/bistar.pdf Graphic file (type pdf)
  <use ./figuras/bistar.pdf>
-Package pdftex.def Info: ./figuras/bistar.pdf used on input line 203.
+Package pdftex.def Info: ./figuras/bistar.pdf used on input line 164.
 (pdftex.def)             Requested size: 52.63852pt x 89.42485pt.
+File: ./figuras/bistar2.pdf Graphic file (type pdf)
 
-<./figuras/bistar5.pdf, id=801, 116.37578pt x 120.81136pt>
-File: ./figuras/bistar5.pdf Graphic file (type pdf)
-
-<use ./figuras/bistar5.pdf>
-Package pdftex.def Info: ./figuras/bistar5.pdf used on input line 203.
+<use ./figuras/bistar2.pdf>
+Package pdftex.def Info: ./figuras/bistar2.pdf used on input line 164.
 (pdftex.def)             Requested size: 104.73721pt x 108.7292pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [22
 
- <./figuras/bistar5.pdf>]
+]
 File: ./figuras/bistar.pdf Graphic file (type pdf)
  <use ./figuras/bistar.pdf>
-Package pdftex.def Info: ./figuras/bistar.pdf used on input line 218.
+Package pdftex.def Info: ./figuras/bistar.pdf used on input line 179.
 (pdftex.def)             Requested size: 52.63852pt x 89.42485pt.
 
-<./figuras/bistar3.pdf, id=839, 116.37578pt x 120.81136pt>
-File: ./figuras/bistar3.pdf Graphic file (type pdf)
+<./figuras/bistar5.pdf, id=820, 116.37578pt x 120.81136pt>
+File: ./figuras/bistar5.pdf Graphic file (type pdf)
 
-<use ./figuras/bistar3.pdf>
-Package pdftex.def Info: ./figuras/bistar3.pdf used on input line 218.
+<use ./figuras/bistar5.pdf>
+Package pdftex.def Info: ./figuras/bistar5.pdf used on input line 179.
 (pdftex.def)             Requested size: 104.73721pt x 108.7292pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [23
 
- <./figuras/bistar3.pdf>]
-<./figuras/H_6.pdf, id=876, 129.21072pt x 88.45045pt>
-File: ./figuras/H_6.pdf Graphic file (type pdf)
- <use ./figuras/H_6.pdf>
-Package pdftex.def Info: ./figuras/H_6.pdf used on input line 236.
-(pdftex.def)             Requested size: 90.44688pt x 61.91489pt.
+ <./figuras/bistar5.pdf>]
+File: ./figuras/bistar.pdf Graphic file (type pdf)
+ <use ./figuras/bistar.pdf>
+Package pdftex.def Info: ./figuras/bistar.pdf used on input line 194.
+(pdftex.def)             Requested size: 52.63852pt x 89.42485pt.
 
-<./figuras/H_5.pdf, id=877, 129.21072pt x 88.45045pt>
-File: ./figuras/H_5.pdf Graphic file (type pdf)
- <use ./figuras/H_5.pdf>
-Package pdftex.def Info: ./figuras/H_5.pdf used on input line 236.
-(pdftex.def)             Requested size: 90.44688pt x 61.91489pt.
+<./figuras/bistar3.pdf, id=857, 116.37578pt x 120.81136pt>
+File: ./figuras/bistar3.pdf Graphic file (type pdf)
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+<use ./figuras/bistar3.pdf>
+Package pdftex.def Info: ./figuras/bistar3.pdf used on input line 194.
+(pdftex.def)             Requested size: 104.73721pt x 108.7292pt.
+
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [24
 
- <./figuras/H_6.pdf> <./figuras/H_5.pdf>]
+ <./figuras/bistar3.pdf>]
+<./figuras/H_6.pdf, id=894, 129.21072pt x 88.45045pt>
 File: ./figuras/H_6.pdf Graphic file (type pdf)
  <use ./figuras/H_6.pdf>
-Package pdftex.def Info: ./figuras/H_6.pdf used on input line 236.
+Package pdftex.def Info: ./figuras/H_6.pdf used on input line 212.
 (pdftex.def)             Requested size: 90.44688pt x 61.91489pt.
+
+<./figuras/H_5.pdf, id=895, 129.21072pt x 88.45045pt>
 File: ./figuras/H_5.pdf Graphic file (type pdf)
-
-<use ./figuras/H_5.pdf>
-Package pdftex.def Info: ./figuras/H_5.pdf used on input line 236.
+ <use ./figuras/H_5.pdf>
+Package pdftex.def Info: ./figuras/H_5.pdf used on input line 212.
 (pdftex.def)             Requested size: 90.44688pt x 61.91489pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [25
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+ <./figuras/H_6.pdf> <./figuras/H_5.pdf>]
+File: ./figuras/H_6.pdf Graphic file (type pdf)
+ <use ./figuras/H_6.pdf>
+Package pdftex.def Info: ./figuras/H_6.pdf used on input line 212.
+(pdftex.def)             Requested size: 90.44688pt x 61.91489pt.
+File: ./figuras/H_5.pdf Graphic file (type pdf)
+
+<use ./figuras/H_5.pdf>
+Package pdftex.def Info: ./figuras/H_5.pdf used on input line 212.
+(pdftex.def)             Requested size: 90.44688pt x 61.91489pt.
+
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [26
 
-] <./figuras/path-H6.pdf, id=994, 129.21072pt x 88.45045pt>
-File: ./figuras/path-H6.pdf Graphic file (type pdf)
-
-<use ./figuras/path-H6.pdf>
-Package pdftex.def Info: ./figuras/path-H6.pdf used on input line 270.
-(pdftex.def)             Requested size: 103.36871pt x 70.76044pt.
-
-<./figuras/H_4.pdf, id=995, 72.30513pt x 72.30513pt>
-File: ./figuras/H_4.pdf Graphic file (type pdf)
- <use ./figuras/H_4.pdf>
-Package pdftex.def Info: ./figuras/H_4.pdf used on input line 270.
-(pdftex.def)             Requested size: 57.84418pt x 57.84418pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [27
 
- <./figuras/path-H6.pdf> <./figuras/H_4.pdf>]
+] <./figuras/path-H6.pdf, id=1013, 129.21072pt x 88.45045pt>
 File: ./figuras/path-H6.pdf Graphic file (type pdf)
- <use ./figuras/path-H6.pdf>
-Package pdftex.def Info: ./figuras/path-H6.pdf used on input line 270.
-(pdftex.def)             Requested size: 103.36871pt x 70.76044pt.
-File: ./figuras/H_4.pdf Graphic file (type pdf)
 
-<use ./figuras/H_4.pdf>
-Package pdftex.def Info: ./figuras/H_4.pdf used on input line 270.
+<use ./figuras/path-H6.pdf>
+Package pdftex.def Info: ./figuras/path-H6.pdf used on input line 246.
+(pdftex.def)             Requested size: 103.36871pt x 70.76044pt.
+
+<./figuras/H_4.pdf, id=1014, 72.30513pt x 72.30513pt>
+File: ./figuras/H_4.pdf Graphic file (type pdf)
+ <use ./figuras/H_4.pdf>
+Package pdftex.def Info: ./figuras/H_4.pdf used on input line 246.
 (pdftex.def)             Requested size: 57.84418pt x 57.84418pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [28
 
-] <./figuras/scorpion.pdf, id=1075, 246.47382pt x 118.43648pt>
-File: ./figuras/scorpion.pdf Graphic file (type pdf)
+ <./figuras/path-H6.pdf> <./figuras/H_4.pdf>]
+File: ./figuras/path-H6.pdf Graphic file (type pdf)
+ <use ./figuras/path-H6.pdf>
+Package pdftex.def Info: ./figuras/path-H6.pdf used on input line 246.
+(pdftex.def)             Requested size: 103.36871pt x 70.76044pt.
+File: ./figuras/H_4.pdf Graphic file (type pdf)
 
-<use ./figuras/scorpion.pdf>
-Package pdftex.def Info: ./figuras/scorpion.pdf used on input line 285.
-(pdftex.def)             Requested size: 147.8854pt x 71.06242pt.
+<use ./figuras/H_4.pdf>
+Package pdftex.def Info: ./figuras/H_4.pdf used on input line 246.
+(pdftex.def)             Requested size: 57.84418pt x 57.84418pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [29
 
- <./figuras/scorpion.pdf>]
-<./figuras/H_8.pdf, id=1108, 188.8937pt x 100.70624pt>
-File: ./figuras/H_8.pdf Graphic file (type pdf)
- <use ./figuras/H_8.pdf>
-Package pdftex.def Info: ./figuras/H_8.pdf used on input line 298.
-(pdftex.def)             Requested size: 122.77943pt x 65.45827pt.
+] <./figuras/scorpion.pdf, id=1094, 246.47382pt x 118.43648pt>
+File: ./figuras/scorpion.pdf Graphic file (type pdf)
 
-<./figuras/scorpion-H10.pdf, id=1109, 244.41112pt x 106.93953pt>
-File: ./figuras/scorpion-H10.pdf Graphic file (type pdf)
+<use ./figuras/scorpion.pdf>
+Package pdftex.def Info: ./figuras/scorpion.pdf used on input line 261.
+(pdftex.def)             Requested size: 147.8854pt x 71.06242pt.
 
-<use ./figuras/scorpion-H10.pdf>
-Package pdftex.def Info: ./figuras/scorpion-H10.pdf used on input line 298.
-(pdftex.def)             Requested size: 158.86533pt x 69.50986pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [30
 
- <./figuras/H_8.pdf> <./figuras/scorpion-H10.pdf>] (./slides.toc)
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+ <./figuras/scorpion.pdf>]
+<./figuras/H_8.pdf, id=1128, 188.8937pt x 100.70624pt>
+File: ./figuras/H_8.pdf Graphic file (type pdf)
+ <use ./figuras/H_8.pdf>
+Package pdftex.def Info: ./figuras/H_8.pdf used on input line 274.
+(pdftex.def)             Requested size: 122.77943pt x 65.45827pt.
+
+<./figuras/scorpion-H10.pdf, id=1129, 244.41112pt x 106.93953pt>
+File: ./figuras/scorpion-H10.pdf Graphic file (type pdf)
+
+<use ./figuras/scorpion-H10.pdf>
+Package pdftex.def Info: ./figuras/scorpion-H10.pdf used on input line 274.
+(pdftex.def)             Requested size: 158.86533pt x 69.50986pt.
+
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [31
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+ <./figuras/H_8.pdf> <./figuras/scorpion-H10.pdf>] (./slides.toc)
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [32
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [33
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [34
 
-] <./figuras/T_6.pdf, id=1300, 90.87651pt x 107.54378pt>
-File: ./figuras/T_6.pdf Graphic file (type pdf)
-
-<use ./figuras/T_6.pdf>
-Package pdftex.def Info: ./figuras/T_6.pdf used on input line 341.
-(pdftex.def)             Requested size: 72.7013pt x 86.03513pt.
-
-<./figuras/K_6.pdf, id=1301, 124.21106pt x 108.96309pt>
-File: ./figuras/K_6.pdf Graphic file (type pdf)
-
-<use ./figuras/K_6.pdf>
-Package pdftex.def Info: ./figuras/K_6.pdf used on input line 341.
-(pdftex.def)             Requested size: 99.36896pt x 87.17058pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [35
 
- <./figuras/T_6.pdf> <./figuras/K_6.pdf>]
+] <./figuras/T_6.pdf, id=1319, 90.87651pt x 107.54378pt>
 File: ./figuras/T_6.pdf Graphic file (type pdf)
- <use ./figuras/T_6.pdf>
-Package pdftex.def Info: ./figuras/T_6.pdf used on input line 341.
+
+<use ./figuras/T_6.pdf>
+Package pdftex.def Info: ./figuras/T_6.pdf used on input line 317.
 (pdftex.def)             Requested size: 72.7013pt x 86.03513pt.
+
+<./figuras/K_6.pdf, id=1320, 124.21106pt x 108.96309pt>
 File: ./figuras/K_6.pdf Graphic file (type pdf)
 
 <use ./figuras/K_6.pdf>
-Package pdftex.def Info: ./figuras/K_6.pdf used on input line 341.
+Package pdftex.def Info: ./figuras/K_6.pdf used on input line 317.
 (pdftex.def)             Requested size: 99.36896pt x 87.17058pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [36
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+ <./figuras/T_6.pdf> <./figuras/K_6.pdf>]
+File: ./figuras/T_6.pdf Graphic file (type pdf)
+ <use ./figuras/T_6.pdf>
+Package pdftex.def Info: ./figuras/T_6.pdf used on input line 317.
+(pdftex.def)             Requested size: 72.7013pt x 86.03513pt.
+File: ./figuras/K_6.pdf Graphic file (type pdf)
+
+<use ./figuras/K_6.pdf>
+Package pdftex.def Info: ./figuras/K_6.pdf used on input line 317.
+(pdftex.def)             Requested size: 99.36896pt x 87.17058pt.
+
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [37
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [38
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [39
 
-] (./slides.toc)
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [40
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+] (./slides.toc)
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [41
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [42
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [43
 
-] (./slides.toc)
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [44
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+] (./slides.toc)
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [45
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [46
 
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 432.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 432.
-
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [47
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 408.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 408.
+
+
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [48
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [49
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [50
 
-] <./figuras/figura4.pdf, id=1840, 183.06192pt x 178.42961pt>
-File: ./figuras/figura4.pdf Graphic file (type pdf)
-
-<use ./figuras/figura4.pdf>
-Package pdftex.def Info: ./figuras/figura4.pdf used on input line 487.
-(pdftex.def)             Requested size: 128.14246pt x 124.89986pt.
-
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [51
 
- <./figuras/figura4.pdf>]
+] <./figuras/figura4.pdf, id=1860, 183.06192pt x 178.42961pt>
 File: ./figuras/figura4.pdf Graphic file (type pdf)
- <use ./figuras/figura4.pdf>
-Package pdftex.def Info: ./figuras/figura4.pdf used on input line 487.
+
+<use ./figuras/figura4.pdf>
+Package pdftex.def Info: ./figuras/figura4.pdf used on input line 463.
 (pdftex.def)             Requested size: 128.14246pt x 124.89986pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [52
 
-]
+ <./figuras/figura4.pdf>]
 File: ./figuras/figura4.pdf Graphic file (type pdf)
  <use ./figuras/figura4.pdf>
-Package pdftex.def Info: ./figuras/figura4.pdf used on input line 487.
+Package pdftex.def Info: ./figuras/figura4.pdf used on input line 463.
 (pdftex.def)             Requested size: 128.14246pt x 124.89986pt.
 
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [53
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+File: ./figuras/figura4.pdf Graphic file (type pdf)
+ <use ./figuras/figura4.pdf>
+Package pdftex.def Info: ./figuras/figura4.pdf used on input line 463.
+(pdftex.def)             Requested size: 128.14246pt x 124.89986pt.
+
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [54
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [55
 
-] (./slides.toc)
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [56
 
-]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+] (./slides.toc)
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [57
 
 ]
-Overfull \hbox (8.88795pt too wide) has occurred while \output is active
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
  [][]  
  []
 
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [58
+
+]
+Overfull \hbox (34.20236pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+
+Overfull \hbox (122.17525pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[59
 
 ]
 \tf@nav=\write6
@@ -2105,25 +2361,25 @@ Overfull \hbox (8.88795pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 537.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 537.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 513.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 513.
  (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 537.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 537.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 513.
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 949011183E6281640CA98C9222FD0ADA;591.
+(rerunfilecheck)             Checksum: C4881563368B98FA2A1F08B4D3F0E91C;591.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 537.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 513.
  ) 
 Here is how much of TeX's memory you used:
- 22225 strings out of 493089
- 432214 string characters out of 6134842
- 512329 words of memory out of 5000000
- 24995 multiletter control sequences out of 15000+600000
+ 22198 strings out of 493089
+ 431703 string characters out of 6134842
+ 512615 words of memory out of 5000000
+ 24972 multiletter control sequences out of 15000+600000
  22960 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,22n,65p,436b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2153,10 +2409,10 @@ ist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/cm-super/sfss2074.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/public/cm-super/sfsx1000.pfb>
-Output written on slides.pdf (58 pages, 456955 bytes).
+Output written on slides.pdf (59 pages, 446689 bytes).
 PDF statistics:
- 2222 PDF objects out of 2487 (max. 8388607)
- 2073 compressed objects within 21 object streams
- 126 named destinations out of 1000 (max. 500000)
- 278 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2242 PDF objects out of 2487 (max. 8388607)
+ 2097 compressed objects within 21 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

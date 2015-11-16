@@ -1,10 +1,10 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {brazil}
 \beamer@sectionintoc {1}{Introdu\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
-\beamer@sectionintoc {2}{Conjectura de {Gy\IeC {\'a}rf\IeC {\'a}s \& Lehel}}{11}{0}{2}
-\beamer@subsectionintoc {2}{1}{Restringindo a classe das \IeC {\'a}rvores}{11}{0}{2}
-\beamer@subsectionintoc {2}{2}{Limitando o tamanho da sequ\IeC {\^e}ncia}{31}{0}{2}
-\beamer@sectionintoc {3}{Variantes da conjectura de {Gy\IeC {\'a}rf\IeC {\'a}s \& Lehel}}{40}{0}{3}
-\beamer@subsectionintoc {3}{1}{Grafos bipartidos completos}{44}{0}{3}
-\beamer@subsectionintoc {3}{2}{Grafos $k$-crom\IeC {\'a}ticos}{47}{0}{3}
-\beamer@sectionintoc {4}{Considera\IeC {\c c}\IeC {\~o}es finais}{56}{0}{4}
+\beamer@sectionintoc {2}{Conjectura de {Gy\IeC {\'a}rf\IeC {\'a}s \& Lehel}}{12}{0}{2}
+\beamer@subsectionintoc {2}{1}{Restringindo a classe das \IeC {\'a}rvores}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Limitando o tamanho da sequ\IeC {\^e}ncia}{32}{0}{2}
+\beamer@sectionintoc {3}{Variantes da conjectura de {Gy\IeC {\'a}rf\IeC {\'a}s \& Lehel}}{41}{0}{3}
+\beamer@subsectionintoc {3}{1}{Grafos bipartidos completos}{45}{0}{3}
+\beamer@subsectionintoc {3}{2}{Grafos $k$-crom\IeC {\'a}ticos}{48}{0}{3}
+\beamer@sectionintoc {4}{Considera\IeC {\c c}\IeC {\~o}es finais}{57}{0}{4}
