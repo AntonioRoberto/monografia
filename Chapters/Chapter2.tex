@@ -135,7 +135,7 @@ Disso segue que $S$ é um sistema completo de resíduos módulo $n$. $\square$
 %	SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Teoremas de Fermat e do Resto Chinês}
+\section{Teoremas de Fermat e de Wilson}% e do Resto Chinês}
 
 \subsection{Teorema de Fermat}
 
@@ -163,7 +163,6 @@ $a^{p-1}\equiv 1(mod$ $p)$. $\square$
 Dados os inteiros $a$ e $b$ quaisquer e um número primo $p$, com $MDC(a, p) = 1$, temos que:
 
 $a^{b} \equiv a^{b \bmod (p-1)} (\bmod$ $p)$
-
 \end{theorem}
 \textbf{Demonstração:}
 Pelo \autoref{algoritmo_divisao} podemos escrever $b=q(p-1)+r$, onde $r=b\bmod(p-1)$. Assim temos:
@@ -175,27 +174,77 @@ Pelo \autoref{teorema_fermat} temos $a^{p-1} \equiv 1 (\bmod$ $p)$. Logo:
 $a^b \equiv (1)^qa^r \equiv a^r \equiv a^{b \bmod (p-1)} (mod$ $p)$. $\square$
 \\
 
+\subsection{Inverso Multiplicativo Modular}
 
-\subsection{Teorema do Resto Chinês}
+\begin{definition}
+Um inteiro $x$ é chamado de \textit{Inverso Multiplicativo} de $a$ módulo $m$, se $ax\equiv1$ $(mod$ $m)$, para $a$ e $m$ inteiros.
+\end{definition}
 
-\begin{theorem}[Teorema do Resto Chinês]
-Tome o sistema de congruências lineares:
 
-$a_1x \equiv c_1 (mod$ $m_1)$
-
-$a_2x \equiv c_2 (mod$ $m_2)$
-
-$a_3x \equiv c_3 (mod$ $m_3)$
-
-$...$
-
-$a_nx \equiv c_n (mod$ $m_n)$\\
-
-Em que $c_i \in \mathbb{Z}$, $MDC(a_i,m_i) = 1$, e $MDC(m_i, m_j) = 1$ para $i \neq j$
-Nessas condições o sistema acima tem solução única módulo $M$, em que $M = m_1m_2m_3...m_n$.
+\begin{theorem}\label{inveso_multiplicativo_modular}
+Se $p$ é primo e $a$ é primo entre si com $p$, então: $a^{p-2} \equiv a^{-1}$ $(mod$ $p)$, ou seja, $a^{p-2}$ é inverso multiplicativo
+de $a$ módulo $p$.
 \end{theorem}
 \textbf{Demonstração:}
-TODO
+Pelo \autoref{teorema_fermat} sabemos que $a^{p-1}\equiv1$ $(mod$ $p)$. Sabemos também que existe um inverso multiplicativo $a^{-1}$
+de $a$ módulo $p$, já que $a$ e $p$ são primos entre si. Desse mode, temos que:
+
+$a^{p-1}\equiv1$ $(mod$ $p) \Rightarrow a^{p-1}a^{-1} \equiv 1.a^{-1}$ $(mod$ $p) \Rightarrow a^{p-2}\equiv a^{-1}$ $(mod$ $p)$.$\square$
+
+
+\subsection{Teorema de Wilson}
+
+\begin{proposition}\label{proposicao_teorema_wilson}
+Se $p$ é um número primo, e $a$ um inteiro tal que $1\leq a\leq p-2$, então:
+
+$a^2 \equiv 1$ $(mod$ $p) \Leftrightarrow a = \pm 1 $
+\end{proposition}
+\textbf{Demonstração:}
+Claramente se $a = \pm 1$ então $a^2 \equiv 1$ $(mod$ $p)$. Provaremos então somente a ida da implicação.
+
+Sabemos que $a^2 \equiv 1$ $(mod$ $p)$, desse modo temos que:
+\\
+
+$a^2 \equiv 1$ $(mod$ $p) \Rightarrow (a^2-1) \equiv 0$ $(mod$ $p) \Rightarrow (a-1)(a+1) \equiv 0$ $(mod$ $p)$
+\\
+$\Rightarrow (a-1)\equiv0$ $(mod$ $p)$ ou $(a+1)\equiv0$ $(mod$ $p)$
+\\
+$\Rightarrow a\equiv1$ $(mod$ $p)$ ou $a\equiv-1$ $(mod$ $p) \Rightarrow a=1$ ou $a=-1$. $\square$
+
+\begin{theorem}[Teorema de Wilson]
+Se $p$ é um número primo, então $(p-1)! \equiv -1$ $(mod$ $p)$
+\end{theorem}
+\textbf{Demonstração:}
+Para $p=2$ o resultado é trivial, então assumiremos que $p\geq 3$.
+
+Pela \textbf{Proposição} \autoref{proposicao_teorema_wilson} sabemos que $a^2 \equiv 1$ $(mod$ $p) \Leftrightarrow a = \pm 1$ 
+para $1\leq a\leq p-2$, e assim o inverso multiplicativo de um número $b$ em $2\leq b\leq p-2$ é diferente de $b$. Podemos então
+agrupar os $\frac{p-3}{2}$ pares de inversos multiplicativos no intervalo $[2,p-2]$ de modo que teremos: $2.3....(p-2) \equiv1$ $(mod$ $p)$.
+
+Desse mode, temos que:
+
+$(p-1)! \equiv 2.3.4...(p-2)(p-1) \equiv (p-1) \equiv -1$ $(mod$ $p)$. $\square$
+
+%\subsection{Teorema do Resto Chinês}
+
+%\begin{theorem}[Teorema do Resto Chinês]
+%Tome o sistema de congruências lineares:
+
+%$a_1x \equiv c_1 (mod$ $m_1)$
+
+%$a_2x \equiv c_2 (mod$ $m_2)$
+
+%$a_3x \equiv c_3 (mod$ $m_3)$
+
+%$...$
+
+%$a_nx \equiv c_n (mod$ $m_n)$\\
+
+%Em que $c_i \in \mathbb{Z}$, $MDC(a_i,m_i) = 1$, e $MDC(m_i, m_j) = 1$ para $i \neq j$
+%Nessas condições o sistema acima tem solução única módulo $M$, em que $M = m_1m_2m_3...m_n$.
+%\end{theorem}
+%\textbf{Demonstração:}
+%TODO
 
 
 %----------------------------------------------------------------------------------------
@@ -218,7 +267,6 @@ O algoritmo recebe inteiros $a$ e $b$, e calcula $a^b$, usando divisão e conqui
    a(a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for impar} 
   \end{cases}
 \]
-\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -331,21 +379,56 @@ do algoritmo é $O(n^3 \log b)$.
 
 
 %----------------------------------------------------------------------------------------
-\subsection{UVA---}
-\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1031}{10090 - Marbles}\\
-
+\subsection{SPOJ-DCEPC11B}
+\href{http://www.spoj.com/problems/DCEPC11B/}{DCEPC11B - Boring Factorials}\\
 
 \textbf{Resumo:}
+São dados inteiros $N$ ($1\leq N \leq 2.10^9$) e o número primo $P$ ($1 < P \leq 2.10^9)$, de tal forma que a diferença entre $N$ e $P$ é pequena.
+O problema consiste em calcular $N! \bmod P$.
 \\
 
 \textbf{Solução:}
+Pelo \textbf{Teorema de Wilson} sabemos que $(P-1)! \equiv -1 (mod$ $P)$. 
+
+Temos que o problema pode ser dividido em dois casos:
+\newline
+
+\textbf{Caso 1:} \textit{$N \geq P$}
+
+Nesse caso, teremos que:
+
+$N! \equiv (P-1)!\prod_{i=P}^{N}i \equiv (-1)\prod_{i=P}^{N}i$ $(mod$ $P)$. 
+\newline
+
+\textbf{Caso 2:} \textit{$N < P$}
+
+Nesse caso, teremos que:
+
+$N! \equiv (P-1)!\prod_{i=N+1}^{P-1}i^{-1} \equiv (-1)\prod_{i=N+1}^{P-1}i^{-1}$ $(mod$ $P)$. 
 \\
+
+Para resolver o \textbf{caso 1} só precisamos aplicar o \textbf{Teorema de Wilson} e construir o produto $\prod_{i=P}^{N}i$ iterativamente.
+Para o \textbf{caso 2}, podemos usar o \textbf{Pequeno Teorema de Fermat} para calcular o inverso multiplicativo dos números no produto $\prod_{i=N+1}^{P-1}i^{-1}$. 
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Marbles}
+\caption{Boring Factorials}
 \begin{algorithmic}[1]
-\Procedure{FindTwoPrimesSum (n)}{}
+\Procedure{BoringFact (N, P)}{}
+\State $solution \gets -1$
+\\
+\If {$N \geq P$}
+\For {$(i = P \text{; } i \leq N \text{; } i++)$}
+\State $solution \gets (solution.i) \bmod P$
+\EndFor
+\Else
+\For {$(i = N+1 \text{; } i \leq P-1 \text{; } i++)$}
+\State $inverse \gets MODEXP(i, P-2, P)$ \Comment {\autoref{inveso_multiplicativo_modular}}
+\State $solution \gets (solution$ . $inverse) \bmod P$
+\EndFor
+\EndIf
+\\
+\State \Return $solution$
 
 \EndProcedure
 \end{algorithmic}
@@ -353,6 +436,10 @@ do algoritmo é $O(n^3 \log b)$.
 
 
 \textbf{Análise:}
+A complexidade do laço da linha $5$ é dado por $O(N-P)$. Já o laço da linha $8$ consome tempo proporcional a $O((P-N)\log P)$, já que
+a complexidade do algoritmo $MODEXP()$ na linha $9$ é $O(\log P)$.
+
+Assim, a complexidade total do algoritmo é $O(|N-P|\log P)$.
 
 
 
@@ -413,4 +500,175 @@ Reduzindo o problema, dessa maneira, em calcular: $K^{2^{N-3}} \bmod (10^9+7)$.
 
 \textbf{Análise:}
 Como vimos anteriormente, as linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(n \log n)$, e assim a complexidade total é $O(n \log n)$.
+
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-CSUMD}
+\href{https://www.codechef.com/JULY12/problems/CSUMD}{SUMD - My Fair Coins}\\
+
+
+\textbf{Resumo:}
+Existe um número infinito de moedas de dois tipos: as de $1$ centavo, e de $2$ centavos. 
+Todas as moedas tem dois lados (\textit{cara} e \textit{coroa}) que representam o valor da moeda. 
+
+É dado um inteiro $N$ ($1 \leq N \leq 10^9$). 
+O problema consiste em calcular o número de arranjos lineares dessas moedas, de modo que a soma das moedas é igual à $N$.
+A única restrição é que a primeira moeda de cada arranjo seja \textit{cara}. 
+
+Como esse número pode ser muito grande, a resposta tem que ser dada módulo $m$ ($m = 10^7+9$).
+\\
+
+\textbf{Solução:}
+Tome $f_1(N)$ como sendo o número de arranjos lineares com a primeira moeda sendo \textit{cara}. Analogamente, tome $f_2(N)$
+como sendo o número de arranjos lineares com a primeira moeda sendo \textit{coroa}. Por último, tome $f(N) = f_1(N)+f_2(N)$, como
+sendo o número total de arranjos cujo a soma das moedas é $N$.
+
+Nessas condições temos as seguintes \textbf{Proposições}:
+\\
+
+\textbf{Proposição 1:} $f_1(N) = f_2(N)$
+
+\textbf{Prova:} Para cada arranjo em $f_1$, se trocarmos a primeiro moeda de \textit{cara} para \textit{coroa}, teremos um arranjo correspondente em $f_2$. E assim, há uma bijeção de $f_1$ para $f_2$.
+\\
+
+\textbf{Proposição 2:} $f_1(N) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$
+
+\textbf{Prova: }Tome um arranjo $A$ qualque em $f_1$. A primeira moeda de $A$ pode ser tanto uma moeda \textit{cara} de $1$ centavo,
+como uma moeda \textit{cara} de $2$ centavos. O número de arranjos que começam com a moeda de $1$ centavo é $f(N-1)$ e o número de arranjos que começam com a moeda de $2$ centavos é $f(N-2)$. Assim temos:
+
+$f_1(N) = f(N-1) + f(N-2) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$.
+\\
+
+
+\textbf{Proposição 3:} $f_1(N) = 2(f_1(N-1) + f_1(N-2))$
+
+\textbf{Prova: } Decorrente das \textbf{Proposições 1} e \textbf{2}.
+\\
+
+Claramente $f_1(1) = 1$, e $f_1(2) = 3$. Mostraremos um modo elegante de calcular $f_1(N)$ usando \textit{Exponenciação de Matrizes}.
+Tome a matriz $A$ com as seguintes entradas:
+
+\[ A_{2,2} = 
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\]
+
+Teremos então que:
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+       f_1(N-1) & f_1(N-2)
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\]
+
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\bigg(
+\begin{bmatrix}
+       f_1(N-2) & f_1(N-3)
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\bigg)
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\]
+
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+       f_1(N-2) & f_1(N-3)
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}^2
+\]
+
+Expandindo essa recursão até a base, teremos:
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+       f_1(2) & f_1(1)
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}^{N-2}
+\]
+
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+       3 & 1
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}^{N-2}
+\]
+
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{My Fair Coins}
+\begin{algorithmic}[1]
+\Procedure{$f_1 (N, m)$}{}
+\If {$N = 1$}
+\State \Return $1$
+\EndIf
+\\
+\If {$N = 2$}
+\State \Return $3$
+\EndIf
+\\
+\State $A \gets 
+\begin{bmatrix}
+2 & 1           \\[0.3em]
+2 & 0
+\end{bmatrix}
+$
+\\
+\State $B \gets EXPMAT(A, N-2, m)$ \Comment{\textbf{Algoritmo} $\autoref{exponenciacao_matrix}$}
+\\
+\State \Return{$3B_{0,0} + 1B_{1,0}$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+Esse algoritmo tem a mesmo complexidade do \textbf{Algoritmo} \autoref{exponenciacao_matrix}, ou seja, $O(n^3 \log N)$ (onde $n$ é a dimensão da matriz).
+Como nesse problema a matriz é sempre quadrada de dimensão $n=2$, temos que a complexidade final do algoritmo será $O(\log N)$.
 
