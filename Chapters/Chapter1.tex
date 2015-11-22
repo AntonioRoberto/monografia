@@ -21,18 +21,18 @@ Se $d|n$ dizemos que $n$ é múltiplo de $d$. Caso $n$ não seja múltiplo de $d
 A notação $d\bmod n$ ("$d$ \textbf{módulo} $n$"), significa o resta da divisão de $d$ por $n$.
 \end{definition}
 
-\begin{corollary}\label{divisibilidade_transitiva}
+\begin{proposition}\label{divisibilidade_transitiva}
 $d|n$ , $d|m \Rightarrow d|(n+m)$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 Se $d|n$ e $d|m$, então existe inteiros $q$ e $k$, tal que, $n = qd$ e $m = kd$. Desse modo temos:
 
 $(n+m) = qd + kd = (q + k)d \Rightarrow d|(n+m) $ $\square$
 
 
-\begin{corollary}\label{divisibilidade_fracao}
+\begin{proposition}\label{divisibilidade_fracao}
 $d|(\frac{n}{m}) \Rightarrow dm|n$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 
 $d|(\frac{n}{m}) \Rightarrow \exists q \in \mathbb{Z} \mid \frac{n}{m} = qd$
@@ -60,7 +60,7 @@ Assuma que o corolário funciona para $(r-1)$, ie, $d|(S_{j+r-1}-S_j)$.
 
 Temos então que: 
 
-$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j)$ ($\triangleright$ \textbf{Corolário} \autoref{divisibilidade_transitiva})
+$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j)$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_transitiva})
 
 $d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_j)$ $\square$ 
 
@@ -216,9 +216,9 @@ $MDC(a,b) = d \Rightarrow MDC(\frac{a}{d}, \frac{b}{d}) = 1$
 \textbf{Demonstração:}
 Suponha que $MDC(\frac{a}{d}, \frac{b}{d}) = r > 1$. Assim temos:
 
-$r|\frac{a}{d} \Rightarrow dr|a$ ($\triangleright$ \textbf{Corolário} \autoref{divisibilidade_fracao})
+$r|\frac{a}{d} \Rightarrow dr|a$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_fracao})
 
-$r|\frac{b}{d} \Rightarrow dr|b$ ($\triangleright$ \textbf{Corolário} \autoref{divisibilidade_fracao})
+$r|\frac{b}{d} \Rightarrow dr|b$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_fracao})
 
 $r > 1 \Rightarrow dr > d \Rightarrow dr > MDC(a,b)$
 
@@ -661,6 +661,35 @@ $O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo
 
 
 
+%----------------------------------------------------------------------------------------
+\subsection{UVA-10090}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1031}{10090 - Marbles}\\
+
+
+\textbf{Resumo:}
+%É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos.
+%E em caso afirmativo encontrar o valor desses dois primos.
+\\
+
+\textbf{Solução:}
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Marbles}
+\begin{algorithmic}[1]
+\Procedure{FindTwoPrimesSum (n)}{}
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 \subsection{UVA-718}
@@ -711,7 +740,6 @@ $max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Bi
 
 Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
 \\
-\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}

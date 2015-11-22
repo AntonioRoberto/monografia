@@ -204,7 +204,6 @@ TODO
 
 \section{Exponenciação}
 
-%----------------------------------------------------------------------------------------
 \subsection{Exponenciação Binária}
 
 \textit{Exponenciação Binária} é um algoritmo muito usado em \textit{Ciência da Computação} principalmente no campo da \textit{Criptografia}.
@@ -249,11 +248,10 @@ O tempo $T(a,b)$ que o algoritmo consome é dado por: $T(a,b) = T(a,b/2)+O(1)$, 
 Expandindo essa recursão é fácil perceber que a complexidade do algoritmo é $O(\log b)$.
 
 
-%----------------------------------------------------------------------------------------
 \subsection{Exponenciação Binária Modular}
 
 \textit{Exponenciação Binária Modular} é uma varição do algoritmo \textit{Exponenciação Binária} que calcula $a^b\bmod m$, para dodos inteiros $a$, $b$, e $m$. Em geral \textit{Exponenciação Binária Modular} é mais usado que \textit{Exponenciação Binária}, 
-pelo fato da expressão $a^b$ crescer rapidamente e causar \textit{overflow}.\\
+pelo fato da expressão $a^b$ crescer rapidamente e causar \textit{overflow}.
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -275,50 +273,12 @@ pelo fato da expressão $a^b$ crescer rapidamente e causar \textit{overflow}.\\
 
 \EndProcedure
 \end{algorithmic}
-\end{algorithm}
 
 
 \textbf{Análise:}
-O tempo $T(a,b,m)$ que o algoritmo consome é dado por: $T(a,b,m) = T(a,b/2,m)+O(1)$, em que $T(a,0,m) = O(1)$.
+O tempo $T(a,b,m)$ que o algoritmo consome é dado por: $T(a,b,m) = T(a,b/2,m)+O(1)$.
 
-Assim esse algoritmo tem a mesma complexidade $O(\log b)$ da \textit{Exponenciação Binária}.
-
-%----------------------------------------------------------------------------------------
-\subsection{Exponenciação de Matriz}
-
-\textit{Exponenciação de Matrix} é uma outra varição do algoritmo \textit{Exponenciação Binária} que calcula $A^b\bmod m$, para dados inteiros $b$ e $m$ e a matrix quadrada $A_{n,n}$. 
-
-\begin{definition}
-A expressão "$A \bmod m$", em que $A$ é uma matriz e $m$ um inteiro qualquer, representa uma matriz $B$ com as mesmas dimensões que $A$, tal que: $B_{ij} = A_{ij} \bmod m$, $\forall B_{ij} \in B$.
-\end{definition}
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Exponenciação de Matrix}\label{exponenciacao_matrix}
-\begin{algorithmic}[1]
-\Procedure{$EXPMAT (A, b, m)$}{}
-\If {$b = 0$}
-\State \Return $I$ \Comment {$I$ representa a matrix identidade de dimensão $n$}
-\EndIf 
-\\
-\State $P \gets EXPMAT(A, \lfloor \frac{b}{2} \rfloor, m)$
-\State $P \gets P^2 \mod m$
-\\
-\If {$b \equiv 0 (mod$ $2)$}
-\State \Return $P$
-\Else
-\State \Return $A(P) \mod m$
-\EndIf
-
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-
-\textbf{Análise:}
-A recursão desse algoritmo é similar a recursão da \textit{Exponenciação Binária}, exceto pela operação de produto, que nesse caso são produtos de matrizes. O tempo gasto para multiplicar duas matrizes quadradas de dimensão $n$ é $O(n^3)$. Assim, a complexidade total 
-do algoritmo é $O(n^3 \log b)$.
-
+Expandindo essa recursão é fácil perceber que a complexidade do algoritmo é $O(\log b)$.
 
 
 
@@ -331,11 +291,13 @@ do algoritmo é $O(n^3 \log b)$.
 
 
 %----------------------------------------------------------------------------------------
-\subsection{UVA---}
+\subsection{UVA-10090}
 \href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1031}{10090 - Marbles}\\
 
 
 \textbf{Resumo:}
+%É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos.
+%E em caso afirmativo encontrar o valor desses dois primos.
 \\
 
 \textbf{Solução:}
