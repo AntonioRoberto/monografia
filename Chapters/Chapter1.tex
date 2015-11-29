@@ -198,6 +198,8 @@ Deixaremos a demostração a cargo do leitor.
 \begin{definition}
 O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferente de zero), denotado por $MDC(a,b)$, é o maior inteiro que divide ambos $a$ e $b$. 
 Se $MDC(a,b) = 1$ dizemos que $a$ e $b$ são primos entre si.
+
+Por definição, temos também que $MDC(a,0) = a$.
 \end{definition}
 
 
@@ -277,6 +279,14 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \end{algorithm}
 
 \textbf{Análise:}
+Primeiro provaremos a corretude do algoritmo fazendo um indução sobre o número de chamadas recursivas $N$.
+
+Se $N=0$, então $b=0$, e desse modo $MDC(a,0)=a$, ie, para esse caso base o algoritmo retorna o valor correto.
+
+Agora assuma que $MDC(a,b)$ faça $N>0$ chamadas recursivas. Pela hipótese de indução a chamada $MDC(b, a \bmod b)$ retorna o valor correto. Pelo \textbf{Corolário} \autoref{gcd_modular} sabemos que $MDC(a,b) = MDC(b, a \bmod b)$, provando assim a corretude do algoritmo.
+
+Agora faremos uma análise da complexidade do algoritmo.
+
 O \textit{Algoritmo de Euclides} consome tempo proporcional à $O(\log b)$. Para provar a análise do custo do algoritmo é preciso conhecer algumas propriedades da \textit{Sequência de Fibonacci}, e desse modo, a 
 demostração será feita no \textbf{Capítulo 3}, \textbf{Subseção 3.2.1}.
 
@@ -388,6 +398,18 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
 \end{algorithm}
 
 \textbf{Análise:}
+Primeiro provaremos a corretude do algoritmo. Para isso provaremos que ao final do algoritmo teremos a seguinte implicação:
+$isPrime[n] = false \Leftrightarrow n$ é composto.
+
+Todos os valores que $n$ assume no laço da linha $11$ são múltiplos de $p$, e assim temos que: $isPrime[n] = false \Rightarrow n$ é composto.
+
+Agora tome um $n$ composto qualquer menor que $N$. Sabemos que existe um primo $q \leq \sqrt{n} \leq \sqrt{N}$ que divide $n$. 
+E desse modo, em uma das iterações do laço da linha $8$ teremos $p=q$. Como $q$ é primo então $isPrime[q]=true$, e desse modo
+o laço da linha $11$ será executado, iterando sobre os múltiplos de $q$ menores que $N$, ie, em alguma iteração será executado 
+a operaçõe $isPrime[n]\gets false$, implicando assim em: $isPrime[n] = false \Leftarrow n$ é composto.
+
+Agora faremos uma análise da complexidade do algoritmo.
+
 O laço da linha $4$ itera sobre todos os valores de $2$ até $N$ e assim consome tempo $O(N)$.
 Já o laço mais interno na linha $9$ itera sobre de $p^2$ até $N$ múltiplos de $p$, e assim consome tempo
 $O(N/p)$. 
