@@ -562,22 +562,128 @@ $F(S) \bmod 99991 $
 \href{http://codeforces.com/contest/227/problem/E}{227E - Anniversary}\\
 
 \textbf{Resumo:}
+São dados quatro inteiros $m$, $l$, $r$, $k$ ($1\leq m\leq 10^9$, $1\leq l \leq r \leq 10^{12}$, $2\leq k\leq r-l+1$), 
+e um conjunto $A = \{l,l+1,l+2,...,r\}$.
+Dado um conjunto $S \subseteq A$ com $k$ elementos, ie, $S = \{s_1, s_2,...,s_k\}$, é definido a função 
+$F(S) = MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k})$.
+
+O problemas consiste em encontrar tal subconjunto $S$, de tal forma que $F(S)$ seja máxima. No final do algoritmo basta imprimir 
+$F(S) \bmod m$.
 \\
 
 \textbf{Solução:}
-\\
+Pelo \autoref{fibonacci_mdc} sabemos que, $MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k}) = Fib_{MDC(s_1,s_2,...,s_k)}$.
+Desse modo, para maximizar $F(S)$, basta maximizar $MDC(s_1,s_2,...,s_k)$, já que $Fib_x$ é uma sequência crescente.
+
+Suponha que o valor máximo para $MDC(s_1,s_2,...,s_k)$ seja $q$. Como $q$ divide pelo memos $k$ inteiros ($s_1,s_2,...,s_k$)
+no conjunto $A$, então $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$, ie, o número de múltiplos de $q$ entre $l$ e $r$ é maior ou igual à $k$.
+
+Todos os valores que $\lfloor \frac{r}{q} \rfloor$ assume, são da forma:
+\newline
+
+$i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor \leq \sqrt{r}$
+
+$\lfloor \frac{r}{i} \rfloor$, com $i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor > \sqrt{r}$
+\newline
+
+Analogamente, podemos calcular todos os valores que $\lceil \frac{l}{q} \rceil$ assume.
+
+Tendo todos esses valores armazenados em um conjunto $Q$, é possivel calcular todos os valores distintos que $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1$ assume, e assim basta escolher o maior $q \in Q$, tal que 
+$\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$.  
+
+A partir do momento que calculamos $q$, ie, encontramos o valor máximo de $MDC(s_1,s_2,...,s_k)$, precisamos de uma maneira eficiente de calcular $Fib_q \bmod m$.
+E para isso, usaremos \textbf{Exponenciação de Matriz} com a seguinte matriz:
+\newline
+
+\[ A_{2,2} =
+\begin{bmatrix}
+       1 & 1           \\[0.3em]
+       1 & 0
+\end{bmatrix}
+\]
+\newline
+
+Observe que:
+$
+\begin{bmatrix}
+       Fib_q & Fib_{q-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+       Fib_{q-1} & Fib_{q-2}
+\end{bmatrix}
+\begin{bmatrix}
+       1 & 1           \\[0.3em]
+       1 & 0
+\end{bmatrix}
+$
+\newline
+
+E assim:
+$
+\begin{bmatrix}
+       Fib_q & Fib_{q-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+       Fib_{2} & Fib_{1}
+\end{bmatrix}
+A^{q-2}
+=
+\begin{bmatrix}
+       1 & 1
+\end{bmatrix}
+A^{q-2}
+$
+\newline
+
 
 \textbf{Pseudocódigo:}
+
 \begin{algorithm}
 \caption{Anniversary}
 \begin{algorithmic}[1]
-\Procedure{FindTwoPrimesSum (n)}{}
+\Procedure{$FindMaximumValue (m, r, l, k)$}{}
 
+\State $Q \gets \emptyset$
+\State $q \gets 0$
+\\
+\For {$(i = 1 \text{; } i \leq \sqrt{r} \text{; } i++)$}
+\State $Q \gets Q\cup\{i\}$
+\EndFor
+\\
+\For {$(i = 1 \text{; } i \leq \sqrt{r} \text{; } i++)$}
+\State $Q \gets Q\cup\{\lfloor \frac{r}{i} \rfloor \}$
+\EndFor
+\\
+\For {$(i = 1 \text{; } i \leq \sqrt{l} \text{; } i++)$}
+\State $Q \gets Q\cup\{\lceil \frac{l}{i} \rceil \}$
+\EndFor
+\\
+\For {\textbf{all} $q^* \in Q$}
+\If {$\lfloor \frac{r}{q^*} \rfloor -\lceil \frac{l}{q^*} \rceil + 1 \geq k$}
+\State $q \gets max(q, q^*)$
+\EndIf
+\EndFor
+\\
+\State $A \gets 
+\begin{bmatrix}
+       1 & 1           \\[0.3em]
+       1 & 0
+\end{bmatrix}
+$
+\\
+\State $B \gets EXPMAT(A, q-2, m) $
+\\
+\State \Return $(B_{0,0}+B_{1,0}) \bmod m$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 
 \textbf{Análise:}
+Os laços das linhas $5$ e $8$ consomem tempo proporcional a $O(\sqrt{r})$. O laço da linha $11$ consomem tempo proporcional a $O(\sqrt{l})$, que por sua vez é $O(\sqrt{r})$, já que $l\leq r$. Como é inserido um elemento em $Q$ para cada iteração desses três primeiros laços, temos que no final do algoritmo o número de elementos em $Q$ é da ordem de $O(\sqrt{r})$.
 
+O laço da linha $14$ consomem tempo proporcional a $O(|Q|)$, ie, $O(\sqrt{r})$.
 
+Assim, a complexidade total do algoritmo é $O(\sqrt{r} + \log r)$, já que o algoritmo \textit{EXPMAT()} roda em $O(\log q)$, ou melhor, $O(\log r)$, pois $q \leq r$. 
