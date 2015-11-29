@@ -69,9 +69,15 @@ Disso temos que, $|R| = |S|$, ou melhor, $k=n$. $\square$
 
 \begin{definition}
 Congruências da forma $ax \equiv b (mod$ $m)$, onde $a$, $b$ e $m$ são inteiros e $x$ é uma incógnita, são chamadas de \textit{Congruências Lineares}.
+\newline
 \end{definition}
 
 
+\begin{definition}\label{def_residuo_quadratico}
+Um inteiro $q$ é chamado de \textbf{Resíduo Quadrático} módulo $n$ se é congruente a um \textit{quadrado perfeito} módulo $n$, ie, se existe $x$, tal que:
+$x^2 \equiv q$ $(mod$ $n)$. 
+\newline 
+\end{definition}
 
 \begin{proposition}\label{congruencia_linear_ida}
 $ax \equiv b (mod$ $m)$ tem solução $\Rightarrow$ $MDC(a,m)|b$
@@ -82,7 +88,7 @@ Suponha que $\exists x\in\mathbb{Z}$, tal que $ax\equiv b(mod$ $m)$, assim temos
 $ax\equiv b(mod$ $m) \Rightarrow m|(b-ax) \Rightarrow \exists! r\in\mathbb{Z}$ tal que $(b-ax) = mr$
 
 $\Rightarrow b = mr + ax \Rightarrow MDC(a,m)|b$, pois $MDC(a,m)$ divide tanto $a$ como $m$. $\square$
-
+\newline
 
 
 \begin{proposition}\label{congruencia_linear_volta}
@@ -409,6 +415,7 @@ $N! \equiv (P-1)!\prod_{i=N+1}^{P-1}i^{-1} \equiv (-1)\prod_{i=N+1}^{P-1}i^{-1}$
 
 Para resolver o \textbf{caso 1} só precisamos aplicar o \textbf{Teorema de Wilson} e construir o produto $\prod_{i=P}^{N}i$ iterativamente.
 Para o \textbf{caso 2}, podemos usar o \textbf{Pequeno Teorema de Fermat} para calcular o inverso multiplicativo dos números no produto $\prod_{i=N+1}^{P-1}i^{-1}$. 
+\newline 
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -639,7 +646,7 @@ Expandindo essa recursão até a base, teremos:
        2 & 0    
 \end{bmatrix}^{N-2}
 \]
-
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}

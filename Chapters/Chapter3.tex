@@ -127,7 +127,11 @@ Observe também que: $E \leq \sum_{p=2}^{N}\frac{N}{p} = O(N\log N)$.
 $\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positivos $n$ e $k$. 
 \end{proposition}
 \textbf{Demonstração:}
-TODO
+Pelo \autoref{formula_produto_euler} sabemos que $\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$.
+E assim, $\Phi(n^k) = n^k \prod_{p|n^k}(\frac{p-1}{p})$. Porém, um primo $p$ divide $n$, se e somente se, $p$ divide $n^k$, implicando em, 
+$\prod_{p|n^k}(\frac{p-1}{p}) = \prod_{p|n}(\frac{p-1}{p})$.
+
+Portanto, $\Phi(n^k) = n^k \prod_{p|n^k}(\frac{p-1}{p}) = n^k \prod_{p|n}(\frac{p-1}{p}) = n^{k-1}\Phi(n)$. $\square$
 
 
 \subsection{Teorema de Euler}
@@ -137,10 +141,21 @@ Dados números inteiros $a$ e $n$ primos entre si, temos que:
 $a^{\Phi(n)} \equiv 1 (\bmod$ $n)$. Observe que esse teorema é uma generalização do \autoref{teorema_fermat}.
 \end{theorem}
 \textbf{Demonstração:}
-TODO usa residuos completo mod m
+Tome o conjunto $P = \{p_1, p_2, ..., p_{\Phi(n)}\}$, onde os elementos de $P$ são os números distintos primos com $n$ e menores que $n$. Claramente $p_1p_2...p_{\Phi(n)} \equiv 1(\bmod$ $n)$.
 
+Agora tome o conjunto $R = \{ap_1, ap_2, ..., ap_{\Phi(n)}\}$, em que $MDC(a,n) = 1$. Como $a$ e $n$ são primos entre si, então todos
+os elementos de $R$ são também primos com $n$, e assim, teremos que $(ap_1)(ap_2)...(ap_{\Phi(n)}) \equiv 1(\bmod$ $n)$.
 
+Das congruências acima podemos concluir que:
+\newline
 
+$p_1p_2...p_{\Phi(n)} \equiv  (ap_1)(ap_2)...(ap_{\Phi(n)}) (\bmod$ $n)$ 
+
+$p_1p_2...p_{\Phi(n)} \equiv a^\Phi(n)p_1p_2...p_{\Phi(n)} (\bmod$ $n)$
+\newline
+
+E assim, concluímos que $1 \equiv a^\Phi(n)(\bmod$ $n)$, já que $p_1p_2...p_{\Phi(n)} \equiv 1(\bmod$ $n)$. $\square$
+\\
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
@@ -229,7 +244,7 @@ Desse modo, aplicar o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funcio
 E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
 
 
-\begin{theorem}
+\begin{theorem}\label{fibonacci_formula_fechada}
 $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$
 \end{theorem}
 \textbf{Demonstração:}
@@ -267,8 +282,7 @@ $Fib_n = \frac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{(\frac{1+\sq
 $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$ $\square$
 
 
-
-
+\subsection{Análise Algoritmo de Euclides}
 TODO demostracao analise algoritmo de euclides
 
 %----------------------------------------------------------------------------------------
@@ -424,7 +438,7 @@ $N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1})\Phi(p
 $\Rightarrow \Phi(N) = (p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})\Phi(M)$ ($\triangleright$ \autoref{phi_potencia})
 
 $\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})}$
-\\
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -524,7 +538,7 @@ Esse par corresponde ao par $\{D,D\}$ do problema original.
 
 
 %----------------------------------------------------------------------------------------
-\subsection{CodeChef-MODEFB}
+\subsection{CodeChef-MOREFB}
 \href{https://www.codechef.com/problems/MOREFB}{71544 - Another Fibonacci}\\
 
 \textbf{Resumo:}
@@ -535,17 +549,87 @@ Tome a seguinte função:
 $F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\Phi(n^m) \bmod 201004.$
 
 O problema consiste em calcular a expressão:  
-$F(S) \bmod 99991 $
-\\
+$F(S) \bmod m$, onde $m = 99991$.
+\newline
 
 \textbf{Solução:}
-\\
+Pelo \autoref{fibonacci_formula_fechada} temos que $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$.
+
+Primeiro verificamos que $5$ é \textit{Resíduo Quadrático} módulo $m$, já que $5 \equiv 10104^2(\bmod$ $m)$ (esse valor pode
+ser encontrado iterando sobre todos valores menores que $m$), logo: $\sqrt{5} \equiv 10104(\bmod$ $m)$.
+
+Verificamos também que $5$ tem \textit{Inverso Multiplicativo} módulo $m$, já que $MDC(5,m)=1$. Assim, iterando sobre os valores até $m$, podemos encontrar $79993$, que é \textit{Inverso Multiplicativo} de $5$, ie, $5.79993 \equiv 1(\bmod$ $m)$, ou melhor, $5^{-1} \equiv 79993(\bmod$ $m)$.
+Analogamente podemos calcular o \textit{Inverso Multiplicativo} do $2$ módulo $n$, $2^{-1} \equiv 49996(\bmod$ $m)$.
+
+Substituindo esse valores na equação acimas, temos:
+\newline
+
+$Fib_n \equiv 10104.79993 \big( (10105.49996)^n - (-10103.49996)^n (\bmod$ $m)$ 
+\newline
+
+Melhorando a equação um pouco mais, chegamos em:
+\newline
+
+$Fib_n\equiv 22019(55048^n - 44944^n)(\bmod$ $m)$
+\newline
+
+Assuma que $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. Vamos calcular o $F(S) \bmod m$ em função de $a$, $b$ e $c$.
+
+Suponha que $N=3$ e $S=\{s_1, s_2, s_3\}$. 
+
+Para $K=1$, teremos:
+
+$F(S) = Fib_{s_1}+Fib_{s_2}+Fib_{s_3} = a((b^{s_1}+b^{s_2}+b^{s_3}) - (c^{s_1}+c^{s_2}+c^{s_3}))$.
+
+Para $K=2$, teremos:
+
+$F(S) = Fib_{s_1+s_2}+Fib_{s_1+s_3}+Fib_{s_2+s_3} = a((b^{s_1+s_2}+b^{s_1+s_2}+b^{s_2+s_3}) - (c^{s_1+s_2}+c^{s_1+s_3}+c^{s_2+s_3}))$.
+
+Para $K=3$, teremos:
+
+$F(S) = Fib_{s_1+s_2+s_3} = a(b^{s_1+s_2+s_3} - c^{s_1+s_2+s_3})$.
+\newline
+
+Tome agora o polinômio: 
+
+$B(x) = (x-b^{s_1})(x-b^{s_2})(x-b^{s_3})$
+
+$B(x) = x^3 + x^2(b^{s_1}+b^{s_2}+b^{s_3}) + x^1(b^{s_1+s_2}+b^{s_1+s_2}+b^{s_2+s_3}) + x^0(b^{s_1+s_2+s_3})$.
+
+Percebemos, que a parte em $F(S)$ que contém $b$, é exatamente igual ao coeficiente do monômio de grau $N-K$ em $B(x)$.
+
+Analogamente, podemos calcular a parte em $F(S)$ que contém $c$, com o polinômio $C(x) = (x-c^{s_1})(x-c^{s_2})(x-c^{s_3})$.
+\newline
+
+Assim, para resolver o problema de caso geral, basta criar os polinômios:
+
+$B(x) = (x-b^{s_1})(x-b^{s_2})...(x-b^{s_N})$
+
+$C(x) = (x-c^{s_1})(x-c^{s_2})...(x-c^{s_N})$
+\newline
+
+A solução trivial para construir os polinômios $B(x)$ e $C(x)$ consome tempo proporcional a $O(N^2)$, porém usando 
+\textbf{Fast Fourier Transform}, podemos calcular tais polinômios em $O(N\log N)$.
+\newline
+
+Para mais informações sobre  \textbf{Fast Fourier Transform} acesse:
+
+\href{http://mathworld.wolfram.com/FastFourierTransform.html}{http://mathworld.wolfram.com/FastFourierTransform.html}.
+\newline
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Another Fibonacci}
 \begin{algorithmic}[1]
-\Procedure{F (S)}{}
+\Procedure{F (S, N, K)}{}
+\State $m \gets 99991$
+\State $a \gets 22019$
+\State $b \gets 55048$
+\State $c \gets 44944$
+\\
+\State $[Bcoef, Ccoef]\gets FastFourierTransform(S,N,K,m,a,b,c)$ 
+\\
+\State \Return $a(Bcoef - Coef)\bmod m$
 
 \EndProcedure
 \end{algorithmic}
@@ -553,7 +637,8 @@ $F(S) \bmod 99991 $
 
 
 \textbf{Análise:}
-
+Na linha $7$ é aplicado o algoritmo \textbf{Fast Fourier Transform} para calcular os coeficientes do monomio de grau $N-K$ dos 
+polinômios $B(x)$ e $C(x)$ respectivamente. O complexidade final do algoritmo será igual a complexidade da \textit{Transformada Rápida de Fourier} que é $O(N\log N)$.
 
 
 
@@ -636,7 +721,7 @@ A^{q-2}
 A^{q-2}
 $
 \newline
-
+\clearpage
 
 \textbf{Pseudocódigo:}
 
@@ -687,3 +772,4 @@ Os laços das linhas $5$ e $8$ consomem tempo proporcional a $O(\sqrt{r})$. O la
 O laço da linha $14$ consomem tempo proporcional a $O(|Q|)$, ie, $O(\sqrt{r})$.
 
 Assim, a complexidade total do algoritmo é $O(\sqrt{r} + \log r)$, já que o algoritmo \textit{EXPMAT()} roda em $O(\log q)$, ou melhor, $O(\log r)$, pois $q \leq r$. 
+

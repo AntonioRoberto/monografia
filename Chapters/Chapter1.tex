@@ -278,10 +278,10 @@ demostração será feita no \textbf{Capítulo 3}, \textbf{Subsessão 3.2}.
 
 \subsection{Teorema de Bézout}
 
-\begin{corollary}\label{bezout_conjunto_nao_nulo}
+\begin{proposition}\label{bezout_conjunto_nao_nulo}
 Dado o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
 e pelo menos um desses números é diferente de zero. Temos então que $S \neq \emptyset$. 
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 As combinações possíveis para $a$ e $b$ são:
 
@@ -324,7 +324,7 @@ Tome o conjunto das combinações lineares de $a$ e $b$:
 
 $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$.
 
-Pelo \textbf{Corolário} \autoref{bezout_conjunto_nao_nulo} sabemos que $S \neq \emptyset$. Como $S$ contém somente números positivos e não é vazio, 
+Pelo \textbf{Proposição} \autoref{bezout_conjunto_nao_nulo} sabemos que $S \neq \emptyset$. Como $S$ contém somente números positivos e não é vazio, 
 $S$ está limitado inferiormente por \textit{zero} e assim, $S$ tem um elemento mínimo que chamaremos de $d$.
 
 Como $d \in S$, então existe $u, v\in \mathbb{Z}$, tal que, $d = ua + vb$. Pelo \textbf{Corolário} \autoref{bezout_conjunto_divide}, sabemos que $d$ divide todos elementos em $S$, em particular:
@@ -620,9 +620,11 @@ Assim a complexidade do algoritmo final será $O(|S|\log (\max (S_i-S_{i-1})))$.
 \textbf{Resumo:}
 Calcular quantos divisores de um número inteiro $n$ ($1\leq n \leq 10^9$), contém os dígitos $4$ e $7$ na forma decimal.
 Por exemplo, para $n=94$ os únicos divisore que contém tais dígitos são: $47, 94$.
+\newline
 
 \textbf{Solução:}
 Para esse problema, basta calcular todos os divisores de $n$, com o \textbf{Algoritmo} \autoref{encontra_divisores}, e depois verificar quais deles contêm os digitos $4$ ou $7$.
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -792,7 +794,7 @@ $max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Bi
 \\
 
 Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
-\\
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}

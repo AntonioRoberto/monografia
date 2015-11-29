@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 NOV 2015 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 NOV 2015 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1628,7 +1628,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 294.
 [4]
 
-Package hyperref Warning: No autoref name for `corollary' on input line 327.
+Package hyperref Warning: No autoref name for `proposition' on input line 327.
 
 
 Package hyperref Warning: No autoref name for `corollary' on input line 330.
@@ -1789,156 +1789,160 @@ Underfull \hbox (badness 10000) in paragraph at lines 618--619
  []
 
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 625.
-
-
-Package hyperref Warning: No autoref name for `algorithm' on input line 632.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 665.
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+Underfull \hbox (badness 10000) in paragraph at lines 620--624
 
  []
 
+
+Package hyperref Warning: No autoref name for `algorithm' on input line 626.
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 672.
+(babel)             in language  on input line 627.
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 673--678
+
+Package hyperref Warning: No autoref name for `algorithm' on input line 634.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 667.
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--682
+Underfull \hbox (badness 10000) in paragraph at lines 675--680
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--685
+Underfull \hbox (badness 10000) in paragraph at lines 681--684
 
  []
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 688.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 692--694
+Underfull \hbox (badness 10000) in paragraph at lines 685--687
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--697
+Package hyperref Warning: No autoref name for `corollary' on input line 690.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--700
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 701--703
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 704--706
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 707--709
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 710--712
+Underfull \hbox (badness 10000) in paragraph at lines 697--699
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 713.
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 713--715
+(babel)             in language  on input line 700.
+[10
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 700--702
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 718--720
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 721--739
+Underfull \hbox (badness 10000) in paragraph at lines 706--708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--743
+Underfull \hbox (badness 10000) in paragraph at lines 709--711
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 712--714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--717
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--722
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--745
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 748.
+(babel)             in language  on input line 750.
 
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 751--758
+Underfull \hbox (badness 10000) in paragraph at lines 751--752
 
  []
 
 
-Overfull \hbox (3.4236pt too wide) in paragraph at lines 766--767
+Underfull \hbox (badness 10000) in paragraph at lines 753--760
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 761.
+[11]
+Overfull \hbox (3.4236pt too wide) in paragraph at lines 768--769
 \T1/ppl/m/n/10.95 gra-fos. Nos fo-ca-re-mos na parte ma-te-má-tica do pro-blema
 , que en-volve des-co-brir quando
  []
 
+
+Package hyperref Warning: No autoref name for `corollary' on input line 777.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--780
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--783
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--786
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 787--789
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 790--792
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 793--795
+
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 768.
-[11]
-
-Package hyperref Warning: No autoref name for `corollary' on input line 775.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 775--778
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 779--781
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 782--784
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 785--787
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 791--793
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 794--796
-
- []
-
-) (./Chapters/Chapter2.tex
-Overfull \hbox (8.92628pt too wide) in paragraph at lines 830--2
+(babel)             in language  on input line 797.
+[12]) (./Chapters/Chapter2.tex
+Overfull \hbox (8.92628pt too wide) in paragraph at lines 832--2
 \T1/ppl/m/n/10.95 mada $\OML/cmm/m/it/10.95 ExtendedMDC\OT1/cmr/m/n/10.95 (\OML
 /cmm/m/it/10.95 a; b\OT1/cmr/m/n/10.95 )$ \T1/ppl/m/n/10.95 na li-nha $\OT1/cmr
 /m/n/10.95 5$\T1/ppl/m/n/10.95 , logo a com-ple-xi-dade to-tal do al-go-ritmo é
@@ -1948,10 +1952,9 @@ n/10.95 +
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
-[12]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [13]
+[13
+
+]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
  [14
@@ -1990,17 +1993,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--61
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 68.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
+
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 82.
+(babel)             in language  on input line 80.
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
-Package hyperref Warning: No autoref name for `proposition' on input line 105.
-
-
-Package hyperref Warning: No autoref name for `proposition' on input line 105.
+ []
 
 
-Overfull \hbox (15.86432pt too wide) in paragraph at lines 111--112
+Package hyperref Warning: No autoref name for `proposition' on input line 111.
+
+
+Package hyperref Warning: No autoref name for `proposition' on input line 111.
+
+
+Overfull \hbox (15.86432pt too wide) in paragraph at lines 117--118
 []\T1/ppl/m/it/10.95 O con-junto $\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 = \O
 MS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 s[]; s[]; s[]; :::; s[]\OMS/cmsy/m/n/10.
 95 g$ \T1/ppl/m/it/10.95 com $\OML/cmm/m/it/10.95 s[] \OT1/cmr/m/n/10.95 = \OML
@@ -2011,14 +2028,14 @@ pl/m/it/10.95 , e $\OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
  []
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 116.
+Package hyperref Warning: No autoref name for `corollary' on input line 122.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 138.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 140.
+(babel)             in language  on input line 146.
 
-Overfull \hbox (22.59612pt too wide) in paragraph at lines 146--151
+Overfull \hbox (22.59612pt too wide) in paragraph at lines 152--157
 \T1/ppl/b/n/10.95 Demonstração: \T1/ppl/m/n/10.95 Tome os con-jun-tos $\OML/cmm
 /m/it/10.95 S \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 s[]
 ; s[]; s[]; :::; s[]\OMS/cmsy/m/n/10.95 g$\T1/ppl/m/n/10.95 , com $\OML/cmm/m/i
@@ -2028,163 +2045,170 @@ t/10.95 s[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ai$\T1/ppl/m/n/10.95 , e $
 /n/10.95 2\OML/cmm/m/it/10.95 ; :::; p \OMS/cmsy/m/n/10.95 ^^@
  []
 
-
-Package hyperref Warning: No autoref name for `corollary' on input line 156.
-
-
-Package hyperref Warning: No autoref name for `proposition' on input line 156.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
-
- []
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 157.
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 174--176
+
+Package hyperref Warning: No autoref name for `corollary' on input line 162.
+
+
+Package hyperref Warning: No autoref name for `proposition' on input line 162.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 177.
+(babel)             in language  on input line 183.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 201.
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-
-Package hyperref Warning: No autoref name for `proposition' on input line 220.
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 254.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 257.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 261.
+(babel)             in language  on input line 222.
 [17]
-Overfull \hbox (11.23503pt too wide) in paragraph at lines 297--298
+
+Package hyperref Warning: No autoref name for `proposition' on input line 226.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 260.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 263.
+
+Overfull \hbox (11.23503pt too wide) in paragraph at lines 303--304
 []\T1/ppl/m/n/10.95 Expandindo essa re-cur-são é fá-cil per-ce-ber que a com-pl
 e-xi-dade do al-go-ritmo é $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 ([] \OML/cm
 m/m/it/10.95 b\OT1/cmr/m/n/10.95 )$\T1/ppl/m/n/10.95 . 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 301.
+(babel)             in language  on input line 307.
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
+Underfull \hbox (badness 10000) in paragraph at lines 309--311
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 335.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 369.
+(babel)             in language  on input line 312.
 [18]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 369.
- [19]
+(babel)             in language  on input line 341.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 377.
+(babel)             in language  on input line 383.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 382.
+(babel)             in language  on input line 388.
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--402
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--409
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 447.
+(babel)             in language  on input line 391.
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 391--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--401
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--419
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 454.
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 461.
 [20]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 447.
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
+Underfull \hbox (badness 10000) in paragraph at lines 470--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--465
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--487
-
- []
-
-
-Package hyperref Warning: No autoref name for `algorithm' on input line 494.
+Package hyperref Warning: No autoref name for `algorithm' on input line 501.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 508.
+(babel)             in language  on input line 515.
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--529
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 519.
+(babel)             in language  on input line 534.
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 520--522
+Underfull \hbox (badness 10000) in paragraph at lines 535--537
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--530
+Underfull \hbox (badness 10000) in paragraph at lines 540--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--535
+Underfull \hbox (badness 10000) in paragraph at lines 548--550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--543
+Underfull \hbox (badness 10000) in paragraph at lines 554--556
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 547--549
-
- []
-
-
-Package hyperref Warning: No autoref name for `algorithm' on input line 664.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 670.
+(babel)             in language  on input line 649.
 [22]
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 672.
+Package hyperref Warning: No autoref name for `algorithm' on input line 671.
+
+
+Package hyperref Warning: No autoref name for `algorithm' on input line 679.
 
 ) (./Chapters/Chapter3.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [23]
+ [23
+
+]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
  [24
@@ -2257,13 +2281,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 148.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 145.
 [26]
-Overfull \hbox (0.25557pt too wide) in paragraph at lines 167--171
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--162
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 163.
+
+Overfull \hbox (0.25557pt too wide) in paragraph at lines 182--186
 \T1/ppl/m/n/10.95 pres-são fun-ci-ona para um in-teiro qual-quer $\OT1/cmr/m/n/
 10.95 (\OML/cmm/m/it/10.95 k \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1) \OML
 /cmm/m/it/10.95 > \OT1/cmr/m/n/10.95 2$\T1/ppl/m/n/10.95 , ou seja, $\OML/cmm/m
@@ -2272,16 +2311,19 @@ Overfull \hbox (0.25557pt too wide) in paragraph at lines 167--171
  []
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 176.
+Package hyperref Warning: No autoref name for `corollary' on input line 191.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 223.
+[27]
+
+Package hyperref Warning: No autoref name for `proposition' on input line 228.
 
 
-Package hyperref Warning: No autoref name for `proposition' on input line 213.
+Package hyperref Warning: No autoref name for `corollary' on input line 232.
 
 
-Package hyperref Warning: No autoref name for `corollary' on input line 217.
-
-
-Overfull \hbox (8.84793pt too wide) in paragraph at lines 228--230
+Overfull \hbox (8.84793pt too wide) in paragraph at lines 243--245
 \OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 m; n\OT1/cmr/m/n
 /10.95 ) = \OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s; \O
 T1/cmr/m/n/10.95 0) = \OML/cmm/m/it/10.95 s$\T1/ppl/m/n/10.95 , te-re-mos tam-b
@@ -2291,85 +2333,84 @@ t/10.95 Fib[]; \OT1/cmr/m/n/10.95 0) =
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 239.
-[27]
+(babel)             in language  on input line 285.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
+(babel)             in language  on input line 292.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 282.
+(babel)             in language  on input line 296.
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--294
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
-
- []
-
-
-Package hyperref Warning: No autoref name for `corollary' on input line 306.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 307.
+(babel)             in language  on input line 299.
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
+
+
+Package hyperref Warning: No autoref name for `corollary' on input line 320.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 350.
+(babel)             in language  on input line 364.
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--357
-
- []
-
-
-Package hyperref Warning: No autoref name for `proposition' on input line 359.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 388.
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
-
- []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 391.
+(babel)             in language  on input line 367.
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 394--396
+Underfull \hbox (badness 10000) in paragraph at lines 367--371
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 408.
+
+Package hyperref Warning: No autoref name for `proposition' on input line 373.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 402.
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--410
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 422.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 408.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 422.
 
-Overfull \hbox (16.36215pt too wide) in paragraph at lines 417--419
+Overfull \hbox (16.36215pt too wide) in paragraph at lines 431--433
 \T1/ppl/m/n/10.95 O único pro-blema agora é cal-cu-lar $\OT1/cmr/m/n/10.95 ^^H(
 \OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 )$ \T1/ppl/m/n/10.95 a par-tir de $\OT1
 /cmr/m/n/10.95 ^^H(\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 )$\T1/ppl/m/n/10.95 
@@ -2377,65 +2418,116 @@ Overfull \hbox (16.36215pt too wide) in paragraph at lines 417--419
 []p[]:::p[]M$\T1/ppl/m/n/10.95 ,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
-
- []
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 479.
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--486
-
- []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 490.
+(babel)             in language  on input line 433.
 [30]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 490.
+(babel)             in language  on input line 441.
  [31]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 493.
 
-Package hyperref Warning: No autoref name for `corollary' on input line 490.
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
+
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--494
+Underfull \hbox (badness 10000) in paragraph at lines 497--500
+
+ []
+
+
+Package hyperref Warning: No autoref name for `corollary' on input line 504.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--508
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 527.
+(babel)             in language  on input line 508.
+[32
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 541.
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--540
+Underfull \hbox (badness 10000) in paragraph at lines 551--554
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--543
+Overfull \hbox (4.721pt too wide) in paragraph at lines 561--563
+[]\T1/ppl/m/n/10.95 Verificamos tam-bém que $\OT1/cmr/m/n/10.95 5$ \T1/ppl/m/n/
+10.95 tem \T1/ppl/m/it/10.95 In-verso Mul-ti-pli-ca-tivo \T1/ppl/m/n/10.95 mó-d
+ulo $\OML/cmm/m/it/10.95 m$\T1/ppl/m/n/10.95 , já que $\OML/cmm/m/it/10.95 MDC\
+OT1/cmr/m/n/10.95 (5\OML/cmm/m/it/10.95 ; m\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--569
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--572
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 561.
+(babel)             in language  on input line 573.
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--563
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 590--592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--614
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--619
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 564.
-[32]
-Overfull \hbox (2.46692pt too wide) in paragraph at lines 564--569
+(babel)             in language  on input line 642.
+[34]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 646.
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Overfull \hbox (2.46692pt too wide) in paragraph at lines 649--654
 \T1/ppl/m/n/10.95 men-tos, ie, $\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 = \OMS
 /cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 s[]; s[]; :::; s[]\OMS/cmsy/m/n/10.95 g$\T
 1/ppl/m/n/10.95 , é de-fi-nido a fun-ção $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.
@@ -2445,12 +2537,12 @@ Overfull \hbox (2.46692pt too wide) in paragraph at lines 564--569
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--573
+Underfull \hbox (badness 10000) in paragraph at lines 655--658
 
  []
 
 
-Overfull \hbox (34.45744pt too wide) in paragraph at lines 574--577
+Overfull \hbox (34.45744pt too wide) in paragraph at lines 659--662
 []\T1/ppl/b/n/10.95 Solução: \T1/ppl/m/n/10.95 Pelo [][]Te-o-rema 16[][][] sa-b
 e-mos que, $\OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Fib[
 ]; Fib[]; :::; Fib[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 Fib[]$\T1/ppl/m/
@@ -2458,17 +2550,17 @@ n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 581--583
+Underfull \hbox (badness 10000) in paragraph at lines 666--668
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--588
+Underfull \hbox (badness 10000) in paragraph at lines 671--673
 
  []
 
 
-Overfull \hbox (53.71141pt too wide) in paragraph at lines 594--597
+Overfull \hbox (53.71141pt too wide) in paragraph at lines 679--682
 []\T1/ppl/m/n/10.95 A par-tir do mo-mento que cal-cu-la-mos $\OML/cmm/m/it/10.9
 5 q$\T1/ppl/m/n/10.95 , ie, en-con-tra-mos o va-lor má-ximo de $\OML/cmm/m/it/1
 0.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; s[]; :::; s[]\OT1/cmr/m/n/
@@ -2476,32 +2568,33 @@ Overfull \hbox (53.71141pt too wide) in paragraph at lines 594--597
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 594--597
+Underfull \hbox (badness 10000) in paragraph at lines 679--682
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--605
+Underfull \hbox (badness 10000) in paragraph at lines 688--690
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 606--621
+Underfull \hbox (badness 10000) in paragraph at lines 691--706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--639
+Underfull \hbox (badness 10000) in paragraph at lines 707--724
 
  []
 
-) (./Chapters/Chapter5.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 724.
+[35]) (./Chapters/Chapter5.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [33]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3.
- [34]
+ [36
+
+]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -2511,12 +2604,12 @@ Package babel Info: Redefining portuges shorthand "|
 ) (./Appendices/AppendixA.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [35
+ [37
 
 ]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [36
+ [38
 
 ]
 Ap\^endice A.
@@ -2525,7 +2618,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=659, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=677, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2534,10 +2627,10 @@ Package pdftex.def Info: Figures/grafico.png used on input line 22.
 ) (./Appendices/AppendixB.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [37 <./Figures/grafico.png>]
+ [39 <./Figures/grafico.png>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
- [38
+ [40
 
 ]
 Ap\^endice B.
@@ -2564,13 +2657,13 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 50.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 54.
-[39]
+[41]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 60.
 )
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 283.
- [40]
+ [42]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 283.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 283.
@@ -2581,7 +2674,7 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 287.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 287.
 
-[41
+[43
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
@@ -2589,7 +2682,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 287.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 287.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A7D6A0D9F5D0CFE94B7C781122F75A3C;7474.
+(rerunfilecheck)             Checksum: 282360FFA729FC0E9FE6F07758B6F5F7;7691.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2599,10 +2692,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28015 strings out of 493089
- 499706 string characters out of 6134842
- 651924 words of memory out of 5000000
- 30956 multiletter control sequences out of 15000+600000
+ 28022 strings out of 493089
+ 499817 string characters out of 6134842
+ 646924 words of memory out of 5000000
+ 30959 multiletter control sequences out of 15000+600000
  53971 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,51p,10403b,2185s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2627,10 +2720,10 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (53 pages, 475479 bytes).
+Output written on main.pdf (55 pages, 484094 bytes).
 PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 727 compressed objects within 8 object streams
- 191 named destinations out of 1000 (max. 500000)
- 438 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 830 PDF objects out of 1000 (max. 8388607)
+ 744 compressed objects within 8 object streams
+ 195 named destinations out of 1000 (max. 500000)
+ 446 words of extra memory for PDF output out of 10000 (max. 10000000)
 
