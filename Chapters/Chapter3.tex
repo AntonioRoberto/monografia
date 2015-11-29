@@ -23,8 +23,6 @@ $\Phi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
 $\Phi(n)$ é função multiplicativa, ie, $\Phi(mn) = \Phi(m)\Phi(n)$ para $MDC(m,n) = 1$.
 \end{theorem}
 \textbf{Demonstração:}
-A demonstração a seguir foi baseada no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 72 p.}
-
 Primeiro vamos dispor os números de $1$ à $nm$ da seguinte maneira:\\
 
 $1\quad(m+1)\quad(2m+1)\quad...\quad(n-1)m+1$
@@ -82,7 +80,7 @@ $\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
 
 \subsection{Algoritmo $\Phi$ de Euler}
 
-Nessa subsessão mostraremos um algoritmo para o cálculo de \textbf{$\Phi$ de Euler} para os primeiros $N$ números naturais.
+Nessa subseção mostraremos um algoritmo para o cálculo de \textbf{$\Phi$ de Euler} para os primeiros $N$ números naturais.
 O algoritmo baseia-se na idéia do \textbf{Crivo de Erastótenes} e no \autoref{formula_produto_euler}.
 \newline
 
@@ -188,7 +186,7 @@ Provaremos por indução que a expressão sempre funciona.
 
 $MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1})$
 
-$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pelo \textbf{Corolário} \autoref{corolario_gcd_soma})
+$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pelo \textbf{Proposição} \autoref{corolario_gcd_soma})
 
 Logo, temos que:
 
@@ -229,7 +227,7 @@ $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\trian
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
 
-Pelo \textbf{Corolário} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
+Pelo \textbf{Proposição} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$
 
@@ -248,8 +246,6 @@ E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos t
 $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$
 \end{theorem}
 \textbf{Demonstração:}
-
-A demonstração a seguir foi baseada no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 85 p.}
 
 $Fib_{n+1} = Fib_n + Fib_{n-1}$
 
@@ -283,7 +279,43 @@ $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)
 
 
 \subsection{Análise Algoritmo de Euclides}
-TODO demostracao analise algoritmo de euclides
+
+No \textbf{Algoritmo} \autoref{mdc}, exceto a chamada recursiva, todas as operações são feitas em tempo constante. Assim, 
+a complexidade do algoritmo $MDC(a,b)$ será proporcional ao número de chamadas recursivas que o algoritmo faz.
+Observe também que se $a\leq b$, então o algoritmo $MDC(a,b)$ fará uma chamada a mais do que se $a>b$ (na primeira iteração
+os parâmetros $a$ e $b$ seriam trocados de posição). Desse modo, sem perda de generalidade, assumiremos que $a > b$.
+
+\begin{proposition}\label{algoritmo_euclides_prop1}
+Se o algoritmo $MDC(a,b)$ faz $N$ ($1 < N$) chamadas recursivas, então: $a\geq Fib_{N+1}$ e $b \geq Fib_{N}$.
+\end{proposition}
+\textbf{Demonstração:}
+Provaremos essa proposição por indução. A base da indução é $N=1$. Como temos $1$ chamada recursiva, então $b\neq0$, ie, 
+$b \geq 1 = Fib_1$. Como $a > b$, então $a \geq 1 = Fib_2$, provando assim a base da indução.  
+
+Agora assuma que $N>1$, e que o algoritmo $MDC(a,b)$ faz $N$ chamadas recursivas. Pelo \autoref{algoritmo_divisao} sabemos que existe
+$q$ e $r$ tal que $a=qb+r$, e $0\leq r<b$. 
+Assim, temos que $MDC(b,r)$ faz $N-1$ chamadas recursivas.
+
+Pela hipótese de indução, temos que $b\geq Fib_N$ e $r\geq Fib_{N-1}$. Além disso, como $a > b$, temos que $q > 1$. 
+
+Concluindo assim que, $a \geq b+r \geq Fib_N + Fib_{N-1} = Fib_{N+1}$. $\square$
+
+\begin{proposition}\label{algoritmo_euclides_prop2}
+$Fib_N \geq \Phi^{N-1}$, em que $\Phi = \frac{1+\sqrt{5}}{2} \approx 1.618$ é a \textit{proporção áurea}.
+\end{proposition}
+\textbf{Demonstração:}
+Provaremos essa proposição por indução. Para $N=1$, temos: $Fib_1 = 1 \geq \Phi^{0} = 1$.
+
+Agora assuma que $N>1$. Primeiro observe que $\Phi^2 = (\frac{1+\sqrt{5}}{2})^2 = (\frac{3+\sqrt{5}}{2}) = \Phi + 1$.
+
+Pela hipótese de indução, temos que $Fib_N = Fib_{N-1} + Fib_{N-2} \geq \Phi^{N-2} + \Phi^{N-3} = \Phi^{N-3}(\Phi+1) = \Phi^{N-1}$.$\square$
+\newline
+
+Pelas \textbf{Proposições} \autoref{algoritmo_euclides_prop1} e \autoref{algoritmo_euclides_prop2}, temos que se $MDC(a,b)$ faz $N$
+chamadas recursivas, então $a \geq Fib_{N+1}$ e $b \geq Fib_N \geq \Phi^{N-1}$. 
+Podemos concluir então que, $\log_\Phi b \geq N-1$, ie, $N$ é $O(\log b)$. 
+
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION
@@ -317,7 +349,7 @@ Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(
 $F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^{n}\lambda_l d_l$, em que, $d_1, d_2,..., d_n$ são os divisores de $M$, $\lambda_l$ é o número de vezes que o divisor $d_l$ aparece na somatória $\sum_{i=1}^{M-1}MDC(i,N)$, e $n$ é o número de divisores de $M$.
 \\
 
-Pelo Corolario \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória, será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
+Pelo \textbf{Proposição} \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória, será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
 
 Reescrevendo novamente $F(M)$, temos:
 
@@ -501,7 +533,7 @@ São dados inteiros positivos $N$ e $D$. O problema consiste em calcular o núme
 \textbf{Solução:}
 Claramente se $D$ for maior que $N$, não há nenhum par que satisfaça as condições. Logo, assumiremos que $D \leq N$.
 
-Pelo \textbf{Corolário} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema
+Pelo \textbf{Proposição} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema
 em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
 Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$, já que $\Phi(r)$ nos dá a qunatidade de números menores ou iguais a $r$ e primo com entre si com $r$. Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
 \\

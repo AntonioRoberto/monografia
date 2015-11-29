@@ -13,7 +13,7 @@ A noção de divisibilidade dos números inteiros é fundamental na \textbf{Teor
 Nesse seção vamos descrever algumas definições e propriedades que serão utilizados ao longo desse trabalho.
 
 \begin{definition}
-A notação $d|n$ ("$d$ \textbf{divive} $n$"), significa que existe um inteiro $q$, tal que, $n = dq$.
+A notação $d|n$ ("$d$ \textbf{divide} $n$"), significa que existe um inteiro $q$, tal que, $n = dq$.
 Se $d|n$ dizemos que $n$ é múltiplo de $d$. Caso $n$ não seja múltiplo de $d$ (ou seja, $d$ não divide $n$), escrevemos $d \nmid n$.
 \end{definition}
 
@@ -40,13 +40,13 @@ $d|(\frac{n}{m}) \Rightarrow \exists q \in \mathbb{Z} \mid \frac{n}{m} = qd$
 $d|(\frac{n}{m}) \Rightarrow n = q(dm) \Rightarrow dm|n$ $\square$
 
 
-\begin{corollary}\label{corolario_divisibilidade_1}
+\begin{proposition}\label{corolario_divisibilidade_1}
 Dado um subconjunto dos inteiros $S = \{S_1, S_2, S_3, ..., S_n\}$ ordenado crescentemente, e um número inteiro $d$, tal que, $d|(S_i-S_{i-1})$, $2 \leq i \leq n$, 
 temos que: 
 
 $d|(S_i-S_j)$, $\forall S_i, S_j \in S$.
 
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
 Tome $S_i,S_j \in S$ quaisquer, e sem perda de generalidade assuma que $S_i \geq S_j$ (ie, $i \geq j$, pois $S$ está ordenado crescentemente).
 
@@ -65,12 +65,16 @@ $d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j)$ ($\tri
 $d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_j)$ $\square$ 
 
 
-\begin{corollary}\label{corolario_divisibilidade_1.1}
-O \textbf{Corolário} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
-\end{corollary}
+\begin{proposition}\label{corolario_divisibilidade_1.1}
+O \textbf{Proposição} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
+\end{proposition}
 \textbf{Demonstração:}
 Deixaremos a demostração a cargo do leitor.
+\newline
 
+\begin{definition}
+A operação \textbf{módulo} de dois inteiros $a$ e $b$, dada por "$a \bmod b$", representa o resto da divisão de $a$ por $b$.
+\end{definition}
 
 \begin{theorem}[Teorema da Divisão]\label{algoritmo_divisao}
 Para todo número inteiro $a$ e qualquer número inteiro positivo $n$, existe inteiros únicos $q$ e $r$, tal que:
@@ -120,7 +124,7 @@ $n = (qk_1 + k_2)d \Rightarrow d|n$ $\square$
 
 
 \subsection{Divisores}
-Nessa subsessão mostraremos um algoritmo simples para calcular todos os divisores de um determinado número inteiro positivo qualquer.
+Nessa subseção mostraremos um algoritmo simples para calcular todos os divisores de um determinado número inteiro positivo qualquer.
 
 \begin{theorem} 
 O número de divisores de $n \in \mathbb{Z}^{+}$ é da ordem de $O(\sqrt{n})$.
@@ -128,7 +132,7 @@ O número de divisores de $n \in \mathbb{Z}^{+}$ é da ordem de $O(\sqrt{n})$.
 \textbf{Demonstração:}
 Tome um divisor $d$ de $n$ qualquer, com $d > \sqrt{n}$. Dessa forma sabemos que existe um inteiro $q$, com $n=qd$ (observe que $q$ também é divisor de $n$). 
 Como $d > \sqrt{n}$ então $q < \sqrt{n}$. Assim, para qualquer divisor $d$ de $n$ maior que $\sqrt{n}$, existe exatamente um divisor $q$ de $n$ menor que $\sqrt{n}$ correspondente ao mesmo.
-O que implica que só existe no máximo $\sqrt{n}$ divisores maiores que $\sqrt{n}$. Por outro lado, claramente só existem $\sqrt{n}$ divisores menores que $\sqrt{n}$.
+O que implica que só existem no máximo $\sqrt{n}$ divisores maiores que $\sqrt{n}$. Por outro lado, claramente só existem $\sqrt{n}$ divisores menores que $\sqrt{n}$.
 Concluímos então que o número total de divisores de $n$ é da ordem de $O(\sqrt{n})$. $\square$
 \\
 
@@ -210,10 +214,12 @@ Assim, qualquer divisor de $a$ e $b$ é também divisor de $b$ e $(a \bmod b)$ (
 
 
 
-\begin{corollary}\label{divisibilidade_mdc}
+\begin{proposition}\label{divisibilidade_mdc}
 $MDC(a,b) = d \Rightarrow MDC(\frac{a}{d}, \frac{b}{d}) = 1$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
+Para $d = 1$, a prova é trivial.
+
 Suponha que $MDC(\frac{a}{d}, \frac{b}{d}) = r > 1$. Assim temos:
 
 $r|\frac{a}{d} \Rightarrow dr|a$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_fracao})
@@ -226,21 +232,21 @@ Chegamos então numa contradição, pois $dr$ é divisor comum de $a$ e $b$, e $
 
 
 
-\begin{corollary}\label{corolario_gcd_soma}
+\begin{proposition}\label{corolario_gcd_soma}
 Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(a,a \pm b)$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
-A prova dessa expressão vem do fato de que qualder divisor de $a$ e $b$, é também divisor de $(a \pm b)$.
+A prova dessa expressão vem do fato de que qualquer divisor de $a$ e $b$, é também divisor de $(a \pm b)$.
 
 
 
-\begin{corollary}\label{corolario_gcd_produto}
+\begin{proposition}\label{corolario_gcd_produto}
 Para números inteiros quaisquer $a$ e $b$, temos:
 
 $MDC(a,b) = 1 \Rightarrow MDC(a,bk) = MDC(a,k)$, com $k \in \mathbb{Z}$
-\end{corollary}
+\end{proposition}
 \textbf{Demonstração:}
-A prova dessa expressão vem do fato de que qualder divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
+A prova dessa expressão vem do fato de que qualquer divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
 \\
 
 \begin{corollary}\label{mdc_primo_fatorial}
@@ -253,7 +259,7 @@ o produto $(p-1)!$ de todos os inteiros positivos menores que $p$ também não t
 
 
 
-\subsection{Algoritmo de Euclides}
+\subsection{Algoritmo de Euclides}\label{algoritmo_de_euclides_subsessao}
 A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o \textbf{Máximo Divisor Comum} de dois números baseando-se no 
 \textbf{Corolário} \autoref{gcd_modular}.\\
 
@@ -262,17 +268,17 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \caption{Algoritmo de Euclides}\label{mdc}
 \begin{algorithmic}[1]
 \Procedure{$MDC (a, b)$}{}
-\If {$a = 0$}
-\State \Return $b$
+\If {$b = 0$}
+\State \Return $a$
 \EndIf
-\State \Return $MDC(b \bmod a, a)$
+\State \Return $MDC(b, a \bmod b)$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 \textbf{Análise:}
 O \textit{Algoritmo de Euclides} consome tempo proporcional à $O(\log b)$. Para provar a análise do custo do algoritmo é preciso conhecer algumas propriedades da \textit{Sequência de Fibonacci}, e desse modo, a 
-demostração será feita no \textbf{Capítulo 3}, \textbf{Subsessão 3.2}.
+demostração será feita no \textbf{Capítulo 3}, \textbf{Subseção 3.2.1}.
 
 
 
@@ -311,7 +317,7 @@ $x = m^*a + n^*b, x = qd + r \Rightarrow r = m^*a + n^*b - qd = m^*a + n^*b - q(
 
 $\Rightarrow r = (m^* - qm)a + (n^* - qn)b \Rightarrow r \in S$, pois $r > 0$
 
-Chegando numa contrdição, pois $r \in S$, $d \in S$, $r < d$ e $d$ é o menor elemento em $S$.
+Chegando numa contradição, pois $r \in S$, $d \in S$, $r < d$ e $d$ é o menor elemento em $S$.
 
 Desse modo, temos que $d$ divide todos os elementos de $S$. $\square$
 
@@ -361,6 +367,7 @@ Desse modo, ao final do algoritmo, os elementos não marcados são números prim
 \begin{algorithmic}[1]
 \Procedure{CrivoErastótenes (N)}{}
 \State $isPrime[] \gets \text{new Array}[N]$ \Comment{$isPrime[]$ é um vetor booleano}
+\State $isPrime[1] \gets false$
 \\
 \For {($p = 2 \text{; } p \leq N \text{; } p++)$}
 \State $isPrime[p] \gets true$
@@ -421,9 +428,9 @@ $MDC(a,b)|c \Leftrightarrow$ a \textit{Equação Diofantina} $ax + by=c$, tem so
 \textbf{Demonstração:}
 Provaremos primeiro a ida da implicação.
 
-Pelo \autoref{teorema_bezout} sabemos que existe $x^*$ e $y^*$, tal que, $ax^* + by^* = MDC(a,b)$. Logo:
+Pelo \autoref{teorema_bezout} sabemos que existem inteiros $x^*$ e $y^*$, tal que, $ax^* + by^* = MDC(a,b)$. Logo:
 
-$MDC(a,b)|c \Rightarrow \exists! q\in\mathbb{Z} \mid c = MDC(a,b)q \Rightarrow a(x^*q) + b(y^*q) = MDC(a,b)q = c$ $\square$
+$MDC(a,b)|c \Rightarrow \exists! q\in\mathbb{Z} \mid c = MDC(a,b)q \Rightarrow a(x^*q) + b(y^*q) = MDC(a,b)q = c$ 
 
 Provaremos agora a volta da implicação.
 
@@ -436,15 +443,15 @@ $\Rightarrow MDC(a,b)(ux + vy) = c \Rightarrow MDC(a,b)|c$. $\square$
 
 %----------------------------------------------------------------------------------------
 
-\subsection{Algoritmo de Euclides Extendido}
+\subsection{Algoritmo de Euclides Estendido}
 
-\textit{Algoritmo de Euclides Extendido} é uma extensão do \textit{Algoritmo de Euclides} que calcula não só o $MDC(a,b)$, para dados $a$ e $b$, mas também encontra
+\textit{Algoritmo de Euclides Estendido} é uma extensão do \textit{Algoritmo de Euclides} que calcula não só o $MDC(a,b)$, para dados $a$ e $b$, mas também encontra
 uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$. 
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Algoritmo de Euclides Extendido}\label{mdc_extended}
+\caption{Algoritmo de Euclides Estendido}\label{mdc_extended}
 \begin{algorithmic}[1]
 \Procedure{$ExtendedMDC (a, b)$}{}
 \If {$a = 0$}
@@ -460,6 +467,8 @@ uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$.
 \end{algorithm}
 
 \textbf{Análise:}
+Primeiro mostraremos a corretude do algoritmo.
+
 Em vez de retornar um inteiro, $ExtendedMDC(a,b)$ retorna uma tupla $[d,x,y]$, onde $d=MDC(a,b)$ e $x$,$y$ são a solução da equação $ax+by=d=MDC(a,b)$.
 Sabemos que $[d,x,y]$ na linha $5$ satisfaz a equação, $(b\bmod a)x + ay = d$, assim:
 
@@ -467,7 +476,7 @@ $(b\bmod a)x + ay = d \Rightarrow (b - \lfloor \frac{b}{a} \rfloor a)x + ay = d$
 
 $\Rightarrow a(y-\lfloor \frac{b}{a} \rfloor x) + b(x) = ax^* + by^* = d = MDC(a,b)$
 
-Observe que o \textit{Algoritmo de Euclides Extendido} é baseado no \textit{Algoritmo de Euclides}, tendo a mesma complexidade $O(\log(a+b))$.
+Observe que o \textit{Algoritmo de Euclides Estendido} é baseado no \textit{Algoritmo de Euclides}, tendo a mesma complexidade $O(\log(a+b))$.
 \\
 
 
@@ -476,7 +485,7 @@ Tome $[d,x_0,y_0]$ como sendo a tupla retornada pelo $ExtendedMDC(a,b)$, com $a$
 Então temos que todas as soluções da equação $ax+by=c$ são da forma: $x=(x_0\frac{c}{d} + \frac{bq}{d})$, $y=(y_0\frac{c}{d} - \frac{aq}{d})$, em que $q\in\mathbb{Z}$.
 \end{corollary}
 \textbf{Demonstração:}
-Pelo \textit{Algoritmo de Euclides Extendido} sabemos que $ax_0 + by_0=d$. Sabemos também que $d|c$ por definição, ie, existe $k\in\mathbb{Z}$ tal que $c=kd$.
+Pelo \textit{Algoritmo de Euclides Estendido} sabemos que $ax_0 + by_0=d$. Sabemos também que $d|c$ por definição, ie, existe $k\in\mathbb{Z}$ tal que $c=kd$.
 Assim temos que $x=x_0k$ e $y=y_0k$ é solução, já que $a(x_0k)+b(y_0k) = kd = c$. 
 
 Agora tome a solução $x^*,y^*$ qualquer ($ax^*+by^*=c$). Subtraindo as últimas duas equações temos:
@@ -585,11 +594,11 @@ Seja $S = \{S_1, S_2, S_3, ..., S_n\}$, com $n = |S|$, o conjunto dado pelo prob
 Tome um número qualquer $d \in P(S)$. Por definição temos que $\forall S_i, S_j \in S$, $S_i \equiv S_j ( mod$ $d) \Rightarrow $ 
 $ (S_i-S_j) \equiv 0 ( mod$ $d) \Rightarrow d \mid (S_i-S_j)$ .
 
-Pelo \textbf{Corolário} \autoref{corolario_divisibilidade_1} sabemos que:
+Pelo \textbf{Proposição} \autoref{corolario_divisibilidade_1} sabemos que:
 
 $d | (S_i-S_{i-1})$, $ \forall i \in \mathbb{N}, 2 \leq i \leq n \Rightarrow d | (S_i-S_j)$, $ \forall S_i, S_j \in S \Rightarrow d \in P(S)$.
 
-E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o Máximo Divisor Comum das diferenças $(S_i-S_{i-1})$ com $i$ variando de $2$ à $n$ $\square$.
+E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o Máximo Divisor Comum das diferenças $(S_i-S_{i-1})$ com $i$ variando de $2$ a $n$ $\square$.
 \\
 
 \textbf{Pseudocódigo:}
@@ -608,7 +617,7 @@ E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o 
 \end{algorithm}
 
 \textbf{Análise:}
-Pelo \textbf{Corolário} \autoref{corolario_divisibilidade_1.1} sabemos que não é preciso o conjunto $S$ ser ordenado.
+Pelo \textbf{Proposição} \autoref{corolario_divisibilidade_1.1} sabemos que não é preciso o conjunto $S$ ser ordenado.
 Assim a complexidade do algoritmo final será $O(|S|\log (\max (S_i-S_{i-1})))$.
 
 
@@ -619,7 +628,7 @@ Assim a complexidade do algoritmo final será $O(|S|\log (\max (S_i-S_{i-1})))$.
 
 \textbf{Resumo:}
 Calcular quantos divisores de um número inteiro $n$ ($1\leq n \leq 10^9$), contém os dígitos $4$ e $7$ na forma decimal.
-Por exemplo, para $n=94$ os únicos divisore que contém tais dígitos são: $47, 94$.
+Por exemplo, para $n=94$ os únicos divisores que contém tais dígitos são: $47, 94$.
 \newline
 
 \textbf{Solução:}
@@ -753,7 +762,7 @@ O único trecho do algoritmo que não roda em tempo constante é a chamada $Exte
 \textbf{Resumo:}
 É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem um posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$), 
 de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro. 
-Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais à $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
+Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais a $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
 Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consite em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
 usando os $E$ elevadores.
 \\
@@ -767,12 +776,12 @@ nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ 
 
 Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
 
-Dois elevadores $u$ e $v$ tem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
+Dois elevadores $u$ e $v$ atingem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
 $Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
 
 Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
-Pelo \autoref{equacao_diofantina_implicacao}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão
-conexos pelo andar $Y_u$. Checaremos essas restrições no começo do algoritmo, e daqui para frente assumiremos que $MDC(a,b)|c$ e $Y_u\neq Y_v$.
+Pelo \autoref{equacao_diofantina_implicacao}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão conectados.
+Checaremos essas restrições no começo do algoritmo, e daqui para frente assumiremos que $MDC(a,b)|c$ e $Y_u\neq Y_v$.
 
 Tome $d$, $t_1$, $t_2$ como sendo os valores retornados por $ExtendedMDC(a,b)$, temos então pelo \textbf{Corolário} \autoref{mdc_extended_solutions} que todas as soluções da
 equação $at_u + bt_v = c$, são da forma $t_u = (t_1\frac{c}{d} + \frac{bq}{d})$ e $t_v = (t_2\frac{c}{d} - \frac{aq}{d})$, com $q \in\mathbb{Z}$. Logo:

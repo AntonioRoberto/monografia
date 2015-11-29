@@ -41,7 +41,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 
 \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
 
-\addbibresource{example.bib} % The filename of the bibliography
+\addbibresource{main.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage{amssymb}
@@ -196,9 +196,9 @@ E um agradecimento especial ao Professor Doutor \textit{Carlos Eduardo Ferreira}
 
 \tableofcontents % Prints the main table of contents
 
-\listoffigures % Prints the list of figures
+%\listoffigures % Prints the list of figures
 
-\listoftables % Prints the list of tables
+%\listoftables % Prints the list of tables
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -279,8 +279,17 @@ E um agradecimento especial ao Professor Doutor \textit{Carlos Eduardo Ferreira}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
+\clearpage
 
-\printbibliography[heading=bibintoc]
+  \begin{thebibliography}{1}
+
+  \bibitem{notes} OLIVEIRA SANTOS, José Plínio {\em Introdução à Teoria dos Números}  IMPA, 1998. 72-85 pg
+
+  \bibitem{notes} CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford {\em Algoritmo Teoria e Prática}  CAMPUS, 2002.
+  
+  \end{thebibliography}
+
+%\printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
 
