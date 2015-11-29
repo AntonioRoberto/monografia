@@ -123,9 +123,9 @@ $E = \sum_{p\text{ primo} \mid p \leq N}\frac{N}{p} $.
 Observe também que: $E \leq \sum_{p=2}^{N}\frac{N}{p} = O(N\log N)$. 
 
 
-\begin{proposition}\label{phi_potencia_nk}
+\begin{corollary}\label{phi_potencia_nk}
 $\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positivos $n$ e $k$. 
-\end{proposition}
+\end{corollary}
 \textbf{Demonstração:}
 TODO
 
@@ -161,13 +161,13 @@ A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positiv
 \end{definition}
 
 
-\begin{proposition}\label{gcd_consecutivo_fib}
+\begin{corollary}\label{gcd_consecutivo_fib}
 $MDC(Fib_n, Fib_{n-1}) = 1$, para $n \geq 2$
-\end{proposition}
+\end{corollary}
 \textbf{Demonstração:}
 Tome os primeiros termos da sequência de fibonacci: $1, 1, 2, 3, 5, 8,...$.
 Claramente a expressão acima funciona para os primeiros termos.
-Assuma que a expressão funciona para um inteiro qualquer $(k-1) > 2$, ou seja, $MDC(Fib_{k-1}, Fib_{k-2}) = 1$.
+Assuma que a expressão funciona para um inteiro qualquer $(k-1) > 2$ ($MDC(Fib_{k-1}, Fib_{k-2}) = 1$).
 
 Provaremos por indução que a expressão sempre funciona.
 
@@ -181,9 +181,9 @@ $MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1}) = 1$ $\square$
 
 
 
-\begin{proposition}\label{gcd_combinacao_fib}
+\begin{corollary}\label{gcd_combinacao_fib}
 $Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$
-\end{proposition}
+\end{corollary}
 \textbf{Demonstração:} Provaremos esse corolário por indução no índice $n$.
 
 A base da indução será, $n=2$:
@@ -192,7 +192,7 @@ $Fib_{m+2} = Fib_m + Fim_{m+1} = Fib_m + Fib_m + Fib_{m-1}$
 
 $Fib_{m+2} = 2Fib_m + 1Fib_{m-1} = Fib_mFib_{3} + Fib_{m-1}Fib_2$
 
-Assumindo que a expressão é válida para todos os valores menores que $n$, temos:
+Assumindo que a expressão funciona para todos os valores menores que $n$, temos:
 
 $Fib_{m+n} = Fib_{m+n-2} + Fib_{m+n-1}$
 
@@ -210,7 +210,7 @@ $MDC(Fib_m, Fib_n) = Fib_{MDC(m, n)}, \forall m, n \in \mathbb{Z}$
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm + r})$ ($\triangleright$ \autoref{algoritmo_divisao}, $n = qm + r, 0 \leq r < n$)
 
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\triangleright$ \textbf{Proposição} \autoref{gcd_combinacao_fib}).
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\triangleright$ \textbf{Corolário} \autoref{gcd_combinacao_fib}).
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
 
@@ -225,7 +225,7 @@ Se tirarmos o símbolo funcional $Fib$, a última equação forma um passo do \t
 Podemos continuar esse processo até que o resto $r$ se torne $0$. O último resto não-nulo será
 exatamente o Máximo Divisor Comum do dois números originais.
 
-Desse modo, aplicar o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que aplicar aos índice $m$ e $n$.
+Desse modo, se aplicar-mos o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que se aplicar-mos aos índice $m$ e $n$.
 E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
 
 
@@ -234,7 +234,7 @@ $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)
 \end{theorem}
 \textbf{Demonstração:}
 
-A demonstração a seguir foi baseada no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 85 p.}
+A demonstração asseguir foi baseada no livro: \textit{OLIVEIRA SANTOS, José Plínio de. Introdução à Teoria dos Números. IMPA, 1998. 85 p.}
 
 $Fib_{n+1} = Fib_n + Fib_{n-1}$
 
@@ -289,14 +289,14 @@ $G(N) = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N}MDC(i,j)$.
 \\
 
 \textbf{Solução:}
-Trivialmente a expressão acima pode ser calculada em tempo proporcional a $O(n^2log(N))$, porém essa solução consome muito tempo e não será aceita no Judge Online. Vamos então mostrar uma solução mais eficiente.
+Trivialmente a expressão acima pode ser calculada em tempo proporcional à $O(n^2log(N))$, porém essa solução consome muito tempo e não será aceita no Judge Online. Vamos então mostrar uma solução mais eficiente.
 \\
 
 Primeiramente reescrevemos a expressão acima da seguinte maneira:
 
 $G(N) = \sum_{j=2}^N\sum_{i=1}^{j-1}MDC(i,j)$ ( $\rhd$ Observe que as expressão são equivalentes).
 
-Tome agora a função $F(M) = \sum_{i=1}^{M-1}MDC(i, M)$. Com isso, $G(N) = \sum_{j=2}^NF(j)$.
+Tome agora a função $F(M) = \sum_{i=1}^{M-1}MDC(i, M)$ $\Rightarrow$ $G(N) = \sum_{j=2}^NF(j)$.
 
 Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(M)$ são divisores de $M$. Desse modo, podemos reescrever $F(M)$ da seguinte maneira:
 
@@ -314,7 +314,7 @@ $G(N) = \sum_{j=2}^N \sum_{l=1}^n \Phi(j/d_l)d_l$ $\square$.
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{GCD - Extreme(I)}\label{gcd_extreme}
+\caption{GCD - Etreme(I)}\label{gcd_extreme}
 \begin{algorithmic}[1]
 \Procedure{G (N)}{}
 \State $\Phi[] \gets PHI(N)$
@@ -356,13 +356,13 @@ O problema consiste em calcular a expressão: $\Phi(n^m) \bmod d$.
 \\
 
 \textbf{Solução:}
-Pelo \textbf{Proposição} \autoref{phi_potencia_nk}, temos: 
+Pelo \textbf{Corolário} \autoref{phi_potencia_nk}, temos: 
 
 $\Phi(n^m) \bmod d = (n^{m-1}\Phi(n)) \bmod d$
 
 $\Phi(n^m) \bmod d = ((n^{m-1} \bmod d)(\Phi(n)) \bmod d) \bmod d)$
 
-Desse modo, podemos calcular o primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e a segundo fator com o método $PHI()$.
+Desse modo, podemos calcular a primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e a segundo fator com o método $PHI()$.
 \\
 
 \textbf{Pseudocódigo:}
@@ -379,8 +379,8 @@ Desse modo, podemos calcular o primeiro fator do produto ($n^{m-1} \bmod d$) usa
 \end{algorithm}
 
 \textbf{Análise:}
-As linhas $3$ e $4$ do algoritmo consomem tempo proporcional a $O(\log m)$ e $O(1)$ respectivamente.
-Se precalcularmos o vetor $\Phi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
+As linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(\log m)$ e $O(1)$ respectivamente.
+Se precalcular-mos o vetor $\Phi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
 
 
 
@@ -391,11 +391,11 @@ Se precalcularmos o vetor $\Phi[]$, temos que a complexidade total para calcular
 \textbf{Resumo:}
 É dado um inteiro $N$ ($2 \leq N \leq 10^{18}$) e o valora de $\Phi(N)$.
 
-O problema consiste em fatorar $N$. 
+O problema consiste em fatorizar $N$. 
 \\
 
 \textbf{Solução:}
-A solução trivial para fatorar $N$ consome tempo proporcional a $O(\sqrt{N})$, porém para uma entrada na ordem de $10^{18}$ precisames de um algoritmo mais eficiente.
+A solução trivial para fatorar $N$ consome tempo proporcional à $O(\sqrt{N})$, porém para uma entrada na ordem de $10^{18}$ precisames de um algoritmo mais eficiente.
 
 Se $N$ for primo, ie, $\Phi(N) = N-1$, já temos a solução.
 
@@ -466,13 +466,13 @@ $\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a
 
 
 \textbf{Análise:}
-O laço da linha $10$ consome tempo proporcional a $O(\sqrt[3]N)$. Já o laço da linha $11$ consome tempo proporcional a $O(\log_pN)$, pois tem no máximo $a$ iterações ($a$ é o número de vezes que o fator primo $p$ aparece em $N$) e assim, $p^a < N \Rightarrow a < \log_p{N}$. 
+O laço da linha $10$ consome tempo proporcional à $O(\sqrt[3]N)$. Já o laço da linha $11$ consome tempo proporcional à $O(\log_pN)$, pois tem no máximo $a$ iterações ($a$ é o número de vezes que o fator primo $p$ aparece em $N$) e assim, $p^a < N \Rightarrow a < \log_p{N}$. 
 
 As linhas 15-16 rodam em $O(log_pN)$, já que o número máximo de elementos distintos em $S$ é $log_pN$ ($p$ é o menor primo que divide $N$).
 E as linhas 18-23 rodam em $O(1)$.
 
-Assim, o algoritmo total consome tempo proporcional a $O(\sqrt[3]N \log N)$. 
-Observe que esse algoritmo é bem mais eficiente que o algoritmo trivial para fatoração $O(\sqrt N)$.
+Assim, o algoritmo total consome tempo proporcional à $O(\sqrt[3]N \log N)$. 
+Obeserve que esse algoritmo é bem mais eficiente que o algoritmo trivial para fatoração $O(\sqrt N)$.
 
 
 %----------------------------------------------------------------------------------------
@@ -481,11 +481,11 @@ Observe que esse algoritmo é bem mais eficiente que o algoritmo trivial para fa
 
 
 \textbf{Resumo:}
-São dados inteiros positivos $N$ e $D$. O problema consiste em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq N$ e $MDC(A,B)=D$.
+São dados inteiros positivos $N$ e $D$. O problema consite em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq N$ e $MDC(A,B)=D$.
 \\
 
 \textbf{Solução:}
-Claramente se $D$ for maior que $N$, não há nenhum par que satisfaça as condições. Logo, assumiremos que $D \leq N$.
+Claramente se $D$ for maior que $N$, não há nenhum par que satisfaz as condições. Logo, assumiremos que $D \leq N$.
 
 Pelo \textbf{Corolário} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema
 em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
@@ -515,7 +515,7 @@ Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \le
 \end{algorithm}
 
 \textbf{Análise:}
-Se precalcularmos $\Phi[]$ teremos que o fator limitando do algoritmo será o laço da linha $8$, e a complexidade do algoritmo será $O(\frac{N}{D})$.
+Se precalcular $\Phi[]$ teremos que o fator limitando do algoritmo será o laço da linha $8$, e a complexidade do algoritmo será $O(\frac{N}{D})$.
 
 Obs.: Quando dobramos o valor de $count$ na linha $11$, tem um único $\{1,1\}$ que é contado duas vezes, e por isso precisamos subtrair $1$ do valor final. 
 Esse par corresponde ao par $\{D,D\}$ do problema original.

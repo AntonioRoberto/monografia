@@ -667,26 +667,79 @@ $O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo
 
 
 \textbf{Resumo:}
+É dado um inteiro $n$ ($1 < n \leq 2.10^9$) que corresponde ao número de bolinhas disponíveis que serão colocadas em caixas. São dados também dois tipos de caixas:
+A caixa do tipo $1$ que pode armazenar $n_1$ bolinhas e custa $c_1$; E a caixa do tipo $2$ que pode armazenar $n_2$ bolinhas e custa $c_2$.
+
+O problema consiste em encontrar o custo mínimo para comprar caixas de forma que todas as caixas compradas estejam totalmente
+ preenchidas e todas as $n$ bolinhas estejam dentro de alguma caixa.
 %É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos.
 %E em caso afirmativo encontrar o valor desses dois primos.
 \\
 
 \textbf{Solução:}
-\\
+Imagine que compramos $x$ caixas do tipo $1$ e $y$ caixas do tipo $2$. Desse modo, o problema se resume em encontrar os valores $x$ e $y$, tal que: 
+\newline
+
+$n_1x + n_2y = n$, com $x,y\geq 0$, e que $c_1x+c_2y$ seja mínimo.
+\newline 
+
+Como no enunciado do problema é garantido que existe uma solução, então pelo \autoref{equacao_diofantina_implicacao} sabemos que $MDC(n_1,n_2) | n$.
+
+Pelo \textbf{Corolário} \autoref{mdc_extended_solutions} sabemos que toda solução $x$ e $y$ são da forma:
+
+$x=(x_0\frac{n}{d} + \frac{n_2q}{d})$ e $y =(y_0\frac{n}{d} - \frac{n_1q}{d})$, onde $d = MDC(n_1,n_2)$ e $q$ é um inteiro qualquer.
+
+Desse modo temos:
+\newline
+
+$x\geq0 \Rightarrow (x_0\frac{n}{d} + \frac{n_2q}{d})\geq 0 \Rightarrow q \geq \lceil -\frac{x_0n}{n_2} \rceil$
+\newline
+
+$y\geq0 \Rightarrow (y_0\frac{n}{d} - \frac{n_1q}{d}) \geq 0 \Rightarrow q \leq \lfloor \frac{y_0n}{n_1} \rfloor$
+\newline
+
+$\lceil -\frac{x_0n}{n_2} \rceil \leq q \leq \lfloor \frac{y_0n}{n_1} \rfloor$
+\newline
+
+Queremos encontrar o valor $min\{c_1x+c_2y\}$, onde $min\{f\}$ é o valor mínimo que a expressão $f$ assume. Portanto:
+\newline
+
+$min\{c_1x+c_2y\} = min\big\{c_1(x_0\frac{n}{d} + \frac{n_2q}{d})\big\}$ 
+\newline
+
+$min\{c_1x+c_2y\} = min\big\{q(\frac{n_2c_1 - n_1c_2}{d}) + n(\frac{c_1x_0+c_2y_0}{d})\big\}$ 
+\newline
+
+$min\{c_1x+c_2y\} = min\big\{q(\frac{n_2c_1 - n_1c_2}{d})\big\} + n(\frac{c_1x_0+c_2y_0}{d})$, já que $n(\frac{c_1x_0+c_2y_0}{d})$ é constante. 
+\newline
+
+Se $(\frac{n_2c_1 - n_1c_2}{d})$ for positivo, então $q(\frac{n_2c_1 - n_1c_2}{d})$ assume valor mínimo quando $q$ é mínimo, ie, $q=\lceil -\frac{x_0n}{n_2} \rceil$.
+
+Por outro lado, se $(\frac{n_2c_1 - n_1c_2}{d})$ for negativo, então $q(\frac{n_2c_1 - n_1c_2}{d})$ assume valor mínimo quando $q$ é máximo, ie, $q=\lfloor \frac{y_0n}{n_1} \rfloor$.
+\newline
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
 \caption{Marbles}
 \begin{algorithmic}[1]
-\Procedure{FindTwoPrimesSum (n)}{}
+\Procedure{$FindMinimumPrice (n, c_1, n_1, c_2, n_2)$}{}
 
+\State $[d,x_0,y_0] \gets ExtendedMDC(n_1,n_2)$
+\\
+\If {$(\frac{n_2c_1 - n_1c_2}{d}) \geq 0$}
+\State \Return $\lceil -\frac{x_0n}{n_2} \rceil (\frac{n_2c_1 - n_1c_2}{d})$
+\\
+\Else
+\State \Return $\lfloor \frac{y_0n}{n_1} \rfloor (\frac{n_2c_1 - n_1c_2}{d})$
+\EndIf
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
-
+\newline
 
 \textbf{Análise:}
-
+O único trecho do algoritmo que não roda em tempo constante é a chamada $ExtendedMDC(n_1,n_2)$ na linha $2$, logo a complexidade total do algoritmo é $O(\log(n_1+n_2))$.
+\newline
 
 
 
