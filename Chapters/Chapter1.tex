@@ -181,12 +181,30 @@ Todo número inteiro n (n > 1) que têm apenas dois divisores distintos (1 e n) 
 
 
 \begin{theorem}[Fatoração Única]\label{fatoracao_unica}
-Um número natural qualquer $n$, pode ser escrito unicamente como um produto da forma: 
+Um número natural qualquer $n>1$, pode ser escrito unicamente como um produto da forma: 
 $n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 < p_2 < ... < p_k$, e os números $a_i$ são inteiros positivos.
 \end{theorem}
 \textbf{Demonstração:}
-Deixaremos a demostração a cargo do leitor.
-\textbf{Dica:} Use o fato de que o conjunto dos primos que divide um número inteiro é único, e o fato de que se qualquer potência $a_i$ for alterado o valor de $n$ será alterado.
+Primeiro vamos mostrar que existe tal fatoração para um inteiro $n$ qualquer. Se $n$ for primo, então $n$ já está fatorado. 
+Se $n$ for composto, então existe um primo $p$ que divide $n$, ie, $n=pq$. Se $q$ for primo então $n$ estará fatorado,
+ ou $n = p^1q^1$ ou $n = p^2$ (se $p=q$).
+Caso $q$ não seja primo, repitimos o mesmo processo para $q$, de modo que teremos uma fatoração de $q$ no final do processo, e por
+consequência uma fatoração de $n$.
+
+Para mostrar a unicidade, tome as duas fatorações de $n$, $p_1^{a_1}p_2^{a_2}...p_k^{a_k}$ e $q_1^{b_1}q_2^{b_2}...q_r^{b_r}$.
+Por definição temos, $p_1 < p_2 < ... < p_k$ e $q_1 < q_2 < ... < q_r$. 
+
+Se $k<r$ então existe um primo em $\{q_1,q_2,...,q_r\}$ que divide $n$, mas não aparece na fatoração $p_1^{a_1}p_2^{a_2}...p_k^{a_k}$,
+chegando numa contradição. Analogamente, podemos provar que se $k>r$ chegaremos em outra contradição. E assim, concluímos que $k=r$.
+
+Por outro lado, todo primo que aparece na primeira fatoração deve também aparecer segunda fatoração (e vice versa). Pelo fato das
+fatorações estarem ordenadas, teremos que $p_i = q_i$, $1\leq i\leq k$.
+
+
+
+ Como a primeira fatoração divide a segunda fatoração e vice versa, temos também que $a_i = b_i$, $1\leq i\leq k$. $\square$
+
+
 
 
 
@@ -369,7 +387,6 @@ O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf
 até um certo valor limite $N$.
 O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
 Desse modo, ao final do algoritmo, os elementos não marcados são números primos.\\
-\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
@@ -414,7 +431,8 @@ O laço da linha $4$ itera sobre todos os valores de $2$ até $N$ e assim consom
 Já o laço mais interno na linha $9$ itera sobre de $p^2$ até $N$ múltiplos de $p$, e assim consome tempo
 $O(N/p)$. 
 
-Desse modo a complexidade conjunta dos laços das linhas $6$ e $9$, será $O(\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p})$(observe que o laço da linha $6$ itera sobre os primos menores que $sqrt(N)$). 
+Desse modo a complexidade conjunta dos laços das linhas $6$ e $9$, será $O(\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p})$
+(observe que o laço da linha $6$ itera sobre os primos menores que $sqrt(N)$). 
 
 Como foi sugerido por \textit{Leonhard Euler} no século XVIII, temos que $\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p} = O(N\log \log N)$. E assim a complexidade final do algoritmo é $O(N \log \log N)$.
 %----------------------------------------------------------------------------------------
@@ -469,7 +487,7 @@ $\Rightarrow MDC(a,b)(ux + vy) = c \Rightarrow MDC(a,b)|c$. $\square$
 
 \textit{Algoritmo de Euclides Estendido} é uma extensão do \textit{Algoritmo de Euclides} que calcula não só o $MDC(a,b)$, para dados $a$ e $b$, mas também encontra
 uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$. 
-\\
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}

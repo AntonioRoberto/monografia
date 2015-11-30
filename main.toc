@@ -5,17 +5,17 @@
 \contentsline {section}{\numberline {1.1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{section.5}
 \contentsline {subsection}{\numberline {1.1.1}Divisores}{2}{subsection.16}
 \contentsline {section}{\numberline {1.2}N\IeC {\'u}meros Primos}{3}{section.19}
-\contentsline {section}{\numberline {1.3}M\IeC {\'a}ximo Divisor Comum}{3}{section.22}
+\contentsline {section}{\numberline {1.3}M\IeC {\'a}ximo Divisor Comum}{4}{section.22}
 \contentsline {subsection}{\numberline {1.3.1}Algoritmo de Euclides}{4}{subsection.29}
 \contentsline {subsection}{\numberline {1.3.2}Teorema de B\IeC {\'e}zout}{5}{subsection.31}
-\contentsline {section}{\numberline {1.4}Crivo de Erast\IeC {\'o}teles}{5}{section.35}
-\contentsline {section}{\numberline {1.5}Equa\IeC {\c c}\IeC {\~o}es Diofantinas}{6}{section.37}
+\contentsline {section}{\numberline {1.4}Crivo de Erast\IeC {\'o}teles}{6}{section.35}
+\contentsline {section}{\numberline {1.5}Equa\IeC {\c c}\IeC {\~o}es Diofantinas}{7}{section.37}
 \contentsline {subsection}{\numberline {1.5.1}Algoritmo de Euclides Estendido}{7}{subsection.39}
 \contentsline {section}{\numberline {1.6}Problemas Propostos}{8}{section.42}
 \contentsline {subsection}{\numberline {1.6.1}UVA-543}{8}{subsection.43}
-\contentsline {subsection}{\numberline {1.6.2}CodeChef-GOC203}{8}{subsection.45}
+\contentsline {subsection}{\numberline {1.6.2}CodeChef-GOC203}{9}{subsection.45}
 \contentsline {subsection}{\numberline {1.6.3}UVA-10407}{9}{subsection.47}
-\contentsline {subsection}{\numberline {1.6.4}CodeChef-MAANDI}{9}{subsection.49}
+\contentsline {subsection}{\numberline {1.6.4}CodeChef-MAANDI}{10}{subsection.49}
 \contentsline {subsection}{\numberline {1.6.5}UVA-10090}{11}{subsection.51}
 \contentsline {subsection}{\numberline {1.6.6}UVA-718}{12}{subsection.53}
 \contentsline {chapter}{\numberline {2}Aritm\IeC {\'e}tica Modular}{15}{chapter.55}
