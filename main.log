@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 NOV 2015 23:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 JAN 2016 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1718,10 +1718,10 @@ Package babel Info: Redefining portuges shorthand "|
 [8
 
 ]
-Overfull \hbox (25.77795pt too wide) in paragraph at lines 587--589
+Overfull \hbox (26.56633pt too wide) in paragraph at lines 587--589
 \T1/ppl/m/n/10.95 laço na li-nha $\OT1/cmr/m/n/10.95 4$ \T1/ppl/m/n/10.95 con-s
 ome tempo $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n\OT1/c
-mr/m/n/10.95 )$\T1/ppl/m/n/10.95 . As-sim a com-ple-ci-dade do al-go-ritmo $\OM
+mr/m/n/10.95 )$\T1/ppl/m/n/10.95 . As-sim a com-ple-xi-dade do al-go-ritmo $\OM
 L/cmm/m/it/10.95 SumOfPrimes\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n\OT1/cmr/m
 /n/10.95 )$
  []
@@ -2724,7 +2724,7 @@ xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
 fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/palatino/uplri8a.pfb>
-Output written on main.pdf (51 pages, 479273 bytes).
+Output written on main.pdf (51 pages, 479473 bytes).
 PDF statistics:
  801 PDF objects out of 1000 (max. 8388607)
  720 compressed objects within 8 object streams

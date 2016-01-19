@@ -10,7 +10,7 @@
 
 \section{Introdução}
 A noção de divisibilidade dos números inteiros é fundamental na \textbf{Teoria dos Números}.
-Nesse seção vamos descrever algumas definições e propriedades que serão utilizados ao longo desse trabalho.
+Nessa seção vamos descrever algumas definições e propriedades que serão utilizadas ao longo desse trabalho.
 
 \begin{definition}
 A notação $d|n$ ("$d$ \textbf{divide} $n$"), significa que existe um inteiro $q$, tal que, $n = dq$.
@@ -25,7 +25,7 @@ A notação $d\bmod n$ ("$d$ \textbf{módulo} $n$"), significa o resta da divis�
 $d|n$ , $d|m \Rightarrow d|(n+m)$
 \end{proposition}
 \textbf{Demonstração:}
-Se $d|n$ e $d|m$, então existe inteiros $q$ e $k$, tal que, $n = qd$ e $m = kd$. Desse modo temos:
+Se $d|n$ e $d|m$, então existem inteiros $q$ e $k$, tal que, $n = qd$ e $m = kd$. Desse modo temos:
 
 $(n+m) = qd + kd = (q + k)d \Rightarrow d|(n+m) $ $\square$
 
@@ -66,7 +66,7 @@ $d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_j)$ $\square$
 
 
 \begin{proposition}\label{corolario_divisibilidade_1.1}
-O \textbf{Proposição} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
+A \textbf{Proposição} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
 \end{proposition}
 \textbf{Demonstração:}
 Deixaremos a demostração a cargo do leitor.
@@ -77,7 +77,7 @@ A operação \textbf{módulo} de dois inteiros $a$ e $b$, dada por "$a \bmod b$"
 \end{definition}
 
 \begin{theorem}[Teorema da Divisão]\label{algoritmo_divisao}
-Para todo número inteiro $a$ e qualquer número inteiro positivo $n$, existe inteiros únicos $q$ e $r$, tal que:
+Para todo número inteiro $a$ e qualquer número inteiro positivo $n$, existem inteiros únicos $q$ e $r$, tal que:
 
 $a = qn + r$, $0 \leq r < n$
 
@@ -93,7 +93,7 @@ Porém, como $r \neq r^*$, e tanto $r$ quanto $r^*$ são menores que $n$, temos 
 
 $(r\bmod n) \neq (r^*\bmod n) \Rightarrow n \nmid (r - r^*)$.
 
-Chegando numa contradição, e assim $q$ e $r$ são únicos $\square$ \\
+Chegando numa contradição, e assim $q$ e $r$ são únicos. $\square$ \\
 
 \begin{corollary}\label{divisibilidade_modular}
 $d|n$ , $d|m \Rightarrow d|(n \bmod m)$
@@ -124,13 +124,13 @@ $n = (qk_1 + k_2)d \Rightarrow d|n$ $\square$
 
 
 \subsection{Divisores}
-Nessa subseção mostraremos um algoritmo simples para calcular todos os divisores de um determinado número inteiro positivo qualquer.
+Nessa subseção mostraremos um algoritmo simples para calcular todos os divisores de um dado número inteiro positivo qualquer.
 
 \begin{theorem} 
 O número de divisores de $n \in \mathbb{Z}^{+}$ é da ordem de $O(\sqrt{n})$.
 \end{theorem}
 \textbf{Demonstração:}
-Tome um divisor $d$ de $n$ qualquer, com $d > \sqrt{n}$. Dessa forma sabemos que existe um inteiro $q$, com $n=qd$ (observe que $q$ também é divisor de $n$). 
+Tome um divisor $d$ de $n$ qualquer, com $d > \sqrt{n}$. Dessa forma sabemos que existe um inteiro $q$, tal que $n=qd$ (observe que $q$ também é divisor de $n$). 
 Como $d > \sqrt{n}$ então $q < \sqrt{n}$. Assim, para qualquer divisor $d$ de $n$ maior que $\sqrt{n}$, existe exatamente um divisor $q$ de $n$ menor que $\sqrt{n}$ correspondente ao mesmo.
 O que implica que só existem no máximo $\sqrt{n}$ divisores maiores que $\sqrt{n}$. Por outro lado, claramente só existem $\sqrt{n}$ divisores menores que $\sqrt{n}$.
 Concluímos então que o número total de divisores de $n$ é da ordem de $O(\sqrt{n})$. $\square$
@@ -188,7 +188,7 @@ $n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 <
 Primeiro vamos mostrar que existe tal fatoração para um inteiro $n$ qualquer. Se $n$ for primo, então $n$ já está fatorado. 
 Se $n$ for composto, então existe um primo $p$ que divide $n$, ie, $n=pq$. Se $q$ for primo então $n$ estará fatorado,
  ou $n = p^1q^1$ ou $n = p^2$ (se $p=q$).
-Caso $q$ não seja primo, repitimos o mesmo processo para $q$, de modo que teremos uma fatoração de $q$ no final do processo, e por
+Caso $q$ não seja primo, repetimos o mesmo processo para $q$, de modo que teremos uma fatoração de $q$ no final do processo, e por
 consequência uma fatoração de $n$.
 
 Para mostrar a unicidade, tome as duas fatorações de $n$, $p_1^{a_1}p_2^{a_2}...p_k^{a_k}$ e $q_1^{b_1}q_2^{b_2}...q_r^{b_r}$.
@@ -229,7 +229,7 @@ Pelo \textbf{Corolário} \autoref{divisibilidade_modular} e \autoref{divisibilid
 
 $d|a, d|b \Leftrightarrow d|b, d|(a \bmod b)$
 
-Assim, qualquer divisor de $a$ e $b$ é também divisor de $b$ e $(a \bmod b)$ (e vise versa). Implicando que o \textbf{Máximo Divisor Comum} de $a$ e $b$
+Assim, qualquer divisor de $a$ e $b$ é também divisor de $b$ e $(a \bmod b)$ (e vise versa), implicando que o \textbf{Máximo Divisor Comum} de $a$ e $b$
 é igual ao \textbf{Máximo Divisor Comum} de $b$ e $(a \bmod b)$. $\square$
 
 
@@ -297,7 +297,7 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \end{algorithm}
 
 \textbf{Análise:}
-Primeiro provaremos a corretude do algoritmo fazendo um indução sobre o número de chamadas recursivas $N$.
+Primeiro provaremos a corretude do algoritmo fazendo umia indução sobre o número de chamadas recursivas $N$.
 
 Se $N=0$, então $b=0$, e desse modo $MDC(a,0)=a$, ie, para esse caso base o algoritmo retorna o valor correto.
 
@@ -313,7 +313,7 @@ demostração será feita no \textbf{Capítulo 3}, \textbf{Subseção 3.2.1}.
 \subsection{Teorema de Bézout}
 
 \begin{proposition}\label{bezout_conjunto_nao_nulo}
-Dado o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
+Seja o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
 e pelo menos um desses números é diferente de zero. Temos então que $S \neq \emptyset$. 
 \end{proposition}
 \textbf{Demonstração:}
@@ -331,8 +331,8 @@ Como não temos ambos $a$ e $b$ iguais à zero, então $S$ deve conter pelo meno
 
 
 \begin{corollary}\label{bezout_conjunto_divide}
-Dado o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
-e pelo menos um desses números é diferente de zero. Temos então que o menor número $d \in S$ divide todos elementos de $S$.
+Seja o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
+e pelo menos um desses números é diferente de zero. Temos então que o menor número $d \in S$ divide todos os elementos de $S$.
 \end{corollary}
 \textbf{Demonstração:}
 Como $d \in S$, $\exists m,n\in\mathbb{Z} \mid d = ma + nb$.
@@ -345,7 +345,7 @@ $x = m^*a + n^*b, x = qd + r \Rightarrow r = m^*a + n^*b - qd = m^*a + n^*b - q(
 
 $\Rightarrow r = (m^* - qm)a + (n^* - qn)b \Rightarrow r \in S$, pois $r > 0$
 
-Chegando numa contradição, pois $r \in S$, $d \in S$, $r < d$ e $d$ é o menor elemento em $S$.
+Chegamos numa contradição, pois $r \in S$, $d \in S$, $r < d$ e $d$ é o menor elemento em $S$.
 
 Desse modo, temos que $d$ divide todos os elementos de $S$. $\square$
 
@@ -422,13 +422,13 @@ Todos os valores que $n$ assume no laço da linha $11$ são múltiplos de $p$, e
 
 Agora tome um $n$ composto qualquer menor que $N$. Sabemos que existe um primo $q \leq \sqrt{n} \leq \sqrt{N}$ que divide $n$. 
 E desse modo, em uma das iterações do laço da linha $8$ teremos $p=q$. Como $q$ é primo então $isPrime[q]=true$, e desse modo
-o laço da linha $11$ será executado, iterando sobre os múltiplos de $q$ menores que $N$, ie, em alguma iteração será executado 
-a operaçõe $isPrime[n]\gets false$, implicando assim em: $isPrime[n] = false \Leftarrow n$ é composto.
+o laço da linha $11$ será executado, iterando sobre os múltiplos de $q$ menores que $N$, ie, em alguma iteração será executada 
+a operação $isPrime[n]\gets false$, implicando assim em: $isPrime[n] = false \Leftarrow n$ é composto.
 
 Agora faremos uma análise da complexidade do algoritmo.
 
 O laço da linha $4$ itera sobre todos os valores de $2$ até $N$ e assim consome tempo $O(N)$.
-Já o laço mais interno na linha $9$ itera sobre de $p^2$ até $N$ múltiplos de $p$, e assim consome tempo
+Já o laço mais interno na linha $9$ itera sobre todos os múltiplas de $p$ de $p^2$ até $N$, e assim consome tempo
 $O(N/p)$. 
 
 Desse modo a complexidade conjunta dos laços das linhas $6$ e $9$, será $O(\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p})$
@@ -474,7 +474,7 @@ $MDC(a,b)|c \Rightarrow \exists! q\in\mathbb{Z} \mid c = MDC(a,b)q \Rightarrow a
 
 Provaremos agora a volta da implicação.
 
-Sabemos que existe inteiros $u$ e $v$, tal que, $a=MDC(a,b)u$ e $b=MDC(a,b)v$. Logo:
+Sabemos que existem inteiros $u$ e $v$, tal que, $a=MDC(a,b)u$ e $b=MDC(a,b)v$. Logo:
 
 $ax + by=c$, tem solução inteira $\Rightarrow MDC(a,b)ux + MDC(a,b)vy = c$
 
@@ -585,7 +585,7 @@ Para resolver esse problema basta rodar o \textbf{Algoritmo} \autoref{crivo_eras
 \end{algorithm}
 
 \textbf{Análise:}
-O \textit{Crivo de Erastótenes} consome tempo proporcional a $O(n \log \log n)$, e o laço na linha $4$ consome tempo $O(n)$. Assim a complecidade do algoritmo $SumOfPrimes(n)$ é $O(n \log \log n)$.
+O \textit{Crivo de Erastótenes} consome tempo proporcional a $O(n \log \log n)$, e o laço na linha $4$ consome tempo $O(n)$. Assim a complexidade do algoritmo $SumOfPrimes(n)$ é $O(n \log \log n)$.
 
 %----------------------------------------------------------------------------------------
 \subsection{CodeChef-GOC203}
@@ -657,7 +657,7 @@ E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o 
 \end{algorithm}
 
 \textbf{Análise:}
-Pelo \textbf{Proposição} \autoref{corolario_divisibilidade_1.1} sabemos que não é preciso o conjunto $S$ ser ordenado.
+Pela \textbf{Proposição} \autoref{corolario_divisibilidade_1.1} sabemos que não é preciso o conjunto $S$ ser ordenado.
 Assim a complexidade do algoritmo final será $O(|S|\log (\max (S_i-S_{i-1})))$.
 
 
@@ -672,7 +672,7 @@ Por exemplo, para $n=94$ os únicos divisores que contém tais dígitos são: $4
 \newline
 
 \textbf{Solução:}
-Para esse problema, basta calcular todos os divisores de $n$, com o \textbf{Algoritmo} \autoref{encontra_divisores}, e depois verificar quais deles contêm os digitos $4$ ou $7$.
+Para esse problema, basta calcular todos os divisores de $n$, com o \textbf{Algoritmo} \autoref{encontra_divisores}, e depois verificar quais deles contêm os dígitos $4$ ou $7$.
 \clearpage
 
 \textbf{Pseudocódigo:}
@@ -718,7 +718,7 @@ $O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo
 
 
 \textbf{Resumo:}
-É dado um inteiro $n$ ($1 < n \leq 2.10^9$) que corresponde ao número de bolinhas disponíveis que serão colocadas em caixas. São dados também dois tipos de caixas:
+É dado um inteiro $n$ ($1 < n \leq 2*10^9$) que corresponde ao número de bolinhas disponíveis que serão colocadas em caixas. São dados também dois tipos de caixas:
 A caixa do tipo $1$ que pode armazenar $n_1$ bolinhas e custa $c_1$; E a caixa do tipo $2$ que pode armazenar $n_2$ bolinhas e custa $c_2$.
 
 O problema consiste em encontrar o custo mínimo para comprar caixas de forma que todas as caixas compradas estejam totalmente
@@ -800,15 +800,15 @@ O único trecho do algoritmo que não roda em tempo constante é a chamada $Exte
 \href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=659}{718 - Skyscraper Floors}\\
 
 \textbf{Resumo:}
-É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem um posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$), 
+É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem uma posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$), 
 de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro. 
 Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais a $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
-Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consite em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
+Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consiste em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
 usando os $E$ elevadores.
 \\
 
 \textbf{Solução:} 
-Primeiro imagine que temos um grafo bidirecionado com $E$ vértices, onde cada vértice representa um elevador e cada aresta $(u,v)$ nos diz que os elevadores $u$ e $v$ 
+Primeiro imagine que temos um grafo bidirecionado com $E$ vértices, onde cada vértice representa um elevador e cada aresta $(u,v)$ nos indica que os elevadores $u$ e $v$ 
 conseguem chegar em algum andar em comum.
 Sabemos quais elevadores atingem o andar $A$, basta verificar se $Y_i+X_it=A$ tem solução $t$ inteira. Analogamente sabemos quais elevadores atingem o andar
 $B$. Então só precisaríamos fazer uma busca (\href{https://en.wikipedia.org/wiki/Breadth-first_search}{BFS} ou \href{https://en.wikipedia.org/wiki/Depth-first_search}{DFS})
