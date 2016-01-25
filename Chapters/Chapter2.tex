@@ -54,9 +54,9 @@ Se o conjunto $S = \{s_0, s_1, s_2, ..., s_{k-1}\}$ é um sistema completo de re
 \textbf{Demonstração:}
 Tome o conjunto $R = \{0, 1, 2, 3,...,n-1\}$. Pela \textbf{Proposição} \autoref{residuo_completo_1n} sabemos que $R$ é um sistema completo de resíduos módulo $n$.
 
-Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente a exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$, ou simplesmente $k\leq n$. 
+Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente a exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$. 
 Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente a exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
-Disso temos que, $|R| = |S|$, ou melhor, $k=n$. $\square$
+Assim, como $|S| \leq |R|$ e $|R| \leq |S|$, temos que $|R| = n = k = |S|$. $\square$
 \\
 
 
@@ -193,7 +193,7 @@ de $a$ módulo $p$.
 \end{theorem}
 \textbf{Demonstração:}
 Pelo \autoref{teorema_fermat} sabemos que $a^{p-1}\equiv1$ $(mod$ $p)$. Sabemos também que existe um inverso multiplicativo $a^{-1}$
-de $a$ módulo $p$, já que $a$ e $p$ são primos entre si. Desse mode, temos que:
+de $a$ módulo $p$, já que $a$ e $p$ são primos entre si. Desse modo, temos que:
 
 $a^{p-1}\equiv1$ $(mod$ $p) \Rightarrow a^{p-1}a^{-1} \equiv 1.a^{-1}$ $(mod$ $p) \Rightarrow a^{p-2}\equiv a^{-1}$ $(mod$ $p)$.$\square$
 
@@ -270,7 +270,7 @@ O algoritmo recebe inteiros $a$ e $b$, e calcula $a^b$, usando divisão e conqui
   \begin{cases} 
    1& \text{se } b = 0 \\
    (a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for par} \\
-   a(a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for impar} 
+   a(a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for ímpar} 
   \end{cases}
 \]
 
@@ -306,7 +306,7 @@ Expandindo essa recursão é fácil perceber que a complexidade do algoritmo é 
 %----------------------------------------------------------------------------------------
 \subsection{Exponenciação Binária Modular}
 
-\textit{Exponenciação Binária Modular} é uma varição do algoritmo \textit{Exponenciação Binária} que calcula $a^b\bmod m$, para dodos inteiros $a$, $b$, e $m$. Em geral \textit{Exponenciação Binária Modular} é mais usado que \textit{Exponenciação Binária}, 
+\textit{Exponenciação Binária Modular} é uma variação do algoritmo \textit{Exponenciação Binária} que calcula $a^b\bmod m$, para dodos inteiros $a$, $b$, e $m$. Em geral \textit{Exponenciação Binária Modular} é mais usado que \textit{Exponenciação Binária}, 
 pelo fato da expressão $a^b$ crescer rapidamente e causar \textit{overflow}.\\
 
 \textbf{Pseudocódigo:}
@@ -340,7 +340,7 @@ Assim esse algoritmo tem a mesma complexidade $O(\log b)$ da \textit{Exponencia�
 %----------------------------------------------------------------------------------------
 \subsection{Exponenciação de Matriz}
 
-\textit{Exponenciação de Matrix} é uma outra varição do algoritmo \textit{Exponenciação Binária} que calcula $A^b\bmod m$, para dados inteiros $b$ e $m$ e a matrix quadrada $A_{n,n}$. 
+\textit{Exponenciação de Matriz} é uma outra variação do algoritmo \textit{Exponenciação Binária} que calcula $A^b\bmod m$, para dados inteiros $b$ e $m$ e a matriz quadrada $A_{n,n}$. 
 
 \begin{definition}
 A expressão "$A \bmod m$", em que $A$ é uma matriz e $m$ um inteiro qualquer, representa uma matriz $B$ com as mesmas dimensões que $A$, tal que: $B_{ij} = A_{ij} \bmod m$, $\forall B_{ij} \in B$.
@@ -348,11 +348,11 @@ A expressão "$A \bmod m$", em que $A$ é uma matriz e $m$ um inteiro qualquer, 
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Exponenciação de Matrix}\label{exponenciacao_matrix}
+\caption{Exponenciação de Matriz}\label{exponenciacao_matrix}
 \begin{algorithmic}[1]
 \Procedure{$EXPMAT (A, b, m)$}{}
 \If {$b = 0$}
-\State \Return $I$ \Comment {$I$ representa a matrix identidade de dimensão $n$}
+\State \Return $I$ \Comment {$I$ representa a matriz identidade de dimensão $n$}
 \EndIf 
 \\
 \State $P \gets EXPMAT(A, \lfloor \frac{b}{2} \rfloor, m)$
@@ -517,7 +517,7 @@ Como vimos anteriormente, as linhas $3$ e $4$ do algoritmo consomem tempo propor
 
 
 \textbf{Resumo:}
-Existe um número infinito de moedas de dois tipos: as de $1$ centavo, e de $2$ centavos. 
+Existe um número infinito de moedas de dois tipos: as de $1$ centavo, e as de $2$ centavos. 
 Todas as moedas tem dois lados (\textit{cara} e \textit{coroa}) que representam o valor da moeda. 
 
 É dado um inteiro $N$ ($1 \leq N \leq 10^9$). 
@@ -530,14 +530,14 @@ Como esse número pode ser muito grande, a resposta tem que ser dada módulo $m$
 \textbf{Solução:}
 Tome $f_1(N)$ como sendo o número de arranjos lineares com a primeira moeda sendo \textit{cara}. Analogamente, tome $f_2(N)$
 como sendo o número de arranjos lineares com a primeira moeda sendo \textit{coroa}. Por último, tome $f(N) = f_1(N)+f_2(N)$, como
-sendo o número total de arranjos cujo a soma das moedas é $N$.
+sendo o número total de arranjos cuja a soma das moedas é $N$.
 
 Nessas condições temos as seguintes \textbf{Proposições}:
 \\
 
 \textbf{Proposição 1:} $f_1(N) = f_2(N)$
 
-\textbf{Prova:} Para cada arranjo em $f_1$, se trocarmos a primeiro moeda de \textit{cara} para \textit{coroa}, teremos um arranjo correspondente em $f_2$. E assim, há uma bijeção de $f_1$ para $f_2$.
+\textbf{Prova:} Para cada arranjo em $f_1$, se trocarmos a primeira moeda de \textit{cara} para \textit{coroa}, teremos um arranjo correspondente em $f_2$. E assim, há uma bijeção de $f_1$ para $f_2$.
 \\
 
 \textbf{Proposição 2:} $f_1(N) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$
@@ -676,6 +676,6 @@ $
 \end{algorithm}
 
 \textbf{Análise:}
-Esse algoritmo tem a mesmo complexidade do \textbf{Algoritmo} \autoref{exponenciacao_matrix}, ou seja, $O(n^3 \log N)$ (onde $n$ é a dimensão da matriz).
+Esse algoritmo tem a mesma complexidade do \textbf{Algoritmo} \autoref{exponenciacao_matrix}, ou seja, $O(n^3 \log N)$ (onde $n$ é a dimensão da matriz).
 Como nesse problema a matriz é sempre quadrada de dimensão $n=2$, temos que a complexidade final do algoritmo será $O(\log N)$.
 
