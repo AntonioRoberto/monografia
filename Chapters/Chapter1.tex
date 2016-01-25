@@ -10,7 +10,7 @@
 
 \section{Introdução}
 A noção de divisibilidade dos números inteiros é fundamental na \textbf{Teoria dos Números}.
-Nessa seção vamos descrever algumas definições e propriedades que serão utilizadas ao longo desse trabalho.
+Nesta seção vamos descrever algumas definições e propriedades que serão utilizadas ao longo desse trabalho.
 
 \begin{definition}
 A notação $d|n$ ("$d$ \textbf{divide} $n$"), significa que existe um inteiro $q$, tal que, $n = dq$.
@@ -297,7 +297,7 @@ A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o
 \end{algorithm}
 
 \textbf{Análise:}
-Primeiro provaremos a corretude do algoritmo fazendo umia indução sobre o número de chamadas recursivas $N$.
+Primeiro provaremos a corretude do algoritmo fazendo uma indução sobre o número de chamadas recursivas $N$.
 
 Se $N=0$, então $b=0$, e desse modo $MDC(a,0)=a$, ie, para esse caso base o algoritmo retorna o valor correto.
 
@@ -428,7 +428,7 @@ a operação $isPrime[n]\gets false$, implicando assim em: $isPrime[n] = false \
 Agora faremos uma análise da complexidade do algoritmo.
 
 O laço da linha $4$ itera sobre todos os valores de $2$ até $N$ e assim consome tempo $O(N)$.
-Já o laço mais interno na linha $9$ itera sobre todos os múltiplas de $p$ de $p^2$ até $N$, e assim consome tempo
+Já o laço mais interno na linha $9$ itera sobre todos os números entre $p^2$ e $N$ que são múltiplos de $p$, e assim consome tempo
 $O(N/p)$. 
 
 Desse modo a complexidade conjunta dos laços das linhas $6$ e $9$, será $O(\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p})$
