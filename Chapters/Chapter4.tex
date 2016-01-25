@@ -1,239 +1,812 @@
-% Chapter Template
+% Chapter 4
 
-\chapter{Lista de Problemas} % Main chapter title
+\chapter{Funções Aritméticas} % Main chapter title
 
 \label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 %----------------------------------------------------------------------------------------
-%	SECTION 1
+%	SECTION
 %----------------------------------------------------------------------------------------
 
-Esse capítulo contém uma lista de problemas que envolvem \textit{Teoria dos Números}
-separados por nível de dificuldade. Os problemas aqui listados foram retirados do site
-\href{http://ahmed-aly.com/Category.jsp?ID=41}{http://ahmed-aly.com/}.
+\section{$\Phi$ de Euler}
+
+\begin{definition}
+A Função Totiente de Euler, denotada por $\Phi(n)$, é a função aritmética que conta o número 
+de inteiros positivos menores ou iguais a $n$ que são primos entre si com $n$ (ou \textbf{coprimos}).
+
+$\Phi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
+\end{definition}
+
+
+
+\begin{theorem}\label{phi_multiplicativa}
+$\Phi(n)$ é função multiplicativa, ie, $\Phi(mn) = \Phi(m)\Phi(n)$ para $MDC(m,n) = 1$.
+\end{theorem}
+\textbf{Demonstração:}
+Primeiro vamos dispor os números de $1$ à $nm$ da seguinte maneira:\\
+
+$1\quad(m+1)\quad(2m+1)\quad...\quad(n-1)m+1$
+
+$2\quad(m+2)\quad(2m+2)\quad...\quad(n-1)m+2$
+
+$3\quad(m+3)\quad(2m+3)\quad...\quad(n-1)m+3$
+
+$\vdots$
+
+$m\quad\quad2m\quad\quad\quad3m\quad\quad...\quad\quad\quad\quad{nm}$\\
+
+Tome a linha $q$, com os elementos $q,m+q,2m+q,...,(n-1)m+q$. Se o $MDC(m,q) = d > 1$, então nenhum termo dessa linha será primo com
+$mn$, já que: 
 \\
 
+$MDC(m,q) \neq 1 \Rightarrow MDC(xm+q,q) \neq 1 \Rightarrow MDC(mn,q) \neq 1$.
+\newline
+
+Logo, as únicas linhas da tabela que nos interessam são aquelas cujo primeiro termo é primo com $m$ (observe que temos $\Phi(m)$
+linhas que satisfazem essa condição).
+
+Agora, para cada uma dessas $\Phi(m)$ linhas, queremos saber quantos termos são primos com $n$, já que todos elementos na linha são
+primos com $m$. Como $MDC(m,n) = 1$, pelo \autoref{sistemo_completp_residuo} sabemos que os termos $r,m+r,2m+r,...,(n-1)m+r$ formam um sistema completo de resíduos módulo $n$.
+Assim, cada uma dessas $\Phi(m)$ linhas contém $\Phi(n)$ elementos primos com $n$, e como eles são primos com $m$, são também
+primos com $mn$. E isto nos garante que $\Phi(m) = \Phi(m)\Phi(n)$. $\square$
+
+
+\begin{theorem}\label{phi_potencia}
+$\Phi(p^k) = (p^k - p^{k-1})$, para $p$ primo e $k$ inteiro positivo.
+\end{theorem}
+\textbf{Demonstração:}
+Como $p$ é um número primo, para qualquer inteiro $n$, os únicos valores possíveis para $MDC(p^k,n)$ são: $1, p, p^2,...,p^k$, 
+e desse modo, se $MDC(p^k,n)\neq1$ temos que $p|n$ ($n$ é múltiplo de $p$). Assim, a quantidade de números não-primos e menores do que $p^k$ é $p^{k-1}$.
+
+Logo, temos que: $\Phi(p^k) = p^k - p^{k-1}$ $\square$
+
+
+
+
+\begin{theorem}[Fórmula Produto de Euler]\label{formula_produto_euler}
+$\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$
+\end{theorem}
+\textbf{Demonstração:}
+
+$\Phi(n) = \Phi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$ ($\triangleright$ \autoref{fatoracao_unica})
+
+$\Phi(n) = \Phi(p_1^{a_1})\Phi(p_2^{a_2})...\Phi(p_k^{a_k})$ ($\triangleright$ \autoref{phi_multiplicativa})
+
+$\Phi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$ ($\triangleright$ \autoref{phi_potencia})
+
+$\Phi(n) = p_1^{a_1}p_2^{a_2}...p_k^{a_k}(1 - 1/p_1)(1 - 1/p_2)...(1 - 1/p_k)$
+
+$\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
+
+\subsection{Algoritmo $\Phi$ de Euler}
+
+Nessa subseção mostraremos um algoritmo para o cálculo de \textbf{$\Phi$ de Euler} para os primeiros $N$ números naturais.
+O algoritmo baseia-se na idéia do \textbf{Crivo de Erastótenes} e no \autoref{formula_produto_euler}.
+\newline
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Calcula os primeiros N termos da função $\Phi$}\label{phi_de_euler_algoritmh}
+\begin{algorithmic}[1]
+\Procedure{$PHI (N)$}{}
+\State $\Phi[] \gets new Array[N]$
+\\
+\For {$(p = 1 \text{; } p \leq N \text{; } p++)$}
+\State $\Phi[p] \gets p$
+\EndFor
+\\
+\For {$(p = 2\text{; } p \leq N\text{; } p++)$}
+
+\If {$\Phi[p] \neq p$} \Comment{$\Phi[p] \neq p \Leftrightarrow p\text{ não é primo}$}
+\State \textbf{continue}
+\EndIf
+\\
+\For {$(n = p\text{; } n \leq N\text{; } n = n+p)$}
+\State $\Phi[n] \gets \Phi[n] (\frac{p-1}{p})$
+\EndFor
+\EndFor
+\\
+\State \Return {$\Phi[]$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+Deixaremos a demonstração a cargo do leitor.
+
+\textbf{Dica:}
+O laço mais interno, na linha $11$ só é executado quando $p$ é primo, e assim ele executa uma quantidade de vezes proporcional à:
+$E = \sum_{p\text{ primo} \mid p \leq N}\frac{N}{p} $.
+
+Observe também que: $E \leq \sum_{p=2}^{N}\frac{N}{p} = O(N\log N)$. 
+
+
+\begin{proposition}\label{phi_potencia_nk}
+$\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positivos $n$ e $k$. 
+\end{proposition}
+\textbf{Demonstração:}
+Pelo \autoref{formula_produto_euler} sabemos que $\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$.
+E assim, $\Phi(n^k) = n^k \prod_{p|n^k}(\frac{p-1}{p})$. Porém, um primo $p$ divide $n$, se e somente se, $p$ divide $n^k$, implicando em, 
+$\prod_{p|n^k}(\frac{p-1}{p}) = \prod_{p|n}(\frac{p-1}{p})$.
+
+Portanto, $\Phi(n^k) = n^k \prod_{p|n^k}(\frac{p-1}{p}) = n^k \prod_{p|n}(\frac{p-1}{p}) = n^{k-1}\Phi(n)$. $\square$
+
+
+\subsection{Teorema de Euler}
+
+\begin{theorem}[Teorema de Euler]\label{teorema_de_euler}
+Dados números inteiros $a$ e $n$ primos entre si, temos que:
+$a^{\Phi(n)} \equiv 1 (\bmod$ $n)$. Observe que esse teorema é uma generalização do \autoref{teorema_fermat}.
+\end{theorem}
+\textbf{Demonstração:}
+Tome o conjunto $P = \{p_1, p_2, ..., p_{\Phi(n)}\}$, onde os elementos de $P$ são os números distintos primos com $n$ e menores que $n$. Claramente $p_1p_2...p_{\Phi(n)} \equiv 1(\bmod$ $n)$.
+
+Agora tome o conjunto $R = \{ap_1, ap_2, ..., ap_{\Phi(n)}\}$, em que $MDC(a,n) = 1$. Como $a$ e $n$ são primos entre si, então todos
+os elementos de $R$ são também primos com $n$, e assim, teremos que $(ap_1)(ap_2)...(ap_{\Phi(n)}) \equiv 1(\bmod$ $n)$.
+
+Das congruências acima podemos concluir que:
+\newline
+
+$p_1p_2...p_{\Phi(n)} \equiv  (ap_1)(ap_2)...(ap_{\Phi(n)}) (\bmod$ $n)$ 
+
+$p_1p_2...p_{\Phi(n)} \equiv a^\Phi(n)p_1p_2...p_{\Phi(n)} (\bmod$ $n)$
+\newline
+
+E assim, concluímos que $1 \equiv a^\Phi(n)(\bmod$ $n)$, já que $p_1p_2...p_{\Phi(n)} \equiv 1(\bmod$ $n)$. $\square$
+\\
 %----------------------------------------------------------------------------------------
-%	1
+%	SECTION
 %----------------------------------------------------------------------------------------
-\section{Nível 1}
+
+\section{Sequência de Fibonacci}
+
+\begin{definition}
+A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positivos em que cada termo subsequente corresponde a soma dos dois termos anteriores.
+
+\[
+ Fib_n :=
+  \begin{cases}
+   0 & \text{se } n = 0 \\
+   1 & \text{se } n = 1 \\
+   Fib_{n-1} + Fib_{n-2} & \text{se } n \geq 2
+  \end{cases}
+\]
+\end{definition}
+
+
+\begin{proposition}\label{gcd_consecutivo_fib}
+$MDC(Fib_n, Fib_{n-1}) = 1$, para $n \geq 2$
+\end{proposition}
+\textbf{Demonstração:}
+Tome os primeiros termos da sequência de Fibonacci: $1, 1, 2, 3, 5, 8,...$.
+Claramente a expressão acima funciona para os primeiros termos.
+Assuma que a expressão funciona para um inteiro qualquer $(k-1) > 2$, ou seja, $MDC(Fib_{k-1}, Fib_{k-2}) = 1$.
+
+Provaremos por indução que a expressão sempre funciona.
+
+$MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1})$
+
+$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pelo \textbf{Proposição} \autoref{corolario_gcd_soma})
+
+Logo, temos que:
+
+$MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1}) = 1$ $\square$
+
+
+
+\begin{proposition}\label{gcd_combinacao_fib}
+$Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$
+\end{proposition}
+\textbf{Demonstração:} Provaremos esse corolário por indução no índice $n$.
+
+A base da indução será, $n=2$:
+
+$Fib_{m+2} = Fib_m + Fim_{m+1} = Fib_m + Fib_m + Fib_{m-1}$
+
+$Fib_{m+2} = 2Fib_m + 1Fib_{m-1} = Fib_mFib_{3} + Fib_{m-1}Fib_2$
+
+Assumindo que a expressão é válida para todos os valores menores que $n$, temos:
+
+$Fib_{m+n} = Fib_{m+n-2} + Fib_{m+n-1}$
+
+$Fib_{m+n} = (Fib_{m}Fib_{n-1} + Fib_{m-1}Fib_{n-2}) + (Fib_{m}Fib_{n} + Fib_{m-1}Fib_{n-1})$
+
+$Fib_{m+n} = Fib_m(Fib_{n-1} + Fib_{n}) + Fib_{m-1}(Fib_{n-2} + Fib_{n-1})$
+
+$Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$ $\square$ 
+
+
+\begin{theorem}\label{fibonacci_mdc}
+$MDC(Fib_m, Fib_n) = Fib_{MDC(m, n)}, \forall m, n \in \mathbb{Z}$
+\end{theorem}
+\textbf{Demonstração:}
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm + r})$ ($\triangleright$ \autoref{algoritmo_divisao}, $n = qm + r, 0 \leq r < n$)
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\triangleright$ \textbf{Proposição} \autoref{gcd_combinacao_fib}).
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
+
+Pela \textbf{Proposição} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$
+
+$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{n \bmod m})$
+
+Se tirarmos o símbolo funcional $Fib$, a última equação forma um passo do \textbf{Algoritmo de Euclides} ($MDC(m,n) = MDC(m, n \bmod m)$).
+
+Podemos continuar esse processo até que o resto $r$ se torne $0$. O último resto não-nulo será
+exatamente o Máximo Divisor Comum do dois números originais.
+
+Desse modo, aplicar o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que aplicar aos índices $m$ e $n$.
+E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
+
+
+\begin{theorem}\label{fibonacci_formula_fechada}
+$Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$
+\end{theorem}
+\textbf{Demonstração:}
+
+$Fib_{n+1} = Fib_n + Fib_{n-1}$
+
+$Fib_{n+1} - kFib_n = Fib_n + Fib_{n-1} - kFib_n$
+
+$Fib_{n+1} - kFib_n = Fib_n + Fib_{n-1} - kFib_n + (kFib_{n-1}-kFib_{n-1}) + (k^2Fib_{n-1}-k^2Fib_{n-1})$
+
+$Fib_{n+1} - kFib_n = (1 - k)(Fib_n - kFib_{n-1}) + (1 + k - k^2)Fib_{n-1}$
+
+Se denotarmos as raízes de $k^2-k-1=0$ por $k_1$ e $k_2$, teremos que $k_1=\frac{1-\sqrt{5}}{2}$ e $k_2=\frac{1+\sqrt{5}}{2}$. 
+
+$Fib_{n+1} - k_1Fib_b = k_2(Fib_n - k_1Fib_{n-1})$
+
+$Fib_{n+1} - k_2Fib_b = k_1(Fib_n - k_2Fib_{n-1})$
+
+Por iterações sucessivas dessas duas equações teremos que:
+
+$Fib_{n+1} - k_1Fib_b = k_2^n(Fib_1 - k_1Fib_0) = k_2^n$
+
+$Fib_{n+1} - k_2Fib_b = k_1^n(Fib_1 - k_2Fib_0) = k_1^n$
+
+Subtraindo membro à membro temos:
+
+$Fib_n(k_2 - k_1) = k_2^n - k_1^n$
+
+$Fib_n = \frac{k_2^n - k_1^n}{k_2 - k_1}$
+
+$Fib_n = \frac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{(\frac{1+\sqrt{5}}{2}) - (\frac{1-\sqrt{5}}{2})}$
+
+$Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$ $\square$
+
+
+\subsection{Análise do Algoritmo de Euclides}
+
+No \textbf{Algoritmo} \autoref{mdc}, exceto a chamada recursiva, todas as operações são feitas em tempo constante. Assim, 
+a complexidade do algoritmo $MDC(a,b)$ será proporcional ao número de chamadas recursivas que o algoritmo faz.
+Observe também que se $a\leq b$, então o algoritmo $MDC(a,b)$ fará uma chamada a mais do que se $a>b$ (na primeira iteração
+os parâmetros $a$ e $b$ seriam trocados de posição). Desse modo, sem perda de generalidade, assumiremos que $a > b$.
+
+\begin{proposition}\label{algoritmo_euclides_prop1}
+Se o algoritmo $MDC(a,b)$ faz $N$ ($1 < N$) chamadas recursivas, então: $a\geq Fib_{N+1}$ e $b \geq Fib_{N}$.
+\end{proposition}
+\textbf{Demonstração:}
+Provaremos essa proposição por indução. A base da indução é $N=1$. Como temos $1$ chamada recursiva, então $b\neq0$, ie, 
+$b \geq 1 = Fib_1$. Como $a > b$, então $a \geq 1 = Fib_2$, provando assim a base da indução.  
+
+Agora assuma que $N>1$, e que o algoritmo $MDC(a,b)$ faz $N$ chamadas recursivas. Pelo \autoref{algoritmo_divisao} sabemos que existe
+$q$ e $r$ tal que $a=qb+r$, e $0\leq r<b$. 
+Assim, temos que $MDC(b,r)$ faz $N-1$ chamadas recursivas.
+
+Pela hipótese de indução, temos que $b\geq Fib_N$ e $r\geq Fib_{N-1}$. Além disso, como $a > b$, temos que $q > 1$. 
+
+Concluindo assim que, $a \geq b+r \geq Fib_N + Fib_{N-1} = Fib_{N+1}$. $\square$
+
+\begin{proposition}\label{algoritmo_euclides_prop2}
+$Fib_N \geq \Phi^{N-1}$, em que $\Phi = \frac{1+\sqrt{5}}{2} \approx 1.618$ é a \textit{proporção áurea}.
+\end{proposition}
+\textbf{Demonstração:}
+Provaremos essa proposição por indução. Para $N=1$, temos: $Fib_1 = 1 \geq \Phi^{0} = 1$.
+
+Agora assuma que $N>1$. Primeiro observe que $\Phi^2 = (\frac{1+\sqrt{5}}{2})^2 = (\frac{3+\sqrt{5}}{2}) = \Phi + 1$.
+
+Pela hipótese de indução, temos que $Fib_N = Fib_{N-1} + Fib_{N-2} \geq \Phi^{N-2} + \Phi^{N-3} = \Phi^{N-3}(\Phi+1) = \Phi^{N-1}$.$\square$
+\newline
+
+Pelas \textbf{Proposições} \autoref{algoritmo_euclides_prop1} e \autoref{algoritmo_euclides_prop2}, temos que se $MDC(a,b)$ faz $N$
+chamadas recursivas, então $a \geq Fib_{N+1}$ e $b \geq Fib_N \geq \Phi^{N-1}$. 
+Podemos concluir então que, $\log_\Phi b \geq N-1$, ie, $N$ é $O(\log b)$. 
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Problemas Propostos}
+
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-11424}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2419}{11424 - GCD - Extreme (I)} \\
+
+\textbf{Resumo:}
+É dado um inteiro positivo $N$ ($1 < N < 200001$). O problema consiste em calcular o mais rápido possível a expressão:
+
+$G(N) = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N}MDC(i,j)$.
+\\
+
+\textbf{Solução:}
+Trivialmente a expressão acima pode ser calculada em tempo proporcional a $O(n^2log(N))$, porém essa solução consome muito tempo e não será aceita no Judge Online. Vamos então mostrar uma solução mais eficiente.
+\\
+
+Primeiramente reescrevemos a expressão acima da seguinte maneira:
+
+$G(N) = \sum_{j=2}^N\sum_{i=1}^{j-1}MDC(i,j)$ ( $\rhd$ Observe que as expressões são equivalentes).
+
+Tome agora a função $F(M) = \sum_{i=1}^{M-1}MDC(i, M)$. Com isso, $G(N) = \sum_{j=2}^NF(j)$.
+
+Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(M)$ são divisores de $M$. Desse modo, podemos reescrever $F(M)$ da seguinte maneira:
+
+$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^{n}\lambda_l d_l$, em que, $d_1, d_2,..., d_n$ são os divisores de $M$, $\lambda_l$ é o número de vezes que o divisor $d_l$ aparece na somatória $\sum_{i=1}^{M-1}MDC(i,N)$, e $n$ é o número de divisores de $M$.
+\\
+
+Pela \textbf{Proposição} \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
+
+Reescrevendo novamente $F(M)$, temos:
+
+$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^n \lambda_l d_l = \sum_{l=1}^n \Phi(M/d_l) d_l$.
+
+$G(N) = \sum_{j=2}^N \sum_{l=1}^n \Phi(j/d_l)d_l$ $\square$.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{GCD - Extreme(I)}\label{gcd_extreme}
+\begin{algorithmic}[1]
+\Procedure{G (N)}{}
+\State $\Phi[] \gets PHI(N)$
+\State $solution \gets 0$
+\For {$j$ := $2$ to $N$}
+\For {\textbf{each} divisor $d$ de $j$}
+\State $solution \gets solution + \Phi[j/d] d$
+\EndFor
+\EndFor
+\State \Return{$solution$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O método $PHI(N)$ na linha 2 consome tempo proporcional à $O(N\sqrt{N})$.
+
+O número de divisores de $j$ é proporcional à $O(\sqrt{N})$, já que $j \leq N$.
+
+Assim a complexidade das linhas 4, 5, 6 do algoritmo é $O(N\sqrt{N})$.
+
+Complexidade final do algoritmo: $O(N\sqrt{N})$.
+
+\textbf{OBS.:} Para resolver o problema no Judge Online será preciso armazenar as soluções usando \href{https://linux.ime.usp.br/~stefanot/mac499/template.pdf}{Programação Dinâmica}.
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{TJU-3506}
+\href{http://acm.tju.edu.cn/toj/showp3506.html}{3506 - Euler Function} \\
+
+\textbf{Resumo:}
+São dados três números positivos $n$, $m$ ($1 < n < 10^7$, $1 < m < 10^9$) e $d = 201004$.
+O problema consiste em calcular a expressão: $\Phi(n^m) \bmod d$.
+\\
+
+\textbf{Solução:}
+Pela \textbf{Proposição} \autoref{phi_potencia_nk}, temos: 
+
+$\Phi(n^m) \bmod d = (n^{m-1}\Phi(n)) \bmod d$
+
+$\Phi(n^m) \bmod d = ((n^{m-1} \bmod d)(\Phi(n)) \bmod d) \bmod d)$
+
+Desse modo, podemos calcular o primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e o segundo fator com o \textbf{Algoritmo} \autoref{phi_de_euler_algoritmh}.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Euler Functions}
+\begin{algorithmic}[1]
+\Procedure{$PhiEulerPotential (n, m, d)$}{}
+\State $\Phi[] \gets PHI(n)$
+\State $exp \gets EXPMOD(n, m-1, d)$
+\State $solution \gets (exp$ $\Phi[n]) \bmod d$
+\State \Return{$solution$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+As linhas $3$ e $4$ do algoritmo consomem tempo proporcional a $O(\log m)$ e $O(1)$ respectivamente.
+Se precalcularmos o vetor $\Phi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-IITK2P05}
+\href{https://www.codechef.com/problems/IITK2P05}{IITK2P05 - Factorization}\\
+
+\textbf{Resumo:}
+São dados um inteiro $N$ ($2 \leq N \leq 10^{18}$) e o valor de $\Phi(N)$.
+
+O problema consiste em fatorar $N$. 
+\\
+
+\textbf{Solução:}
+A solução trivial para fatorar $N$ consome tempo proporcional a $O(\sqrt{N})$, porém para uma entrada na ordem de $10^{18}$ precisamos de um algoritmo mais eficiente.
+
+Se $N$ for primo, ie, $\Phi(N) = N-1$, já temos a solução.
+
+Assuma então que $N$ é um número composto. Primeiro vamos iterar nos primeiros $\sqrt[3]{N}$ inteiros e remover todos os fatores primos de $N$ nesse intervalo. Tome $M$ como sendo o valor resultante.
+
+Imagine que $M$ tenha três ou mais fatores primos. Sabemos que $M$ não tem nenhum fator primo menor que $\sqrt[3]{N}$, temos que: $M > (\sqrt[3]{N})^3 \Rightarrow M > N$ (contradição).
+Desse modo, temos que $M$ tem no máximo dois fatores primos, e esses valores são maiores que $\sqrt[3]{N}$.
+
 \begin{itemize}
-\item \url{http://www.spoj.com/problems/NEG2/}
-\item \url{http://www.spoj.com/problems/PON/}
-\item \url{http://www.spoj.com/problems/TWOSQRS/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=347}
-\item \url{http://acm.tju.edu.cn/toj/showp1868.html}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1176}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1889}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1080}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1614}
-\item \url{http://www.spoj.com/problems/FACT0/}
-\item \url{http://www.spoj.com/problems/CPRIME/}
-\item \url{http://www.spoj.com/problems/FCTRL/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1865}
-\item \url{http://codeforces.com/problemset/problem/80/A}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1240}
-\item \url{http://acm.sgu.ru/problem.php?contest=0&problem=106}
-\item \url{http://www.codechef.com/problems/POWERMUL}
-\item \url{http://www.spoj.com/problems/MARBLES/}
-\item \url{http://www.spoj.com/problems/LCMSUM/}
-\item \url{http://www.spoj.com/problems/ETF/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=627}
-\item \url{http://codeforces.com/problemset/problem/122/A}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1335}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1068}
-\item \url{http://codeforces.com/problemset/problem/114/A}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3565}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=96}
-\item \url{http://www.spoj.com/problems/LINES/}
-\item \url{http://www.spoj.com/problems/PRIME1/}
-\item \url{http://www.spoj.com/problems/DIV/}
-\item \url{http://www.spoj.com/problems/DIVSUM/}
-\item \url{http://codeforces.com/problemset/problem/230/B}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=484}
-\item \url{http://www.spoj.com/problems/TIPTOP/}
-\item \url{http://www.spoj.com/problems/FACTCG2/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=400}
-\item \url{http://codeforces.com/problemset/problem/158/D}
+  \item \textbf{Caso 1:} $M$ tem só um fator primo, ie, $M$ é primo:
+		Basta checar se $\Phi(M) = M-1$
+
+  \item \textbf{Caso 2:} $M$ tem dois fatores primos iguais, $M = p ^2$:
+		Basta verificar se $M$ é um quadrado perfeito. Pode ser feito facilmente com busca binária.
+
+  \item \textbf{Caso 3:} $M$ tem dois fatores primos distintos, $M = pq$:
+		Se $M=pq$ então $\Phi(M) = (p-1)(q-1)$. Temos então um sistema com duas equações e duas incógnitas. Se resolvermos o sistema encontraremos a fatoração de $M$ e assim a fatoração de $N$.
 \end{itemize}
+O único problema agora é calcular $\Phi(M)$ a partir de $\Phi(N)$. Assuma que $N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M$, com $k \geq 0$ e 
+ $p_i$ os fatores primos distintos de $N$ removidos na primeira etapa do algoritmo. Temos então:
+
+$N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1}p_2^{a_2}...p_k^{a_k}M)$
+
+$N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1})\Phi(p_2^{a_2})...\Phi(p_k^{a_k})\Phi(M)$ ($\triangleright$ \autoref{phi_multiplicativa})
+
+$\Rightarrow \Phi(N) = (p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})\Phi(M)$ ($\triangleright$ \autoref{phi_potencia})
+
+$\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})}$
+\clearpage
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Fatoração de $N$}
+\begin{algorithmic}[1]
+\Procedure{$Factorization (N, \Phi_N)$}{}
+\State $S \gets \emptyset$ \Comment{$S$ contém os fatores primos de $N$}
+\State $M \gets N$
+\State $\Phi_M \gets \Phi_N$
+\\
+\If {$\Phi_N = N-1$} \Comment{Se $N$ for primo}
+\State $S \gets S \cup \{N\}$
+\State \Return {$S$}
+\EndIf
+\\
+\For {\textbf{each} $p \text{ primo menor igual à } \sqrt[3]{N}$}
+\While {$M \equiv 0 (mod $ $p)$}
+\State $M \gets \frac{M}{p}$
+\State $S \gets S \cup \{p\}$
+\EndWhile
+\EndFor
+\\
+\For {\textbf{each} $p \in S$}
+\State $\Phi_M \gets \frac{\Phi_m}{p^a - p^{a-1}}$ \Comment{$a :=$ número de vezes que o primo $p$ é inserido em $S$}
+\EndFor
+\\
+\If {$\Phi_M = M-1$} \Comment{Se $M$ for primo}
+\State $S \gets S \cup \{M\}$
+\State \Return {$S$}
+\EndIf
+\\
+\State $(p, q) \gets System(M, \Phi_M)$ \Comment{Resolve o sistema de 2 equações e 2 incógnitas}
+\State $S \gets S \cup \{p, q\}$
+\State \Return {$S$}
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O laço da linha $10$ consome tempo proporcional a $O(\sqrt[3]N)$. Já o laço da linha $11$ consome tempo proporcional a $O(\log_pN)$, pois tem no máximo $a$ iterações ($a$ é o número de vezes que o fator primo $p$ aparece em $N$) e assim, $p^a < N \Rightarrow a < \log_p{N}$. 
+
+As linhas 15-16 rodam em $O(log_pN)$, já que o número máximo de elementos distintos em $S$ é $log_pN$ ($p$ é o menor primo que divide $N$).
+E as linhas 18-23 rodam em $O(1)$.
+
+Assim, o algoritmo total consome tempo proporcional a $O(\sqrt[3]N \log N)$. 
+Observe que esse algoritmo é bem mais eficiente que o algoritmo trivial para fatoração $O(\sqrt N)$.
 
 
 %----------------------------------------------------------------------------------------
-%	2
-%----------------------------------------------------------------------------------------
-\section{Nível 2}
-
-\begin{itemize}
-\item \url{http://www.spoj.com/problems/FRACTION/}
-\item \url{http://www.spoj.com/problems/DIV2/}
-\item \url{http://www.spoj.com/problems/CRYPTO1/}
-\item \url{http://www.spoj.com/problems/NDIVPHI/}
-\item \url{http://codeforces.com/problemset/problem/235/A}
-\item \url{http://www.spoj.com/problems/ODDDIV/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1658}
-\item \url{http://www.spoj.com/problems/TUTMRBL/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=855}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1431}
-\item \url{http://www.spoj.com/problems/PAGAIN/}
-\item \url{http://www.spoj.com/problems/PROOT/}
-\item \url{http://www.spoj.com/problems/DIVSUM2/}
-\item \url{http://www.spoj.com/problems/KPEQU/}
-\item \url{http://codeforces.com/problemset/problem/199/A}
-\item \url{http://codeforces.com/problemset/problem/236/B}
-\item \url{http://www.spoj.com/problems/MINNUM/}
-\item \url{http://codeforces.com/problemset/problem/26/A}
-\item \url{http://www.spoj.com/problems/PSYCHON/}
-\item \url{http://www.spoj.com/problems/GCDEX/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1252}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1031}
-\item \url{http://www.spoj.com/problems/DCEPCA03/}
-\end{itemize}
+\subsection{CodeChef-PUPPYGCD}
+\href{https://www.codechef.com/problems/PUPPYGCD}{PUPPYGCD - Puppy and GCD}\\
 
 
-%----------------------------------------------------------------------------------------
-%	3
-%----------------------------------------------------------------------------------------
-\section{Nível 3}
+\textbf{Resumo:}
+São dados inteiros positivos $N$ e $D$. O problema consiste em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq N$ e $MDC(A,B)=D$.
+\\
 
-\begin{itemize}
-\item \url{http://www.spoj.com/problems/FACT1/}
-\item \url{http://codeforces.com/problemset/problem/248/B}
-\item \url{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=3382}
-\item \url{http://www.spoj.com/problems/MSE08H/}
-\item \url{http://www.spoj.com/problems/SCRAPER/}
-\item \url{http://www.spoj.com/problems/MSKYCODE/}
-\item \url{http://codeforces.com/problemset/problem/150/A}
-\item \url{http://codeforces.com/problemset/problem/59/B}
-\item \url{http://codeforces.com/problemset/problem/221/B}
-\item \url{http://www.spoj.com/problems/UCI2009B/}
-\item \url{http://www.codechef.com/problems/FUNC}
-\item \url{http://www.spoj.com/problems/HOMEW/}
-\item \url{http://codeforces.com/problemset/problem/237/C}
-\item \url{http://www.spoj.com/problems/SQFREE/}
-\item \url{http://codeforces.com/problemset/problem/68/A}
-\item \url{http://codeforces.com/problemset/problem/17/A}
-\item \url{http://codeforces.com/problemset/problem/284/A}
-\end{itemize}
+\textbf{Solução:}
+Claramente se $D$ for maior que $N$, não há nenhum par que satisfaz as condições. Logo, assumiremos que $D \leq N$.
 
+Pela \textbf{Proposição} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema da seguinte forma:
+calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
+Como $\Phi(r)$ nos dá a quantidade de números menores ou igual a $r$ coprimos com respeito a ele, temos que 
+o número total de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$.
+Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
+\\
 
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Puppy and GCD}
+\begin{algorithmic}[1]
+\Procedure{$CalculatePairs (N, P)$}{}
+\If {$D > N$}
+\State \Return $0$
+\EndIf
+\\
+\State $\Phi[] \gets PHI(\frac{N}{D})$
+\State $count \gets 0$
+\\
+\For {($A = 1 \text{; } A \leq \frac{N}{D} \text{; } A++)$}
+\State $count \gets count + \Phi[A]$
+\EndFor
+\\
+\State $count \gets 2$ $count - 1$
+\State \Return $count$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
-%----------------------------------------------------------------------------------------
-%	4
-%----------------------------------------------------------------------------------------
-\section{Nível 4}
+\textbf{Análise:}
+Se precalcularmos $\Phi[]$ teremos que o trecho mais custoso do algoritmo será o laço da linha $8$, e assim a complexidade do algoritmo será $O(\frac{N}{D})$.
 
-\begin{itemize}
-\item \url{http://codeforces.com/problemset/problem/225/B}
-\item \url{http://codeforces.com/problemset/problem/71/C}
-\item \url{http://codeforces.com/problemset/problem/172/B}
-\item \url{http://www.spoj.com/problems/DPEQN/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=659}
-\item \url{http://www.spoj.com/problems/FNRANK/}
-\item \url{http://codeforces.com/problemset/problem/154/B}
-\item \url{http://codeforces.com/problemset/problem/177/B1}
-\item \url{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1197}
-\item \url{http://www.spoj.com/problems/NWERC04H/}
-\item \url{http://www.spoj.com/problems/NDIVPHI2/}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1702}
-\item \url{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=3890}
-\end{itemize}
+Obs.: Quando dobramos o valor de $count$ na linha $11$, tem um único $\{1,1\}$ que é contado duas vezes, e por isso precisamos subtrair $1$ do valor final. 
+Esse par corresponde ao par $\{D,D\}$ do problema original.
 
-
-
-%----------------------------------------------------------------------------------------
-%	5
-%----------------------------------------------------------------------------------------
-\section{Nível 5}
-
-\begin{itemize}
-\item \url{http://codeforces.com/problemset/problem/7/C}
-\item \url{http://www.spoj.com/problems/POLYCODE/}
-\item \url{http://www.spoj.com/problems/DOTS/}
-\item \url{http://codeforces.com/problemset/problem/117/B}
-\item \url{http://codeforces.com/problemset/problem/172/D}
-\item \url{http://codeforces.com/problemset/problem/66/D}
-\item \url{http://codeforces.com/problemset/problem/16/C}
-\item \url{http://codeforces.com/problemset/problem/123/A}
-\item \url{http://codeforces.com/problemset/problem/111/B}
-\item \url{http://codeforces.com/problemset/problem/177/B2}
-\item \url{http://codeforces.com/problemset/problem/75/C}
-\end{itemize}
-
-
-
-%----------------------------------------------------------------------------------------
-%	6
-%----------------------------------------------------------------------------------------
-\section{Nível 6}
-
-\begin{itemize}
-\item \url{http://codeforces.com/problemset/problem/134/B}
-\item \url{http://codeforces.com/problemset/problem/78/C}
-\item \url{http://codeforces.com/problemset/problem/222/C}
-\item \url{http://codeforces.com/problemset/problem/27/E}
-\end{itemize}
 
 
 
 %----------------------------------------------------------------------------------------
-%	7
+\subsection{CodeChef-MOREFB}
+\href{https://www.codechef.com/problems/MOREFB}{71544 - Another Fibonacci}\\
+
+\textbf{Resumo:}
+São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 50000$, $1 \leq K \leq N$) e um conjunto $S \subset \mathbb{N}$ com $N$ elementos, tal que, $\forall s \in S, 1 \leq s \leq 10^9$.
+
+Tome a seguinte função:
+
+$F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\Phi(n^m) \bmod 201004.$
+
+O problema consiste em calcular a expressão:  
+$F(S) \bmod m$, onde $m = 99991$.
+\newline
+
+\textbf{Solução:}
+Pelo \autoref{fibonacci_formula_fechada} temos que $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$.
+
+Primeiro verificamos que $5$ é \textit{Resíduo Quadrático} módulo $m$, já que $5 \equiv 10104^2(\bmod$ $m)$ (esse valor pode
+ser encontrado iterando sobre todos valores menores que $m$), logo: $\sqrt{5} \equiv 10104(\bmod$ $m)$.
+
+Verificamos também que $5$ tem \textit{Inverso Multiplicativo} módulo $m$, já que $MDC(5,m)=1$. Assim, iterando sobre os valores até $m$, podemos encontrar $79993$, que é \textit{Inverso Multiplicativo} de $5$, ie, $5 * 79993 \equiv 1(\bmod$ $m)$, ou simplesmente, $5^{-1} \equiv 79993(\bmod$ $m)$.
+Analogamente podemos calcular o \textit{Inverso Multiplicativo} do $2$ módulo $n$, $2^{-1} \equiv 49996(\bmod$ $m)$.
+
+Substituindo esses valores na equação acima, temos:
+\newline
+
+$Fib_n \equiv 10104*79993 \big( (10105*49996)^n - (-10103*49996)^n (\bmod$ $m)$ 
+\newline
+
+Como $10104*79993 \equiv 22019 (\bmod$ $m)$, $10105*49996 \equiv 55048 (\bmod$ $m)$ e $(-10103*49996) \equiv 44944 (\bmod$ $m)$, temos que:
+\newline
+
+$Fib_n\equiv 22019(55048^n - 44944^n)(\bmod$ $m)$
+\newline
+
+Para facilitar a demonstração usaremos as constantes $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. 
+Vamos calcular $F(S) \bmod m$ em função de $a$, $b$ e $c$.
+\newline
+
+Suponha que $N=3$ e $S=\{s_1, s_2, s_3\}$. 
+
+Para $K=1$, teremos:
+
+$F(S) = Fib_{s_1}+Fib_{s_2}+Fib_{s_3} = a((b^{s_1}+b^{s_2}+b^{s_3}) - (c^{s_1}+c^{s_2}+c^{s_3}))$.
+
+Para $K=2$, teremos:
+
+$F(S) = Fib_{s_1+s_2}+Fib_{s_1+s_3}+Fib_{s_2+s_3} = a((b^{s_1+s_2}+b^{s_1+s_2}+b^{s_2+s_3}) - (c^{s_1+s_2}+c^{s_1+s_3}+c^{s_2+s_3}))$.
+
+Para $K=3$, teremos:
+
+$F(S) = Fib_{s_1+s_2+s_3} = a(b^{s_1+s_2+s_3} - c^{s_1+s_2+s_3})$.
+\newline
+
+Tome agora o polinômio: 
+
+$B(x) = (x-b^{s_1})(x-b^{s_2})(x-b^{s_3})$
+
+$B(x) = x^3 + x^2(b^{s_1}+b^{s_2}+b^{s_3}) + x^1(b^{s_1+s_2}+b^{s_1+s_2}+b^{s_2+s_3}) + x^0(b^{s_1+s_2+s_3})$.
+
+Percebemos, que a parte em $F(S)$ que contém $b$, é exatamente igual ao coeficiente do monômio de grau $N-K$ em $B(x)$.
+
+Analogamente, podemos calcular a parte em $F(S)$ que contém $c$, com o polinômio $C(x) = (x-c^{s_1})(x-c^{s_2})(x-c^{s_3})$.
+\newline
+
+Assim, para resolver o problema de caso geral, basta criar os polinômios:
+
+$B(x) = (x-b^{s_1})(x-b^{s_2})...(x-b^{s_N})$
+
+$C(x) = (x-c^{s_1})(x-c^{s_2})...(x-c^{s_N})$
+\newline
+
+A solução trivial para construir os polinômios $B(x)$ e $C(x)$ consome tempo proporcional a $O(N^2)$, porém usando 
+\textbf{Fast Fourier Transform}, podemos calcular tais polinômios em $O(N\log N)$.
+\newline
+
+Para mais informações sobre  \textbf{Fast Fourier Transform} acesse:
+
+\href{http://mathworld.wolfram.com/FastFourierTransform.html}{http://mathworld.wolfram.com/FastFourierTransform.html}.
+\newline
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Another Fibonacci}
+\begin{algorithmic}[1]
+\Procedure{F (S, N, K)}{}
+\State $m \gets 99991$
+\State $a \gets 22019$
+\State $b \gets 55048$
+\State $c \gets 44944$
+\\
+\State $[Bcoef, Ccoef]\gets FastFourierTransform(S,N,K,m,a,b,c)$ 
+\\
+\State \Return $a(Bcoef - Coef)\bmod m$
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+Na linha $7$ é aplicado o algoritmo \textbf{Fast Fourier Transform} para calcular os coeficientes do monômio de grau $N-K$ dos 
+polinômios $B(x)$ e $C(x)$ respectivamente. O complexidade final do algoritmo será igual a complexidade do algoritmo \textit{Fast Fourier Transform} que é $O(N\log N)$.
+
+
+
 %----------------------------------------------------------------------------------------
-\section{Nível 7}
+\subsection{Codeforces-227E}
+\href{http://codeforces.com/contest/227/problem/E}{227E - Anniversary}\\
 
-\begin{itemize}
-\item \url{http://www.spoj.com/problems/PRIMES2/}
-\item \url{http://codeforces.com/problemset/problem/113/C}
-\item \url{http://codeforces.com/problemset/problem/225/E}
-\item \url{http://codeforces.com/problemset/problem/251/C}
-\item \url{http://codeforces.com/problemset/problem/10/C}
-\item \url{http://codeforces.com/problemset/problem/226/C}
-\item \url{http://codeforces.com/problemset/problem/74/C}
-\item \url{http://www.spoj.com/problems/KPRIMES2/}
-\end{itemize}
+\textbf{Resumo:}
+São dados quatro inteiros $m$, $l$, $r$, $k$ ($1\leq m\leq 10^9$, $1\leq l \leq r \leq 10^{12}$, $2\leq k\leq r-l+1$), 
+e um conjunto $A = \{l,l+1,l+2,...,r\}$.
+Dado um conjunto $S \subseteq A$ com $k$ elementos, ie, $S = \{s_1, s_2,...,s_k\}$, seja a função 
+$F(S) = MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k})$.
+
+O problema consiste em encontrar tal subconjunto $S$, de tal forma que $F(S)$ seja máxima. No final do algoritmo basta imprimir 
+$F(S) \bmod m$.
+\\
+
+\textbf{Solução:}
+Pelo \autoref{fibonacci_mdc} sabemos que, $MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k}) = Fib_{MDC(s_1,s_2,...,s_k)}$.
+Desse modo, para maximizar $F(S)$, basta maximizar $MDC(s_1,s_2,...,s_k)$, já que $Fib_x$ é uma sequência crescente.
+
+Suponha que o valor máximo para $MDC(s_1,s_2,...,s_k)$ seja $q$. Como $q$ divide pelo memos $k$ inteiros ($s_1,s_2,...,s_k$)
+no conjunto $A$, então $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$, ie, o número de múltiplos de $q$ entre $l$ e $r$ é maior ou igual à $k$.
+
+Todos os valores que $\lfloor \frac{r}{q} \rfloor$ assume são da forma:
+\newline
+
+$i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor \leq \sqrt{r}$
+
+$\lfloor \frac{r}{i} \rfloor$, com $i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor > \sqrt{r}$
+\newline
+
+Analogamente, podemos calcular todos os valores que $\lceil \frac{l}{q} \rceil$ assume.
+
+Tendo todos esses valores armazenados em um conjunto $Q$, é possível calcular todos os valores distintos que $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1$ assume, e assim basta escolher o maior $q \in Q$, tal que 
+$\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$.  
+
+A partir do momento que calculamos $q$, ie, encontramos o valor máximo de $MDC(s_1,s_2,...,s_k)$, precisamos de uma maneira eficiente de calcular $Fib_q \bmod m$.
+E para isso, usaremos \textbf{Exponenciação de Matriz} com a seguinte matriz:
+\newline
+
+\[ A_{2,2} =
+\begin{bmatrix}
+       1 & 1           \\[0.3em]
+       1 & 0
+\end{bmatrix}
+\]
+\newline
+
+Observe que:
+$
+\begin{bmatrix}
+       Fib_q & Fib_{q-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+       Fib_{q-1} & Fib_{q-2}
+\end{bmatrix}
+\begin{bmatrix}
+       1 & 1           \\[0.3em]
+       1 & 0
+\end{bmatrix}
+$
+\newline
+
+E assim:
+$
+\begin{bmatrix}
+       Fib_q & Fib_{q-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+       Fib_{2} & Fib_{1}
+\end{bmatrix}
+A^{q-2}
+=
+\begin{bmatrix}
+       1 & 1
+\end{bmatrix}
+A^{q-2}
+$
+\newline
+\clearpage
+
+\textbf{Pseudocódigo:}
+
+\begin{algorithm}
+\caption{Anniversary}
+\begin{algorithmic}[1]
+\Procedure{$FindMaximumValue (m, r, l, k)$}{}
+
+\State $Q \gets \emptyset$
+\State $q \gets 0$
+\\
+\For {$(i = 1 \text{; } i \leq \sqrt{r} \text{; } i++)$}
+\State $Q \gets Q\cup\{i\}$
+\EndFor
+\\
+\For {$(i = 1 \text{; } i \leq \sqrt{r} \text{; } i++)$}
+\State $Q \gets Q\cup\{\lfloor \frac{r}{i} \rfloor \}$
+\EndFor
+\\
+\For {$(i = 1 \text{; } i \leq \sqrt{l} \text{; } i++)$}
+\State $Q \gets Q\cup\{\lceil \frac{l}{i} \rceil \}$
+\EndFor
+\\
+\For {\textbf{all} $q^* \in Q$}
+\If {$\lfloor \frac{r}{q^*} \rfloor -\lceil \frac{l}{q^*} \rceil + 1 \geq k$}
+\State $q \gets max(q, q^*)$
+\EndIf
+\EndFor
+\\
+\State $A \gets 
+\begin{bmatrix}
+       1 & 1           \\[0.3em]
+       1 & 0
+\end{bmatrix}
+$
+\\
+\State $B \gets EXPMAT(A, q-2, m) $
+\\
+\State \Return $(B_{0,0}+B_{1,0}) \bmod m$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
 
+\textbf{Análise:}
+Os laços das linhas $5$ e $8$ consomem tempo proporcional a $O(\sqrt{r})$. O laço da linha $11$ consome tempo proporcional a $O(\sqrt{l})$, que por sua vez é $O(\sqrt{r})$, já que $l\leq r$. Como é inserido um elemento em $Q$ para cada iteração desses três primeiros laços, temos que no final do algoritmo o número de elementos em $Q$ é da ordem de $O(\sqrt{r})$.
 
-%----------------------------------------------------------------------------------------
-%	8
-%----------------------------------------------------------------------------------------
-\section{Nível 8}
+O laço da linha $14$ consome tempo proporcional a $O(|Q|)$, ie, $O(\sqrt{r})$.
 
+O algoritmo \textit{EXPMAT()} roda em $O(\log q)$, ou simplesmente, $O(\log r)$, já que $q \leq r$.
 
-\begin{itemize}
-\item \url{http://codeforces.com/problemset/problem/215/E}
-\item \url{http://codeforces.com/problemset/problem/45/G}
-\item \url{http://codeforces.com/problemset/problem/17/D}
-\item \url{http://www.spoj.com/problems/SWAP_ESY/}
-\item \url{http://codeforces.com/problemset/problem/216/E}
-\item \url{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2640}
-\item \url{http://codeforces.com/problemset/problem/83/D}
-\end{itemize}
-
-
-%----------------------------------------------------------------------------------------
-%	9
-%----------------------------------------------------------------------------------------
-\section{Nível 9}
-
-\begin{itemize}
-\item \url{http://codeforces.com/problemset/problem/180/B}
-\item \url{http://www.spoj.com/problems/FACT2/}
-\item \url{http://codeforces.com/problemset/problem/235/E}
-\item \url{http://codeforces.com/problemset/problem/185/D}
-\item \url{http://codeforces.com/problemset/problem/73/E}
-\item \url{http://codeforces.com/problemset/problem/200/E}
-\end{itemize}
-
-
-
-%----------------------------------------------------------------------------------------
-%	10
-%----------------------------------------------------------------------------------------
-\section{Nível 10}
-
-\begin{itemize}
-\item \url{http://codeforces.com/problemset/problem/162/C}
-\end{itemize}
-
-
-
+Assim, a complexidade total do algoritmo é $O(\sqrt{r} + \log r)$.

@@ -1,57 +1,58 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {brazilian}
-\contentsline {chapter}{\numberline {1}Divisibilidade}{1}{chapter.4}
-\contentsline {section}{\numberline {1.1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{section.5}
-\contentsline {subsection}{\numberline {1.1.1}Divisores}{2}{subsection.16}
-\contentsline {section}{\numberline {1.2}N\IeC {\'u}meros Primos}{3}{section.19}
-\contentsline {section}{\numberline {1.3}M\IeC {\'a}ximo Divisor Comum}{4}{section.22}
-\contentsline {subsection}{\numberline {1.3.1}Algoritmo de Euclides}{4}{subsection.29}
-\contentsline {subsection}{\numberline {1.3.2}Teorema de B\IeC {\'e}zout}{5}{subsection.31}
-\contentsline {section}{\numberline {1.4}Crivo de Erast\IeC {\'o}teles}{6}{section.35}
-\contentsline {section}{\numberline {1.5}Equa\IeC {\c c}\IeC {\~o}es Diofantinas}{7}{section.37}
-\contentsline {subsection}{\numberline {1.5.1}Algoritmo de Euclides Estendido}{7}{subsection.39}
-\contentsline {section}{\numberline {1.6}Problemas Propostos}{8}{section.42}
-\contentsline {subsection}{\numberline {1.6.1}UVA-543}{8}{subsection.43}
-\contentsline {subsection}{\numberline {1.6.2}CodeChef-GOC203}{9}{subsection.45}
-\contentsline {subsection}{\numberline {1.6.3}UVA-10407}{9}{subsection.47}
-\contentsline {subsection}{\numberline {1.6.4}CodeChef-MAANDI}{10}{subsection.49}
-\contentsline {subsection}{\numberline {1.6.5}UVA-10090}{11}{subsection.51}
-\contentsline {subsection}{\numberline {1.6.6}UVA-718}{12}{subsection.53}
-\contentsline {chapter}{\numberline {2}Aritm\IeC {\'e}tica Modular}{15}{chapter.55}
-\contentsline {section}{\numberline {2.1}Congru\IeC {\^e}ncia}{15}{section.56}
-\contentsline {section}{\numberline {2.2}Congru\IeC {\^e}ncia Linear}{16}{section.62}
-\contentsline {section}{\numberline {2.3}Teoremas de Fermat e de Wilson}{17}{section.69}
-\contentsline {subsection}{\numberline {2.3.1}Teorema de Fermat}{17}{subsection.70}
-\contentsline {subsection}{\numberline {2.3.2}Inverso Multiplicativo Modular}{17}{subsection.73}
-\contentsline {subsection}{\numberline {2.3.3}Teorema de Wilson}{17}{subsection.76}
-\contentsline {section}{\numberline {2.4}Exponencia\IeC {\c c}\IeC {\~a}o}{18}{section.79}
-\contentsline {subsection}{\numberline {2.4.1}Exponencia\IeC {\c c}\IeC {\~a}o Bin\IeC {\'a}ria}{18}{subsection.80}
-\contentsline {subsection}{\numberline {2.4.2}Exponencia\IeC {\c c}\IeC {\~a}o Bin\IeC {\'a}ria Modular}{18}{subsection.82}
-\contentsline {subsection}{\numberline {2.4.3}Exponencia\IeC {\c c}\IeC {\~a}o de Matriz}{19}{subsection.84}
-\contentsline {section}{\numberline {2.5}Problemas Propostos}{20}{section.87}
-\contentsline {subsection}{\numberline {2.5.1}SPOJ-DCEPC11B}{20}{subsection.88}
-\contentsline {subsection}{\numberline {2.5.2}CodeChef-IITK2P10}{20}{subsection.90}
-\contentsline {subsection}{\numberline {2.5.3}CodeChef-CSUMD}{21}{subsection.92}
-\contentsline {chapter}{\numberline {3}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{25}{chapter.94}
-\contentsline {section}{\numberline {3.1}$\Phi $ de Euler}{25}{section.95}
-\contentsline {subsection}{\numberline {3.1.1}Algoritmo $\Phi $ de Euler}{26}{subsection.100}
-\contentsline {subsection}{\numberline {3.1.2}Teorema de Euler}{26}{subsection.103}
-\contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{27}{section.105}
-\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise do Algoritmo de Euclides}{28}{subsection.111}
-\contentsline {section}{\numberline {3.3}Problemas Propostos}{29}{section.114}
-\contentsline {subsection}{\numberline {3.3.1}UVA-11424}{29}{subsection.115}
-\contentsline {subsection}{\numberline {3.3.2}TJU-3506}{30}{subsection.117}
-\contentsline {subsection}{\numberline {3.3.3}CodeChef-IITK2P05}{31}{subsection.119}
-\contentsline {subsection}{\numberline {3.3.4}CodeChef-PUPPYGCD}{32}{subsection.121}
-\contentsline {subsection}{\numberline {3.3.5}CodeChef-MOREFB}{33}{subsection.123}
-\contentsline {subsection}{\numberline {3.3.6}Codeforces-227E}{35}{subsection.125}
-\contentsline {chapter}{\numberline {4}Conclus\IeC {\~a}o}{37}{chapter.127}
-\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{39}{appendix.128}
-\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{41}{appendix.130}
-\contentsline {section}{\numberline {B.1}Ahmed-Aly}{41}{section.131}
-\contentsline {section}{\numberline {B.2}UVa}{41}{section.132}
-\contentsline {section}{\numberline {B.3}URI}{41}{section.133}
-\contentsline {section}{\numberline {B.4}Topcoder}{41}{section.134}
-\contentsline {section}{\numberline {B.5}Codeforces}{42}{section.135}
-\contentsline {section}{\numberline {B.6}CodeChef}{42}{section.136}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.4}
+\contentsline {chapter}{\numberline {2}Divisibilidade}{3}{chapter.5}
+\contentsline {section}{\numberline {2.1}Divisibilidade}{3}{section.6}
+\contentsline {subsection}{\numberline {2.1.1}Divisores}{4}{subsection.17}
+\contentsline {section}{\numberline {2.2}N\IeC {\'u}meros Primos}{5}{section.20}
+\contentsline {section}{\numberline {2.3}M\IeC {\'a}ximo Divisor Comum}{6}{section.23}
+\contentsline {subsection}{\numberline {2.3.1}Algoritmo de Euclides}{6}{subsection.30}
+\contentsline {subsection}{\numberline {2.3.2}Teorema de B\IeC {\'e}zout}{7}{subsection.32}
+\contentsline {section}{\numberline {2.4}Crivo de Erast\IeC {\'o}teles}{8}{section.36}
+\contentsline {section}{\numberline {2.5}Equa\IeC {\c c}\IeC {\~o}es Diofantinas}{9}{section.38}
+\contentsline {subsection}{\numberline {2.5.1}Algoritmo de Euclides Estendido}{9}{subsection.40}
+\contentsline {section}{\numberline {2.6}Problemas Propostos}{10}{section.43}
+\contentsline {subsection}{\numberline {2.6.1}UVA-543}{10}{subsection.44}
+\contentsline {subsection}{\numberline {2.6.2}CodeChef-GOC203}{11}{subsection.46}
+\contentsline {subsection}{\numberline {2.6.3}UVA-10407}{11}{subsection.48}
+\contentsline {subsection}{\numberline {2.6.4}CodeChef-MAANDI}{12}{subsection.50}
+\contentsline {subsection}{\numberline {2.6.5}UVA-10090}{13}{subsection.52}
+\contentsline {subsection}{\numberline {2.6.6}UVA-718}{14}{subsection.54}
+\contentsline {chapter}{\numberline {3}Aritm\IeC {\'e}tica Modular}{17}{chapter.56}
+\contentsline {section}{\numberline {3.1}Congru\IeC {\^e}ncia}{17}{section.57}
+\contentsline {section}{\numberline {3.2}Congru\IeC {\^e}ncia Linear}{18}{section.63}
+\contentsline {section}{\numberline {3.3}Teoremas de Fermat e de Wilson}{19}{section.70}
+\contentsline {subsection}{\numberline {3.3.1}Teorema de Fermat}{19}{subsection.71}
+\contentsline {subsection}{\numberline {3.3.2}Inverso Multiplicativo Modular}{19}{subsection.74}
+\contentsline {subsection}{\numberline {3.3.3}Teorema de Wilson}{19}{subsection.77}
+\contentsline {section}{\numberline {3.4}Exponencia\IeC {\c c}\IeC {\~a}o}{20}{section.80}
+\contentsline {subsection}{\numberline {3.4.1}Exponencia\IeC {\c c}\IeC {\~a}o Bin\IeC {\'a}ria}{20}{subsection.81}
+\contentsline {subsection}{\numberline {3.4.2}Exponencia\IeC {\c c}\IeC {\~a}o Bin\IeC {\'a}ria Modular}{20}{subsection.83}
+\contentsline {subsection}{\numberline {3.4.3}Exponencia\IeC {\c c}\IeC {\~a}o de Matriz}{21}{subsection.85}
+\contentsline {section}{\numberline {3.5}Problemas Propostos}{22}{section.88}
+\contentsline {subsection}{\numberline {3.5.1}SPOJ-DCEPC11B}{22}{subsection.89}
+\contentsline {subsection}{\numberline {3.5.2}CodeChef-IITK2P10}{22}{subsection.91}
+\contentsline {subsection}{\numberline {3.5.3}CodeChef-CSUMD}{23}{subsection.93}
+\contentsline {chapter}{\numberline {4}Fun\IeC {\c c}\IeC {\~o}es Aritm\IeC {\'e}ticas}{27}{chapter.95}
+\contentsline {section}{\numberline {4.1}$\Phi $ de Euler}{27}{section.96}
+\contentsline {subsection}{\numberline {4.1.1}Algoritmo $\Phi $ de Euler}{28}{subsection.101}
+\contentsline {subsection}{\numberline {4.1.2}Teorema de Euler}{28}{subsection.104}
+\contentsline {section}{\numberline {4.2}Sequ\IeC {\^e}ncia de Fibonacci}{29}{section.106}
+\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise do Algoritmo de Euclides}{30}{subsection.112}
+\contentsline {section}{\numberline {4.3}Problemas Propostos}{31}{section.115}
+\contentsline {subsection}{\numberline {4.3.1}UVA-11424}{31}{subsection.116}
+\contentsline {subsection}{\numberline {4.3.2}TJU-3506}{32}{subsection.118}
+\contentsline {subsection}{\numberline {4.3.3}CodeChef-IITK2P05}{33}{subsection.120}
+\contentsline {subsection}{\numberline {4.3.4}CodeChef-PUPPYGCD}{34}{subsection.122}
+\contentsline {subsection}{\numberline {4.3.5}CodeChef-MOREFB}{35}{subsection.124}
+\contentsline {subsection}{\numberline {4.3.6}Codeforces-227E}{37}{subsection.126}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o}{39}{chapter.128}
+\contentsline {chapter}{\numberline {A}Curiosidades da ACM-ICPC}{41}{appendix.129}
+\contentsline {chapter}{\numberline {B}Ju\IeC {\'\i }zes Online (Online Judges)}{43}{appendix.131}
+\contentsline {section}{\numberline {B.1}Ahmed-Aly}{43}{section.132}
+\contentsline {section}{\numberline {B.2}UVa}{43}{section.133}
+\contentsline {section}{\numberline {B.3}URI}{43}{section.134}
+\contentsline {section}{\numberline {B.4}Topcoder}{43}{section.135}
+\contentsline {section}{\numberline {B.5}Codeforces}{44}{section.136}
+\contentsline {section}{\numberline {B.6}CodeChef}{44}{section.137}

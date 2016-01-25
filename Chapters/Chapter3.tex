@@ -1,6 +1,6 @@
 % Chapter 3
 
-\chapter{Funções Aritméticas} % Main chapter title
+\chapter{Aritmética Modular} % Main chapter title
 
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
@@ -8,312 +8,371 @@
 %	SECTION
 %----------------------------------------------------------------------------------------
 
-\section{$\Phi$ de Euler}
+\section{Congruência}
 
 \begin{definition}
-A Função Totiente de Euler, denotada por $\Phi(n)$, é a função aritmética que conta o número 
-de inteiros positivos menores ou iguais a $n$ que são primos entre si com $n$ (ou \textbf{coprimos}).
-
-$\Phi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
+Para $a$ e $b$ inteiros, dizemos que $a$ é congruente à $b$ módulo $m$ ($a \equiv b (mod$ $m), m > 0$) 
+se $a$ e $b$ produzem o mesmo resto na divisão por $m$ (ie, $m|(a-b)$).
+Caso contrário ($m\nmid (a-b)$), dizemos que $a$ não é congruente à $b$ módulo $m$ ($a \not\equiv b (mod $ $m)$).
+\\
 \end{definition}
 
 
-
-\begin{theorem}\label{phi_multiplicativa}
-$\Phi(n)$ é função multiplicativa, ie, $\Phi(mn) = \Phi(m)\Phi(n)$ para $MDC(m,n) = 1$.
-\end{theorem}
-\textbf{Demonstração:}
-Primeiro vamos dispor os números de $1$ à $nm$ da seguinte maneira:\\
-
-$1\quad(m+1)\quad(2m+1)\quad...\quad(n-1)m+1$
-
-$2\quad(m+2)\quad(2m+2)\quad...\quad(n-1)m+2$
-
-$3\quad(m+3)\quad(2m+3)\quad...\quad(n-1)m+3$
-
-$\vdots$
-
-$m\quad\quad2m\quad\quad\quad3m\quad\quad...\quad\quad\quad\quad{nm}$\\
-
-Tome a linha $q$, com os elementos $q,m+q,2m+q,...,(n-1)m+q$. Se o $MDC(m,q) = d > 1$, então nenhum termo dessa linha será primo com
-$mn$, já que: 
-\\
-
-$MDC(m,q) \neq 1 \Rightarrow MDC(xm+q,q) \neq 1 \Rightarrow MDC(mn,q) \neq 1$.
-\newline
-
-Logo, as únicas linhas da tabela que nos interessam são aquelas cujo primeiro termo é primo com $m$ (observe que temos $\Phi(m)$
-linhas que satisfazem essa condição).
-
-Agora, para cada uma dessas $\Phi(m)$ linhas, queremos saber quantos termos são primos com $n$, já que todos elementos na linha são
-primos com $m$. Como $MDC(m,n) = 1$, pelo \autoref{sistemo_completp_residuo} sabemos que os termos $r,m+r,2m+r,...,(n-1)m+r$ formam um sistema completo de resíduos módulo $n$.
-Assim, cada uma dessas $\Phi(m)$ linhas contém $\Phi(n)$ elementos primos com $n$, e como eles são primos com $m$, são também
-primos com $mn$. E isto nos garante que $\Phi(m) = \Phi(m)\Phi(n)$. $\square$
+\begin{definition}
+Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos modulo $n$ se:
+%\begin{enumerate}
+$\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$
+%\item$s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$
+%\\
+%\end{enumerate}
+\end{definition}
 
 
-\begin{theorem}\label{phi_potencia}
-$\Phi(p^k) = (p^k - p^{k-1})$, para $p$ primo e $k$ inteiro positivo.
-\end{theorem}
-\textbf{Demonstração:}
-Como $p$ é um número primo, para qualquer inteiro $n$, os únicos valores possíveis para $MDC(p^k,n)$ são: $1, p, p^2,...,p^k$, 
-e desse modo, se $MDC(p^k,n)\neq1$ temos que $p|n$ ($n$ é múltiplo de $p$). Assim, a quantidade de números não-primos e menores do que $p^k$ é $p^{k-1}$.
+\begin{proposition}\label{corolario_implicacao_mdc}
+Dados inteiros $a$, $b$, $c$, $d$ com $MDC(c,d)=1$, temos que: 
 
-Logo, temos que: $\Phi(p^k) = p^k - p^{k-1}$ $\square$
-
-
-
-
-\begin{theorem}[Fórmula Produto de Euler]\label{formula_produto_euler}
-$\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$
-\end{theorem}
-\textbf{Demonstração:}
-
-$\Phi(n) = \Phi(p_1^{a_1}p_2^{a_2}...p_k^{a_k})$ ($\triangleright$ \autoref{fatoracao_unica})
-
-$\Phi(n) = \Phi(p_1^{a_1})\Phi(p_2^{a_2})...\Phi(p_k^{a_k})$ ($\triangleright$ \autoref{phi_multiplicativa})
-
-$\Phi(n) = (p_1^{a_1} - p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k} - p_k^{a_k-1})$ ($\triangleright$ \autoref{phi_potencia})
-
-$\Phi(n) = p_1^{a_1}p_2^{a_2}...p_k^{a_k}(1 - 1/p_1)(1 - 1/p_2)...(1 - 1/p_k)$
-
-$\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p})$ $\square$\\
-
-\subsection{Algoritmo $\Phi$ de Euler}
-
-Nessa subseção mostraremos um algoritmo para o cálculo de \textbf{$\Phi$ de Euler} para os primeiros $N$ números naturais.
-O algoritmo baseia-se na idéia do \textbf{Crivo de Erastótenes} e no \autoref{formula_produto_euler}.
-\newline
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Calcula os primeiros N termos da função $\Phi$}\label{phi_de_euler_algoritmh}
-\begin{algorithmic}[1]
-\Procedure{$PHI (N)$}{}
-\State $\Phi[] \gets new Array[N]$
-\\
-\For {$(p = 1 \text{; } p \leq N \text{; } p++)$}
-\State $\Phi[p] \gets p$
-\EndFor
-\\
-\For {$(p = 2\text{; } p \leq N\text{; } p++)$}
-
-\If {$\Phi[p] \neq p$} \Comment{$\Phi[p] \neq p \Leftrightarrow p\text{ não é primo}$}
-\State \textbf{continue}
-\EndIf
-\\
-\For {$(n = p\text{; } n \leq N\text{; } n = n+p)$}
-\State $\Phi[n] \gets \Phi[n] (\frac{p-1}{p})$
-\EndFor
-\EndFor
-\\
-\State \Return {$\Phi[]$}
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-\textbf{Análise:}
-Deixaremos a demonstração a cargo do leitor.
-
-\textbf{Dica:}
-O laço mais interno, na linha $11$ só é executado quando $p$ é primo, e assim ele executa uma quantidade de vezes proporcional à:
-$E = \sum_{p\text{ primo} \mid p \leq N}\frac{N}{p} $.
-
-Observe também que: $E \leq \sum_{p=2}^{N}\frac{N}{p} = O(N\log N)$. 
-
-
-\begin{proposition}\label{phi_potencia_nk}
-$\Phi(n^k) = n^{k-1}\Phi(n)$, para inteiros positivos $n$ e $k$. 
+$ac \equiv bc (mod$ $d) \Rightarrow a \equiv b (mod$ $d)$.
 \end{proposition}
 \textbf{Demonstração:}
-Pelo \autoref{formula_produto_euler} sabemos que $\Phi(n) = n \prod_{p|n}(1 - \frac{1}{p}) = n \prod_{p|n}(\frac{p-1}{p})$.
-E assim, $\Phi(n^k) = n^k \prod_{p|n^k}(\frac{p-1}{p})$. Porém, um primo $p$ divide $n$, se e somente se, $p$ divide $n^k$, implicando em, 
-$\prod_{p|n^k}(\frac{p-1}{p}) = \prod_{p|n}(\frac{p-1}{p})$.
 
-Portanto, $\Phi(n^k) = n^k \prod_{p|n^k}(\frac{p-1}{p}) = n^k \prod_{p|n}(\frac{p-1}{p}) = n^{k-1}\Phi(n)$. $\square$
+$ac \equiv bc (mod$ $d) \Rightarrow d|(ac-bc) \Rightarrow d|c(a-b) \Rightarrow d|(a-b)$, já que $MDC(c,d)=1$
+
+$\Rightarrow a \equiv b (mod$ $d)$. $\square$
+\\
 
 
-\subsection{Teorema de Euler}
+\begin{proposition}\label{residuo_completo_1n}
+O conjunto $R = \{0, 1, 2, 3,...,n-1\}$, é um sistema completo de resíduos módulo $n$.
+\end{proposition}
+\textbf{Demonstração:}
+Pelo \autoref{algoritmo_divisao} sabemos que para qualquer inteiro $a$, existe $q, r$ tal que, $a = qn + r, 0 \leq r < n$. Assim, $a\equiv r(mod$ $n)$, com $r \in R$. $\square$
+\\
 
-\begin{theorem}[Teorema de Euler]\label{teorema_de_euler}
-Dados números inteiros $a$ e $n$ primos entre si, temos que:
-$a^{\Phi(n)} \equiv 1 (\bmod$ $n)$. Observe que esse teorema é uma generalização do \autoref{teorema_fermat}.
+\begin{theorem}
+Se o conjunto $S = \{s_0, s_1, s_2, ..., s_{k-1}\}$ é um sistema completo de resíduos módulo $n$, então $k=n$.
 \end{theorem}
 \textbf{Demonstração:}
-Tome o conjunto $P = \{p_1, p_2, ..., p_{\Phi(n)}\}$, onde os elementos de $P$ são os números distintos primos com $n$ e menores que $n$. Claramente $p_1p_2...p_{\Phi(n)} \equiv 1(\bmod$ $n)$.
+Tome o conjunto $R = \{0, 1, 2, 3,...,n-1\}$. Pela \textbf{Proposição} \autoref{residuo_completo_1n} sabemos que $R$ é um sistema completo de resíduos módulo $n$.
 
-Agora tome o conjunto $R = \{ap_1, ap_2, ..., ap_{\Phi(n)}\}$, em que $MDC(a,n) = 1$. Como $a$ e $n$ são primos entre si, então todos
-os elementos de $R$ são também primos com $n$, e assim, teremos que $(ap_1)(ap_2)...(ap_{\Phi(n)}) \equiv 1(\bmod$ $n)$.
-
-Das congruências acima podemos concluir que:
-\newline
-
-$p_1p_2...p_{\Phi(n)} \equiv  (ap_1)(ap_2)...(ap_{\Phi(n)}) (\bmod$ $n)$ 
-
-$p_1p_2...p_{\Phi(n)} \equiv a^\Phi(n)p_1p_2...p_{\Phi(n)} (\bmod$ $n)$
-\newline
-
-E assim, concluímos que $1 \equiv a^\Phi(n)(\bmod$ $n)$, já que $p_1p_2...p_{\Phi(n)} \equiv 1(\bmod$ $n)$. $\square$
+Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente a exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$. 
+Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente a exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
+Assim, como $|S| \leq |R|$ e $|R| \leq |S|$, temos que $|R| = n = k = |S|$. $\square$
 \\
+
+
+
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Sequência de Fibonacci}
+\section{Congruência Linear}
 
 \begin{definition}
-A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positivos em que cada termo subsequente corresponde a soma dos dois termos anteriores.
-
-\[
- Fib_n :=
-  \begin{cases}
-   0 & \text{se } n = 0 \\
-   1 & \text{se } n = 1 \\
-   Fib_{n-1} + Fib_{n-2} & \text{se } n \geq 2
-  \end{cases}
-\]
+Congruências da forma $ax \equiv b (mod$ $m)$, onde $a$, $b$ e $m$ são inteiros e $x$ é uma incógnita, são chamadas de \textit{Congruências Lineares}.
+\newline
 \end{definition}
 
 
-\begin{proposition}\label{gcd_consecutivo_fib}
-$MDC(Fib_n, Fib_{n-1}) = 1$, para $n \geq 2$
+\begin{definition}\label{def_residuo_quadratico}
+Um inteiro $q$ é chamado de \textbf{Resíduo Quadrático} módulo $n$ se é congruente a um \textit{quadrado perfeito} módulo $n$, ie, se existe $x$, tal que:
+$x^2 \equiv q$ $(mod$ $n)$. 
+\newline 
+\end{definition}
+
+\begin{proposition}\label{congruencia_linear_ida}
+$ax \equiv b (mod$ $m)$ tem solução $\Rightarrow$ $MDC(a,m)|b$
 \end{proposition}
 \textbf{Demonstração:}
-Tome os primeiros termos da sequência de Fibonacci: $1, 1, 2, 3, 5, 8,...$.
-Claramente a expressão acima funciona para os primeiros termos.
-Assuma que a expressão funciona para um inteiro qualquer $(k-1) > 2$, ou seja, $MDC(Fib_{k-1}, Fib_{k-2}) = 1$.
+Suponha que $\exists x\in\mathbb{Z}$, tal que $ax\equiv b(mod$ $m)$, assim temos:
 
-Provaremos por indução que a expressão sempre funciona.
+$ax\equiv b(mod$ $m) \Rightarrow m|(b-ax) \Rightarrow \exists! r\in\mathbb{Z}$ tal que $(b-ax) = mr$
 
-$MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1})$
-
-$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pelo \textbf{Proposição} \autoref{corolario_gcd_soma})
-
-Logo, temos que:
-
-$MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1}) = 1$ $\square$
-
-
-
-\begin{proposition}\label{gcd_combinacao_fib}
-$Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$
-\end{proposition}
-\textbf{Demonstração:} Provaremos esse corolário por indução no índice $n$.
-
-A base da indução será, $n=2$:
-
-$Fib_{m+2} = Fib_m + Fim_{m+1} = Fib_m + Fib_m + Fib_{m-1}$
-
-$Fib_{m+2} = 2Fib_m + 1Fib_{m-1} = Fib_mFib_{3} + Fib_{m-1}Fib_2$
-
-Assumindo que a expressão é válida para todos os valores menores que $n$, temos:
-
-$Fib_{m+n} = Fib_{m+n-2} + Fib_{m+n-1}$
-
-$Fib_{m+n} = (Fib_{m}Fib_{n-1} + Fib_{m-1}Fib_{n-2}) + (Fib_{m}Fib_{n} + Fib_{m-1}Fib_{n-1})$
-
-$Fib_{m+n} = Fib_m(Fib_{n-1} + Fib_{n}) + Fib_{m-1}(Fib_{n-2} + Fib_{n-1})$
-
-$Fib_{m+n} = Fib_mFib_{n+1} + Fib_{m-1}Fib_n$ $\square$ 
-
-
-\begin{theorem}\label{fibonacci_mdc}
-$MDC(Fib_m, Fib_n) = Fib_{MDC(m, n)}, \forall m, n \in \mathbb{Z}$
-\end{theorem}
-\textbf{Demonstração:}
-
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm + r})$ ($\triangleright$ \autoref{algoritmo_divisao}, $n = qm + r, 0 \leq r < n$)
-
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\triangleright$ \textbf{Proposição} \autoref{gcd_combinacao_fib}).
-
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
-
-Pela \textbf{Proposição} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
-
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$
-
-$MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{n \bmod m})$
-
-Se tirarmos o símbolo funcional $Fib$, a última equação forma um passo do \textbf{Algoritmo de Euclides} ($MDC(m,n) = MDC(m, n \bmod m)$).
-
-Podemos continuar esse processo até que o resto $r$ se torne $0$. O último resto não-nulo será
-exatamente o Máximo Divisor Comum do dois números originais.
-
-Desse modo, aplicar o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que aplicar aos índices $m$ e $n$.
-E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
-
-
-\begin{theorem}\label{fibonacci_formula_fechada}
-$Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$
-\end{theorem}
-\textbf{Demonstração:}
-
-$Fib_{n+1} = Fib_n + Fib_{n-1}$
-
-$Fib_{n+1} - kFib_n = Fib_n + Fib_{n-1} - kFib_n$
-
-$Fib_{n+1} - kFib_n = Fib_n + Fib_{n-1} - kFib_n + (kFib_{n-1}-kFib_{n-1}) + (k^2Fib_{n-1}-k^2Fib_{n-1})$
-
-$Fib_{n+1} - kFib_n = (1 - k)(Fib_n - kFib_{n-1}) + (1 + k - k^2)Fib_{n-1}$
-
-Se denotarmos as raízes de $k^2-k-1=0$ por $k_1$ e $k_2$, teremos que $k_1=\frac{1-\sqrt{5}}{2}$ e $k_2=\frac{1+\sqrt{5}}{2}$. 
-
-$Fib_{n+1} - k_1Fib_b = k_2(Fib_n - k_1Fib_{n-1})$
-
-$Fib_{n+1} - k_2Fib_b = k_1(Fib_n - k_2Fib_{n-1})$
-
-Por iterações sucessivas dessas duas equações teremos que:
-
-$Fib_{n+1} - k_1Fib_b = k_2^n(Fib_1 - k_1Fib_0) = k_2^n$
-
-$Fib_{n+1} - k_2Fib_b = k_1^n(Fib_1 - k_2Fib_0) = k_1^n$
-
-Subtraindo membro à membro temos:
-
-$Fib_n(k_2 - k_1) = k_2^n - k_1^n$
-
-$Fib_n = \frac{k_2^n - k_1^n}{k_2 - k_1}$
-
-$Fib_n = \frac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{(\frac{1+\sqrt{5}}{2}) - (\frac{1-\sqrt{5}}{2})}$
-
-$Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$ $\square$
-
-
-\subsection{Análise do Algoritmo de Euclides}
-
-No \textbf{Algoritmo} \autoref{mdc}, exceto a chamada recursiva, todas as operações são feitas em tempo constante. Assim, 
-a complexidade do algoritmo $MDC(a,b)$ será proporcional ao número de chamadas recursivas que o algoritmo faz.
-Observe também que se $a\leq b$, então o algoritmo $MDC(a,b)$ fará uma chamada a mais do que se $a>b$ (na primeira iteração
-os parâmetros $a$ e $b$ seriam trocados de posição). Desse modo, sem perda de generalidade, assumiremos que $a > b$.
-
-\begin{proposition}\label{algoritmo_euclides_prop1}
-Se o algoritmo $MDC(a,b)$ faz $N$ ($1 < N$) chamadas recursivas, então: $a\geq Fib_{N+1}$ e $b \geq Fib_{N}$.
-\end{proposition}
-\textbf{Demonstração:}
-Provaremos essa proposição por indução. A base da indução é $N=1$. Como temos $1$ chamada recursiva, então $b\neq0$, ie, 
-$b \geq 1 = Fib_1$. Como $a > b$, então $a \geq 1 = Fib_2$, provando assim a base da indução.  
-
-Agora assuma que $N>1$, e que o algoritmo $MDC(a,b)$ faz $N$ chamadas recursivas. Pelo \autoref{algoritmo_divisao} sabemos que existe
-$q$ e $r$ tal que $a=qb+r$, e $0\leq r<b$. 
-Assim, temos que $MDC(b,r)$ faz $N-1$ chamadas recursivas.
-
-Pela hipótese de indução, temos que $b\geq Fib_N$ e $r\geq Fib_{N-1}$. Além disso, como $a > b$, temos que $q > 1$. 
-
-Concluindo assim que, $a \geq b+r \geq Fib_N + Fib_{N-1} = Fib_{N+1}$. $\square$
-
-\begin{proposition}\label{algoritmo_euclides_prop2}
-$Fib_N \geq \Phi^{N-1}$, em que $\Phi = \frac{1+\sqrt{5}}{2} \approx 1.618$ é a \textit{proporção áurea}.
-\end{proposition}
-\textbf{Demonstração:}
-Provaremos essa proposição por indução. Para $N=1$, temos: $Fib_1 = 1 \geq \Phi^{0} = 1$.
-
-Agora assuma que $N>1$. Primeiro observe que $\Phi^2 = (\frac{1+\sqrt{5}}{2})^2 = (\frac{3+\sqrt{5}}{2}) = \Phi + 1$.
-
-Pela hipótese de indução, temos que $Fib_N = Fib_{N-1} + Fib_{N-2} \geq \Phi^{N-2} + \Phi^{N-3} = \Phi^{N-3}(\Phi+1) = \Phi^{N-1}$.$\square$
+$\Rightarrow b = mr + ax \Rightarrow MDC(a,m)|b$, pois $MDC(a,m)$ divide tanto $a$ como $m$. $\square$
 \newline
 
-Pelas \textbf{Proposições} \autoref{algoritmo_euclides_prop1} e \autoref{algoritmo_euclides_prop2}, temos que se $MDC(a,b)$ faz $N$
-chamadas recursivas, então $a \geq Fib_{N+1}$ e $b \geq Fib_N \geq \Phi^{N-1}$. 
-Podemos concluir então que, $\log_\Phi b \geq N-1$, ie, $N$ é $O(\log b)$. 
+
+\begin{proposition}\label{congruencia_linear_volta}
+$ax \equiv b (mod$ $m)$ tem solução $\Leftarrow$ $MDC(a,m)|b$
+\end{proposition}
+\textbf{Demonstração:}
+
+$MDC(a,m)|b \Rightarrow (ax+my)|b$ ($\triangleright$ \autoref{teorema_bezout})
+
+$\Rightarrow \exists!r\in\mathbb{Z}$ tal que, $b=(ax + my)r \Rightarrow b = (xr)a + (yr)m$
+
+$\Rightarrow b \equiv xra + yrm$ $(mod$ $m) \Rightarrow b \equiv xra$ $(mod$ $m)$
+
+E assim, a \textbf{Congruência Linear} $az\equiv b (mod$ $m)$, tem solução $z=xr$. $\square$
+
+\begin{corollary}\label{teorema_congruencia_linear_ida_volta}
+$ax \equiv b (mod$ $m)$ tem solução $\Leftrightarrow$ $MDC(a,m)|b$
+\end{corollary}
+\textbf{Demonstração:}
+Segue trivialmente das \textbf{Proposições} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}.
+
+
+
+
+\begin{theorem}\label{sistemo_completp_residuo}
+O conjunto $S = \{s_0, s_1, s_2,..., s_{n-1}\}$ com $s_i = im + p$, $m, n, p \in \mathbb{Z}$, e $MDC(m,n) = 1$ é um sistema completo de resíduos módulo $n$.
+\end{theorem}
+\textbf{Demonstração:}
+Primeiro provaremos que $\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$.
+
+Tome um inteiro $a$ qualquer e a Congruência Linear: $(a-p)\equiv xm(mod$ $n)$. Pelo \textbf{Corolário} \autoref{teorema_congruencia_linear_ida_volta} sabemos que essa Congruência Linear tem solução, já que $MDC(m,n)=1$. Assim:
+
+$(a-p)\equiv xm(mod$ $n) \Rightarrow a\equiv xm+p(mod$ $n) \Rightarrow a\equiv im + p (mod$ $n), i=x\bmod n$
+
+$\Rightarrow a\equiv s_i(mod$ $n)$
+
+Agora provaremos que $s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$.
+
+Tome $s_i$ e $s_j$ em $S$ com $i\neq j$, $0 < |i-j| < n$. Claramente $(i-j)\not\equiv 0(mod$ $n)$, já que que $i$ e $j$ são distintos e $0 \leq i,j < n$.
+Portanto $(i-j)m\not\equiv 0(mod$ $n)$, já que $MDC(m,n)=1$, e assim:
+
+$(i-j)m\not\equiv 0(mod$ $n) \Rightarrow im \not\equiv jm(mod$ $n) \Rightarrow im+p \not\equiv jm+p(mod$ $n)$
+
+$\Rightarrow s_i \not\equiv s_j(mod$ $n)$.
+
+Disso segue que $S$ é um sistema completo de resíduos módulo $n$. $\square$
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Teoremas de Fermat e de Wilson}% e do Resto Chinês}
+
+\subsection{Teorema de Fermat}
+
+\begin{theorem}[Pequeno Teorema de Fermat]\label{teorema_fermat}
+Dado um número primo qualquer $p$, temos que: 
+$a^{p-1} \equiv 1 (\bmod$ $p), \forall a \in \mathbb{Z} \mid MDC(a, p) = 1$
+\end{theorem}
+\textbf{Demonstração:}
+Tome os conjuntos $S = \{s_0, s_1, s_2, ..., s_{p-1}\}$, com $s_i = ai$, e $T = \{0, 1, 2,..., p-1\}$. 
+Claramente o conjunto $T$ é um \textit{Sistema completo de resíduos módulo $p$}.
+Pelo \autoref{sistemo_completp_residuo} sabemos que $S$ também é um \textit{Sistema completo de resíduos módulo $p$},
+e assim, $\forall s_i\in S$, $\exists! t_j\in T, 0\leq t_j\leq(p-1)$, tal que $s_i\equiv t_j(mod$ $p)$. Dessa informação podemos derivar a seguinte congruência modular:
+
+$s_1.s_2.s_3...s_{p-1} \equiv t_1.t_2.t_3...t_{p-1} (mod$ $p)$ ($\triangleright$ Observe que o correspondente a $s_0$ é $t_0$)
+
+$\Rightarrow a.2a.3a....(p-1)a \equiv 1.2.3....(p-1) (mod$ $p) \Rightarrow a^{p-1}(p-1)! \equiv (p-1)! (mod$ $p)$
+
+E aplicando os \textbf{Corolários} \autoref{mdc_primo_fatorial} e \textbf{Proposição} \autoref{corolario_implicacao_mdc}, temos:
+
+$a^{p-1}\equiv 1(mod$ $p)$. $\square$
+\\
+
+
+\begin{theorem}\label{teorema_fermat_expansao}
+Dados os inteiros $a$ e $b$ quaisquer e um número primo $p$, com $MDC(a, p) = 1$, temos que:
+
+$a^{b} \equiv a^{b \bmod (p-1)} (\bmod$ $p)$
+\end{theorem}
+\textbf{Demonstração:}
+Pelo \autoref{algoritmo_divisao} podemos escrever $b=q(p-1)+r$, onde $r=b\bmod(p-1)$. Assim temos:
+
+$a^b = a^{q(p-1)+r} = a^{q(p-1)}a^r = (a^{p-1})^qa^r \Rightarrow a^b \equiv (a^{p-1})^qa^r (mod$ $p)$ 
+
+Pelo \autoref{teorema_fermat} temos $a^{p-1} \equiv 1 (\bmod$ $p)$. Logo:
+
+$a^b \equiv (1)^qa^r \equiv a^r \equiv a^{b \bmod (p-1)} (mod$ $p)$. $\square$
+\\
+
+\subsection{Inverso Multiplicativo Modular}
+
+\begin{definition}
+Um inteiro $x$ é chamado de \textit{Inverso Multiplicativo} de $a$ módulo $m$, se $ax\equiv1$ $(mod$ $m)$, para $a$ e $m$ inteiros.
+\end{definition}
+
+
+\begin{theorem}\label{inveso_multiplicativo_modular}
+Se $p$ é primo e $a$ é primo entre si com $p$, então: $a^{p-2} \equiv a^{-1}$ $(mod$ $p)$, ou seja, $a^{p-2}$ é inverso multiplicativo
+de $a$ módulo $p$.
+\end{theorem}
+\textbf{Demonstração:}
+Pelo \autoref{teorema_fermat} sabemos que $a^{p-1}\equiv1$ $(mod$ $p)$. Sabemos também que existe um inverso multiplicativo $a^{-1}$
+de $a$ módulo $p$, já que $a$ e $p$ são primos entre si. Desse modo, temos que:
+
+$a^{p-1}\equiv1$ $(mod$ $p) \Rightarrow a^{p-1}a^{-1} \equiv 1.a^{-1}$ $(mod$ $p) \Rightarrow a^{p-2}\equiv a^{-1}$ $(mod$ $p)$.$\square$
+
+
+\subsection{Teorema de Wilson}
+
+\begin{proposition}\label{proposicao_teorema_wilson}
+Se $p$ é um número primo, e $a$ um inteiro tal que $1\leq a\leq p-2$, então:
+
+$a^2 \equiv 1$ $(mod$ $p) \Leftrightarrow a = \pm 1 $
+\end{proposition}
+\textbf{Demonstração:}
+Claramente se $a = \pm 1$ então $a^2 \equiv 1$ $(mod$ $p)$. Provaremos então somente a ida da implicação.
+
+Sabemos que $a^2 \equiv 1$ $(mod$ $p)$, desse modo temos que:
+\\
+
+$a^2 \equiv 1$ $(mod$ $p) \Rightarrow (a^2-1) \equiv 0$ $(mod$ $p) \Rightarrow (a-1)(a+1) \equiv 0$ $(mod$ $p)$
+\\
+$\Rightarrow (a-1)\equiv0$ $(mod$ $p)$ ou $(a+1)\equiv0$ $(mod$ $p)$
+\\
+$\Rightarrow a\equiv1$ $(mod$ $p)$ ou $a\equiv-1$ $(mod$ $p) \Rightarrow a=1$ ou $a=-1$. $\square$
+
+\begin{theorem}[Teorema de Wilson]
+Se $p$ é um número primo, então $(p-1)! \equiv -1$ $(mod$ $p)$
+\end{theorem}
+\textbf{Demonstração:}
+Para $p=2$ o resultado é trivial, então assumiremos que $p\geq 3$.
+
+Pela \textbf{Proposição} \autoref{proposicao_teorema_wilson} sabemos que $a^2 \equiv 1$ $(mod$ $p) \Leftrightarrow a = \pm 1$ 
+para $1\leq a\leq p-2$, e assim o inverso multiplicativo de um número $b$ em $2\leq b\leq p-2$ é diferente de $b$. Podemos então
+agrupar os $\frac{p-3}{2}$ pares de inversos multiplicativos no intervalo $[2,p-2]$ de modo que teremos: $2.3....(p-2) \equiv1$ $(mod$ $p)$.
+
+Desse mode, temos que:
+
+$(p-1)! \equiv 2.3.4...(p-2)(p-1) \equiv (p-1) \equiv -1$ $(mod$ $p)$. $\square$
+
+%\subsection{Teorema do Resto Chinês}
+
+%\begin{theorem}[Teorema do Resto Chinês]
+%Tome o sistema de congruências lineares:
+
+%$a_1x \equiv c_1 (mod$ $m_1)$
+
+%$a_2x \equiv c_2 (mod$ $m_2)$
+
+%$a_3x \equiv c_3 (mod$ $m_3)$
+
+%$...$
+
+%$a_nx \equiv c_n (mod$ $m_n)$\\
+
+%Em que $c_i \in \mathbb{Z}$, $MDC(a_i,m_i) = 1$, e $MDC(m_i, m_j) = 1$ para $i \neq j$
+%Nessas condições o sistema acima tem solução única módulo $M$, em que $M = m_1m_2m_3...m_n$.
+%\end{theorem}
+%\textbf{Demonstração:}
+%TODO
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Exponenciação}
+
+%----------------------------------------------------------------------------------------
+\subsection{Exponenciação Binária}
+
+\textit{Exponenciação Binária} é um algoritmo muito usado em \textit{Ciência da Computação} principalmente no campo da \textit{Criptografia}.
+
+O algoritmo recebe inteiros $a$ e $b$, e calcula $a^b$, usando divisão e conquista sobre a seguinte equação:
+\[
+ a^b = 
+  \begin{cases} 
+   1& \text{se } b = 0 \\
+   (a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for par} \\
+   a(a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for ímpar} 
+  \end{cases}
+\]
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Exponenciação Binária}
+\begin{algorithmic}[1]
+\Procedure{$EXPBIN (a, b)$}{}
+\If {$b = 0$}
+\State \Return $1$
+\EndIf 
+\\
+\State $pot \gets EXPBIN(a, \lfloor \frac{b}{2} \rfloor)$
+\State $pot \gets pot^2$
+\\
+\If {$b \equiv 0 (mod$ $2)$}
+\State \Return $pot$
+\Else
+\State \Return $a(pot)$
+\EndIf
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O tempo $T(a,b)$ que o algoritmo consome é dado por: $T(a,b) = T(a,b/2)+O(1)$, em que $T(a,0) = O(1)$.
+
+Expandindo essa recursão é fácil perceber que a complexidade do algoritmo é $O(\log b)$.
+
+
+%----------------------------------------------------------------------------------------
+\subsection{Exponenciação Binária Modular}
+
+\textit{Exponenciação Binária Modular} é uma variação do algoritmo \textit{Exponenciação Binária} que calcula $a^b\bmod m$, para dodos inteiros $a$, $b$, e $m$. Em geral \textit{Exponenciação Binária Modular} é mais usado que \textit{Exponenciação Binária}, 
+pelo fato da expressão $a^b$ crescer rapidamente e causar \textit{overflow}.\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Exponenciação Modular}\label{exponenciacao_modular}
+\begin{algorithmic}[1]
+\Procedure{$EXPMOD (a, b, m)$}{}
+\If {$b = 0$}
+\State \Return $1$
+\EndIf 
+\\
+\State $pot \gets EXPMOD(a, \lfloor \frac{b}{2} \rfloor, m)$
+\State $pot \gets pot^2 \mod m$
+\\
+\If {$b \equiv 0 (mod$ $2)$}
+\State \Return $pot$
+\Else
+\State \Return $a(pot) \mod m$
+\EndIf
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O tempo $T(a,b,m)$ que o algoritmo consome é dado por: $T(a,b,m) = T(a,b/2,m)+O(1)$, em que $T(a,0,m) = O(1)$.
+
+Assim esse algoritmo tem a mesma complexidade $O(\log b)$ da \textit{Exponenciação Binária}.
+
+%----------------------------------------------------------------------------------------
+\subsection{Exponenciação de Matriz}
+
+\textit{Exponenciação de Matriz} é uma outra variação do algoritmo \textit{Exponenciação Binária} que calcula $A^b\bmod m$, para dados inteiros $b$ e $m$ e a matriz quadrada $A_{n,n}$. 
+
+\begin{definition}
+A expressão "$A \bmod m$", em que $A$ é uma matriz e $m$ um inteiro qualquer, representa uma matriz $B$ com as mesmas dimensões que $A$, tal que: $B_{ij} = A_{ij} \bmod m$, $\forall B_{ij} \in B$.
+\end{definition}
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Exponenciação de Matriz}\label{exponenciacao_matrix}
+\begin{algorithmic}[1]
+\Procedure{$EXPMAT (A, b, m)$}{}
+\If {$b = 0$}
+\State \Return $I$ \Comment {$I$ representa a matriz identidade de dimensão $n$}
+\EndIf 
+\\
+\State $P \gets EXPMAT(A, \lfloor \frac{b}{2} \rfloor, m)$
+\State $P \gets P^2 \mod m$
+\\
+\If {$b \equiv 0 (mod$ $2)$}
+\State \Return $P$
+\Else
+\State \Return $A(P) \mod m$
+\EndIf
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+A recursão desse algoritmo é similar a recursão da \textit{Exponenciação Binária}, exceto pela operação de produto, que nesse caso são produtos de matrizes. O tempo gasto para multiplicar duas matrizes quadradas de dimensão $n$ é $O(n^3)$. Assim, a complexidade total 
+do algoritmo é $O(n^3 \log b)$.
+
 
 
 
@@ -324,489 +383,299 @@ Podemos concluir então que, $\log_\Phi b \geq N-1$, ie, $N$ é $O(\log b)$.
 \section{Problemas Propostos}
 
 
+
 %----------------------------------------------------------------------------------------
-\subsection{UVA-11424}
-\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2419}{11424 - GCD - Extreme (I)} \\
+\subsection{SPOJ-DCEPC11B}
+\href{http://www.spoj.com/problems/DCEPC11B/}{DCEPC11B - Boring Factorials}\\
 
 \textbf{Resumo:}
-É dado um inteiro positivo $N$ ($1 < N < 200001$). O problema consiste em calcular o mais rápido possível a expressão:
-
-$G(N) = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N}MDC(i,j)$.
+São dados inteiros $N$ ($1\leq N \leq 2.10^9$) e o número primo $P$ ($1 < P \leq 2.10^9)$, de tal forma que a diferença entre $N$ e $P$ é pequena.
+O problema consiste em calcular $N! \bmod P$.
 \\
 
 \textbf{Solução:}
-Trivialmente a expressão acima pode ser calculada em tempo proporcional a $O(n^2log(N))$, porém essa solução consome muito tempo e não será aceita no Judge Online. Vamos então mostrar uma solução mais eficiente.
+Pelo \textbf{Teorema de Wilson} sabemos que $(P-1)! \equiv -1 (mod$ $P)$. 
+
+Temos que o problema pode ser dividido em dois casos:
+\newline
+
+\textbf{Caso 1:} \textit{$N \geq P$}
+
+Nesse caso, teremos que:
+
+$N! \equiv (P-1)!\prod_{i=P}^{N}i \equiv (-1)\prod_{i=P}^{N}i$ $(mod$ $P)$. 
+\newline
+
+\textbf{Caso 2:} \textit{$N < P$}
+
+Nesse caso, teremos que:
+
+$N! \equiv (P-1)!\prod_{i=N+1}^{P-1}i^{-1} \equiv (-1)\prod_{i=N+1}^{P-1}i^{-1}$ $(mod$ $P)$. 
 \\
 
-Primeiramente reescrevemos a expressão acima da seguinte maneira:
+Para resolver o \textbf{caso 1} só precisamos aplicar o \textbf{Teorema de Wilson} e construir o produto $\prod_{i=P}^{N}i$ iterativamente.
+Para o \textbf{caso 2}, podemos usar o \textbf{Pequeno Teorema de Fermat} para calcular o inverso multiplicativo dos números no produto $\prod_{i=N+1}^{P-1}i^{-1}$. 
+\newline 
 
-$G(N) = \sum_{j=2}^N\sum_{i=1}^{j-1}MDC(i,j)$ ( $\rhd$ Observe que as expressões são equivalentes).
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Boring Factorials}
+\begin{algorithmic}[1]
+\Procedure{BoringFact (N, P)}{}
+\State $solution \gets -1$
+\\
+\If {$N \geq P$}
+\For {$(i = P \text{; } i \leq N \text{; } i++)$}
+\State $solution \gets (solution.i) \bmod P$
+\EndFor
+\Else
+\For {$(i = N+1 \text{; } i \leq P-1 \text{; } i++)$}
+\State $inverse \gets MODEXP(i, P-2, P)$ \Comment {\autoref{inveso_multiplicativo_modular}}
+\State $solution \gets (solution$ . $inverse) \bmod P$
+\EndFor
+\EndIf
+\\
+\State \Return $solution$
 
-Tome agora a função $F(M) = \sum_{i=1}^{M-1}MDC(i, M)$. Com isso, $G(N) = \sum_{j=2}^NF(j)$.
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
-Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(M)$ são divisores de $M$. Desse modo, podemos reescrever $F(M)$ da seguinte maneira:
 
-$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^{n}\lambda_l d_l$, em que, $d_1, d_2,..., d_n$ são os divisores de $M$, $\lambda_l$ é o número de vezes que o divisor $d_l$ aparece na somatória $\sum_{i=1}^{M-1}MDC(i,N)$, e $n$ é o número de divisores de $M$.
+\textbf{Análise:}
+A complexidade do laço da linha $5$ é dado por $O(N-P)$. Já o laço da linha $8$ consome tempo proporcional a $O((P-N)\log P)$, já que
+a complexidade do algoritmo $MODEXP()$ na linha $9$ é $O(\log P)$.
+
+Assim, a complexidade total do algoritmo é $O(|N-P|\log P)$.
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-IITK2P10}
+\href{https://www.codechef.com/problems/IITK2P10}{IITK2P10 - Chef and Pattern}\\
+
+
+\textbf{Resumo:}
+Tome a seguinte função $f_K:\mathbb{N}^* \longmapsto \mathbb{N}$:
+
+\[
+ f_K(x) = 
+  \begin{cases} 
+   1 & \text{se } x = 1 \\
+   K & \text{se } x = 2 \\
+   \prod_{i=1}^{x-1}f_K(i) & \text{se } x \geq 3
+  \end{cases}
+\]
+
+São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod p$, em que $p = (10^9+7)$.
 \\
 
-Pela \textbf{Proposição} \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
+\textbf{Solução:}
+Escrevendo os valores dos primeiros termos que a função assume, temos: $f_K(1)=1, f_K(2)=K, f_K(3)=K, f_K(4)=K^2, f_K(5)=K^4, f_K(6)=K^8, f_K(7)=K^{16}$.
 
-Reescrevendo novamente $F(M)$, temos:
+Provaremos, por indução, que $f_K(N) = K^{2^{N-3}}, N \geq 3$.
 
-$F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^n \lambda_l d_l = \sum_{l=1}^n \Phi(M/d_l) d_l$.
+Para os primeiros termos essa expressão é trivialmente verificada.
 
-$G(N) = \sum_{j=2}^N \sum_{l=1}^n \Phi(j/d_l)d_l$ $\square$.
+Assuma que a expressão funciona para algum número natural qualquer $(R-1) \geq 3$ ($f_K(R-1) = K^{2^{R-4}}$).
+
+Nessas condições temos que: 
+
+$f_K(R) = \prod_{i=1}^{R-1}f_K(i) = 1.K.\prod_{i=3}^{R-1}f_K(i) = K\prod_{i=3}^{R-1}K^{2^{i-3}} = K\prod_{j=0}^{R-4}K^{2^j}$
+
+$f_K(R) = KK^{\sum_{j=0}^{R-4}2^j} = KK^{2^{R-3}-1} = K^{2^{R-3}}$ $\square$
+
+Para calcular o valor de $f_K(N) \bmod p$, podemos aplicar o \autoref{teorema_fermat_expansao}, já que $p$ é um número primo e $MDC(p, K) = 1$:
+
+$f_K(N) \bmod p = K^{2^{N-3}} \bmod p = K^{2^{N-3} \bmod (p-1)} \bmod p$ 
+
+Reduzindo o problema, dessa maneira, em calcular: $K^{2^{N-3}} \bmod (10^9+7)$.
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{GCD - Extreme(I)}\label{gcd_extreme}
+\caption{Chef and Pattern}
 \begin{algorithmic}[1]
-\Procedure{G (N)}{}
-\State $\Phi[] \gets PHI(N)$
-\State $solution \gets 0$
-\For {$j$ := $2$ to $N$}
-\For {\textbf{each} divisor $d$ de $j$}
-\State $solution \gets solution + \Phi[j/d] d$
-\EndFor
-\EndFor
+\Procedure{f (N, K)}{}
+\State $p \gets (10^9+7)$
+\State $exp \gets EXPMOD(2, N-3, p-1)$ \Comment{\textbf{Algoritmo} $\autoref{exponenciacao_modular}$}
+\State $solution \gets EXPMOD(K, exp, p)$ \Comment{$solution = K^{2^{N-3} \bmod (p-1)} \bmod p$}
 \State \Return{$solution$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
-O método $PHI(N)$ na linha 2 consome tempo proporcional à $O(N\sqrt{N})$.
-
-O número de divisores de $j$ é proporcional à $O(\sqrt{N})$, já que $j \leq N$.
-
-Assim a complexidade das linhas 4, 5, 6 do algoritmo é $O(N\sqrt{N})$.
-
-Complexidade final do algoritmo: $O(N\sqrt{N})$.
-
-\textbf{OBS.:} Para resolver o problema no Judge Online será preciso armazenar as soluções usando \href{https://linux.ime.usp.br/~stefanot/mac499/template.pdf}{Programação Dinâmica}.
-
-
+Como vimos anteriormente, as linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(n \log n)$, e assim a complexidade total é $O(n \log n)$.
 
 
 
 
 %----------------------------------------------------------------------------------------
-\subsection{TJU-3506}
-\href{http://acm.tju.edu.cn/toj/showp3506.html}{3506 - Euler Function} \\
-
-\textbf{Resumo:}
-São dados três números positivos $n$, $m$ ($1 < n < 10^7$, $1 < m < 10^9$) e $d = 201004$.
-O problema consiste em calcular a expressão: $\Phi(n^m) \bmod d$.
-\\
-
-\textbf{Solução:}
-Pela \textbf{Proposição} \autoref{phi_potencia_nk}, temos: 
-
-$\Phi(n^m) \bmod d = (n^{m-1}\Phi(n)) \bmod d$
-
-$\Phi(n^m) \bmod d = ((n^{m-1} \bmod d)(\Phi(n)) \bmod d) \bmod d)$
-
-Desse modo, podemos calcular o primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e o segundo fator com o \textbf{Algoritmo} \autoref{phi_de_euler_algoritmh}.
-\\
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Euler Functions}
-\begin{algorithmic}[1]
-\Procedure{$PhiEulerPotential (n, m, d)$}{}
-\State $\Phi[] \gets PHI(n)$
-\State $exp \gets EXPMOD(n, m-1, d)$
-\State $solution \gets (exp$ $\Phi[n]) \bmod d$
-\State \Return{$solution$}
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-\textbf{Análise:}
-As linhas $3$ e $4$ do algoritmo consomem tempo proporcional a $O(\log m)$ e $O(1)$ respectivamente.
-Se precalcularmos o vetor $\Phi[]$, temos que a complexidade total para calcular cada instância do problema será: $O(\log m)$ 
-
-
-
-%----------------------------------------------------------------------------------------
-\subsection{CodeChef-IITK2P05}
-\href{https://www.codechef.com/problems/IITK2P05}{IITK2P05 - Factorization}\\
-
-\textbf{Resumo:}
-São dados um inteiro $N$ ($2 \leq N \leq 10^{18}$) e o valor de $\Phi(N)$.
-
-O problema consiste em fatorar $N$. 
-\\
-
-\textbf{Solução:}
-A solução trivial para fatorar $N$ consome tempo proporcional a $O(\sqrt{N})$, porém para uma entrada na ordem de $10^{18}$ precisamos de um algoritmo mais eficiente.
-
-Se $N$ for primo, ie, $\Phi(N) = N-1$, já temos a solução.
-
-Assuma então que $N$ é um número composto. Primeiro vamos iterar nos primeiros $\sqrt[3]{N}$ inteiros e remover todos os fatores primos de $N$ nesse intervalo. Tome $M$ como sendo o valor resultante.
-
-Imagine que $M$ tenha três ou mais fatores primos. Sabemos que $M$ não tem nenhum fator primo menor que $\sqrt[3]{N}$, temos que: $M > (\sqrt[3]{N})^3 \Rightarrow M > N$ (contradição).
-Desse modo, temos que $M$ tem no máximo dois fatores primos, e esses valores são maiores que $\sqrt[3]{N}$.
-
-\begin{itemize}
-  \item \textbf{Caso 1:} $M$ tem só um fator primo, ie, $M$ é primo:
-		Basta checar se $\Phi(M) = M-1$
-
-  \item \textbf{Caso 2:} $M$ tem dois fatores primos iguais, $M = p ^2$:
-		Basta verificar se $M$ é um quadrado perfeito. Pode ser feito facilmente com busca binária.
-
-  \item \textbf{Caso 3:} $M$ tem dois fatores primos distintos, $M = pq$:
-		Se $M=pq$ então $\Phi(M) = (p-1)(q-1)$. Temos então um sistema com duas equações e duas incógnitas. Se resolvermos o sistema encontraremos a fatoração de $M$ e assim a fatoração de $N$.
-\end{itemize}
-O único problema agora é calcular $\Phi(M)$ a partir de $\Phi(N)$. Assuma que $N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M$, com $k \geq 0$ e 
- $p_i$ os fatores primos distintos de $N$ removidos na primeira etapa do algoritmo. Temos então:
-
-$N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1}p_2^{a_2}...p_k^{a_k}M)$
-
-$N = p_1^{a_1}p_2^{a_2}...p_k^{a_k}M \Rightarrow \Phi(N) = \Phi(p_1^{a_1})\Phi(p_2^{a_2})...\Phi(p_k^{a_k})\Phi(M)$ ($\triangleright$ \autoref{phi_multiplicativa})
-
-$\Rightarrow \Phi(N) = (p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})\Phi(M)$ ($\triangleright$ \autoref{phi_potencia})
-
-$\Rightarrow \Phi(M) = \frac{\Phi(N)}{(p_1^{a_1}-p_1^{a_1-1})(p_2^{a_2} - p_2^{a_2-1})...(p_k^{a_k}-p_k^{a_k-1})}$
-\clearpage
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Fatoração de $N$}
-\begin{algorithmic}[1]
-\Procedure{$Factorization (N, \Phi_N)$}{}
-\State $S \gets \emptyset$ \Comment{$S$ contém os fatores primos de $N$}
-\State $M \gets N$
-\State $\Phi_M \gets \Phi_N$
-\\
-\If {$\Phi_N = N-1$} \Comment{Se $N$ for primo}
-\State $S \gets S \cup \{N\}$
-\State \Return {$S$}
-\EndIf
-\\
-\For {\textbf{each} $p \text{ primo menor igual à } \sqrt[3]{N}$}
-\While {$M \equiv 0 (mod $ $p)$}
-\State $M \gets \frac{M}{p}$
-\State $S \gets S \cup \{p\}$
-\EndWhile
-\EndFor
-\\
-\For {\textbf{each} $p \in S$}
-\State $\Phi_M \gets \frac{\Phi_m}{p^a - p^{a-1}}$ \Comment{$a :=$ número de vezes que o primo $p$ é inserido em $S$}
-\EndFor
-\\
-\If {$\Phi_M = M-1$} \Comment{Se $M$ for primo}
-\State $S \gets S \cup \{M\}$
-\State \Return {$S$}
-\EndIf
-\\
-\State $(p, q) \gets System(M, \Phi_M)$ \Comment{Resolve o sistema de 2 equações e 2 incógnitas}
-\State $S \gets S \cup \{p, q\}$
-\State \Return {$S$}
-
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-
-\textbf{Análise:}
-O laço da linha $10$ consome tempo proporcional a $O(\sqrt[3]N)$. Já o laço da linha $11$ consome tempo proporcional a $O(\log_pN)$, pois tem no máximo $a$ iterações ($a$ é o número de vezes que o fator primo $p$ aparece em $N$) e assim, $p^a < N \Rightarrow a < \log_p{N}$. 
-
-As linhas 15-16 rodam em $O(log_pN)$, já que o número máximo de elementos distintos em $S$ é $log_pN$ ($p$ é o menor primo que divide $N$).
-E as linhas 18-23 rodam em $O(1)$.
-
-Assim, o algoritmo total consome tempo proporcional a $O(\sqrt[3]N \log N)$. 
-Observe que esse algoritmo é bem mais eficiente que o algoritmo trivial para fatoração $O(\sqrt N)$.
-
-
-%----------------------------------------------------------------------------------------
-\subsection{CodeChef-PUPPYGCD}
-\href{https://www.codechef.com/problems/PUPPYGCD}{PUPPYGCD - Puppy and GCD}\\
+\subsection{CodeChef-CSUMD}
+\href{https://www.codechef.com/JULY12/problems/CSUMD}{SUMD - My Fair Coins}\\
 
 
 \textbf{Resumo:}
-São dados inteiros positivos $N$ e $D$. O problema consiste em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq N$ e $MDC(A,B)=D$.
+Existe um número infinito de moedas de dois tipos: as de $1$ centavo, e as de $2$ centavos. 
+Todas as moedas tem dois lados (\textit{cara} e \textit{coroa}) que representam o valor da moeda. 
+
+É dado um inteiro $N$ ($1 \leq N \leq 10^9$). 
+O problema consiste em calcular o número de arranjos lineares dessas moedas, de modo que a soma das moedas é igual à $N$.
+A única restrição é que a primeira moeda de cada arranjo seja \textit{cara}. 
+
+Como esse número pode ser muito grande, a resposta tem que ser dada módulo $m$ ($m = 10^7+9$).
 \\
 
 \textbf{Solução:}
-Claramente se $D$ for maior que $N$, não há nenhum par que satisfaz as condições. Logo, assumiremos que $D \leq N$.
+Tome $f_1(N)$ como sendo o número de arranjos lineares com a primeira moeda sendo \textit{cara}. Analogamente, tome $f_2(N)$
+como sendo o número de arranjos lineares com a primeira moeda sendo \textit{coroa}. Por último, tome $f(N) = f_1(N)+f_2(N)$, como
+sendo o número total de arranjos cuja a soma das moedas é $N$.
 
-Pela \textbf{Proposição} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema da seguinte forma:
-calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
-Como $\Phi(r)$ nos dá a quantidade de números menores ou igual a $r$ coprimos com respeito a ele, temos que 
-o número total de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$.
-Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
+Nessas condições temos as seguintes \textbf{Proposições}:
 \\
 
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Puppy and GCD}
-\begin{algorithmic}[1]
-\Procedure{$CalculatePairs (N, P)$}{}
-\If {$D > N$}
-\State \Return $0$
-\EndIf
-\\
-\State $\Phi[] \gets PHI(\frac{N}{D})$
-\State $count \gets 0$
-\\
-\For {($A = 1 \text{; } A \leq \frac{N}{D} \text{; } A++)$}
-\State $count \gets count + \Phi[A]$
-\EndFor
-\\
-\State $count \gets 2$ $count - 1$
-\State \Return $count$
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+\textbf{Proposição 1:} $f_1(N) = f_2(N)$
 
-\textbf{Análise:}
-Se precalcularmos $\Phi[]$ teremos que o trecho mais custoso do algoritmo será o laço da linha $8$, e assim a complexidade do algoritmo será $O(\frac{N}{D})$.
-
-Obs.: Quando dobramos o valor de $count$ na linha $11$, tem um único $\{1,1\}$ que é contado duas vezes, e por isso precisamos subtrair $1$ do valor final. 
-Esse par corresponde ao par $\{D,D\}$ do problema original.
-
-
-
-
-%----------------------------------------------------------------------------------------
-\subsection{CodeChef-MOREFB}
-\href{https://www.codechef.com/problems/MOREFB}{71544 - Another Fibonacci}\\
-
-\textbf{Resumo:}
-São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 50000$, $1 \leq K \leq N$) e um conjunto $S \subset \mathbb{N}$ com $N$ elementos, tal que, $\forall s \in S, 1 \leq s \leq 10^9$.
-
-Tome a seguinte função:
-
-$F(S) = \sum_{A \subset S \hspace{1mm} e\hspace{1mm} |A| = K}^{} Fib(sum(A))$, onde $sum(A) = \sum_{a \in A}a$. %$\Phi(n^m) \bmod 201004.$
-
-O problema consiste em calcular a expressão:  
-$F(S) \bmod m$, onde $m = 99991$.
-\newline
-
-\textbf{Solução:}
-Pelo \autoref{fibonacci_formula_fechada} temos que $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$.
-
-Primeiro verificamos que $5$ é \textit{Resíduo Quadrático} módulo $m$, já que $5 \equiv 10104^2(\bmod$ $m)$ (esse valor pode
-ser encontrado iterando sobre todos valores menores que $m$), logo: $\sqrt{5} \equiv 10104(\bmod$ $m)$.
-
-Verificamos também que $5$ tem \textit{Inverso Multiplicativo} módulo $m$, já que $MDC(5,m)=1$. Assim, iterando sobre os valores até $m$, podemos encontrar $79993$, que é \textit{Inverso Multiplicativo} de $5$, ie, $5 * 79993 \equiv 1(\bmod$ $m)$, ou simplesmente, $5^{-1} \equiv 79993(\bmod$ $m)$.
-Analogamente podemos calcular o \textit{Inverso Multiplicativo} do $2$ módulo $n$, $2^{-1} \equiv 49996(\bmod$ $m)$.
-
-Substituindo esses valores na equação acima, temos:
-\newline
-
-$Fib_n \equiv 10104*79993 \big( (10105*49996)^n - (-10103*49996)^n (\bmod$ $m)$ 
-\newline
-
-Como $10104*79993 \equiv 22019 (\bmod$ $m)$, $10105*49996 \equiv 55048 (\bmod$ $m)$ e $(-10103*49996) \equiv 44944 (\bmod$ $m)$, temos que:
-\newline
-
-$Fib_n\equiv 22019(55048^n - 44944^n)(\bmod$ $m)$
-\newline
-
-Para facilitar a demonstração usaremos as constantes $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. 
-Vamos calcular $F(S) \bmod m$ em função de $a$, $b$ e $c$.
-\newline
-
-Suponha que $N=3$ e $S=\{s_1, s_2, s_3\}$. 
-
-Para $K=1$, teremos:
-
-$F(S) = Fib_{s_1}+Fib_{s_2}+Fib_{s_3} = a((b^{s_1}+b^{s_2}+b^{s_3}) - (c^{s_1}+c^{s_2}+c^{s_3}))$.
-
-Para $K=2$, teremos:
-
-$F(S) = Fib_{s_1+s_2}+Fib_{s_1+s_3}+Fib_{s_2+s_3} = a((b^{s_1+s_2}+b^{s_1+s_2}+b^{s_2+s_3}) - (c^{s_1+s_2}+c^{s_1+s_3}+c^{s_2+s_3}))$.
-
-Para $K=3$, teremos:
-
-$F(S) = Fib_{s_1+s_2+s_3} = a(b^{s_1+s_2+s_3} - c^{s_1+s_2+s_3})$.
-\newline
-
-Tome agora o polinômio: 
-
-$B(x) = (x-b^{s_1})(x-b^{s_2})(x-b^{s_3})$
-
-$B(x) = x^3 + x^2(b^{s_1}+b^{s_2}+b^{s_3}) + x^1(b^{s_1+s_2}+b^{s_1+s_2}+b^{s_2+s_3}) + x^0(b^{s_1+s_2+s_3})$.
-
-Percebemos, que a parte em $F(S)$ que contém $b$, é exatamente igual ao coeficiente do monômio de grau $N-K$ em $B(x)$.
-
-Analogamente, podemos calcular a parte em $F(S)$ que contém $c$, com o polinômio $C(x) = (x-c^{s_1})(x-c^{s_2})(x-c^{s_3})$.
-\newline
-
-Assim, para resolver o problema de caso geral, basta criar os polinômios:
-
-$B(x) = (x-b^{s_1})(x-b^{s_2})...(x-b^{s_N})$
-
-$C(x) = (x-c^{s_1})(x-c^{s_2})...(x-c^{s_N})$
-\newline
-
-A solução trivial para construir os polinômios $B(x)$ e $C(x)$ consome tempo proporcional a $O(N^2)$, porém usando 
-\textbf{Fast Fourier Transform}, podemos calcular tais polinômios em $O(N\log N)$.
-\newline
-
-Para mais informações sobre  \textbf{Fast Fourier Transform} acesse:
-
-\href{http://mathworld.wolfram.com/FastFourierTransform.html}{http://mathworld.wolfram.com/FastFourierTransform.html}.
-\newline
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Another Fibonacci}
-\begin{algorithmic}[1]
-\Procedure{F (S, N, K)}{}
-\State $m \gets 99991$
-\State $a \gets 22019$
-\State $b \gets 55048$
-\State $c \gets 44944$
-\\
-\State $[Bcoef, Ccoef]\gets FastFourierTransform(S,N,K,m,a,b,c)$ 
-\\
-\State \Return $a(Bcoef - Coef)\bmod m$
-
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-
-\textbf{Análise:}
-Na linha $7$ é aplicado o algoritmo \textbf{Fast Fourier Transform} para calcular os coeficientes do monômio de grau $N-K$ dos 
-polinômios $B(x)$ e $C(x)$ respectivamente. O complexidade final do algoritmo será igual a complexidade do algoritmo \textit{Fast Fourier Transform} que é $O(N\log N)$.
-
-
-
-%----------------------------------------------------------------------------------------
-\subsection{Codeforces-227E}
-\href{http://codeforces.com/contest/227/problem/E}{227E - Anniversary}\\
-
-\textbf{Resumo:}
-São dados quatro inteiros $m$, $l$, $r$, $k$ ($1\leq m\leq 10^9$, $1\leq l \leq r \leq 10^{12}$, $2\leq k\leq r-l+1$), 
-e um conjunto $A = \{l,l+1,l+2,...,r\}$.
-Dado um conjunto $S \subseteq A$ com $k$ elementos, ie, $S = \{s_1, s_2,...,s_k\}$, seja a função 
-$F(S) = MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k})$.
-
-O problema consiste em encontrar tal subconjunto $S$, de tal forma que $F(S)$ seja máxima. No final do algoritmo basta imprimir 
-$F(S) \bmod m$.
+\textbf{Prova:} Para cada arranjo em $f_1$, se trocarmos a primeira moeda de \textit{cara} para \textit{coroa}, teremos um arranjo correspondente em $f_2$. E assim, há uma bijeção de $f_1$ para $f_2$.
 \\
 
-\textbf{Solução:}
-Pelo \autoref{fibonacci_mdc} sabemos que, $MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k}) = Fib_{MDC(s_1,s_2,...,s_k)}$.
-Desse modo, para maximizar $F(S)$, basta maximizar $MDC(s_1,s_2,...,s_k)$, já que $Fib_x$ é uma sequência crescente.
+\textbf{Proposição 2:} $f_1(N) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$
 
-Suponha que o valor máximo para $MDC(s_1,s_2,...,s_k)$ seja $q$. Como $q$ divide pelo memos $k$ inteiros ($s_1,s_2,...,s_k$)
-no conjunto $A$, então $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$, ie, o número de múltiplos de $q$ entre $l$ e $r$ é maior ou igual à $k$.
+\textbf{Prova: }Tome um arranjo $A$ qualque em $f_1$. A primeira moeda de $A$ pode ser tanto uma moeda \textit{cara} de $1$ centavo,
+como uma moeda \textit{cara} de $2$ centavos. O número de arranjos que começam com a moeda de $1$ centavo é $f(N-1)$ e o número de arranjos que começam com a moeda de $2$ centavos é $f(N-2)$. Assim temos:
 
-Todos os valores que $\lfloor \frac{r}{q} \rfloor$ assume são da forma:
-\newline
+$f_1(N) = f(N-1) + f(N-2) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$.
+\\
 
-$i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor \leq \sqrt{r}$
 
-$\lfloor \frac{r}{i} \rfloor$, com $i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor > \sqrt{r}$
-\newline
+\textbf{Proposição 3:} $f_1(N) = 2(f_1(N-1) + f_1(N-2))$
 
-Analogamente, podemos calcular todos os valores que $\lceil \frac{l}{q} \rceil$ assume.
+\textbf{Prova: } Decorrente das \textbf{Proposições 1} e \textbf{2}.
+\\
 
-Tendo todos esses valores armazenados em um conjunto $Q$, é possível calcular todos os valores distintos que $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1$ assume, e assim basta escolher o maior $q \in Q$, tal que 
-$\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$.  
+Claramente $f_1(1) = 1$, e $f_1(2) = 3$. Mostraremos um modo elegante de calcular $f_1(N)$ usando \textit{Exponenciação de Matrizes}.
+Tome a matriz $A$ com as seguintes entradas:
 
-A partir do momento que calculamos $q$, ie, encontramos o valor máximo de $MDC(s_1,s_2,...,s_k)$, precisamos de uma maneira eficiente de calcular $Fib_q \bmod m$.
-E para isso, usaremos \textbf{Exponenciação de Matriz} com a seguinte matriz:
-\newline
-
-\[ A_{2,2} =
+\[ A_{2,2} = 
 \begin{bmatrix}
-       1 & 1           \\[0.3em]
-       1 & 0
+       2 & 1           \\[0.3em]
+       2 & 0    
 \end{bmatrix}
 \]
-\newline
 
-Observe que:
-$
-\begin{bmatrix}
-       Fib_q & Fib_{q-1}
-\end{bmatrix}
-=
-\begin{bmatrix}
-       Fib_{q-1} & Fib_{q-2}
-\end{bmatrix}
-\begin{bmatrix}
-       1 & 1           \\[0.3em]
-       1 & 0
-\end{bmatrix}
-$
-\newline
+Teremos então que:
 
-E assim:
-$
+\[ 
 \begin{bmatrix}
-       Fib_q & Fib_{q-1}
+       f_1(N) & f_1(N-1)
 \end{bmatrix}
 =
 \begin{bmatrix}
-       Fib_{2} & Fib_{1}
+       f_1(N-1) & f_1(N-2)
 \end{bmatrix}
-A^{q-2}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\]
+
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\bigg(
+\begin{bmatrix}
+       f_1(N-2) & f_1(N-3)
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\bigg)
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}
+\]
+
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
 =
 \begin{bmatrix}
-       1 & 1
+       f_1(N-2) & f_1(N-3)
 \end{bmatrix}
-A^{q-2}
-$
-\newline
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}^2
+\]
+
+Expandindo essa recursão até a base, teremos:
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+       f_1(2) & f_1(1)
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}^{N-2}
+\]
+
+
+\[ 
+\begin{bmatrix}
+       f_1(N) & f_1(N-1)
+\end{bmatrix}
+=
+\begin{bmatrix}
+       3 & 1
+\end{bmatrix}
+\begin{bmatrix}
+       2 & 1           \\[0.3em]
+       2 & 0    
+\end{bmatrix}^{N-2}
+\]
 \clearpage
 
 \textbf{Pseudocódigo:}
-
 \begin{algorithm}
-\caption{Anniversary}
+\caption{My Fair Coins}
 \begin{algorithmic}[1]
-\Procedure{$FindMaximumValue (m, r, l, k)$}{}
-
-\State $Q \gets \emptyset$
-\State $q \gets 0$
-\\
-\For {$(i = 1 \text{; } i \leq \sqrt{r} \text{; } i++)$}
-\State $Q \gets Q\cup\{i\}$
-\EndFor
-\\
-\For {$(i = 1 \text{; } i \leq \sqrt{r} \text{; } i++)$}
-\State $Q \gets Q\cup\{\lfloor \frac{r}{i} \rfloor \}$
-\EndFor
-\\
-\For {$(i = 1 \text{; } i \leq \sqrt{l} \text{; } i++)$}
-\State $Q \gets Q\cup\{\lceil \frac{l}{i} \rceil \}$
-\EndFor
-\\
-\For {\textbf{all} $q^* \in Q$}
-\If {$\lfloor \frac{r}{q^*} \rfloor -\lceil \frac{l}{q^*} \rceil + 1 \geq k$}
-\State $q \gets max(q, q^*)$
+\Procedure{$f_1 (N, m)$}{}
+\If {$N = 1$}
+\State \Return $1$
 \EndIf
-\EndFor
+\\
+\If {$N = 2$}
+\State \Return $3$
+\EndIf
 \\
 \State $A \gets 
 \begin{bmatrix}
-       1 & 1           \\[0.3em]
-       1 & 0
+2 & 1           \\[0.3em]
+2 & 0
 \end{bmatrix}
 $
 \\
-\State $B \gets EXPMAT(A, q-2, m) $
+\State $B \gets EXPMAT(A, N-2, m)$ \Comment{\textbf{Algoritmo} $\autoref{exponenciacao_matrix}$}
 \\
-\State \Return $(B_{0,0}+B_{1,0}) \bmod m$
+\State \Return{$3B_{0,0} + 1B_{1,0}$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
-Os laços das linhas $5$ e $8$ consomem tempo proporcional a $O(\sqrt{r})$. O laço da linha $11$ consome tempo proporcional a $O(\sqrt{l})$, que por sua vez é $O(\sqrt{r})$, já que $l\leq r$. Como é inserido um elemento em $Q$ para cada iteração desses três primeiros laços, temos que no final do algoritmo o número de elementos em $Q$ é da ordem de $O(\sqrt{r})$.
+Esse algoritmo tem a mesma complexidade do \textbf{Algoritmo} \autoref{exponenciacao_matrix}, ou seja, $O(n^3 \log N)$ (onde $n$ é a dimensão da matriz).
+Como nesse problema a matriz é sempre quadrada de dimensão $n=2$, temos que a complexidade final do algoritmo será $O(\log N)$.
 
-O laço da linha $14$ consome tempo proporcional a $O(|Q|)$, ie, $O(\sqrt{r})$.
-
-O algoritmo \textit{EXPMAT()} roda em $O(\log q)$, ou simplesmente, $O(\log r)$, já que $q \leq r$.
-
-Assim, a complexidade total do algoritmo é $O(\sqrt{r} + \log r)$.

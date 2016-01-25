@@ -1,379 +1,548 @@
 % Chapter 2
 
-\chapter{Aritmética Modular} % Main chapter title
+\chapter{Divisibilidade} % Main chapter title
 
 \label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 %----------------------------------------------------------------------------------------
-%	SECTION
+%	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Congruência}
+\section{Divisibilidade}
+A noção de divisibilidade dos números inteiros é fundamental na \textbf{Teoria dos Números}.
+Nesta seção vamos descrever algumas definições e propriedades que serão utilizadas ao longo desse trabalho.
 
 \begin{definition}
-Para $a$ e $b$ inteiros, dizemos que $a$ é congruente à $b$ módulo $m$ ($a \equiv b (mod$ $m), m > 0$) 
-se $a$ e $b$ produzem o mesmo resto na divisão por $m$ (ie, $m|(a-b)$).
-Caso contrário ($m\nmid (a-b)$), dizemos que $a$ não é congruente à $b$ módulo $m$ ($a \not\equiv b (mod $ $m)$).
-\\
+A notação $d|n$ ("$d$ \textbf{divide} $n$"), significa que existe um inteiro $q$, tal que, $n = dq$.
+Se $d|n$ dizemos que $n$ é múltiplo de $d$. Caso $n$ não seja múltiplo de $d$ (ou seja, $d$ não divide $n$), escrevemos $d \nmid n$.
 \end{definition}
-
 
 \begin{definition}
-Dizemos que o conjunto de inteiros $S = \{s_1, s_2, ..., s_k\}$ é um sistema completo de resíduos modulo $n$ se:
-%\begin{enumerate}
-$\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$
-%\item$s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$
-%\\
-%\end{enumerate}
+A notação $d\bmod n$ ("$d$ \textbf{módulo} $n$"), significa o resta da divisão de $d$ por $n$.
 \end{definition}
 
+\begin{proposition}\label{divisibilidade_transitiva}
+$d|n$ , $d|m \Rightarrow d|(n+m)$
+\end{proposition}
+\textbf{Demonstração:}
+Se $d|n$ e $d|m$, então existem inteiros $q$ e $k$, tal que, $n = qd$ e $m = kd$. Desse modo temos:
 
-\begin{proposition}\label{corolario_implicacao_mdc}
-Dados inteiros $a$, $b$, $c$, $d$ com $MDC(c,d)=1$, temos que: 
+$(n+m) = qd + kd = (q + k)d \Rightarrow d|(n+m) $ $\square$
 
-$ac \equiv bc (mod$ $d) \Rightarrow a \equiv b (mod$ $d)$.
+
+\begin{proposition}\label{divisibilidade_fracao}
+$d|(\frac{n}{m}) \Rightarrow dm|n$
 \end{proposition}
 \textbf{Demonstração:}
 
-$ac \equiv bc (mod$ $d) \Rightarrow d|(ac-bc) \Rightarrow d|c(a-b) \Rightarrow d|(a-b)$, já que $MDC(c,d)=1$
+$d|(\frac{n}{m}) \Rightarrow \exists q \in \mathbb{Z} \mid \frac{n}{m} = qd$
 
-$\Rightarrow a \equiv b (mod$ $d)$. $\square$
-\\
+$d|(\frac{n}{m}) \Rightarrow n = q(dm) \Rightarrow dm|n$ $\square$
 
 
-\begin{proposition}\label{residuo_completo_1n}
-O conjunto $R = \{0, 1, 2, 3,...,n-1\}$, é um sistema completo de resíduos módulo $n$.
+\begin{proposition}\label{corolario_divisibilidade_1}
+Dado um subconjunto dos inteiros $S = \{S_1, S_2, S_3, ..., S_n\}$ ordenado crescentemente, e um número inteiro $d$, tal que, $d|(S_i-S_{i-1})$, $2 \leq i \leq n$, 
+temos que: 
+
+$d|(S_i-S_j)$, $\forall S_i, S_j \in S$.
+
 \end{proposition}
 \textbf{Demonstração:}
-Pelo \autoref{algoritmo_divisao} sabemos que para qualquer inteiro $a$, existe $q, r$ tal que, $a = qn + r, 0 \leq r < n$. Assim, $a\equiv r(mod$ $n)$, com $r \in R$. $\square$
-\\
+Tome $S_i,S_j \in S$ quaisquer, e sem perda de generalidade assuma que $S_i \geq S_j$ (ie, $i \geq j$, pois $S$ está ordenado crescentemente).
 
-\begin{theorem}
-Se o conjunto $S = \{s_0, s_1, s_2, ..., s_{k-1}\}$ é um sistema completo de resíduos módulo $n$, então $k=n$.
+Como $i \geq j$, tome $r \in \mathbb{N}$ como sendo a diferença entre $i$ e $j$ : $i = j + r$.
+
+Vamos agora provar por indução que $d|(S_{j+r}-S_j)$.
+
+Para $r=0$ ou $r=1$ a demostração segue trivialmente.
+
+Assuma que o corolário funciona para $(r-1)$, ie, $d|(S_{j+r-1}-S_j)$. 
+
+Temos então que: 
+
+$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_{j+r-1})+(S_{j+r-1}-S_j)$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_transitiva})
+
+$d|(S_{j+r}-S_{j+r-1}) \Rightarrow d|(S_{j+r}-S_j)$ $\square$ 
+
+
+\begin{proposition}\label{corolario_divisibilidade_1.1}
+A \textbf{Proposição} \autoref{corolario_divisibilidade_1} funciona mesmo se o conjunto $S$ não estiver ordenado.
+\end{proposition}
+\textbf{Demonstração:}
+Deixaremos a demostração a cargo do leitor.
+\newline
+
+\begin{definition}
+A operação \textbf{módulo} de dois inteiros $a$ e $b$, dada por "$a \bmod b$", representa o resto da divisão de $a$ por $b$.
+\end{definition}
+
+\begin{theorem}[Teorema da Divisão]\label{algoritmo_divisao}
+Para todo número inteiro $a$ e qualquer número inteiro positivo $n$, existem inteiros únicos $q$ e $r$, tal que:
+
+$a = qn + r$, $0 \leq r < n$
+
+O valor $q$ ($q = \lfloor  \frac{a}{n} \rfloor$) é chamado de \textbf{quociente} da divisão, e o valor $r$ ($r = a \bmod n$) é chamado de \textbf{resto}
+(ou \textbf{resíduo}) da divisão.
 \end{theorem}
 \textbf{Demonstração:}
-Tome o conjunto $R = \{0, 1, 2, 3,...,n-1\}$. Pela \textbf{Proposição} \autoref{residuo_completo_1n} sabemos que $R$ é um sistema completo de resíduos módulo $n$.
+Suponha que $q$ e $r$ não sejam únicos, ie, que exista $q^*$ e $r^*$ tal que: $a = q^*n + r^*, 0 \leq r^* < n$.
 
-Podemos concluir então, que cada elemento $s_i$ de $S$ é congruente a exatamente um dos elementos $r_i$ em $R$, o que nos garante $|S| \leq |R|$. 
-Por outro lado, o conjunto $S$ é por definição um sistema completo de resíduos módulo $n$, e desse modo cada elemento $r_i$ de $R$ é congruente a exatamente um dos elementos $s_i$ em $S$, o que nos garante $|R| \leq |S|$.
-Assim, como $|S| \leq |R|$ e $|R| \leq |S|$, temos que $|R| = n = k = |S|$. $\square$
-\\
+$a = qn + r = q^*n + r^* \Rightarrow (r - r^*) = (q^* - q)n \Rightarrow n|(r - r^*)$ já que $n|(q^* - q)n$.
 
+Porém, como $r \neq r^*$, e tanto $r$ quanto $r^*$ são menores que $n$, temos que: 
 
+$(r\bmod n) \neq (r^*\bmod n) \Rightarrow n \nmid (r - r^*)$.
 
-%----------------------------------------------------------------------------------------
-%	SECTION
-%----------------------------------------------------------------------------------------
+Chegando numa contradição, e assim $q$ e $r$ são únicos. $\square$ \\
 
-\section{Congruência Linear}
-
-\begin{definition}
-Congruências da forma $ax \equiv b (mod$ $m)$, onde $a$, $b$ e $m$ são inteiros e $x$ é uma incógnita, são chamadas de \textit{Congruências Lineares}.
-\newline
-\end{definition}
-
-
-\begin{definition}\label{def_residuo_quadratico}
-Um inteiro $q$ é chamado de \textbf{Resíduo Quadrático} módulo $n$ se é congruente a um \textit{quadrado perfeito} módulo $n$, ie, se existe $x$, tal que:
-$x^2 \equiv q$ $(mod$ $n)$. 
-\newline 
-\end{definition}
-
-\begin{proposition}\label{congruencia_linear_ida}
-$ax \equiv b (mod$ $m)$ tem solução $\Rightarrow$ $MDC(a,m)|b$
-\end{proposition}
-\textbf{Demonstração:}
-Suponha que $\exists x\in\mathbb{Z}$, tal que $ax\equiv b(mod$ $m)$, assim temos:
-
-$ax\equiv b(mod$ $m) \Rightarrow m|(b-ax) \Rightarrow \exists! r\in\mathbb{Z}$ tal que $(b-ax) = mr$
-
-$\Rightarrow b = mr + ax \Rightarrow MDC(a,m)|b$, pois $MDC(a,m)$ divide tanto $a$ como $m$. $\square$
-\newline
-
-
-\begin{proposition}\label{congruencia_linear_volta}
-$ax \equiv b (mod$ $m)$ tem solução $\Leftarrow$ $MDC(a,m)|b$
-\end{proposition}
-\textbf{Demonstração:}
-
-$MDC(a,m)|b \Rightarrow (ax+my)|b$ ($\triangleright$ \autoref{teorema_bezout})
-
-$\Rightarrow \exists!r\in\mathbb{Z}$ tal que, $b=(ax + my)r \Rightarrow b = (xr)a + (yr)m$
-
-$\Rightarrow b \equiv xra + yrm$ $(mod$ $m) \Rightarrow b \equiv xra$ $(mod$ $m)$
-
-E assim, a \textbf{Congruência Linear} $az\equiv b (mod$ $m)$, tem solução $z=xr$. $\square$
-
-\begin{corollary}\label{teorema_congruencia_linear_ida_volta}
-$ax \equiv b (mod$ $m)$ tem solução $\Leftrightarrow$ $MDC(a,m)|b$
+\begin{corollary}\label{divisibilidade_modular}
+$d|n$ , $d|m \Rightarrow d|(n \bmod m)$
 \end{corollary}
 \textbf{Demonstração:}
-Segue trivialmente das \textbf{Proposições} \autoref{congruencia_linear_ida} e \autoref{congruencia_linear_volta}.
+
+$d|n \Rightarrow n = k_1d, k_1 \in \mathbb{Z}$
+
+$d|m \Rightarrow m = k_2d, k_2 \in \mathbb{Z}$
+
+$n = qm + (n \bmod m) \Rightarrow (n \bmod m) = n - qm$ ($\triangleright$ \autoref{algoritmo_divisao})
+
+$(n \bmod m) = k_1d - qk_2d = (k_1 - qk_2)d \Rightarrow d|(n \bmod m)$ $\square$
 
 
+\begin{corollary}\label{divisibilidade_modular2}
+$d|m$ , $d|(n \bmod m) \Rightarrow d|n$
+\end{corollary}
+\textbf{Demonstração:}
+
+$d|m \Rightarrow m = k_1d, k_1 \in \mathbb{Z}$
+
+$d|(n \bmod m) \Rightarrow (n \bmod m) = k_2d, k_2 \in \mathbb{Z}$
+
+$n = qm + (n \bmod m) \Rightarrow n = qk_1d + k_2d$ ($\triangleright$ \autoref{algoritmo_divisao})
+
+$n = (qk_1 + k_2)d \Rightarrow d|n$ $\square$
 
 
-\begin{theorem}\label{sistemo_completp_residuo}
-O conjunto $S = \{s_0, s_1, s_2,..., s_{n-1}\}$ com $s_i = im + p$, $m, n, p \in \mathbb{Z}$, e $MDC(m,n) = 1$ é um sistema completo de resíduos módulo $n$.
+\subsection{Divisores}
+Nessa subseção mostraremos um algoritmo simples para calcular todos os divisores de um dado número inteiro positivo qualquer.
+
+\begin{theorem} 
+O número de divisores de $n \in \mathbb{Z}^{+}$ é da ordem de $O(\sqrt{n})$.
 \end{theorem}
 \textbf{Demonstração:}
-Primeiro provaremos que $\forall a \in \mathbb{Z}, \exists! s_i \in S \mid a \equiv s_i (mod$ $n)$.
-
-Tome um inteiro $a$ qualquer e a Congruência Linear: $(a-p)\equiv xm(mod$ $n)$. Pelo \textbf{Corolário} \autoref{teorema_congruencia_linear_ida_volta} sabemos que essa Congruência Linear tem solução, já que $MDC(m,n)=1$. Assim:
-
-$(a-p)\equiv xm(mod$ $n) \Rightarrow a\equiv xm+p(mod$ $n) \Rightarrow a\equiv im + p (mod$ $n), i=x\bmod n$
-
-$\Rightarrow a\equiv s_i(mod$ $n)$
-
-Agora provaremos que $s_i \not\equiv s_j (mod $ $n)$ para $i \neq j$.
-
-Tome $s_i$ e $s_j$ em $S$ com $i\neq j$, $0 < |i-j| < n$. Claramente $(i-j)\not\equiv 0(mod$ $n)$, já que que $i$ e $j$ são distintos e $0 \leq i,j < n$.
-Portanto $(i-j)m\not\equiv 0(mod$ $n)$, já que $MDC(m,n)=1$, e assim:
-
-$(i-j)m\not\equiv 0(mod$ $n) \Rightarrow im \not\equiv jm(mod$ $n) \Rightarrow im+p \not\equiv jm+p(mod$ $n)$
-
-$\Rightarrow s_i \not\equiv s_j(mod$ $n)$.
-
-Disso segue que $S$ é um sistema completo de resíduos módulo $n$. $\square$
-
-
-%----------------------------------------------------------------------------------------
-%	SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Teoremas de Fermat e de Wilson}% e do Resto Chinês}
-
-\subsection{Teorema de Fermat}
-
-\begin{theorem}[Pequeno Teorema de Fermat]\label{teorema_fermat}
-Dado um número primo qualquer $p$, temos que: 
-$a^{p-1} \equiv 1 (\bmod$ $p), \forall a \in \mathbb{Z} \mid MDC(a, p) = 1$
-\end{theorem}
-\textbf{Demonstração:}
-Tome os conjuntos $S = \{s_0, s_1, s_2, ..., s_{p-1}\}$, com $s_i = ai$, e $T = \{0, 1, 2,..., p-1\}$. 
-Claramente o conjunto $T$ é um \textit{Sistema completo de resíduos módulo $p$}.
-Pelo \autoref{sistemo_completp_residuo} sabemos que $S$ também é um \textit{Sistema completo de resíduos módulo $p$},
-e assim, $\forall s_i\in S$, $\exists! t_j\in T, 0\leq t_j\leq(p-1)$, tal que $s_i\equiv t_j(mod$ $p)$. Dessa informação podemos derivar a seguinte congruência modular:
-
-$s_1.s_2.s_3...s_{p-1} \equiv t_1.t_2.t_3...t_{p-1} (mod$ $p)$ ($\triangleright$ Observe que o correspondente a $s_0$ é $t_0$)
-
-$\Rightarrow a.2a.3a....(p-1)a \equiv 1.2.3....(p-1) (mod$ $p) \Rightarrow a^{p-1}(p-1)! \equiv (p-1)! (mod$ $p)$
-
-E aplicando os \textbf{Corolários} \autoref{mdc_primo_fatorial} e \textbf{Proposição} \autoref{corolario_implicacao_mdc}, temos:
-
-$a^{p-1}\equiv 1(mod$ $p)$. $\square$
+Tome um divisor $d$ de $n$ qualquer, com $d > \sqrt{n}$. Dessa forma sabemos que existe um inteiro $q$, tal que $n=qd$ (observe que $q$ também é divisor de $n$). 
+Como $d > \sqrt{n}$ então $q < \sqrt{n}$. Assim, para qualquer divisor $d$ de $n$ maior que $\sqrt{n}$, existe exatamente um divisor $q$ de $n$ menor que $\sqrt{n}$ correspondente ao mesmo.
+O que implica que só existem no máximo $\sqrt{n}$ divisores maiores que $\sqrt{n}$. Por outro lado, claramente só existem $\sqrt{n}$ divisores menores que $\sqrt{n}$.
+Concluímos então que o número total de divisores de $n$ é da ordem de $O(\sqrt{n})$. $\square$
 \\
 
+\clearpage
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Encontra todos os divisores de N}\label{encontra_divisores}
+\begin{algorithmic}[1]
+\Procedure{FindDivisors (N)}{}
+\State $D \gets \emptyset$ \Comment{Conjunto $D$ contém os divisores de $N$}
 
-\begin{theorem}\label{teorema_fermat_expansao}
-Dados os inteiros $a$ e $b$ quaisquer e um número primo $p$, com $MDC(a, p) = 1$, temos que:
+\For {($d = 1 \text{; } d^2 \leq N \text{; } d++)$}
 
-$a^{b} \equiv a^{b \bmod (p-1)} (\bmod$ $p)$
-\end{theorem}
-\textbf{Demonstração:}
-Pelo \autoref{algoritmo_divisao} podemos escrever $b=q(p-1)+r$, onde $r=b\bmod(p-1)$. Assim temos:
+\If {$d\nmid N$}
+\State \textbf{continue}
+\EndIf
+\State $D \gets D \cup \{d\}$
+\State $q \gets \frac{N}{d}$
+\If {$q\neq d$}
+\State $D \gets D \cup \{q\}$
+\EndIf
 
-$a^b = a^{q(p-1)+r} = a^{q(p-1)}a^r = (a^{p-1})^qa^r \Rightarrow a^b \equiv (a^{p-1})^qa^r (mod$ $p)$ 
+\EndFor
 
-Pelo \autoref{teorema_fermat} temos $a^{p-1} \equiv 1 (\bmod$ $p)$. Logo:
+\State \Return{$D$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
-$a^b \equiv (1)^qa^r \equiv a^r \equiv a^{b \bmod (p-1)} (mod$ $p)$. $\square$
-\\
+\textbf{Análise:}
+O laço da linha 3 consome tempo  $O(\sqrt{N})$, testando se os números menores que $\sqrt{N}$ são divisores. Na linha 7 são calculados os divisores correspondentes maiores 
+que $\sqrt{N}$. E a condição da linha 8 garante que se $N$ for quadrado perfeito, então é inserido $\sqrt{N}$ somente uma vez no conjunto $D$.
+Assim a complexidade total do algoritmo é $O(\sqrt{N})$.
 
-\subsection{Inverso Multiplicativo Modular}
 
-\begin{definition}
-Um inteiro $x$ é chamado de \textit{Inverso Multiplicativo} de $a$ módulo $m$, se $ax\equiv1$ $(mod$ $m)$, para $a$ e $m$ inteiros.
+
+
+%-----------------------------------
+%	SECTION 2
+%-----------------------------------
+\section{Números Primos}
+
+\begin{definition} 
+Todo número inteiro n (n > 1) que têm apenas dois divisores distintos (1 e n) é chamado de número primo. Se n (n > 1) não for primo, dizemos que n é número composto.
 \end{definition}
 
 
-\begin{theorem}\label{inveso_multiplicativo_modular}
-Se $p$ é primo e $a$ é primo entre si com $p$, então: $a^{p-2} \equiv a^{-1}$ $(mod$ $p)$, ou seja, $a^{p-2}$ é inverso multiplicativo
-de $a$ módulo $p$.
+\begin{theorem}[Fatoração Única]\label{fatoracao_unica}
+Um número natural qualquer $n>1$, pode ser escrito unicamente como um produto da forma: 
+$n = p_1^{a_1}p_2^{a_2}...p_k^{a_k}$, onde os $p_i$ são números primos, $p_1 < p_2 < ... < p_k$, e os números $a_i$ são inteiros positivos.
 \end{theorem}
 \textbf{Demonstração:}
-Pelo \autoref{teorema_fermat} sabemos que $a^{p-1}\equiv1$ $(mod$ $p)$. Sabemos também que existe um inverso multiplicativo $a^{-1}$
-de $a$ módulo $p$, já que $a$ e $p$ são primos entre si. Desse modo, temos que:
+Primeiro vamos mostrar que existe tal fatoração para um inteiro $n$ qualquer. Se $n$ for primo, então $n$ já está fatorado. 
+Se $n$ for composto, então existe um primo $p$ que divide $n$, ie, $n=pq$. Se $q$ for primo então $n$ estará fatorado,
+ ou $n = p^1q^1$ ou $n = p^2$ (se $p=q$).
+Caso $q$ não seja primo, repetimos o mesmo processo para $q$, de modo que teremos uma fatoração de $q$ no final do processo, e por
+consequência uma fatoração de $n$.
 
-$a^{p-1}\equiv1$ $(mod$ $p) \Rightarrow a^{p-1}a^{-1} \equiv 1.a^{-1}$ $(mod$ $p) \Rightarrow a^{p-2}\equiv a^{-1}$ $(mod$ $p)$.$\square$
+Para mostrar a unicidade, tome as duas fatorações de $n$, $p_1^{a_1}p_2^{a_2}...p_k^{a_k}$ e $q_1^{b_1}q_2^{b_2}...q_r^{b_r}$.
+Por definição temos, $p_1 < p_2 < ... < p_k$ e $q_1 < q_2 < ... < q_r$. 
+
+Se $k<r$ então existe um primo em $\{q_1,q_2,...,q_r\}$ que divide $n$, mas não aparece na fatoração $p_1^{a_1}p_2^{a_2}...p_k^{a_k}$,
+chegando numa contradição. Analogamente, podemos provar que se $k>r$ chegaremos em outra contradição. E assim, concluímos que $k=r$.
+
+Por outro lado, todo primo que aparece na primeira fatoração deve também aparecer segunda fatoração (e vice versa). Pelo fato das
+fatorações estarem ordenadas, teremos que $p_i = q_i$, $1\leq i\leq k$.
 
 
-\subsection{Teorema de Wilson}
 
-\begin{proposition}\label{proposicao_teorema_wilson}
-Se $p$ é um número primo, e $a$ um inteiro tal que $1\leq a\leq p-2$, então:
+ Como a primeira fatoração divide a segunda fatoração e vice versa, temos também que $a_i = b_i$, $1\leq i\leq k$. $\square$
 
-$a^2 \equiv 1$ $(mod$ $p) \Leftrightarrow a = \pm 1 $
+
+
+
+
+%-----------------------------------
+%	SECTION 3
+%-----------------------------------
+\section{Máximo Divisor Comum}
+
+\begin{definition}
+O Máximo Divisor Comum de dois inteiros quaisquer $a$ e $b$ (com a ou b diferente de zero), denotado por $MDC(a,b)$, é o maior inteiro que divide ambos $a$ e $b$. 
+Se $MDC(a,b) = 1$ dizemos que $a$ e $b$ são primos entre si.
+
+Por definição, temos também que $MDC(a,0) = a$.
+\end{definition}
+
+
+\begin{corollary}\label{gcd_modular}
+Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(b, a \bmod b)$
+\end{corollary}
+\textbf{Demonstração:}
+Pelo \textbf{Corolário} \autoref{divisibilidade_modular} e \autoref{divisibilidade_modular2}, temos:
+
+$d|a, d|b \Leftrightarrow d|b, d|(a \bmod b)$
+
+Assim, qualquer divisor de $a$ e $b$ é também divisor de $b$ e $(a \bmod b)$ (e vise versa), implicando que o \textbf{Máximo Divisor Comum} de $a$ e $b$
+é igual ao \textbf{Máximo Divisor Comum} de $b$ e $(a \bmod b)$. $\square$
+
+
+
+\begin{proposition}\label{divisibilidade_mdc}
+$MDC(a,b) = d \Rightarrow MDC(\frac{a}{d}, \frac{b}{d}) = 1$
 \end{proposition}
 \textbf{Demonstração:}
-Claramente se $a = \pm 1$ então $a^2 \equiv 1$ $(mod$ $p)$. Provaremos então somente a ida da implicação.
+Para $d = 1$, a prova é trivial.
 
-Sabemos que $a^2 \equiv 1$ $(mod$ $p)$, desse modo temos que:
+Suponha que $MDC(\frac{a}{d}, \frac{b}{d}) = r > 1$. Assim temos:
+
+$r|\frac{a}{d} \Rightarrow dr|a$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_fracao})
+
+$r|\frac{b}{d} \Rightarrow dr|b$ ($\triangleright$ \textbf{Proposição} \autoref{divisibilidade_fracao})
+
+$r > 1 \Rightarrow dr > d \Rightarrow dr > MDC(a,b)$
+
+Chegamos então numa contradição, pois $dr$ é divisor comum de $a$ e $b$, e $dr$ é maior que o \textbf{Máximo Divisor Comum} de $a$ e $b$. $\square$
+
+
+
+\begin{proposition}\label{corolario_gcd_soma}
+Para números inteiros quaisquer $a$ e $b$, $MDC(a,b) = MDC(a,a \pm b)$
+\end{proposition}
+\textbf{Demonstração:}
+A prova dessa expressão vem do fato de que qualquer divisor de $a$ e $b$, é também divisor de $(a \pm b)$.
+
+
+
+\begin{proposition}\label{corolario_gcd_produto}
+Para números inteiros quaisquer $a$ e $b$, temos:
+
+$MDC(a,b) = 1 \Rightarrow MDC(a,bk) = MDC(a,k)$, com $k \in \mathbb{Z}$
+\end{proposition}
+\textbf{Demonstração:}
+A prova dessa expressão vem do fato de que qualquer divisor $d$ de $a$ e $bk$, é também divisor de $k$, pois $d$ não divide $b$ ($MDC(a,b) = 1$).
 \\
 
-$a^2 \equiv 1$ $(mod$ $p) \Rightarrow (a^2-1) \equiv 0$ $(mod$ $p) \Rightarrow (a-1)(a+1) \equiv 0$ $(mod$ $p)$
+\begin{corollary}\label{mdc_primo_fatorial}
+$MDC((p-1)!, p)=1$, para $p$ primo qualquer.
+\end{corollary}
+\textbf{Demonstração:}
+Tome um inteiro positivo $d < p$. Como $p$ é primo, sabemos que $MDC(p,d)=1$, ie, $d$ não tem nenhum fator primo em comum com $p$. Assim
+o produto $(p-1)!$ de todos os inteiros positivos menores que $p$ também não terá nenhum fator primo em comum com $p$. $\square$
 \\
-$\Rightarrow (a-1)\equiv0$ $(mod$ $p)$ ou $(a+1)\equiv0$ $(mod$ $p)$
-\\
-$\Rightarrow a\equiv1$ $(mod$ $p)$ ou $a\equiv-1$ $(mod$ $p) \Rightarrow a=1$ ou $a=-1$. $\square$
 
-\begin{theorem}[Teorema de Wilson]
-Se $p$ é um número primo, então $(p-1)! \equiv -1$ $(mod$ $p)$
+
+
+\subsection{Algoritmo de Euclides}\label{algoritmo_de_euclides_subsessao}
+A ideia principal do \textbf{Algoritmo de Euclides} é calcular recursivamente o \textbf{Máximo Divisor Comum} de dois números baseando-se no 
+\textbf{Corolário} \autoref{gcd_modular}.\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Algoritmo de Euclides}\label{mdc}
+\begin{algorithmic}[1]
+\Procedure{$MDC (a, b)$}{}
+\If {$b = 0$}
+\State \Return $a$
+\EndIf
+\State \Return $MDC(b, a \bmod b)$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+Primeiro provaremos a corretude do algoritmo fazendo uma indução sobre o número de chamadas recursivas $N$.
+
+Se $N=0$, então $b=0$, e desse modo $MDC(a,0)=a$, ie, para esse caso base o algoritmo retorna o valor correto.
+
+Agora assuma que $MDC(a,b)$ faça $N>0$ chamadas recursivas. Pela hipótese de indução a chamada $MDC(b, a \bmod b)$ retorna o valor correto. Pelo \textbf{Corolário} \autoref{gcd_modular} sabemos que $MDC(a,b) = MDC(b, a \bmod b)$, provando assim a corretude do algoritmo.
+
+Agora faremos uma análise da complexidade do algoritmo.
+
+O \textit{Algoritmo de Euclides} consome tempo proporcional à $O(\log b)$. Para provar a análise do custo do algoritmo é preciso conhecer algumas propriedades da \textit{Sequência de Fibonacci}, e desse modo, a 
+demostração será feita no \textbf{Capítulo 3}, \textbf{Subseção 3.2.1}.
+
+
+
+\subsection{Teorema de Bézout}
+
+\begin{proposition}\label{bezout_conjunto_nao_nulo}
+Seja o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
+e pelo menos um desses números é diferente de zero. Temos então que $S \neq \emptyset$. 
+\end{proposition}
+\textbf{Demonstração:}
+As combinações possíveis para $a$ e $b$ são:
+
+$a > 0 \Rightarrow |a| = 1.a + 0.b$
+
+$a < 0 \Rightarrow |a| = (-1).a + 0.b$
+
+$b > 0 \Rightarrow |b| = 0.a + 1.b$
+
+$b < 0 \Rightarrow |b| = 0.a + (-1).b$
+
+Como não temos ambos $a$ e $b$ iguais à zero, então $S$ deve conter pelo menos $|a|$ ou $|b|$, e assim $S \neq \emptyset$ $\square$
+
+
+\begin{corollary}\label{bezout_conjunto_divide}
+Seja o conjunto de combinações lineares positivas $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$, onde os números $a$ e $b$ são inteiros, 
+e pelo menos um desses números é diferente de zero. Temos então que o menor número $d \in S$ divide todos os elementos de $S$.
+\end{corollary}
+\textbf{Demonstração:}
+Como $d \in S$, $\exists m,n\in\mathbb{Z} \mid d = ma + nb$.
+
+Tome $x \in S$ qualquer. Pelo \autoref{algoritmo_divisao} $x = qd + r$, $0 \leq r < d$.
+
+Suponha que $d\nmid x$, ie, $x \neq qd$ e $0 < r$. Como $x \in S$, $\exists m^*,n^*\in\mathbb{Z} \mid x = m^*a + n^*b$, e assim:
+
+$x = m^*a + n^*b, x = qd + r \Rightarrow r = m^*a + n^*b - qd = m^*a + n^*b - q(ma + nb)$ 
+
+$\Rightarrow r = (m^* - qm)a + (n^* - qn)b \Rightarrow r \in S$, pois $r > 0$
+
+Chegamos numa contradição, pois $r \in S$, $d \in S$, $r < d$ e $d$ é o menor elemento em $S$.
+
+Desse modo, temos que $d$ divide todos os elementos de $S$. $\square$
+
+
+\begin{theorem}[Teorema de Bézout]\label{teorema_bezout}
+$\forall$ $a$, $b \in \mathbb{Z}$ (com pelo menos um dos dois números diferente de zero), $\exists$ $x, y \in \mathbb{Z} \mid ax + by = mdc(a, b).$
 \end{theorem}
 \textbf{Demonstração:}
-Para $p=2$ o resultado é trivial, então assumiremos que $p\geq 3$.
+Tome o conjunto das combinações lineares de $a$ e $b$:
 
-Pela \textbf{Proposição} \autoref{proposicao_teorema_wilson} sabemos que $a^2 \equiv 1$ $(mod$ $p) \Leftrightarrow a = \pm 1$ 
-para $1\leq a\leq p-2$, e assim o inverso multiplicativo de um número $b$ em $2\leq b\leq p-2$ é diferente de $b$. Podemos então
-agrupar os $\frac{p-3}{2}$ pares de inversos multiplicativos no intervalo $[2,p-2]$ de modo que teremos: $2.3....(p-2) \equiv1$ $(mod$ $p)$.
+$S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$.
 
-Desse mode, temos que:
+Pelo \textbf{Proposição} \autoref{bezout_conjunto_nao_nulo} sabemos que $S \neq \emptyset$. Como $S$ contém somente números positivos e não é vazio, 
+$S$ está limitado inferiormente por \textit{zero} e assim, $S$ tem um elemento mínimo que chamaremos de $d$.
 
-$(p-1)! \equiv 2.3.4...(p-2)(p-1) \equiv (p-1) \equiv -1$ $(mod$ $p)$. $\square$
+Como $d \in S$, então existe $u, v\in \mathbb{Z}$, tal que, $d = ua + vb$. Pelo \textbf{Corolário} \autoref{bezout_conjunto_divide}, sabemos que $d$ divide todos elementos em $S$, em particular:
 
-%\subsection{Teorema do Resto Chinês}
+$d$ divide $|a|$ e $|b| \Rightarrow d|MDC(a,b) \Rightarrow 0 < d \leq MDC(a,b)$
 
-%\begin{theorem}[Teorema do Resto Chinês]
-%Tome o sistema de congruências lineares:
+Por outro lado, $MDC(a,b)$ também divide $a$ e $b$:
 
-%$a_1x \equiv c_1 (mod$ $m_1)$
+$MDC(a,b)|a$ e $MDC(a,b)|b \Rightarrow MDC(a,b)|(ua + vb)$
 
-%$a_2x \equiv c_2 (mod$ $m_2)$
+$ \Rightarrow MDC(a,b)|d \Rightarrow MDC(a,b) \leq d$
 
-%$a_3x \equiv c_3 (mod$ $m_3)$
+$MDC(a,b)\leq d$ e $d \leq MDC(a,b) \Rightarrow MDC(a,b) = d \Rightarrow MDC(a,b) \in S$ $\square$
 
-%$...$
 
-%$a_nx \equiv c_n (mod$ $m_n)$\\
 
-%Em que $c_i \in \mathbb{Z}$, $MDC(a_i,m_i) = 1$, e $MDC(m_i, m_j) = 1$ para $i \neq j$
-%Nessas condições o sistema acima tem solução única módulo $M$, em que $M = m_1m_2m_3...m_n$.
-%\end{theorem}
-%\textbf{Demonstração:}
-%TODO
 
 
 %----------------------------------------------------------------------------------------
 %	SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Exponenciação}
+\section{Crivo de Erastóteles}
 
-%----------------------------------------------------------------------------------------
-\subsection{Exponenciação Binária}
-
-\textit{Exponenciação Binária} é um algoritmo muito usado em \textit{Ciência da Computação} principalmente no campo da \textit{Criptografia}.
-
-O algoritmo recebe inteiros $a$ e $b$, e calcula $a^b$, usando divisão e conquista sobre a seguinte equação:
-\[
- a^b = 
-  \begin{cases} 
-   1& \text{se } b = 0 \\
-   (a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for par} \\
-   a(a^{\lfloor \frac{b}{2} \rfloor})^2& \text{se } b \text{ for ímpar} 
-  \end{cases}
-\]
+O \textit{Crivo de Erastótenes} é um algoritmo criado pelo matemático \textbf{Erastótenes} (a.C. 285-194 a.C.) para o cálculo de números primos
+até um certo valor limite $N$.
+O algoritmo mantém uma tabela com $N$ elementos, e para cada primo, começando pelo número $2$, marca na tabelo os números compostos múltiplos desses primos.
+Desse modo, ao final do algoritmo, os elementos não marcados são números primos.\\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Exponenciação Binária}
+\caption{Crivo de Erastótenes paro o cálculo de números primos}\label{crivo_erastotenes}
 \begin{algorithmic}[1]
-\Procedure{$EXPBIN (a, b)$}{}
-\If {$b = 0$}
-\State \Return $1$
-\EndIf 
+\Procedure{CrivoErastótenes (N)}{}
+\State $isPrime[] \gets \text{new Array}[N]$ \Comment{$isPrime[]$ é um vetor booleano}
+\State $isPrime[1] \gets false$
 \\
-\State $pot \gets EXPBIN(a, \lfloor \frac{b}{2} \rfloor)$
-\State $pot \gets pot^2$
+\For {($p = 2 \text{; } p \leq N \text{; } p++)$}
+\State $isPrime[p] \gets true$
+\EndFor
 \\
-\If {$b \equiv 0 (mod$ $2)$}
-\State \Return $pot$
-\Else
-\State \Return $a(pot)$
+\For {($p = 2 \text{; } p^2 \leq N \text{; } p++)$}
+\If {$isPrime[p] = false$}
+\State \textbf{continue}
 \EndIf
-
+\For {($n = p^2 \text{; } n \leq N \text{; } n = n+p)$}
+\State $isPrime[n] \gets false$
+\EndFor
+\EndFor
+\\
+\State \Return{$isPrime[]$}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
-O tempo $T(a,b)$ que o algoritmo consome é dado por: $T(a,b) = T(a,b/2)+O(1)$, em que $T(a,0) = O(1)$.
+Primeiro provaremos a corretude do algoritmo. Para isso provaremos que ao final do algoritmo teremos a seguinte implicação:
+$isPrime[n] = false \Leftrightarrow n$ é composto.
 
-Expandindo essa recursão é fácil perceber que a complexidade do algoritmo é $O(\log b)$.
+Todos os valores que $n$ assume no laço da linha $11$ são múltiplos de $p$, e assim temos que: $isPrime[n] = false \Rightarrow n$ é composto.
+
+Agora tome um $n$ composto qualquer menor que $N$. Sabemos que existe um primo $q \leq \sqrt{n} \leq \sqrt{N}$ que divide $n$. 
+E desse modo, em uma das iterações do laço da linha $8$ teremos $p=q$. Como $q$ é primo então $isPrime[q]=true$, e desse modo
+o laço da linha $11$ será executado, iterando sobre os múltiplos de $q$ menores que $N$, ie, em alguma iteração será executada 
+a operação $isPrime[n]\gets false$, implicando assim em: $isPrime[n] = false \Leftarrow n$ é composto.
+
+Agora faremos uma análise da complexidade do algoritmo.
+
+O laço da linha $4$ itera sobre todos os valores de $2$ até $N$ e assim consome tempo $O(N)$.
+Já o laço mais interno na linha $9$ itera sobre todos os números entre $p^2$ e $N$ que são múltiplos de $p$, e assim consome tempo
+$O(N/p)$. 
+
+Desse modo a complexidade conjunta dos laços das linhas $6$ e $9$, será $O(\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p})$
+(observe que o laço da linha $6$ itera sobre os primos menores que $sqrt(N)$). 
+
+Como foi sugerido por \textit{Leonhard Euler} no século XVIII, temos que $\sum_{p \text{ primo | }p\leq sqrt(N)} \frac{1}{p} = O(N\log \log N)$. E assim a complexidade final do algoritmo é $O(N \log \log N)$.
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Equações Diofantinas}
+
+\textit{Equações Diofantinas} são equações polinomiais com variáveis inteiras. Alguns exemplos são mostrados a seguir, sendo $x$, $y$, $z$ incógnitas, e $a$, $b$, $n$ constantes inteiras:
+
+$ax + by = n$ ($\triangleright$ \textit{Equação Diofantina Linear})
+
+$ax + by = MDC(a,b)$ ($\triangleright$ \textit{Identidade de Bézout})
+
+$x^n + y^n = z^n$ ($\triangleright$ Equação base do \textit{Último Teorema de Fermat})
+
+$x^2 - ny^2 = \pm 1$ ($\triangleright$ \textit{Equação de Pell})\\
+
+
+
+Nesse trabalho abordaremos somente \textit{Equações Diofantinas Lineares}, da forma:
+
+$\sum_{i=1}^{k}a_i x_i = c$
+
+onde $c$ e $a_i$ são constantes, e $x_i$ variáveis inteiras.\\
+
+
+\begin{theorem}\label{equacao_diofantina_implicacao}
+Dados inteiros $a$, $b$, $c$ , temos que:
+
+$MDC(a,b)|c \Leftrightarrow$ a \textit{Equação Diofantina} $ax + by=c$, tem solução inteira.
+\end{theorem}
+\textbf{Demonstração:}
+Provaremos primeiro a ida da implicação.
+
+Pelo \autoref{teorema_bezout} sabemos que existem inteiros $x^*$ e $y^*$, tal que, $ax^* + by^* = MDC(a,b)$. Logo:
+
+$MDC(a,b)|c \Rightarrow \exists! q\in\mathbb{Z} \mid c = MDC(a,b)q \Rightarrow a(x^*q) + b(y^*q) = MDC(a,b)q = c$ 
+
+Provaremos agora a volta da implicação.
+
+Sabemos que existem inteiros $u$ e $v$, tal que, $a=MDC(a,b)u$ e $b=MDC(a,b)v$. Logo:
+
+$ax + by=c$, tem solução inteira $\Rightarrow MDC(a,b)ux + MDC(a,b)vy = c$
+
+$\Rightarrow MDC(a,b)(ux + vy) = c \Rightarrow MDC(a,b)|c$. $\square$ 
 
 
 %----------------------------------------------------------------------------------------
-\subsection{Exponenciação Binária Modular}
 
-\textit{Exponenciação Binária Modular} é uma variação do algoritmo \textit{Exponenciação Binária} que calcula $a^b\bmod m$, para dodos inteiros $a$, $b$, e $m$. Em geral \textit{Exponenciação Binária Modular} é mais usado que \textit{Exponenciação Binária}, 
-pelo fato da expressão $a^b$ crescer rapidamente e causar \textit{overflow}.\\
+\subsection{Algoritmo de Euclides Estendido}
+
+\textit{Algoritmo de Euclides Estendido} é uma extensão do \textit{Algoritmo de Euclides} que calcula não só o $MDC(a,b)$, para dados $a$ e $b$, mas também encontra
+uma solução para a \textit{Identidade de Bézout} $ax+by = MDC(a,b)$. 
+\clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Exponenciação Modular}\label{exponenciacao_modular}
+\caption{Algoritmo de Euclides Estendido}\label{mdc_extended}
 \begin{algorithmic}[1]
-\Procedure{$EXPMOD (a, b, m)$}{}
-\If {$b = 0$}
-\State \Return $1$
-\EndIf 
-\\
-\State $pot \gets EXPMOD(a, \lfloor \frac{b}{2} \rfloor, m)$
-\State $pot \gets pot^2 \mod m$
-\\
-\If {$b \equiv 0 (mod$ $2)$}
-\State \Return $pot$
-\Else
-\State \Return $a(pot) \mod m$
+\Procedure{$ExtendedMDC (a, b)$}{}
+\If {$a = 0$}
+\State \Return $[b,0,1]$
 \EndIf
-
+\\
+\State $[d,x,y] \gets ExtendedMDC(b \bmod a, a)$
+\State $x^* \gets y - \lfloor \frac{b}{a} \rfloor x$
+\State $y^* \gets x$
+\State \Return $[d,x^*,y^*]$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
-O tempo $T(a,b,m)$ que o algoritmo consome é dado por: $T(a,b,m) = T(a,b/2,m)+O(1)$, em que $T(a,0,m) = O(1)$.
+Primeiro mostraremos a corretude do algoritmo.
 
-Assim esse algoritmo tem a mesma complexidade $O(\log b)$ da \textit{Exponenciação Binária}.
+Em vez de retornar um inteiro, $ExtendedMDC(a,b)$ retorna uma tupla $[d,x,y]$, onde $d=MDC(a,b)$ e $x$,$y$ são a solução da equação $ax+by=d=MDC(a,b)$.
+Sabemos que $[d,x,y]$ na linha $5$ satisfaz a equação, $(b\bmod a)x + ay = d$, assim:
 
-%----------------------------------------------------------------------------------------
-\subsection{Exponenciação de Matriz}
+$(b\bmod a)x + ay = d \Rightarrow (b - \lfloor \frac{b}{a} \rfloor a)x + ay = d$
 
-\textit{Exponenciação de Matriz} é uma outra variação do algoritmo \textit{Exponenciação Binária} que calcula $A^b\bmod m$, para dados inteiros $b$ e $m$ e a matriz quadrada $A_{n,n}$. 
+$\Rightarrow a(y-\lfloor \frac{b}{a} \rfloor x) + b(x) = ax^* + by^* = d = MDC(a,b)$
 
-\begin{definition}
-A expressão "$A \bmod m$", em que $A$ é uma matriz e $m$ um inteiro qualquer, representa uma matriz $B$ com as mesmas dimensões que $A$, tal que: $B_{ij} = A_{ij} \bmod m$, $\forall B_{ij} \in B$.
-\end{definition}
-
-\textbf{Pseudocódigo:}
-\begin{algorithm}
-\caption{Exponenciação de Matriz}\label{exponenciacao_matrix}
-\begin{algorithmic}[1]
-\Procedure{$EXPMAT (A, b, m)$}{}
-\If {$b = 0$}
-\State \Return $I$ \Comment {$I$ representa a matriz identidade de dimensão $n$}
-\EndIf 
+Observe que o \textit{Algoritmo de Euclides Estendido} é baseado no \textit{Algoritmo de Euclides}, tendo a mesma complexidade $O(\log(a+b))$.
 \\
-\State $P \gets EXPMAT(A, \lfloor \frac{b}{2} \rfloor, m)$
-\State $P \gets P^2 \mod m$
+
+
+\begin{corollary}\label{mdc_extended_solutions}
+Tome $[d,x_0,y_0]$ como sendo a tupla retornada pelo $ExtendedMDC(a,b)$, com $a$, $b$, $c$ inteiros e $MDC(a,b)|c$.
+Então temos que todas as soluções da equação $ax+by=c$ são da forma: $x=(x_0\frac{c}{d} + \frac{bq}{d})$, $y=(y_0\frac{c}{d} - \frac{aq}{d})$, em que $q\in\mathbb{Z}$.
+\end{corollary}
+\textbf{Demonstração:}
+Pelo \textit{Algoritmo de Euclides Estendido} sabemos que $ax_0 + by_0=d$. Sabemos também que $d|c$ por definição, ie, existe $k\in\mathbb{Z}$ tal que $c=kd$.
+Assim temos que $x=x_0k$ e $y=y_0k$ é solução, já que $a(x_0k)+b(y_0k) = kd = c$. 
+
+Agora tome a solução $x^*,y^*$ qualquer ($ax^*+by^*=c$). Subtraindo as últimas duas equações temos:
 \\
-\If {$b \equiv 0 (mod$ $2)$}
-\State \Return $P$
-\Else
-\State \Return $A(P) \mod m$
-\EndIf
 
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+$a(x_0k-x^*) + b(y_0k-y^*) = 0 \Rightarrow a(x_0k-x^*) = b(y^* - y_0k) \Rightarrow a|[b(y^* - y_0k)]$
 
+$\Rightarrow \frac{a}{MDC(a,b)}|(y^* - y_0k) \Rightarrow \exists! q\in\mathbb{Z}$, tal que $\frac{a}{MDC(a,b)}q = (y^* - y_0k)$
 
-\textbf{Análise:}
-A recursão desse algoritmo é similar a recursão da \textit{Exponenciação Binária}, exceto pela operação de produto, que nesse caso são produtos de matrizes. O tempo gasto para multiplicar duas matrizes quadradas de dimensão $n$ é $O(n^3)$. Assim, a complexidade total 
-do algoritmo é $O(n^3 \log b)$.
+$\Rightarrow y^* = y_0k + \frac{a}{MDC(a,b)}q \Rightarrow y^* = y_0\frac{c}{d} - \frac{aq}{d}$
+\\
 
+Analogamente, temos: $x^* = x_0\frac{c}{d} + \frac{bq}{d}$
 
+Assim todas as soluções de $ax+by=c$ são da forma:
+$x = x_0\frac{c}{d} + \frac{bq}{d}$, $y = y_0\frac{c}{d} - \frac{aq}{d}$ $\square$
+\\
 
 
 %----------------------------------------------------------------------------------------
@@ -385,297 +554,329 @@ do algoritmo é $O(n^3 \log b)$.
 
 
 %----------------------------------------------------------------------------------------
-\subsection{SPOJ-DCEPC11B}
-\href{http://www.spoj.com/problems/DCEPC11B/}{DCEPC11B - Boring Factorials}\\
+\subsection{UVA-543}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=484}{543 - Goldbach's Conjecture}\\
 
-\textbf{Resumo:}
-São dados inteiros $N$ ($1\leq N \leq 2.10^9$) e o número primo $P$ ($1 < P \leq 2.10^9)$, de tal forma que a diferença entre $N$ e $P$ é pequena.
-O problema consiste em calcular $N! \bmod P$.
+\textbf{Resumo:} 
+É dado um número inteiro $n$ ($6 \leq n < 10^6$). O problema consiste em verificar se $n$ pode ser escrito como a soma de dois números
+primos ímpares. E em caso positivo dizer quais são esses primos.
 \\
 
 \textbf{Solução:}
-Pelo \textbf{Teorema de Wilson} sabemos que $(P-1)! \equiv -1 (mod$ $P)$. 
-
-Temos que o problema pode ser dividido em dois casos:
-\newline
-
-\textbf{Caso 1:} \textit{$N \geq P$}
-
-Nesse caso, teremos que:
-
-$N! \equiv (P-1)!\prod_{i=P}^{N}i \equiv (-1)\prod_{i=P}^{N}i$ $(mod$ $P)$. 
-\newline
-
-\textbf{Caso 2:} \textit{$N < P$}
-
-Nesse caso, teremos que:
-
-$N! \equiv (P-1)!\prod_{i=N+1}^{P-1}i^{-1} \equiv (-1)\prod_{i=N+1}^{P-1}i^{-1}$ $(mod$ $P)$. 
+Para resolver esse problema basta rodar o \textbf{Algoritmo} \autoref{crivo_erastotenes} para $N=n$, e fazer uma varredura linear no vetor $isPrime[]$. Se existir um índice $a$ ($6 \leq a \leq n$) tal que $isPrime[a]$ é $true$ e $isPrime[n-a]$ também é $true$, então o problema acima tem solução. 
 \\
-
-Para resolver o \textbf{caso 1} só precisamos aplicar o \textbf{Teorema de Wilson} e construir o produto $\prod_{i=P}^{N}i$ iterativamente.
-Para o \textbf{caso 2}, podemos usar o \textbf{Pequeno Teorema de Fermat} para calcular o inverso multiplicativo dos números no produto $\prod_{i=N+1}^{P-1}i^{-1}$. 
-\newline 
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Boring Factorials}
+\caption{Sum of odd primes}
 \begin{algorithmic}[1]
-\Procedure{BoringFact (N, P)}{}
-\State $solution \gets -1$
+\Procedure{$SumOfPrimes(n)$}{}
+\State $isPrime[] \gets CrivoErastotenes(n)$
 \\
-\If {$N \geq P$}
-\For {$(i = P \text{; } i \leq N \text{; } i++)$}
-\State $solution \gets (solution.i) \bmod P$
-\EndFor
-\Else
-\For {$(i = N+1 \text{; } i \leq P-1 \text{; } i++)$}
-\State $inverse \gets MODEXP(i, P-2, P)$ \Comment {\autoref{inveso_multiplicativo_modular}}
-\State $solution \gets (solution$ . $inverse) \bmod P$
-\EndFor
+\For {i := 6 to n}
+\If {$isPrime[i]$ e $isPrime[n-i]$} 
+\State \Return $[i, n-i]$
 \EndIf
+\EndFor
 \\
-\State \Return $solution$
-
+\State \Return $"No$ $Solution"$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
-
 \textbf{Análise:}
-A complexidade do laço da linha $5$ é dado por $O(N-P)$. Já o laço da linha $8$ consome tempo proporcional a $O((P-N)\log P)$, já que
-a complexidade do algoritmo $MODEXP()$ na linha $9$ é $O(\log P)$.
-
-Assim, a complexidade total do algoritmo é $O(|N-P|\log P)$.
-
-
+O \textit{Crivo de Erastótenes} consome tempo proporcional a $O(n \log \log n)$, e o laço na linha $4$ consome tempo $O(n)$. Assim a complexidade do algoritmo $SumOfPrimes(n)$ é $O(n \log \log n)$.
 
 %----------------------------------------------------------------------------------------
-\subsection{CodeChef-IITK2P10}
-\href{https://www.codechef.com/problems/IITK2P10}{IITK2P10 - Chef and Pattern}\\
-
+\subsection{CodeChef-GOC203}
+\href{https://www.codechef.com/problems/GOC203}{GOC203 - Fight for Attendence}\\
 
 \textbf{Resumo:}
-Tome a seguinte função $f_K:\mathbb{N}^* \longmapsto \mathbb{N}$:
-
-\[
- f_K(x) = 
-  \begin{cases} 
-   1 & \text{se } x = 1 \\
-   K & \text{se } x = 2 \\
-   \prod_{i=1}^{x-1}f_K(i) & \text{se } x \geq 3
-  \end{cases}
-\]
-
-São dados dois números inteiros $N$, $K$ ($1 \leq N \leq 10^9$, $1 \leq K \leq 10^5$). O problema consiste em calcular a expressão: $f_K(N) \bmod p$, em que $p = (10^9+7)$.
+São dados inteiros $a$, $b$, $c$ ($1 \leq a, b, c \leq 10^6$) e a equação $ax+by=c$. O problema consiste em determinar 
+quando tal equação tem solução inteira.
 \\
 
 \textbf{Solução:}
-Escrevendo os valores dos primeiros termos que a função assume, temos: $f_K(1)=1, f_K(2)=K, f_K(3)=K, f_K(4)=K^2, f_K(5)=K^4, f_K(6)=K^8, f_K(7)=K^{16}$.
-
-Provaremos, por indução, que $f_K(N) = K^{2^{N-3}}, N \geq 3$.
-
-Para os primeiros termos essa expressão é trivialmente verificada.
-
-Assuma que a expressão funciona para algum número natural qualquer $(R-1) \geq 3$ ($f_K(R-1) = K^{2^{R-4}}$).
-
-Nessas condições temos que: 
-
-$f_K(R) = \prod_{i=1}^{R-1}f_K(i) = 1.K.\prod_{i=3}^{R-1}f_K(i) = K\prod_{i=3}^{R-1}K^{2^{i-3}} = K\prod_{j=0}^{R-4}K^{2^j}$
-
-$f_K(R) = KK^{\sum_{j=0}^{R-4}2^j} = KK^{2^{R-3}-1} = K^{2^{R-3}}$ $\square$
-
-Para calcular o valor de $f_K(N) \bmod p$, podemos aplicar o \autoref{teorema_fermat_expansao}, já que $p$ é um número primo e $MDC(p, K) = 1$:
-
-$f_K(N) \bmod p = K^{2^{N-3}} \bmod p = K^{2^{N-3} \bmod (p-1)} \bmod p$ 
-
-Reduzindo o problema, dessa maneira, em calcular: $K^{2^{N-3}} \bmod (10^9+7)$.
+Solução é decorrente do \autoref{equacao_diofantina_implicacao}, bastando checar se $MDC(a,b)|c$.
 \\
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Chef and Pattern}
+\caption{Fight for Attendence}
 \begin{algorithmic}[1]
-\Procedure{f (N, K)}{}
-\State $p \gets (10^9+7)$
-\State $exp \gets EXPMOD(2, N-3, p-1)$ \Comment{\textbf{Algoritmo} $\autoref{exponenciacao_modular}$}
-\State $solution \gets EXPMOD(K, exp, p)$ \Comment{$solution = K^{2^{N-3} \bmod (p-1)} \bmod p$}
-\State \Return{$solution$}
+\Procedure{$EquationSolution (a, b, c)$}{}
+\If {$MDC(a,b)|c$}
+\State \Return $true$
+\EndIf
+\State \Return $false$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 \textbf{Análise:}
-Como vimos anteriormente, as linhas $3$ e $4$ do algoritmo consomem tempo proporcional à $O(n \log n)$, e assim a complexidade total é $O(n \log n)$.
-
+O algoritmo tem a mesma complexidado do \textit{Algoritmo de Euclides}, $O(\log{(a+b)})$. 
 
 
 
 %----------------------------------------------------------------------------------------
-\subsection{CodeChef-CSUMD}
-\href{https://www.codechef.com/JULY12/problems/CSUMD}{SUMD - My Fair Coins}\\
+\subsection{UVA-10407}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1348}{10407 - Simple Division} \\
 
+\textbf{Resumo:} 
+Tome $P(S) := \{ x \in \mathbb{Z} \mid  \forall a , b \in S , a \equiv b ( mod$ $x)\}$ em que $S \subset \mathbb{Z}$.
+
+O problema consiste em encontrar o valor máximo de $P(S)$ dado um conjunto $S$.
+\\
+
+\textbf{Solução:} 
+Seja $S = \{S_1, S_2, S_3, ..., S_n\}$, com $n = |S|$, o conjunto dado pelo problema (assumiremos que os valores de S estão ordenados crescentemente).
+
+Tome um número qualquer $d \in P(S)$. Por definição temos que $\forall S_i, S_j \in S$, $S_i \equiv S_j ( mod$ $d) \Rightarrow $ 
+$ (S_i-S_j) \equiv 0 ( mod$ $d) \Rightarrow d \mid (S_i-S_j)$ .
+
+Pelo \textbf{Proposição} \autoref{corolario_divisibilidade_1} sabemos que:
+
+$d | (S_i-S_{i-1})$, $ \forall i \in \mathbb{N}, 2 \leq i \leq n \Rightarrow d | (S_i-S_j)$, $ \forall S_i, S_j \in S \Rightarrow d \in P(S)$.
+
+E desse modo, para calcular o valor máximo de $P(S)$ só precisamos calcular o Máximo Divisor Comum das diferenças $(S_i-S_{i-1})$ com $i$ variando de $2$ a $n$ $\square$.
+\\
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Simple Division}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{GetMaximumValue (S)}{}
+\State $S \gets sort(S)$ \Comment{sort(X) retorna o conjunto X ordenado.} 
+\State $maxValue \gets 0$
+\For {i := 2 to |S|} 
+\State $maxValue \gets MDC(maxValue, S_i - S_{i-1})$
+\EndFor
+\State \Return{$maxValue$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Análise:}
+Pela \textbf{Proposição} \autoref{corolario_divisibilidade_1.1} sabemos que não é preciso o conjunto $S$ ser ordenado.
+Assim a complexidade do algoritmo final será $O(|S|\log (\max (S_i-S_{i-1})))$.
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{CodeChef-MAANDI}
+\href{https://www.codechef.com/problems/MAANDI}{MAANDI - Maxim and Dividers}\\
 
 \textbf{Resumo:}
-Existe um número infinito de moedas de dois tipos: as de $1$ centavo, e as de $2$ centavos. 
-Todas as moedas tem dois lados (\textit{cara} e \textit{coroa}) que representam o valor da moeda. 
-
-É dado um inteiro $N$ ($1 \leq N \leq 10^9$). 
-O problema consiste em calcular o número de arranjos lineares dessas moedas, de modo que a soma das moedas é igual à $N$.
-A única restrição é que a primeira moeda de cada arranjo seja \textit{cara}. 
-
-Como esse número pode ser muito grande, a resposta tem que ser dada módulo $m$ ($m = 10^7+9$).
-\\
+Calcular quantos divisores de um número inteiro $n$ ($1\leq n \leq 10^9$), contém os dígitos $4$ e $7$ na forma decimal.
+Por exemplo, para $n=94$ os únicos divisores que contém tais dígitos são: $47, 94$.
+\newline
 
 \textbf{Solução:}
-Tome $f_1(N)$ como sendo o número de arranjos lineares com a primeira moeda sendo \textit{cara}. Analogamente, tome $f_2(N)$
-como sendo o número de arranjos lineares com a primeira moeda sendo \textit{coroa}. Por último, tome $f(N) = f_1(N)+f_2(N)$, como
-sendo o número total de arranjos cuja a soma das moedas é $N$.
-
-Nessas condições temos as seguintes \textbf{Proposições}:
-\\
-
-\textbf{Proposição 1:} $f_1(N) = f_2(N)$
-
-\textbf{Prova:} Para cada arranjo em $f_1$, se trocarmos a primeira moeda de \textit{cara} para \textit{coroa}, teremos um arranjo correspondente em $f_2$. E assim, há uma bijeção de $f_1$ para $f_2$.
-\\
-
-\textbf{Proposição 2:} $f_1(N) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$
-
-\textbf{Prova: }Tome um arranjo $A$ qualque em $f_1$. A primeira moeda de $A$ pode ser tanto uma moeda \textit{cara} de $1$ centavo,
-como uma moeda \textit{cara} de $2$ centavos. O número de arranjos que começam com a moeda de $1$ centavo é $f(N-1)$ e o número de arranjos que começam com a moeda de $2$ centavos é $f(N-2)$. Assim temos:
-
-$f_1(N) = f(N-1) + f(N-2) = f_1(N-1) + f_2(N-1) + f_1(N-2) + f_2(N-2)$.
-\\
-
-
-\textbf{Proposição 3:} $f_1(N) = 2(f_1(N-1) + f_1(N-2))$
-
-\textbf{Prova: } Decorrente das \textbf{Proposições 1} e \textbf{2}.
-\\
-
-Claramente $f_1(1) = 1$, e $f_1(2) = 3$. Mostraremos um modo elegante de calcular $f_1(N)$ usando \textit{Exponenciação de Matrizes}.
-Tome a matriz $A$ com as seguintes entradas:
-
-\[ A_{2,2} = 
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}
-\]
-
-Teremos então que:
-
-\[ 
-\begin{bmatrix}
-       f_1(N) & f_1(N-1)
-\end{bmatrix}
-=
-\begin{bmatrix}
-       f_1(N-1) & f_1(N-2)
-\end{bmatrix}
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}
-\]
-
-
-\[ 
-\begin{bmatrix}
-       f_1(N) & f_1(N-1)
-\end{bmatrix}
-=
-\bigg(
-\begin{bmatrix}
-       f_1(N-2) & f_1(N-3)
-\end{bmatrix}
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}
-\bigg)
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}
-\]
-
-
-\[ 
-\begin{bmatrix}
-       f_1(N) & f_1(N-1)
-\end{bmatrix}
-=
-\begin{bmatrix}
-       f_1(N-2) & f_1(N-3)
-\end{bmatrix}
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}^2
-\]
-
-Expandindo essa recursão até a base, teremos:
-
-\[ 
-\begin{bmatrix}
-       f_1(N) & f_1(N-1)
-\end{bmatrix}
-=
-\begin{bmatrix}
-       f_1(2) & f_1(1)
-\end{bmatrix}
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}^{N-2}
-\]
-
-
-\[ 
-\begin{bmatrix}
-       f_1(N) & f_1(N-1)
-\end{bmatrix}
-=
-\begin{bmatrix}
-       3 & 1
-\end{bmatrix}
-\begin{bmatrix}
-       2 & 1           \\[0.3em]
-       2 & 0    
-\end{bmatrix}^{N-2}
-\]
+Para esse problema, basta calcular todos os divisores de $n$, com o \textbf{Algoritmo} \autoref{encontra_divisores}, e depois verificar quais deles contêm os dígitos $4$ ou $7$.
 \clearpage
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{My Fair Coins}
+\caption{Maxim and Dividers}
 \begin{algorithmic}[1]
-\Procedure{$f_1 (N, m)$}{}
-\If {$N = 1$}
-\State \Return $1$
+\Procedure{FindOverluckiDivisors (n)}{}
+\State $D \gets FindDivisors(n)$ \Comment{\textbf{Algoritmo} \autoref{encontra_divisores}}
+\State $count \gets 0$
+\\
+\For {\textbf{each } $d \in D$}
+\State $hasDigits \gets false$
+\\
+\While {d > 0}
+\State $resto \gets d \bmod 10$
+\If {$resto = 4$ || $resto = 7$}
+\State $hasDigits \gets true$
+\EndIf
+\State $d \gets \frac{d}{10}$
+\EndWhile
+\\
+\If {$hasDigits$}
+\State $count \gets count + 1$
+\EndIf
+\EndFor
+\\
+\State \Return $count$
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\textbf{Análise:}
+O laço da linha $5$ roda em tempo $O(\sqrt{n})$, já que o número de elementos em $D$ é da ordem de $O(\sqrt{N})$. O número de dígitos de cada divisor $d$ é da ordem de 
+$O(\log_{10}d)$, ou melhor $O(\log n)$. Assim o laço da linha $8$ consome tempo proporcional à $O(\log n)$ e a complexidade total do algoritmo é $O(\sqrt n\log n)$. 
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-10090}
+\href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1031}{10090 - Marbles}\\
+
+
+\textbf{Resumo:}
+É dado um inteiro $n$ ($1 < n \leq 2*10^9$) que corresponde ao número de bolinhas disponíveis que serão colocadas em caixas. São dados também dois tipos de caixas:
+A caixa do tipo $1$ que pode armazenar $n_1$ bolinhas e custa $c_1$; E a caixa do tipo $2$ que pode armazenar $n_2$ bolinhas e custa $c_2$.
+
+O problema consiste em encontrar o custo mínimo para comprar caixas de forma que todas as caixas compradas estejam totalmente
+ preenchidas e todas as $n$ bolinhas estejam dentro de alguma caixa.
+%É dado um número inteiro $n$ ($0 < n \leq 10^8$). O problema consite em verificar se $n$ pode, ou não pode, ser escrito como a soma de dois números primos.
+%E em caso afirmativo encontrar o valor desses dois primos.
+\\
+
+\textbf{Solução:}
+Imagine que compramos $x$ caixas do tipo $1$ e $y$ caixas do tipo $2$. Desse modo, o problema se resume em encontrar os valores $x$ e $y$, tal que: 
+\newline
+
+$n_1x + n_2y = n$, com $x,y\geq 0$, e que $c_1x+c_2y$ seja mínimo.
+\newline 
+
+Como no enunciado do problema é garantido que existe uma solução, então pelo \autoref{equacao_diofantina_implicacao} sabemos que $MDC(n_1,n_2) | n$.
+
+Pelo \textbf{Corolário} \autoref{mdc_extended_solutions} sabemos que toda solução $x$ e $y$ são da forma:
+
+$x=(x_0\frac{n}{d} + \frac{n_2q}{d})$ e $y =(y_0\frac{n}{d} - \frac{n_1q}{d})$, onde $d = MDC(n_1,n_2)$ e $q$ é um inteiro qualquer.
+
+Desse modo temos:
+\newline
+
+$x\geq0 \Rightarrow (x_0\frac{n}{d} + \frac{n_2q}{d})\geq 0 \Rightarrow q \geq \lceil -\frac{x_0n}{n_2} \rceil$
+\newline
+
+$y\geq0 \Rightarrow (y_0\frac{n}{d} - \frac{n_1q}{d}) \geq 0 \Rightarrow q \leq \lfloor \frac{y_0n}{n_1} \rfloor$
+\newline
+
+$\lceil -\frac{x_0n}{n_2} \rceil \leq q \leq \lfloor \frac{y_0n}{n_1} \rfloor$
+\newline
+
+Queremos encontrar o valor $min\{c_1x+c_2y\}$, onde $min\{f\}$ é o valor mínimo que a expressão $f$ assume. Portanto:
+\newline
+
+$min\{c_1x+c_2y\} = min\big\{c_1(x_0\frac{n}{d} + \frac{n_2q}{d})\big\}$ 
+\newline
+
+$min\{c_1x+c_2y\} = min\big\{q(\frac{n_2c_1 - n_1c_2}{d}) + n(\frac{c_1x_0+c_2y_0}{d})\big\}$ 
+\newline
+
+$min\{c_1x+c_2y\} = min\big\{q(\frac{n_2c_1 - n_1c_2}{d})\big\} + n(\frac{c_1x_0+c_2y_0}{d})$, já que $n(\frac{c_1x_0+c_2y_0}{d})$ é constante. 
+\newline
+
+Se $(\frac{n_2c_1 - n_1c_2}{d})$ for positivo, então $q(\frac{n_2c_1 - n_1c_2}{d})$ assume valor mínimo quando $q$ é mínimo, ie, $q=\lceil -\frac{x_0n}{n_2} \rceil$.
+
+Por outro lado, se $(\frac{n_2c_1 - n_1c_2}{d})$ for negativo, então $q(\frac{n_2c_1 - n_1c_2}{d})$ assume valor mínimo quando $q$ é máximo, ie, $q=\lfloor \frac{y_0n}{n_1} \rfloor$.
+\newline
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Marbles}
+\begin{algorithmic}[1]
+\Procedure{$FindMinimumPrice (n, c_1, n_1, c_2, n_2)$}{}
+
+\State $[d,x_0,y_0] \gets ExtendedMDC(n_1,n_2)$
+\\
+\If {$(\frac{n_2c_1 - n_1c_2}{d}) \geq 0$}
+\State \Return $\lceil -\frac{x_0n}{n_2} \rceil (\frac{n_2c_1 - n_1c_2}{d})$
+\\
+\Else
+\State \Return $\lfloor \frac{y_0n}{n_1} \rfloor (\frac{n_2c_1 - n_1c_2}{d})$
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\newline
+
+\textbf{Análise:}
+O único trecho do algoritmo que não roda em tempo constante é a chamada $ExtendedMDC(n_1,n_2)$ na linha $2$, logo a complexidade total do algoritmo é $O(\log(n_1+n_2))$.
+\newline
+
+
+
+
+%----------------------------------------------------------------------------------------
+\subsection{UVA-718}
+\href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=659}{718 - Skyscraper Floors}\\
+
+\textbf{Resumo:}
+É dado um prédio com $F$ andares (numerados de $0$ até $F-1$) e $E$ elevadores. Cada elevador $i$ tem uma posição inicial $Y_i$ ($Y_i \geq 0$) e uma constante $X_i$ ($X_i > 0$), 
+de tal forma que os únicos andares que esse elevador consegue chegar são da forma, $Y_i+X_it$, com $t$ inteiro. 
+Cada elevador $i$ não consegue atingir andares menores que $Y_i$ e maiores ou iguais a $F$, ie, $Y_i \leq Y_i+X_it \leq F-1$, ou melhor, $0 \leq t \leq \frac{F-1-Y_i}{X_i}$.
+Dado os valores $F$, $E$, e as constantes $Y_i$, $X_i$ para cada elevador, o problema consiste em verificar se é possível ir do andar $A$ até o andar $B$ ($0\leq A,B <F$)
+usando os $E$ elevadores.
+\\
+
+\textbf{Solução:} 
+Primeiro imagine que temos um grafo bidirecionado com $E$ vértices, onde cada vértice representa um elevador e cada aresta $(u,v)$ nos indica que os elevadores $u$ e $v$ 
+conseguem chegar em algum andar em comum.
+Sabemos quais elevadores atingem o andar $A$, basta verificar se $Y_i+X_it=A$ tem solução $t$ inteira. Analogamente sabemos quais elevadores atingem o andar
+$B$. Então só precisaríamos fazer uma busca (\href{https://en.wikipedia.org/wiki/Breadth-first_search}{BFS} ou \href{https://en.wikipedia.org/wiki/Depth-first_search}{DFS})
+nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ até algum elevador que atinge o andar $B$.
+
+Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
+
+Dois elevadores $u$ e $v$ atingem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
+$Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
+
+Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
+Pelo \autoref{equacao_diofantina_implicacao}, sabemos que essa equação tem solução, se e somente se, $MDC(a,b)|c$. Observe também que se $Y_u=Y_v$ os elevadores estarão conectados.
+Checaremos essas restrições no começo do algoritmo, e daqui para frente assumiremos que $MDC(a,b)|c$ e $Y_u\neq Y_v$.
+
+Tome $d$, $t_1$, $t_2$ como sendo os valores retornados por $ExtendedMDC(a,b)$, temos então pelo \textbf{Corolário} \autoref{mdc_extended_solutions} que todas as soluções da
+equação $at_u + bt_v = c$, são da forma $t_u = (t_1\frac{c}{d} + \frac{bq}{d})$ e $t_v = (t_2\frac{c}{d} - \frac{aq}{d})$, com $q \in\mathbb{Z}$. Logo:
+\\
+
+$t_u = (t_1\frac{c}{d} + \frac{bq}{d}) \Rightarrow \frac{-t_1c}{b} \leq q \leq \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Analogamente temos:
+\\
+
+$t_v = (t_2\frac{c}{d} - \frac{aq}{d}) \Rightarrow \frac{t_2c}{a} \geq q \geq \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a}$, já que $0\leq t_u\leq \frac{F-1-Y_u}{X_u}$
+\\
+
+Das duas inequações acima, temos:
+\\
+
+$max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Big) \leq q \leq min\Big(\frac{t_2c}{a}, \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}  \Big)$
+\\
+
+Portanto, se a inequação acima tiver solução inteira $q$, os elevadores $u$ e $v$ serão conectados pelo andar $Y_u+X_ut_u = Y_u+X_u\big[(t_1 + \frac{bq}{d})\frac{c}{d}\big]$.
+\clearpage
+
+\textbf{Pseudocódigo:}
+\begin{algorithm}
+\caption{Verifica se os elevadores $u$ e $v$ estão conexos.}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{$ElevatorsConected (X_u, Y_u, X_v, Y_y, F)$}{}
+\State $a \gets X_u$
+\State $b \gets -X_v$
+\State $c \gets Y_v-Y_u$
+\State $[d,t_1,t_2] \gets ExtendedMDC(a,b)$
+\\
+\If {$Y_u = Y_v$} %\Comment{Se $Y_u=Y_v$ então os elevadores estão conexos}
+\State \Return {$true$}
 \EndIf
 \\
-\If {$N = 2$}
-\State \Return $3$
+\If {$d \nmid c$}
+\State \Return {$false$}
 \EndIf
 \\
-\State $A \gets 
-\begin{bmatrix}
-2 & 1           \\[0.3em]
-2 & 0
-\end{bmatrix}
-$
+\Comment{A partir desse ponto temos: $c\neq0$ e $d|c$}
 \\
-\State $B \gets EXPMAT(A, N-2, m)$ \Comment{\textbf{Algoritmo} $\autoref{exponenciacao_matrix}$}
+\State {$letf \gets max\Big(\frac{-t_1c}{b}, \big[t_2c - (\frac{F-1-Y_v}{X_v})d\big]\frac{1}{a} \Big)$}% max\Big(\frac{-t_1d}{b}, \big[t_2 - (\frac{F-1-Y_v}{X_v})\frac{d}{c}\big]\frac{d}{a}  \Big)$}
+\State {$right \gets min\Big(\frac{t_2c}{a}, \big[(\frac{F-1-Y_u}{X_u})d - t_1c\big]\frac{1}{b}  \Big) $}%min\Big(\frac{t_2d}{a}, \big[(\frac{F-1-Y_u}{X_u})\frac{d}{c} - t_1\big] \frac{d}{b} \Big)$}
 \\
-\State \Return{$3B_{0,0} + 1B_{1,0}$}
+\If {$\lceil left \rceil \leq \lfloor right \rfloor$}
+\State \Return {$true$}
+\EndIf
+\\
+\State \Return {$false$}
+
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
 \textbf{Análise:}
-Esse algoritmo tem a mesma complexidade do \textbf{Algoritmo} \autoref{exponenciacao_matrix}, ou seja, $O(n^3 \log N)$ (onde $n$ é a dimensão da matriz).
-Como nesse problema a matriz é sempre quadrada de dimensão $n=2$, temos que a complexidade final do algoritmo será $O(\log N)$.
-
+O único trecho do algoritmo que não roda em tempo constante é a chamada $ExtendedMDC(a,b)$ na linha $5$, logo a complexidade total do algoritmo é $O(\log(a+b)) = O(\log(X_u+X_v))$.
