@@ -535,7 +535,7 @@ Claramente se $D$ for maior que $N$, não há nenhum par que satisfaz as condiç
 
 Pela \textbf{Proposição} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema da seguinte forma:
 calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
-Como $\Phi(r)$ nos dá a quantidade de números menores ou igual a $r$ comprimos com respeito a ele, temos que 
+Como $\Phi(r)$ nos dá a quantidade de números menores ou igual a $r$ coprimos com respeito a ele, temos que 
 o número total de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$.
 Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
 \\
@@ -607,7 +607,7 @@ Como $10104*79993 \equiv 22019 (\bmod$ $m)$, $10105*49996 \equiv 55048 (\bmod$ $
 $Fib_n\equiv 22019(55048^n - 44944^n)(\bmod$ $m)$
 \newline
 
-Para facilitar a demostração usaremos as constantes $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. 
+Para facilitar a demonstração usaremos as constantes $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. 
 Vamos calcular $F(S) \bmod m$ em função de $a$, $b$ e $c$.
 \newline
 
@@ -673,7 +673,7 @@ Para mais informações sobre  \textbf{Fast Fourier Transform} acesse:
 
 
 \textbf{Análise:}
-Na linha $7$ é aplicado o algoritmo \textbf{Fast Fourier Transform} para calcular os coeficientes do monomio de grau $N-K$ dos 
+Na linha $7$ é aplicado o algoritmo \textbf{Fast Fourier Transform} para calcular os coeficientes do monômio de grau $N-K$ dos 
 polinômios $B(x)$ e $C(x)$ respectivamente. O complexidade final do algoritmo será igual a complexidade do algoritmo \textit{Fast Fourier Transform} que é $O(N\log N)$.
 
 
