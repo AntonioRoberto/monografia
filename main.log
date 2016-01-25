@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 JAN 2016 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 JAN 2016 18:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2392,6 +2392,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 399--403
 Package hyperref Warning: No autoref name for `proposition' on input line 405.
 
 
+Package hyperref Warning: No autoref name for `algorithm' on input line 411.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 411--413
 
  []
@@ -2445,29 +2448,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 529--532
 Package hyperref Warning: No autoref name for `proposition' on input line 536.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--540
+Underfull \hbox (badness 10000) in paragraph at lines 536--542
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 540.
+(babel)             in language  on input line 542.
 [32
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 573.
+(babel)             in language  on input line 575.
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 583--586
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
 
-Overfull \hbox (4.721pt too wide) in paragraph at lines 593--595
+Underfull \hbox (badness 10000) in paragraph at lines 585--588
+
+ []
+
+
+Overfull \hbox (4.721pt too wide) in paragraph at lines 595--597
 []\T1/ppl/m/n/10.95 Verificamos tam-bém que $\OT1/cmr/m/n/10.95 5$ \T1/ppl/m/n/
 10.95 tem \T1/ppl/m/it/10.95 In-verso Mul-ti-pli-ca-tivo \T1/ppl/m/n/10.95 mó-d
 ulo $\OML/cmm/m/it/10.95 m$\T1/ppl/m/n/10.95 , já que $\OML/cmm/m/it/10.95 MDC\
@@ -2475,79 +2478,74 @@ OT1/cmr/m/n/10.95 (5\OML/cmm/m/it/10.95 ; m\OT1/cmr/m/n/10.95 ) =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--598
+Underfull \hbox (badness 10000) in paragraph at lines 598--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--601
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--604
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 605.
+(babel)             in language  on input line 606.
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 605--607
+Underfull \hbox (badness 10000) in paragraph at lines 607--609
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--624
+Underfull \hbox (badness 10000) in paragraph at lines 610--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--635
+Underfull \hbox (badness 10000) in paragraph at lines 626--628
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--642
+Underfull \hbox (badness 10000) in paragraph at lines 637--639
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--646
+Underfull \hbox (badness 10000) in paragraph at lines 644--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 649--651
+Underfull \hbox (badness 10000) in paragraph at lines 647--650
 
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 674.
-[34]
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--655
+
+ []
+
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 678.
+[34]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 682.
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--680
-
- []
-
-
-Overfull \hbox (2.46692pt too wide) in paragraph at lines 681--686
-\T1/ppl/m/n/10.95 men-tos, ie, $\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 = \OMS
-/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 s[]; s[]; :::; s[]\OMS/cmsy/m/n/10.95 g$\T
-1/ppl/m/n/10.95 , é de-fi-nido a fun-ção $\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.
-95 (\OML/cmm/m/it/10.95 S\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 MDC\OT1/cmr
-/m/n/10.95 (\OML/cmm/m/it/10.95 Fib[]; Fib[]; :::; Fib[]\OT1/cmr/m/n/10.95 )$\T
-1/ppl/m/n/10.95 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 687--690
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
 
  []
 
 
-Overfull \hbox (34.45744pt too wide) in paragraph at lines 691--694
+Underfull \hbox (badness 10000) in paragraph at lines 691--694
+
+ []
+
+
+Overfull \hbox (34.45744pt too wide) in paragraph at lines 695--698
 []\T1/ppl/b/n/10.95 Solução: \T1/ppl/m/n/10.95 Pelo [][]Te-o-rema 16[][][] sa-b
 e-mos que, $\OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Fib[
 ]; Fib[]; :::; Fib[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 Fib[]$\T1/ppl/m/
@@ -2555,17 +2553,17 @@ n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--700
+Underfull \hbox (badness 10000) in paragraph at lines 702--704
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--705
+Underfull \hbox (badness 10000) in paragraph at lines 707--709
 
  []
 
 
-Overfull \hbox (53.71141pt too wide) in paragraph at lines 711--714
+Overfull \hbox (53.71141pt too wide) in paragraph at lines 715--718
 []\T1/ppl/m/n/10.95 A par-tir do mo-mento que cal-cu-la-mos $\OML/cmm/m/it/10.9
 5 q$\T1/ppl/m/n/10.95 , ie, en-con-tra-mos o va-lor má-ximo de $\OML/cmm/m/it/1
 0.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; s[]; :::; s[]\OT1/cmr/m/n/
@@ -2573,27 +2571,27 @@ Overfull \hbox (53.71141pt too wide) in paragraph at lines 711--714
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 711--714
+Underfull \hbox (badness 10000) in paragraph at lines 715--718
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--722
+Underfull \hbox (badness 10000) in paragraph at lines 724--726
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--738
+Underfull \hbox (badness 10000) in paragraph at lines 727--742
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--756
+Underfull \hbox (badness 10000) in paragraph at lines 743--760
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 756.
+(babel)             in language  on input line 760.
 [35]) (./Chapters/Chapter5.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -2623,7 +2621,7 @@ Package babel Info: Redefining portuges shorthand "|
 --------------------
  A. Curiosidades da ACM-ICPC
 --------------------
-<Figures/grafico.png, id=659, 937.5025pt x 656.4525pt>
+<Figures/grafico.png, id=660, 937.5025pt x 656.4525pt>
 File: Figures/grafico.png Graphic file (type png)
 
 <use Figures/grafico.png>
@@ -2687,7 +2685,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 296.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5D36CB57A376A35DA02DBD9A336B530D;7583.
+(rerunfilecheck)             Checksum: 5BE3F4B01AAFD869689AEDFA3C526D38;7601.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2697,10 +2695,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27880 strings out of 493089
- 497513 string characters out of 6134842
+ 27881 strings out of 493089
+ 497537 string characters out of 6134842
  646918 words of memory out of 5000000
- 30833 multiletter control sequences out of 15000+600000
+ 30834 multiletter control sequences out of 15000+600000
  53350 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,12n,49p,10403b,2185s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2724,10 +2722,10 @@ xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
 fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/palatino/uplri8a.pfb>
-Output written on main.pdf (51 pages, 479513 bytes).
+Output written on main.pdf (51 pages, 479730 bytes).
 PDF statistics:
- 801 PDF objects out of 1000 (max. 8388607)
- 720 compressed objects within 8 object streams
+ 802 PDF objects out of 1000 (max. 8388607)
+ 721 compressed objects within 8 object streams
  190 named destinations out of 1000 (max. 500000)
  438 words of extra memory for PDF output out of 10000 (max. 10000000)
 

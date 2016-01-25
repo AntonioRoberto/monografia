@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {3.1.1}Algoritmo $\Phi $ de Euler}{26}{subsection.100}
 \contentsline {subsection}{\numberline {3.1.2}Teorema de Euler}{26}{subsection.103}
 \contentsline {section}{\numberline {3.2}Sequ\IeC {\^e}ncia de Fibonacci}{27}{section.105}
-\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise Algoritmo de Euclides}{28}{subsection.111}
+\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise do Algoritmo de Euclides}{28}{subsection.111}
 \contentsline {section}{\numberline {3.3}Problemas Propostos}{29}{section.114}
 \contentsline {subsection}{\numberline {3.3.1}UVA-11424}{29}{subsection.115}
 \contentsline {subsection}{\numberline {3.3.2}TJU-3506}{30}{subsection.117}

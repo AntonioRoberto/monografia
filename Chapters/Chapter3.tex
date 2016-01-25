@@ -12,7 +12,7 @@
 
 \begin{definition}
 A Função Totiente de Euler, denotada por $\Phi(n)$, é a função aritmética que conta o número 
-de inteiros positivos menores ou iguais a $n$ que são primos entre si com $n$.
+de inteiros positivos menores ou iguais a $n$ que são primos entre si com $n$ (ou \textbf{coprimos}).
 
 $\Phi(n) := |\{ x \in \mathbb{N}^{*} \mid MDC(x,n) = 1 \}|$
 \end{definition}
@@ -42,7 +42,7 @@ $mn$, já que:
 $MDC(m,q) \neq 1 \Rightarrow MDC(xm+q,q) \neq 1 \Rightarrow MDC(mn,q) \neq 1$.
 \newline
 
-Logo, as únicas linhas da tabela que nos interessa são aquelas cujo primeiro termo é primo com $m$ (observe que temos $\Phi(m)$
+Logo, as únicas linhas da tabela que nos interessam são aquelas cujo primeiro termo é primo com $m$ (observe que temos $\Phi(m)$
 linhas que satisfazem essa condição).
 
 Agora, para cada uma dessas $\Phi(m)$ linhas, queremos saber quantos termos são primos com $n$, já que todos elementos na linha são
@@ -86,7 +86,7 @@ O algoritmo baseia-se na idéia do \textbf{Crivo de Erastótenes} e no \autoref{
 
 \textbf{Pseudocódigo:}
 \begin{algorithm}
-\caption{Calcula os primeiros N termos da função $\Phi$}
+\caption{Calcula os primeiros N termos da função $\Phi$}\label{phi_de_euler_algoritmh}
 \begin{algorithmic}[1]
 \Procedure{$PHI (N)$}{}
 \State $\Phi[] \gets new Array[N]$
@@ -112,10 +112,10 @@ O algoritmo baseia-se na idéia do \textbf{Crivo de Erastótenes} e no \autoref{
 \end{algorithm}
 
 \textbf{Análise:}
-Deixaremos a demostração a cargo do leitor.
+Deixaremos a demonstração a cargo do leitor.
 
 \textbf{Dica:}
-O laço mais interno, na linha $11$ só é executado quando $p$ é primo, e assim ele executa uma quantida de vezes proporcional à:
+O laço mais interno, na linha $11$ só é executado quando $p$ é primo, e assim ele executa uma quantidade de vezes proporcional à:
 $E = \sum_{p\text{ primo} \mid p \leq N}\frac{N}{p} $.
 
 Observe também que: $E \leq \sum_{p=2}^{N}\frac{N}{p} = O(N\log N)$. 
@@ -161,7 +161,7 @@ E assim, concluímos que $1 \equiv a^\Phi(n)(\bmod$ $n)$, já que $p_1p_2...p_{\
 \section{Sequência de Fibonacci}
 
 \begin{definition}
-A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positivos em que cada termo subsequente corresponde a some dos dois termos anteriores.
+A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positivos em que cada termo subsequente corresponde a soma dos dois termos anteriores.
 
 \[
  Fib_n :=
@@ -178,7 +178,7 @@ A sequência de Fibonacci $Fib_n$ é uma sequência de números inteiros positiv
 $MDC(Fib_n, Fib_{n-1}) = 1$, para $n \geq 2$
 \end{proposition}
 \textbf{Demonstração:}
-Tome os primeiros termos da sequência de fibonacci: $1, 1, 2, 3, 5, 8,...$.
+Tome os primeiros termos da sequência de Fibonacci: $1, 1, 2, 3, 5, 8,...$.
 Claramente a expressão acima funciona para os primeiros termos.
 Assuma que a expressão funciona para um inteiro qualquer $(k-1) > 2$, ou seja, $MDC(Fib_{k-1}, Fib_{k-2}) = 1$.
 
@@ -227,7 +227,7 @@ $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm}Fib_{r+1} + Fib_{qm-1}Fib_{r})$ ($\trian
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{qm-1}Fib_{r})$
 
-Pelo \textbf{Proposição} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
+Pela \textbf{Proposição} \autoref{corolario_gcd_produto} e sabendo que $MDC(Fib_m,Fib_{qm-1})=1$, temos:
 
 $MDC(Fib_m, Fib_n) = MDC(Fib_m, Fib_{r})$
 
@@ -238,7 +238,7 @@ Se tirarmos o símbolo funcional $Fib$, a última equação forma um passo do \t
 Podemos continuar esse processo até que o resto $r$ se torne $0$. O último resto não-nulo será
 exatamente o Máximo Divisor Comum do dois números originais.
 
-Desse modo, aplicar o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que aplicar aos índice $m$ e $n$.
+Desse modo, aplicar o \textbf{Algoritmo de Euclides} em $Fib_m$ e $Fib_n$ funciona da mesma maneira que aplicar aos índices $m$ e $n$.
 E assim, ao chegarmos na base da recursão, $MDC(m,n) = MDC(s,0) = s$, teremos também: $MDC(Fib_m,Fib_n) = MDC(Fib_s,0) = Fib_s = Fib_{MDC(m,n)}$ $\square$.
 
 
@@ -267,7 +267,7 @@ $Fib_{n+1} - k_1Fib_b = k_2^n(Fib_1 - k_1Fib_0) = k_2^n$
 
 $Fib_{n+1} - k_2Fib_b = k_1^n(Fib_1 - k_2Fib_0) = k_1^n$
 
-Subtraindo membro à membro nos dá:
+Subtraindo membro à membro temos:
 
 $Fib_n(k_2 - k_1) = k_2^n - k_1^n$
 
@@ -278,7 +278,7 @@ $Fib_n = \frac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{(\frac{1+\sq
 $Fib_n = \frac{\sqrt{5}}{5}((\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n)$ $\square$
 
 
-\subsection{Análise Algoritmo de Euclides}
+\subsection{Análise do Algoritmo de Euclides}
 
 No \textbf{Algoritmo} \autoref{mdc}, exceto a chamada recursiva, todas as operações são feitas em tempo constante. Assim, 
 a complexidade do algoritmo $MDC(a,b)$ será proporcional ao número de chamadas recursivas que o algoritmo faz.
@@ -340,7 +340,7 @@ Trivialmente a expressão acima pode ser calculada em tempo proporcional a $O(n^
 
 Primeiramente reescrevemos a expressão acima da seguinte maneira:
 
-$G(N) = \sum_{j=2}^N\sum_{i=1}^{j-1}MDC(i,j)$ ( $\rhd$ Observe que as expressão são equivalentes).
+$G(N) = \sum_{j=2}^N\sum_{i=1}^{j-1}MDC(i,j)$ ( $\rhd$ Observe que as expressões são equivalentes).
 
 Tome agora a função $F(M) = \sum_{i=1}^{M-1}MDC(i, M)$. Com isso, $G(N) = \sum_{j=2}^NF(j)$.
 
@@ -349,7 +349,7 @@ Sabemos que todos os valores resultantes do método $MDC(i,M)$ calculados em $F(
 $F(M) = \sum_{i=1}^{M-1}MDC(i, M) = \sum_{l=1}^{n}\lambda_l d_l$, em que, $d_1, d_2,..., d_n$ são os divisores de $M$, $\lambda_l$ é o número de vezes que o divisor $d_l$ aparece na somatória $\sum_{i=1}^{M-1}MDC(i,N)$, e $n$ é o número de divisores de $M$.
 \\
 
-Pelo \textbf{Proposição} \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória, será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
+Pela \textbf{Proposição} \autoref{divisibilidade_mdc} temos que: $MDC(i,M) = d_l \Rightarrow MDC(i/d_l,M/d_l) = 1$. Logo o número de vezes que o divisor $d_l$ aparece na somatória será igual ao número de primos entre si com $(M/d_l)$, ie, $\lambda_l = \Phi(M/d_l)$.
 
 Reescrevendo novamente $F(M)$, temos:
 
@@ -402,13 +402,13 @@ O problema consiste em calcular a expressão: $\Phi(n^m) \bmod d$.
 \\
 
 \textbf{Solução:}
-Pelo \textbf{Proposição} \autoref{phi_potencia_nk}, temos: 
+Pela \textbf{Proposição} \autoref{phi_potencia_nk}, temos: 
 
 $\Phi(n^m) \bmod d = (n^{m-1}\Phi(n)) \bmod d$
 
 $\Phi(n^m) \bmod d = ((n^{m-1} \bmod d)(\Phi(n)) \bmod d) \bmod d)$
 
-Desse modo, podemos calcular o primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e a segundo fator com o método $PHI()$.
+Desse modo, podemos calcular o primeiro fator do produto ($n^{m-1} \bmod d$) usando $EXPMOD()$ e o segundo fator com o \textbf{Algoritmo} \autoref{phi_de_euler_algoritmh}.
 \\
 
 \textbf{Pseudocódigo:}
@@ -435,13 +435,13 @@ Se precalcularmos o vetor $\Phi[]$, temos que a complexidade total para calcular
 \href{https://www.codechef.com/problems/IITK2P05}{IITK2P05 - Factorization}\\
 
 \textbf{Resumo:}
-É dado um inteiro $N$ ($2 \leq N \leq 10^{18}$) e o valora de $\Phi(N)$.
+São dados um inteiro $N$ ($2 \leq N \leq 10^{18}$) e o valor de $\Phi(N)$.
 
 O problema consiste em fatorar $N$. 
 \\
 
 \textbf{Solução:}
-A solução trivial para fatorar $N$ consome tempo proporcional a $O(\sqrt{N})$, porém para uma entrada na ordem de $10^{18}$ precisames de um algoritmo mais eficiente.
+A solução trivial para fatorar $N$ consome tempo proporcional a $O(\sqrt{N})$, porém para uma entrada na ordem de $10^{18}$ precisamos de um algoritmo mais eficiente.
 
 Se $N$ for primo, ie, $\Phi(N) = N-1$, já temos a solução.
 
@@ -531,11 +531,13 @@ São dados inteiros positivos $N$ e $D$. O problema consiste em calcular o núme
 \\
 
 \textbf{Solução:}
-Claramente se $D$ for maior que $N$, não há nenhum par que satisfaça as condições. Logo, assumiremos que $D \leq N$.
+Claramente se $D$ for maior que $N$, não há nenhum par que satisfaz as condições. Logo, assumiremos que $D \leq N$.
 
-Pelo \textbf{Proposição} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema
-em calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
-Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$, já que $\Phi(r)$ nos dá a qunatidade de números menores ou iguais a $r$ e primo com entre si com $r$. Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
+Pela \textbf{Proposição} \autoref{divisibilidade_mdc} sabemos que se $MDC(A,B)=D$ então $MDC(\frac{A}{D}, \frac{B}{D})=1$. Assim, podemos reduzir o problema da seguinte forma:
+calcular o número de pares não-ordenados $\{A,B\}$, tal que $1\leq A,B \leq \frac{N}{D}$ e $MDC(A,B)=1$.
+Como $\Phi(r)$ nos dá a quantidade de números menores ou igual a $r$ comprimos com respeito a ele, temos que 
+o número total de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \leq \frac{N}{D}$.
+Observe que essa somatória nos dá somente a metade do número de pares, já que o problema consiste em calcular pares não-ordenados.
 \\
 
 \textbf{Pseudocódigo:}
@@ -561,7 +563,7 @@ Logo o número de pares será igual a somatória de $\Phi(r)$, com $1 \leq r \le
 \end{algorithm}
 
 \textbf{Análise:}
-Se precalcularmos $\Phi[]$ teremos que o fator limitando do algoritmo será o laço da linha $8$, e a complexidade do algoritmo será $O(\frac{N}{D})$.
+Se precalcularmos $\Phi[]$ teremos que o trecho mais custoso do algoritmo será o laço da linha $8$, e assim a complexidade do algoritmo será $O(\frac{N}{D})$.
 
 Obs.: Quando dobramos o valor de $count$ na linha $11$, tem um único $\{1,1\}$ que é contado duas vezes, e por isso precisamos subtrair $1$ do valor final. 
 Esse par corresponde ao par $\{D,D\}$ do problema original.
@@ -590,22 +592,24 @@ Pelo \autoref{fibonacci_formula_fechada} temos que $Fib_n = \frac{\sqrt{5}}{5}((
 Primeiro verificamos que $5$ é \textit{Resíduo Quadrático} módulo $m$, já que $5 \equiv 10104^2(\bmod$ $m)$ (esse valor pode
 ser encontrado iterando sobre todos valores menores que $m$), logo: $\sqrt{5} \equiv 10104(\bmod$ $m)$.
 
-Verificamos também que $5$ tem \textit{Inverso Multiplicativo} módulo $m$, já que $MDC(5,m)=1$. Assim, iterando sobre os valores até $m$, podemos encontrar $79993$, que é \textit{Inverso Multiplicativo} de $5$, ie, $5.79993 \equiv 1(\bmod$ $m)$, ou melhor, $5^{-1} \equiv 79993(\bmod$ $m)$.
+Verificamos também que $5$ tem \textit{Inverso Multiplicativo} módulo $m$, já que $MDC(5,m)=1$. Assim, iterando sobre os valores até $m$, podemos encontrar $79993$, que é \textit{Inverso Multiplicativo} de $5$, ie, $5 * 79993 \equiv 1(\bmod$ $m)$, ou simplesmente, $5^{-1} \equiv 79993(\bmod$ $m)$.
 Analogamente podemos calcular o \textit{Inverso Multiplicativo} do $2$ módulo $n$, $2^{-1} \equiv 49996(\bmod$ $m)$.
 
-Substituindo esse valores na equação acimas, temos:
+Substituindo esses valores na equação acima, temos:
 \newline
 
-$Fib_n \equiv 10104.79993 \big( (10105.49996)^n - (-10103.49996)^n (\bmod$ $m)$ 
+$Fib_n \equiv 10104*79993 \big( (10105*49996)^n - (-10103*49996)^n (\bmod$ $m)$ 
 \newline
 
-Melhorando a equação um pouco mais, chegamos em:
+Como $10104*79993 \equiv 22019 (\bmod$ $m)$, $10105*49996 \equiv 55048 (\bmod$ $m)$ e $(-10103*49996) \equiv 44944 (\bmod$ $m)$, temos que:
 \newline
 
 $Fib_n\equiv 22019(55048^n - 44944^n)(\bmod$ $m)$
 \newline
 
-Assuma que $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. Vamos calcular o $F(S) \bmod m$ em função de $a$, $b$ e $c$.
+Para facilitar a demostração usaremos as constantes $a=22019$, $b=55048$ e $c=44944$, ie, $Fib_n \equiv a(b^n-c^n)(\bmod$ $m)$. 
+Vamos calcular $F(S) \bmod m$ em função de $a$, $b$ e $c$.
+\newline
 
 Suponha que $N=3$ e $S=\{s_1, s_2, s_3\}$. 
 
@@ -681,10 +685,10 @@ polinômios $B(x)$ e $C(x)$ respectivamente. O complexidade final do algoritmo s
 \textbf{Resumo:}
 São dados quatro inteiros $m$, $l$, $r$, $k$ ($1\leq m\leq 10^9$, $1\leq l \leq r \leq 10^{12}$, $2\leq k\leq r-l+1$), 
 e um conjunto $A = \{l,l+1,l+2,...,r\}$.
-Dado um conjunto $S \subseteq A$ com $k$ elementos, ie, $S = \{s_1, s_2,...,s_k\}$, é definido a função 
+Dado um conjunto $S \subseteq A$ com $k$ elementos, ie, $S = \{s_1, s_2,...,s_k\}$, seja a função 
 $F(S) = MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k})$.
 
-O problemas consiste em encontrar tal subconjunto $S$, de tal forma que $F(S)$ seja máxima. No final do algoritmo basta imprimir 
+O problema consiste em encontrar tal subconjunto $S$, de tal forma que $F(S)$ seja máxima. No final do algoritmo basta imprimir 
 $F(S) \bmod m$.
 \\
 
@@ -695,7 +699,7 @@ Desse modo, para maximizar $F(S)$, basta maximizar $MDC(s_1,s_2,...,s_k)$, já q
 Suponha que o valor máximo para $MDC(s_1,s_2,...,s_k)$ seja $q$. Como $q$ divide pelo memos $k$ inteiros ($s_1,s_2,...,s_k$)
 no conjunto $A$, então $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$, ie, o número de múltiplos de $q$ entre $l$ e $r$ é maior ou igual à $k$.
 
-Todos os valores que $\lfloor \frac{r}{q} \rfloor$ assume, são da forma:
+Todos os valores que $\lfloor \frac{r}{q} \rfloor$ assume são da forma:
 \newline
 
 $i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$, se $\lfloor \frac{r}{q} \rfloor \leq \sqrt{r}$
@@ -705,7 +709,7 @@ $\lfloor \frac{r}{i} \rfloor$, com $i \in \{1,2,3,...,\lfloor\sqrt{r}\rfloor\}$,
 
 Analogamente, podemos calcular todos os valores que $\lceil \frac{l}{q} \rceil$ assume.
 
-Tendo todos esses valores armazenados em um conjunto $Q$, é possivel calcular todos os valores distintos que $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1$ assume, e assim basta escolher o maior $q \in Q$, tal que 
+Tendo todos esses valores armazenados em um conjunto $Q$, é possível calcular todos os valores distintos que $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1$ assume, e assim basta escolher o maior $q \in Q$, tal que 
 $\lfloor \frac{r}{q} \rfloor -\lceil \frac{l}{q} \rceil + 1 \geq k$.  
 
 A partir do momento que calculamos $q$, ie, encontramos o valor máximo de $MDC(s_1,s_2,...,s_k)$, precisamos de uma maneira eficiente de calcular $Fib_q \bmod m$.
@@ -799,9 +803,10 @@ $
 
 
 \textbf{Análise:}
-Os laços das linhas $5$ e $8$ consomem tempo proporcional a $O(\sqrt{r})$. O laço da linha $11$ consomem tempo proporcional a $O(\sqrt{l})$, que por sua vez é $O(\sqrt{r})$, já que $l\leq r$. Como é inserido um elemento em $Q$ para cada iteração desses três primeiros laços, temos que no final do algoritmo o número de elementos em $Q$ é da ordem de $O(\sqrt{r})$.
+Os laços das linhas $5$ e $8$ consomem tempo proporcional a $O(\sqrt{r})$. O laço da linha $11$ consome tempo proporcional a $O(\sqrt{l})$, que por sua vez é $O(\sqrt{r})$, já que $l\leq r$. Como é inserido um elemento em $Q$ para cada iteração desses três primeiros laços, temos que no final do algoritmo o número de elementos em $Q$ é da ordem de $O(\sqrt{r})$.
 
-O laço da linha $14$ consomem tempo proporcional a $O(|Q|)$, ie, $O(\sqrt{r})$.
+O laço da linha $14$ consome tempo proporcional a $O(|Q|)$, ie, $O(\sqrt{r})$.
 
-Assim, a complexidade total do algoritmo é $O(\sqrt{r} + \log r)$, já que o algoritmo \textit{EXPMAT()} roda em $O(\log q)$, ou melhor, $O(\log r)$, pois $q \leq r$. 
+O algoritmo \textit{EXPMAT()} roda em $O(\log q)$, ou simplesmente, $O(\log r)$, já que $q \leq r$.
 
+Assim, a complexidade total do algoritmo é $O(\sqrt{r} + \log r)$.
