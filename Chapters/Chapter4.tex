@@ -335,7 +335,8 @@ $G(N) = \sum_{i=1}^{N-1}\sum_{j=i+1}^{N}MDC(i,j)$.
 \\
 
 \textbf{Solução:}
-Trivialmente a expressão acima pode ser calculada em tempo proporcional a $O(n^2log(N))$, porém essa solução consome muito tempo e não será aceita no Judge Online. Vamos então mostrar uma solução mais eficiente.
+Trivialmente a expressão acima pode ser calculada em tempo proporcional a $O(n^2log(N))$, porém essa solução consome muito tempo. 
+Vamos então mostrar uma solução mais eficiente.
 \\
 
 Primeiramente reescrevemos a expressão acima da seguinte maneira:
@@ -665,7 +666,7 @@ Para mais informações sobre  \textbf{Fast Fourier Transform} acesse:
 \\
 \State $[Bcoef, Ccoef]\gets FastFourierTransform(S,N,K,m,a,b,c)$ 
 \\
-\State \Return $a(Bcoef - Coef)\bmod m$
+\State \Return $a(Bcoef - Ccoef)\bmod m$
 
 \EndProcedure
 \end{algorithmic}

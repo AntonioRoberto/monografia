@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 JAN 2016 20:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 JAN 2016 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2388,64 +2388,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--336
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--340
+Underfull \hbox (badness 10000) in paragraph at lines 337--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
 
  []
 
 
-Package hyperref Warning: No autoref name for `proposition' on input line 352.
+Package hyperref Warning: No autoref name for `proposition' on input line 353.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 358.
+(babel)             in language  on input line 359.
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 358--360
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 396.
+(babel)             in language  on input line 397.
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 399--403
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 
-Package hyperref Warning: No autoref name for `proposition' on input line 405.
-
-
-Package hyperref Warning: No autoref name for `algorithm' on input line 411.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 411--413
+Underfull \hbox (badness 10000) in paragraph at lines 400--404
 
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 434.
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--436
+Package hyperref Warning: No autoref name for `proposition' on input line 406.
+
+
+Package hyperref Warning: No autoref name for `algorithm' on input line 412.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 437.
+(babel)             in language  on input line 435.
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 438.
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 440--442
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
 
  []
 
 
-Overfull \hbox (16.36215pt too wide) in paragraph at lines 463--465
+Overfull \hbox (16.36215pt too wide) in paragraph at lines 464--466
 \T1/ppl/m/n/10.95 O único pro-blema agora é cal-cu-lar $\OT1/cmr/m/n/10.95 ^^H(
 \OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 )$ \T1/ppl/m/n/10.95 a par-tir de $\OT1
 /cmr/m/n/10.95 ^^H(\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 )$\T1/ppl/m/n/10.95 
@@ -2454,47 +2454,47 @@ Overfull \hbox (16.36215pt too wide) in paragraph at lines 463--465
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 473.
+(babel)             in language  on input line 474.
 [33]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 525.
+(babel)             in language  on input line 526.
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--532
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
 
-Package hyperref Warning: No autoref name for `proposition' on input line 536.
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
+
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--542
+Package hyperref Warning: No autoref name for `proposition' on input line 537.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--543
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 542.
+(babel)             in language  on input line 543.
 [34
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 575.
+(babel)             in language  on input line 576.
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--577
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 585--588
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
 
-Overfull \hbox (4.721pt too wide) in paragraph at lines 595--597
+Underfull \hbox (badness 10000) in paragraph at lines 586--589
+
+ []
+
+
+Overfull \hbox (4.721pt too wide) in paragraph at lines 596--598
 []\T1/ppl/m/n/10.95 Verificamos tam-bém que $\OT1/cmr/m/n/10.95 5$ \T1/ppl/m/n/
 10.95 tem \T1/ppl/m/it/10.95 In-verso Mul-ti-pli-ca-tivo \T1/ppl/m/n/10.95 mó-d
 ulo $\OML/cmm/m/it/10.95 m$\T1/ppl/m/n/10.95 , já que $\OML/cmm/m/it/10.95 MDC\
@@ -2502,74 +2502,74 @@ OT1/cmr/m/n/10.95 (5\OML/cmm/m/it/10.95 ; m\OT1/cmr/m/n/10.95 ) =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--600
+Underfull \hbox (badness 10000) in paragraph at lines 599--601
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
+Underfull \hbox (badness 10000) in paragraph at lines 602--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--606
+Underfull \hbox (badness 10000) in paragraph at lines 605--607
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 606.
+(babel)             in language  on input line 607.
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 607--609
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 610--613
+Underfull \hbox (badness 10000) in paragraph at lines 611--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--628
+Underfull \hbox (badness 10000) in paragraph at lines 627--629
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--639
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--646
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--650
+Underfull \hbox (badness 10000) in paragraph at lines 648--651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--655
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 678.
+(babel)             in language  on input line 679.
 [36]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 682.
+(babel)             in language  on input line 683.
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--684
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 691--694
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
 
-Overfull \hbox (34.45744pt too wide) in paragraph at lines 695--698
+Underfull \hbox (badness 10000) in paragraph at lines 692--695
+
+ []
+
+
+Overfull \hbox (34.45744pt too wide) in paragraph at lines 696--699
 []\T1/ppl/b/n/10.95 Solução: \T1/ppl/m/n/10.95 Pelo [][]Te-o-rema 16[][][] sa-b
 e-mos que, $\OML/cmm/m/it/10.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Fib[
 ]; Fib[]; :::; Fib[]\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 Fib[]$\T1/ppl/m/
@@ -2577,17 +2577,17 @@ n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--704
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--709
+Underfull \hbox (badness 10000) in paragraph at lines 708--710
 
  []
 
 
-Overfull \hbox (53.71141pt too wide) in paragraph at lines 715--718
+Overfull \hbox (53.71141pt too wide) in paragraph at lines 716--719
 []\T1/ppl/m/n/10.95 A par-tir do mo-mento que cal-cu-la-mos $\OML/cmm/m/it/10.9
 5 q$\T1/ppl/m/n/10.95 , ie, en-con-tra-mos o va-lor má-ximo de $\OML/cmm/m/it/1
 0.95 MDC\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; s[]; :::; s[]\OT1/cmr/m/n/
@@ -2595,27 +2595,27 @@ Overfull \hbox (53.71141pt too wide) in paragraph at lines 715--718
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 715--718
+Underfull \hbox (badness 10000) in paragraph at lines 716--719
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 724--726
+Underfull \hbox (badness 10000) in paragraph at lines 725--727
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--742
+Underfull \hbox (badness 10000) in paragraph at lines 728--743
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--760
+Underfull \hbox (badness 10000) in paragraph at lines 744--761
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 760.
+(babel)             in language  on input line 761.
 [37]) (./Chapters/Chapter5.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 3.
@@ -2747,7 +2747,7 @@ nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on main.pdf (53 pages, 489646 bytes).
+Output written on main.pdf (53 pages, 489611 bytes).
 PDF statistics:
  821 PDF objects out of 1000 (max. 8388607)
  737 compressed objects within 8 object streams
