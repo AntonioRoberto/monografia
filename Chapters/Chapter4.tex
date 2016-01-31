@@ -186,7 +186,7 @@ Provaremos por indução que a expressão sempre funciona.
 
 $MDC(Fib_{k}, Fib_{k-1}) = MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1})$
 
-$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pelo \textbf{Proposição} \autoref{corolario_gcd_soma})
+$MDC(Fib_{k-1} + Fib_{k-2}, Fib_{k-1}) = MDC(Fib_{k-2}, Fib_{k-1})$ ($\triangleright$ Pela \textbf{Proposição} \autoref{corolario_gcd_soma})
 
 Logo, temos que:
 
@@ -292,7 +292,7 @@ Se o algoritmo $MDC(a,b)$ faz $N$ ($1 < N$) chamadas recursivas, então: $a\geq 
 Provaremos essa proposição por indução. A base da indução é $N=1$. Como temos $1$ chamada recursiva, então $b\neq0$, ie, 
 $b \geq 1 = Fib_1$. Como $a > b$, então $a \geq 1 = Fib_2$, provando assim a base da indução.  
 
-Agora assuma que $N>1$, e que o algoritmo $MDC(a,b)$ faz $N$ chamadas recursivas. Pelo \autoref{algoritmo_divisao} sabemos que existe
+Agora assuma que $N>1$, e que o algoritmo $MDC(a,b)$ faz $N$ chamadas recursivas. Pelo \autoref{algoritmo_divisao} sabemos que existem
 $q$ e $r$ tal que $a=qb+r$, e $0\leq r<b$. 
 Assim, temos que $MDC(b,r)$ faz $N-1$ chamadas recursivas.
 

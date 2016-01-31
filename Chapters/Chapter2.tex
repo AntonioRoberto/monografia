@@ -358,7 +358,7 @@ Tome o conjunto das combinações lineares de $a$ e $b$:
 
 $S := \{x\in\mathbb{Z}, x>0 \mid x = ma + nb, m,n\in \mathbb{Z}\}$.
 
-Pelo \textbf{Proposição} \autoref{bezout_conjunto_nao_nulo} sabemos que $S \neq \emptyset$. Como $S$ contém somente números positivos e não é vazio, 
+Pela \textbf{Proposição} \autoref{bezout_conjunto_nao_nulo} sabemos que $S \neq \emptyset$. Como $S$ contém somente números positivos e não é vazio, 
 $S$ está limitado inferiormente por \textit{zero} e assim, $S$ tem um elemento mínimo que chamaremos de $d$.
 
 Como $d \in S$, então existe $u, v\in \mathbb{Z}$, tal que, $d = ua + vb$. Pelo \textbf{Corolário} \autoref{bezout_conjunto_divide}, sabemos que $d$ divide todos elementos em $S$, em particular:
@@ -634,7 +634,7 @@ Seja $S = \{S_1, S_2, S_3, ..., S_n\}$, com $n = |S|$, o conjunto dado pelo prob
 Tome um número qualquer $d \in P(S)$. Por definição temos que $\forall S_i, S_j \in S$, $S_i \equiv S_j ( mod$ $d) \Rightarrow $ 
 $ (S_i-S_j) \equiv 0 ( mod$ $d) \Rightarrow d \mid (S_i-S_j)$ .
 
-Pelo \textbf{Proposição} \autoref{corolario_divisibilidade_1} sabemos que:
+Pela \textbf{Proposição} \autoref{corolario_divisibilidade_1} sabemos que:
 
 $d | (S_i-S_{i-1})$, $ \forall i \in \mathbb{N}, 2 \leq i \leq n \Rightarrow d | (S_i-S_j)$, $ \forall S_i, S_j \in S \Rightarrow d \in P(S)$.
 
@@ -816,7 +816,7 @@ nesse grafo e verificar se há um caminho de um elevador que atinge o andar $A$ 
 
 Porém, para esse problema, não entraremos em detalhe nos algoritmos envolvendo grafos. Nos focaremos na parte matemática do problema, que envolve descobrir quando dois elevadores conseguem chegar em algum andar em comum, nos possibilitando assim, construir o grafo e resolver o problema.
 
-Dois elevadores $u$ e $v$ atingem um andar em comum, se existe inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
+Dois elevadores $u$ e $v$ atingem um andar em comum, se existem inteiros $t_u$ ($0\leq t_u\leq \frac{F-1-Y_u}{X_u}$) e $t_v$ ($0\leq t_v\leq \frac{F-1-Y_v}{X_v}$), tal que
 $Y_u+X_ut_u = Y_v+X_vt_v$, o que nos dá a \textit{Equação Diofantina Linear} $X_ut_u + (-X_v)tv = (Y_v-Y_u)$.
 
 Vamos mostrar agora um método para calcular $t_u$ e $t_v$, tal que $at_u + bt_v = c$, com $a=X_u$, $b=-X_v$ e c=$(Y_v-Y_u)$.
