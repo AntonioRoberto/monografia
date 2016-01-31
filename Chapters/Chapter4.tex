@@ -686,8 +686,8 @@ polinômios $B(x)$ e $C(x)$ respectivamente. O complexidade final do algoritmo s
 \textbf{Resumo:}
 São dados quatro inteiros $m$, $l$, $r$, $k$ ($1\leq m\leq 10^9$, $1\leq l \leq r \leq 10^{12}$, $2\leq k\leq r-l+1$), 
 e um conjunto $A = \{l,l+1,l+2,...,r\}$.
-Dado um conjunto $S \subseteq A$ com $k$ elementos, ie, $S = \{s_1, s_2,...,s_k\}$, seja a função 
-$F(S) = MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k})$.
+
+Seja $S := \{s_1, s_2,...,s_k\}$ um subconjunto de $A$ com $k$ elementos, e a função  $F(S) := MDC(Fib_{s_1}, Fib_{s_2}, ..., Fib_{s_k})$.
 
 O problema consiste em encontrar tal subconjunto $S$, de tal forma que $F(S)$ seja máxima. No final do algoritmo basta imprimir 
 $F(S) \bmod m$.
